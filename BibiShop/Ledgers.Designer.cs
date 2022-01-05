@@ -96,7 +96,7 @@ namespace BibiShop
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -131,7 +131,7 @@ namespace BibiShop
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.btnCustomerLedgers);
@@ -184,11 +184,11 @@ namespace BibiShop
             // btnCustomerLedgers
             // 
             this.btnCustomerLedgers.BackColor = System.Drawing.Color.White;
-            this.btnCustomerLedgers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnCustomerLedgers.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnCustomerLedgers.FlatAppearance.BorderSize = 2;
             this.btnCustomerLedgers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerLedgers.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnCustomerLedgers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnCustomerLedgers.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnCustomerLedgers.Location = new System.Drawing.Point(391, 6);
             this.btnCustomerLedgers.Name = "btnCustomerLedgers";
             this.btnCustomerLedgers.Size = new System.Drawing.Size(175, 42);
@@ -211,11 +211,11 @@ namespace BibiShop
             // btnSupplierLedgers
             // 
             this.btnSupplierLedgers.BackColor = System.Drawing.Color.White;
-            this.btnSupplierLedgers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnSupplierLedgers.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnSupplierLedgers.FlatAppearance.BorderSize = 2;
             this.btnSupplierLedgers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupplierLedgers.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnSupplierLedgers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnSupplierLedgers.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnSupplierLedgers.Location = new System.Drawing.Point(229, 7);
             this.btnSupplierLedgers.Name = "btnSupplierLedgers";
             this.btnSupplierLedgers.Size = new System.Drawing.Size(156, 42);
@@ -251,7 +251,7 @@ namespace BibiShop
             this.GBPayment.Controls.Add(this.lblPreviousBalance);
             this.GBPayment.Controls.Add(this.lblID);
             this.GBPayment.Controls.Add(this.label4);
-            this.GBPayment.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.GBPayment.CustomBorderColor = System.Drawing.Color.SteelBlue;
             this.GBPayment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GBPayment.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.GBPayment.ForeColor = System.Drawing.Color.White;
@@ -281,8 +281,8 @@ namespace BibiShop
             // 
             // btnPay
             // 
-            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnPay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnPay.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPay.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnPay.FlatAppearance.BorderSize = 2;
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -574,7 +574,7 @@ namespace BibiShop
             // 
             this.DGVSupplierLedger.AllowUserToAddRows = false;
             this.DGVSupplierLedger.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.DGVSupplierLedger.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVSupplierLedger.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVSupplierLedger.BackgroundColor = System.Drawing.Color.White;
@@ -582,7 +582,7 @@ namespace BibiShop
             this.DGVSupplierLedger.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVSupplierLedger.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -600,16 +600,16 @@ namespace BibiShop
             this.BalanceGV,
             this.ActionGV});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(221)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVSupplierLedger.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVSupplierLedger.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVSupplierLedger.EnableHeadersVisualStyles = false;
-            this.DGVSupplierLedger.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(238)))), ((int)(((byte)(208)))));
+            this.DGVSupplierLedger.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.DGVSupplierLedger.Location = new System.Drawing.Point(3, 3);
             this.DGVSupplierLedger.Name = "DGVSupplierLedger";
             this.DGVSupplierLedger.ReadOnly = true;
@@ -617,27 +617,27 @@ namespace BibiShop
             this.DGVSupplierLedger.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVSupplierLedger.Size = new System.Drawing.Size(604, 580);
             this.DGVSupplierLedger.TabIndex = 0;
-            this.DGVSupplierLedger.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Emerald;
-            this.DGVSupplierLedger.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
+            this.DGVSupplierLedger.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
+            this.DGVSupplierLedger.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.DGVSupplierLedger.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.DGVSupplierLedger.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.DGVSupplierLedger.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.DGVSupplierLedger.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.DGVSupplierLedger.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DGVSupplierLedger.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(238)))), ((int)(((byte)(208)))));
-            this.DGVSupplierLedger.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.DGVSupplierLedger.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.DGVSupplierLedger.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
             this.DGVSupplierLedger.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVSupplierLedger.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.DGVSupplierLedger.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DGVSupplierLedger.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DGVSupplierLedger.ThemeStyle.HeaderStyle.Height = 40;
             this.DGVSupplierLedger.ThemeStyle.ReadOnly = true;
-            this.DGVSupplierLedger.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            this.DGVSupplierLedger.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.DGVSupplierLedger.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVSupplierLedger.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.DGVSupplierLedger.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.DGVSupplierLedger.ThemeStyle.RowsStyle.Height = 22;
-            this.DGVSupplierLedger.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(221)))), ((int)(((byte)(160)))));
+            this.DGVSupplierLedger.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.DGVSupplierLedger.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGVSupplierLedger.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSupplierLedger_CellClick);
             // 
@@ -697,10 +697,10 @@ namespace BibiShop
             // 
             this.CustomerLedger.BackColor = System.Drawing.Color.White;
             this.CustomerLedger.Controls.Add(this.DGVCustomerLedger);
-            this.CustomerLedger.Location = new System.Drawing.Point(4, 22);
+            this.CustomerLedger.Location = new System.Drawing.Point(4, 26);
             this.CustomerLedger.Name = "CustomerLedger";
             this.CustomerLedger.Padding = new System.Windows.Forms.Padding(3);
-            this.CustomerLedger.Size = new System.Drawing.Size(582, 590);
+            this.CustomerLedger.Size = new System.Drawing.Size(610, 586);
             this.CustomerLedger.TabIndex = 1;
             this.CustomerLedger.Text = "Customer Ledgers";
             // 
@@ -708,7 +708,7 @@ namespace BibiShop
             // 
             this.DGVCustomerLedger.AllowUserToAddRows = false;
             this.DGVCustomerLedger.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.DGVCustomerLedger.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVCustomerLedger.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVCustomerLedger.BackgroundColor = System.Drawing.Color.White;
@@ -716,14 +716,14 @@ namespace BibiShop
             this.DGVCustomerLedger.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVCustomerLedger.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVCustomerLedger.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.DGVCustomerLedger.ColumnHeadersHeight = 30;
+            this.DGVCustomerLedger.ColumnHeadersHeight = 35;
             this.DGVCustomerLedger.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CIDGV,
             this.CNameGV,
@@ -734,44 +734,44 @@ namespace BibiShop
             this.CBalanceGV,
             this.CActionGV});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(221)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVCustomerLedger.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVCustomerLedger.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVCustomerLedger.EnableHeadersVisualStyles = false;
-            this.DGVCustomerLedger.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(238)))), ((int)(((byte)(208)))));
+            this.DGVCustomerLedger.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.DGVCustomerLedger.Location = new System.Drawing.Point(3, 3);
             this.DGVCustomerLedger.Name = "DGVCustomerLedger";
             this.DGVCustomerLedger.ReadOnly = true;
             this.DGVCustomerLedger.RowHeadersVisible = false;
             this.DGVCustomerLedger.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVCustomerLedger.Size = new System.Drawing.Size(576, 584);
+            this.DGVCustomerLedger.Size = new System.Drawing.Size(604, 580);
             this.DGVCustomerLedger.TabIndex = 1;
-            this.DGVCustomerLedger.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Emerald;
-            this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
+            this.DGVCustomerLedger.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
+            this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.DGVCustomerLedger.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DGVCustomerLedger.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(238)))), ((int)(((byte)(208)))));
-            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.DGVCustomerLedger.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
             this.DGVCustomerLedger.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVCustomerLedger.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.DGVCustomerLedger.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DGVCustomerLedger.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.Height = 30;
+            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.Height = 35;
             this.DGVCustomerLedger.ThemeStyle.ReadOnly = true;
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            this.DGVCustomerLedger.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.DGVCustomerLedger.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVCustomerLedger.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.DGVCustomerLedger.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.DGVCustomerLedger.ThemeStyle.RowsStyle.Height = 22;
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(221)))), ((int)(((byte)(160)))));
+            this.DGVCustomerLedger.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.DGVCustomerLedger.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGVCustomerLedger.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCustomerLedger_CellClick);
             // 

@@ -108,8 +108,6 @@ namespace BibiShop
                     byte[] array = new byte[Convert.ToInt32(len) + 1];
                     dr.GetBytes(0, 0, array, 0, Convert.ToInt32(len));
                     ProductPic = new Guna2Button();
-                    
-
                     ProductPic.Width = 85;
                     ProductPic.Height = 85;
                     ProductPic.BackColor = Color.FromArgb(233, 246, 250);
@@ -119,6 +117,9 @@ namespace BibiShop
                     ProductPic.FillColor = Color.Transparent;
                     ProductPic.Click += ProductPic_Click;
                     ProductPic.Tag = dr["ProductID"].ToString();
+
+
+
 
                     ProductPrice = new Guna2HtmlLabel();
                     ProductPrice.Text = "Rs. " + dr["SalePrice"].ToString();
@@ -1085,6 +1086,18 @@ namespace BibiShop
                 }
             }
 
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            Persons p = new Persons();
+            p.Show();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            MainClass.FillCustomer(cboCustomer);
+            MainClass.FillProducts(cboProduct);
         }
     }
 }

@@ -29,10 +29,11 @@ namespace BibiShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -83,7 +84,6 @@ namespace BibiShop
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtPaymentTotal = new Guna.UI2.WinForms.Guna2TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -94,7 +94,7 @@ namespace BibiShop
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
@@ -103,6 +103,18 @@ namespace BibiShop
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(915, 73);
             this.panel1.TabIndex = 25;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::BibiShop.Properties.Resources.cancel__2_;
+            this.button3.Location = new System.Drawing.Point(870, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(45, 36);
+            this.button3.TabIndex = 6;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -139,7 +151,7 @@ namespace BibiShop
             this.guna2GroupBox1.Controls.Add(this.label5);
             this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.label4);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.SteelBlue;
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
@@ -170,8 +182,8 @@ namespace BibiShop
             // 
             // btnGenerate
             // 
-            this.btnGenerate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnGenerate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnGenerate.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnGenerate.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnGenerate.FlatAppearance.BorderSize = 2;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.Font = new System.Drawing.Font("Century Gothic", 10F);
@@ -314,7 +326,7 @@ namespace BibiShop
             this.guna2GroupBox2.Controls.Add(this.label12);
             this.guna2GroupBox2.Controls.Add(this.label9);
             this.guna2GroupBox2.Controls.Add(this.label7);
-            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.SteelBlue;
             this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
@@ -327,8 +339,8 @@ namespace BibiShop
             // 
             // btnFinalize
             // 
-            this.btnFinalize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnFinalize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnFinalize.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnFinalize.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnFinalize.FlatAppearance.BorderSize = 2;
             this.btnFinalize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalize.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
@@ -343,8 +355,8 @@ namespace BibiShop
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnAdd.FlatAppearance.BorderSize = 2;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 10F);
@@ -640,22 +652,22 @@ namespace BibiShop
             // 
             this.DGVPurchaseCart.AllowUserToAddRows = false;
             this.DGVPurchaseCart.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
-            this.DGVPurchaseCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVPurchaseCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVPurchaseCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVPurchaseCart.BackgroundColor = System.Drawing.Color.White;
             this.DGVPurchaseCart.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVPurchaseCart.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVPurchaseCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVPurchaseCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.DGVPurchaseCart.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVPurchaseCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DGVPurchaseCart.ColumnHeadersHeight = 40;
             this.DGVPurchaseCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PcodeGV,
             this.ProductGV,
@@ -666,17 +678,17 @@ namespace BibiShop
             this.DiscountGV,
             this.ProductTotalGV,
             this.ActionGV});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(221)))), ((int)(((byte)(160)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVPurchaseCart.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVPurchaseCart.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVPurchaseCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVPurchaseCart.EnableHeadersVisualStyles = false;
-            this.DGVPurchaseCart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(238)))), ((int)(((byte)(208)))));
+            this.DGVPurchaseCart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.DGVPurchaseCart.Location = new System.Drawing.Point(0, 0);
             this.DGVPurchaseCart.Name = "DGVPurchaseCart";
             this.DGVPurchaseCart.ReadOnly = true;
@@ -684,27 +696,27 @@ namespace BibiShop
             this.DGVPurchaseCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVPurchaseCart.Size = new System.Drawing.Size(512, 314);
             this.DGVPurchaseCart.TabIndex = 28;
-            this.DGVPurchaseCart.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Emerald;
-            this.DGVPurchaseCart.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
+            this.DGVPurchaseCart.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
+            this.DGVPurchaseCart.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.DGVPurchaseCart.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.DGVPurchaseCart.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.DGVPurchaseCart.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.DGVPurchaseCart.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.DGVPurchaseCart.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DGVPurchaseCart.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(238)))), ((int)(((byte)(208)))));
-            this.DGVPurchaseCart.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.DGVPurchaseCart.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.DGVPurchaseCart.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DGVPurchaseCart.ThemeStyle.HeaderStyle.Height = 30;
+            this.DGVPurchaseCart.ThemeStyle.HeaderStyle.Height = 40;
             this.DGVPurchaseCart.ThemeStyle.ReadOnly = true;
-            this.DGVPurchaseCart.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
+            this.DGVPurchaseCart.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.Height = 22;
-            this.DGVPurchaseCart.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(221)))), ((int)(((byte)(160)))));
+            this.DGVPurchaseCart.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGVPurchaseCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPurchaseCart_CellClick);
             this.DGVPurchaseCart.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPurchaseCart_CellValueChanged);
@@ -784,7 +796,7 @@ namespace BibiShop
             this.GBPayments.Controls.Add(this.label16);
             this.GBPayments.Controls.Add(this.label15);
             this.GBPayments.Controls.Add(this.txtPaymentTotal);
-            this.GBPayments.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.GBPayments.CustomBorderColor = System.Drawing.Color.SteelBlue;
             this.GBPayments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GBPayments.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.GBPayments.ForeColor = System.Drawing.Color.White;
@@ -910,18 +922,6 @@ namespace BibiShop
             this.txtPaymentTotal.ShadowDecoration.Parent = this.txtPaymentTotal;
             this.txtPaymentTotal.Size = new System.Drawing.Size(180, 25);
             this.txtPaymentTotal.TabIndex = 7;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::BibiShop.Properties.Resources.cancel__2_;
-            this.button3.Location = new System.Drawing.Point(870, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 36);
-            this.button3.TabIndex = 6;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // PurchaseInvoice
             // 
