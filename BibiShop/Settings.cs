@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
+using System.Windows.Forms;
 namespace BibiShop
 {
     public partial class Settings : Form
@@ -544,6 +540,30 @@ namespace BibiShop
             }
         }
 
+        byte[] ReadFile(string sPath)
+        {
+            //Initialize byte array with a null value initially.
+            byte[] data = null;
+
+            //Use FileInfo object to get file size.
+            FileInfo fInfo = new FileInfo(sPath);
+            long numBytes = fInfo.Length;
+
+            //Open FileStream to read file
+            FileStream fStream = new FileStream(sPath, FileMode.Open, FileAccess.Read);
+
+            //Use BinaryReader to read file stream into byte array.
+            BinaryReader br = new BinaryReader(fStream);
+
+            //When you use BinaryReader, you need to supply number of bytes 
+            //to read from file.
+            //In this case we want to read entire file. 
+            //So supplying total number of bytes.
+            data = br.ReadBytes((int)numBytes);
+
+            return data;
+        }
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             if (txtBrowse.Text == "")
@@ -562,10 +582,20 @@ namespace BibiShop
                 float costprice;
                 float saleprice;
                 object categoryID, UnitID, brandID,SizeID,ColorID;
+                String ProfilePicture = String.Empty;
+                String filename = String.Empty;
+
+
+
                 int count = 0;
 
                 foreach (DataRow dr in dtItem.Rows)
                 {
+                    ProfilePicture = dr["Image"].ToString();
+                  
+                    byte[] imageData = ReadFile(ProfilePicture);
+
+
                     ProductName = Convert.ToString(dr["ProductName"].ToString());
                     cmd = new SqlCommand("select ProductName from ProductsTable where ProductName = '" + ProductName + "'", MainClass.con);
                     object ob = cmd.ExecuteScalar();
@@ -645,7 +675,7 @@ namespace BibiShop
                         costprice = float.Parse(dr["CostPrice"].ToString());
                         saleprice = float.Parse(dr["SalePrice"].ToString());
                         Remarks = dr["Remarks"].ToString();
-                        cmd = new SqlCommand("insert into ProductsTable (Barcode,ProductName,BrandID,CatID,UnitID,CostPrice,SalePrice,Remarks,ColorID,SizeID) values(@Barcode,@ProductName,@BrandID,@CatID,@UnitID,@CostPrice,@SalePrice,@Remarks,@ColorID,@SizeID)", MainClass.con);
+                        cmd = new SqlCommand("insert into ProductsTable (Barcode,ProductName,BrandID,CatID,UnitID,CostPrice,SalePrice,Remarks,ColorID,SizeID,Image) values(@Barcode,@ProductName,@BrandID,@CatID,@UnitID,@CostPrice,@SalePrice,@Remarks,@ColorID,@SizeID,@Image)", MainClass.con);
                         cmd.Parameters.AddWithValue("@Barcode", barcode);
                         cmd.Parameters.AddWithValue("@ProductName", ProductName);
                         cmd.Parameters.AddWithValue("@BrandID", brandID.ToString());
@@ -656,6 +686,7 @@ namespace BibiShop
                         cmd.Parameters.AddWithValue("@Remarks", Remarks);
                         cmd.Parameters.AddWithValue("@SizeID", SizeID.ToString());
                         cmd.Parameters.AddWithValue("@ColorID", ColorID.ToString());
+                        cmd.Parameters.AddWithValue("@Image", imageData);
                         cmd.ExecuteNonQuery();
                         count++;
 

@@ -151,7 +151,7 @@ namespace BibiShop
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                img.Save(ms, ImageFormat.Png);
                 return ms.ToArray();
             }
         }
