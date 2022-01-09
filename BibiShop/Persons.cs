@@ -20,7 +20,7 @@ namespace BibiShop
             InitializeComponent();
         }
 
-        private void ShowPersons(DataGridView dgv, DataGridViewColumn ID, DataGridViewColumn Name, DataGridViewColumn Type, DataGridViewColumn Contact, DataGridViewColumn Address, string data = null)
+        private void ShowPersons(DataGridView dgv, DataGridViewColumn ID, DataGridViewColumn Name, DataGridViewColumn Type, DataGridViewColumn Contact, DataGridViewColumn Address,DataGridViewColumn Birthday ,string data = null)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace BibiShop
                 MainClass.con.Open();
                 if (data != "")
                 {
-                    cmd = new SqlCommand("select PersonID,Name,Type,Contact,Address from PersonsTable  where Name  like '%" + data + "%' or Type like '%" + data + "%'", MainClass.con);
+                    cmd = new SqlCommand("select PersonID,Name,Type,Contact,Address,Birthday from PersonsTable  where Name  like '%" + data + "%' or Type like '%" + data + "%'", MainClass.con);
                 }
                 else
                 {
@@ -43,6 +43,7 @@ namespace BibiShop
                 Type.DataPropertyName = dt.Columns["Type"].ToString();
                 Contact.DataPropertyName = dt.Columns["Contact"].ToString();
                 Address.DataPropertyName = dt.Columns["Address"].ToString();
+                Birthday.DataPropertyName = dt.Columns["Birthday"].ToString();
                
                 dgv.DataSource = dt;
                 MainClass.con.Close();
@@ -56,7 +57,7 @@ namespace BibiShop
 
         private void Persons_Load(object sender, EventArgs e)
         {
-            ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV);
+            ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV,BdayGV);
         }
 
         private void Clear()
@@ -82,17 +83,18 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        SqlCommand cmd = new SqlCommand("insert into PersonsTable (Name,Type,Contact,Address,PersonImage) values(@Name,@Type,@Contact,@Address,@PersonImage)", MainClass.con);
+                        SqlCommand cmd = new SqlCommand("insert into PersonsTable (Name,Type,Contact,Address,PersonImage,Birthday) values(@Name,@Type,@Contact,@Address,@PersonImage,@Birthday)", MainClass.con);
                         cmd.Parameters.AddWithValue("@Name", txtName.Text);
                         cmd.Parameters.AddWithValue("@Type", cboType.Text);
                         cmd.Parameters.AddWithValue("@Contact", txtContact.Text);
                         cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
                         cmd.Parameters.AddWithValue("@PersonImage", ConvertImageToBytes(pictureBox1.Image));
+                        cmd.Parameters.AddWithValue("@Birthday", BDay.Value.ToShortDateString());
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
                         MessageBox.Show("Person Inserted Successfully.");
                         Clear();
-                        ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV);
+                        ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV, BdayGV);
                     }
                     catch (Exception ex)
                     {
@@ -109,20 +111,22 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        SqlCommand cmd = new SqlCommand("update PersonsTable set Name = @Name, Type = @Type ,PersonImage = @PersonImage,Contact= @Contact, Address = @Address where PersonID = @PersonID", MainClass.con);
+                        SqlCommand cmd = new SqlCommand("update PersonsTable set Name = @Name, Birthday= @Birthday,Type = @Type ,PersonImage = @PersonImage,Contact= @Contact, Address = @Address where PersonID = @PersonID", MainClass.con);
                         cmd.Parameters.AddWithValue("@PersonID", lblID.Text);
                         cmd.Parameters.AddWithValue("@Name", txtName.Text);
                         cmd.Parameters.AddWithValue("@Type", cboType.Text);
                         cmd.Parameters.AddWithValue("@Contact", txtContact.Text);
                         cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
                         cmd.Parameters.AddWithValue("@PersonImage", ConvertImageToBytes(pictureBox1.Image));
+                        cmd.Parameters.AddWithValue("@Birthday", BDay.Value.ToShortDateString());
+
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
                         MessageBox.Show("Person Updated Successfully.");
                         btnSave.Text = "SAVE";
                         btnSave.BackColor = Color.SteelBlue;
                         Clear();
-                        ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV);
+                        ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV, BdayGV);
                     }
                     catch (Exception ex)
                     {
@@ -165,6 +169,7 @@ namespace BibiShop
             cboType.Text = DGVPersons.CurrentRow.Cells[2].Value.ToString();
             txtContact.Text = DGVPersons.CurrentRow.Cells[3].Value.ToString();
             txtAddress.Text = DGVPersons.CurrentRow.Cells[4].Value.ToString();
+            BDay.Text = DGVPersons.CurrentRow.Cells[5].Value.ToString();
             btnSave.Text = "UPDATE";
             btnSave.BackColor = Color.Orange;
         }
@@ -185,7 +190,7 @@ namespace BibiShop
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Record Deleted Successfully");
                             MainClass.con.Close();
-                            ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV);
+                            ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV, BdayGV);
                         }
                         catch (Exception ex)
                         {
@@ -215,7 +220,7 @@ namespace BibiShop
         }
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV,txtSearch.Text.ToString());
+            ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV, BdayGV,txtSearch.Text.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)

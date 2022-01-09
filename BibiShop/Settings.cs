@@ -106,13 +106,13 @@ namespace BibiShop
 
                 txtStoreName.Text = dr["StoreName"].ToString();
                 txtStoreAddress.Text = dr["StoreAddress"].ToString();
-                txtLowStockQty.Text = dr["LowStockQty"].ToString();
+                cboWarehouse.SelectedValue = dr["ShopDefaultWarehouse"].ToString();
             }
             else
             {
                 txtStoreName.Text = "";
                 txtStoreAddress.Text = "";
-                txtLowStockQty.Text = "";
+                cboWarehouse.Text= "";
             }
            
             dr.Close();
@@ -255,6 +255,8 @@ namespace BibiShop
             ShowUsers(DgvUsers, NameGV, UserNameGV, PasswordGV, RoleGV);
             MainClass.HideAllTabsOnTabControl(tabControl1);
             tabControl1.SelectedIndex = 0;
+
+            MainClass.FillWarehouses(cboWarehouse);
             CheckMode();
             ShowStore();
         }
@@ -389,10 +391,10 @@ namespace BibiShop
         private void btnSaveStore_Click(object sender, EventArgs e)
         {
             MainClass.con.Open();
-            SqlCommand cmd = new SqlCommand("insert into StoreTable (StoreName,StoreAddress,LowStockQty,Logo) values (@StoreName,@StoreAddress,@LowStockQty,@Logo) ", MainClass.con);
+            SqlCommand cmd = new SqlCommand("insert into StoreTable (StoreName,StoreAddress,ShopDefaultWarehouse,Logo) values (@StoreName,@StoreAddress,@ShopDefaultWarehouse,@Logo) ", MainClass.con);
             cmd.Parameters.AddWithValue("@StoreName", txtStoreName.Text);
             cmd.Parameters.AddWithValue("@StoreAddress", txtStoreAddress.Text);
-            cmd.Parameters.AddWithValue("@LowStockQty", txtLowStockQty.Text);
+            cmd.Parameters.AddWithValue("@ShopDefaultWarehouse", cboWarehouse.SelectedValue);
             cmd.Parameters.AddWithValue("@Logo", ConvertImageToBytes(pictureBox1.Image));
             cmd.ExecuteNonQuery();
             MessageBox.Show("Store Saved Successfully");
@@ -419,10 +421,10 @@ namespace BibiShop
         private void btnUpdateStore_Click(object sender, EventArgs e)
         {
             MainClass.con.Open();
-            SqlCommand cmd = new SqlCommand("update StoreTable set StoreName = @StoreName, StoreAddress= @StoreAddress , LowStockQty = @LowStockQty, Logo = @Logo ", MainClass.con);
+            SqlCommand cmd = new SqlCommand("update StoreTable set StoreName = @StoreName, StoreAddress= @StoreAddress , ShopDefaultWarehouse = @ShopDefaultWarehouse, Logo = @Logo ", MainClass.con);
             cmd.Parameters.AddWithValue("@StoreName", txtStoreName.Text);
             cmd.Parameters.AddWithValue("@StoreAddress", txtStoreAddress.Text);
-            cmd.Parameters.AddWithValue("@LowStockQty", txtLowStockQty.Text);
+            cmd.Parameters.AddWithValue("@ShopDefaultWarehouse", cboWarehouse.SelectedValue.ToString());
             cmd.Parameters.AddWithValue("@Logo", ConvertImageToBytes(pictureBox1.Image));
 
             cmd.ExecuteNonQuery();

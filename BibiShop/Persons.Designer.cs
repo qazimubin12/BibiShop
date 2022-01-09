@@ -61,6 +61,9 @@ namespace BibiShop
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label6 = new System.Windows.Forms.Label();
+            this.BDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.BdayGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,6 +136,7 @@ namespace BibiShop
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.BDay);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label17);
@@ -142,6 +146,7 @@ namespace BibiShop
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.lblID);
             this.panel2.Controls.Add(this.txtAddress);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtContact);
             this.panel2.Controls.Add(this.label3);
@@ -156,7 +161,7 @@ namespace BibiShop
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(28, 369);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 427);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(209, 164);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,7 +177,7 @@ namespace BibiShop
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.button2.Location = new System.Drawing.Point(243, 369);
+            this.button2.Location = new System.Drawing.Point(243, 427);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 42);
             this.button2.TabIndex = 43;
@@ -185,7 +190,7 @@ namespace BibiShop
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label17.Location = new System.Drawing.Point(24, 343);
+            this.label17.Location = new System.Drawing.Point(24, 401);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(152, 23);
             this.label17.TabIndex = 42;
@@ -216,7 +221,7 @@ namespace BibiShop
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(18, 556);
+            this.btnCancel.Location = new System.Drawing.Point(18, 614);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(87, 42);
             this.btnCancel.TabIndex = 5;
@@ -232,7 +237,7 @@ namespace BibiShop
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(123, 556);
+            this.btnSave.Location = new System.Drawing.Point(123, 614);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(212, 42);
             this.btnSave.TabIndex = 4;
@@ -397,7 +402,8 @@ namespace BibiShop
             this.NameGV,
             this.TypeGV,
             this.ContactGV,
-            this.AddressGV});
+            this.AddressGV,
+            this.BdayGV});
             this.DGVPersons.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
@@ -495,6 +501,42 @@ namespace BibiShop
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(22, 340);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 19);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Birthday:";
+            // 
+            // BDay
+            // 
+            this.BDay.AutoRoundedCorners = true;
+            this.BDay.BorderRadius = 10;
+            this.BDay.BorderThickness = 2;
+            this.BDay.CheckedState.Parent = this.BDay;
+            this.BDay.CustomFormat = "dd/MM/yyyy";
+            this.BDay.FillColor = System.Drawing.Color.White;
+            this.BDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.BDay.HoverState.Parent = this.BDay;
+            this.BDay.Location = new System.Drawing.Point(21, 362);
+            this.BDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.BDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.BDay.Name = "BDay";
+            this.BDay.ShadowDecoration.Parent = this.BDay;
+            this.BDay.Size = new System.Drawing.Size(305, 36);
+            this.BDay.TabIndex = 46;
+            this.BDay.Value = new System.DateTime(2022, 1, 6, 19, 9, 25, 352);
+            // 
+            // BdayGV
+            // 
+            this.BdayGV.HeaderText = "Birthday";
+            this.BdayGV.Name = "BdayGV";
+            this.BdayGV.ReadOnly = true;
+            // 
             // Persons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,5 +594,8 @@ namespace BibiShop
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2DateTimePicker BDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BdayGV;
     }
 }

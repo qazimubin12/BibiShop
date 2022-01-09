@@ -29,9 +29,9 @@ namespace BibiShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCashier = new System.Windows.Forms.Label();
             this.btnLogout = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -47,17 +47,19 @@ namespace BibiShop
             this.UnitGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CostPriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalePriceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantityGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SizeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalOfProductGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActionAddGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ActionRemoveGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPurchases = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddCustomers = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRecentSales = new Guna.UI2.WinForms.Guna2Button();
             this.fpProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.fpCategories = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSearhBarcode = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSaleCart)).BeginInit();
@@ -151,6 +153,7 @@ namespace BibiShop
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(136, 25);
             this.cboProduct.TabIndex = 5;
+            this.cboProduct.SelectedIndexChanged += new System.EventHandler(this.cboProduct_SelectedIndexChanged);
             this.cboProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboProduct_KeyDown);
             // 
             // label3
@@ -184,21 +187,21 @@ namespace BibiShop
             // 
             this.DGVSaleCart.AllowUserToAddRows = false;
             this.DGVSaleCart.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
-            this.DGVSaleCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.DGVSaleCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVSaleCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVSaleCart.BackgroundColor = System.Drawing.Color.White;
             this.DGVSaleCart.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVSaleCart.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVSaleCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSaleCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSaleCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVSaleCart.ColumnHeadersHeight = 30;
             this.DGVSaleCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductIDGV,
@@ -206,18 +209,20 @@ namespace BibiShop
             this.UnitGV,
             this.CostPriceGV,
             this.SalePriceGV,
+            this.ColorGV,
             this.QuantityGV,
+            this.SizeGV,
             this.TotalOfProductGV,
             this.ActionAddGV,
             this.ActionRemoveGV});
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSaleCart.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSaleCart.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVSaleCart.EnableHeadersVisualStyles = false;
             this.DGVSaleCart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
             this.DGVSaleCart.Location = new System.Drawing.Point(12, 161);
@@ -225,7 +230,7 @@ namespace BibiShop
             this.DGVSaleCart.ReadOnly = true;
             this.DGVSaleCart.RowHeadersVisible = false;
             this.DGVSaleCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVSaleCart.Size = new System.Drawing.Size(561, 304);
+            this.DGVSaleCart.Size = new System.Drawing.Size(582, 304);
             this.DGVSaleCart.TabIndex = 11;
             this.DGVSaleCart.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightBlue;
             this.DGVSaleCart.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
@@ -291,6 +296,12 @@ namespace BibiShop
             this.SalePriceGV.Name = "SalePriceGV";
             this.SalePriceGV.ReadOnly = true;
             // 
+            // ColorGV
+            // 
+            this.ColorGV.HeaderText = "Color";
+            this.ColorGV.Name = "ColorGV";
+            this.ColorGV.ReadOnly = true;
+            // 
             // QuantityGV
             // 
             this.QuantityGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -298,6 +309,12 @@ namespace BibiShop
             this.QuantityGV.HeaderText = "Qty";
             this.QuantityGV.Name = "QuantityGV";
             this.QuantityGV.ReadOnly = true;
+            // 
+            // SizeGV
+            // 
+            this.SizeGV.HeaderText = "Size";
+            this.SizeGV.Name = "SizeGV";
+            this.SizeGV.ReadOnly = true;
             // 
             // TotalOfProductGV
             // 
@@ -329,9 +346,9 @@ namespace BibiShop
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.guna2Button1);
-            this.panel2.Controls.Add(this.guna2Button3);
-            this.panel2.Controls.Add(this.guna2Button2);
+            this.panel2.Controls.Add(this.btnPurchases);
+            this.panel2.Controls.Add(this.btnAddCustomers);
+            this.panel2.Controls.Add(this.btnRecentSales);
             this.panel2.Controls.Add(this.fpProducts);
             this.panel2.Controls.Add(this.fpCategories);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -339,6 +356,63 @@ namespace BibiShop
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(600, 751);
             this.panel2.TabIndex = 13;
+            // 
+            // btnPurchases
+            // 
+            this.btnPurchases.BackColor = System.Drawing.Color.White;
+            this.btnPurchases.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPurchases.BorderThickness = 2;
+            this.btnPurchases.CheckedState.Parent = this.btnPurchases;
+            this.btnPurchases.CustomImages.Parent = this.btnPurchases;
+            this.btnPurchases.FillColor = System.Drawing.Color.SteelBlue;
+            this.btnPurchases.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
+            this.btnPurchases.ForeColor = System.Drawing.Color.White;
+            this.btnPurchases.HoverState.Parent = this.btnPurchases;
+            this.btnPurchases.Location = new System.Drawing.Point(3, 287);
+            this.btnPurchases.Name = "btnPurchases";
+            this.btnPurchases.ShadowDecoration.Parent = this.btnPurchases;
+            this.btnPurchases.Size = new System.Drawing.Size(85, 85);
+            this.btnPurchases.TabIndex = 6;
+            this.btnPurchases.Text = "ADD PURCHASES";
+            this.btnPurchases.Click += new System.EventHandler(this.btnPurchases_Click);
+            // 
+            // btnAddCustomers
+            // 
+            this.btnAddCustomers.BackColor = System.Drawing.Color.White;
+            this.btnAddCustomers.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAddCustomers.BorderThickness = 2;
+            this.btnAddCustomers.CheckedState.Parent = this.btnAddCustomers;
+            this.btnAddCustomers.CustomImages.Parent = this.btnAddCustomers;
+            this.btnAddCustomers.FillColor = System.Drawing.Color.SteelBlue;
+            this.btnAddCustomers.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
+            this.btnAddCustomers.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomers.HoverState.Parent = this.btnAddCustomers;
+            this.btnAddCustomers.Location = new System.Drawing.Point(185, 287);
+            this.btnAddCustomers.Name = "btnAddCustomers";
+            this.btnAddCustomers.ShadowDecoration.Parent = this.btnAddCustomers;
+            this.btnAddCustomers.Size = new System.Drawing.Size(85, 85);
+            this.btnAddCustomers.TabIndex = 7;
+            this.btnAddCustomers.Text = "ADD CUSTOMERS";
+            this.btnAddCustomers.Click += new System.EventHandler(this.btnAddCustomers_Click);
+            // 
+            // btnRecentSales
+            // 
+            this.btnRecentSales.BackColor = System.Drawing.Color.White;
+            this.btnRecentSales.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRecentSales.BorderThickness = 2;
+            this.btnRecentSales.CheckedState.Parent = this.btnRecentSales;
+            this.btnRecentSales.CustomImages.Parent = this.btnRecentSales;
+            this.btnRecentSales.FillColor = System.Drawing.Color.SteelBlue;
+            this.btnRecentSales.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
+            this.btnRecentSales.ForeColor = System.Drawing.Color.White;
+            this.btnRecentSales.HoverState.Parent = this.btnRecentSales;
+            this.btnRecentSales.Location = new System.Drawing.Point(94, 287);
+            this.btnRecentSales.Name = "btnRecentSales";
+            this.btnRecentSales.ShadowDecoration.Parent = this.btnRecentSales;
+            this.btnRecentSales.Size = new System.Drawing.Size(85, 85);
+            this.btnRecentSales.TabIndex = 7;
+            this.btnRecentSales.Text = "RECENT SALES";
+            this.btnRecentSales.Click += new System.EventHandler(this.btnRecentSales_Click);
             // 
             // fpProducts
             // 
@@ -386,67 +460,6 @@ namespace BibiShop
             this.txtSearhBarcode.Size = new System.Drawing.Size(365, 30);
             this.txtSearhBarcode.TabIndex = 12;
             this.txtSearhBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearhBarcode_KeyDown);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.guna2Button1.BorderRadius = 41;
-            this.guna2Button1.BorderThickness = 2;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(20, 287);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(85, 85);
-            this.guna2Button1.TabIndex = 6;
-            this.guna2Button1.Text = "SHOW PURCHASES";
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.AutoRoundedCorners = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.White;
-            this.guna2Button2.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.guna2Button2.BorderRadius = 41;
-            this.guna2Button2.BorderThickness = 2;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button2.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(111, 287);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(85, 85);
-            this.guna2Button2.TabIndex = 7;
-            this.guna2Button2.Text = "RECENT SALES";
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.AutoRoundedCorners = true;
-            this.guna2Button3.BackColor = System.Drawing.Color.White;
-            this.guna2Button3.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.guna2Button3.BorderRadius = 41;
-            this.guna2Button3.BorderThickness = 2;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button3.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(202, 287);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(85, 85);
-            this.guna2Button3.TabIndex = 7;
-            this.guna2Button3.Text = "ADD CUSTOMERS";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button4
             // 
@@ -514,20 +527,22 @@ namespace BibiShop
         private Guna.UI2.WinForms.Guna2DataGridView DGVSaleCart;
         public Guna.UI2.WinForms.Guna2TextBox txtSearhBarcode;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel fpCategories;
+        private System.Windows.Forms.FlowLayoutPanel fpProducts;
+        private Guna.UI2.WinForms.Guna2Button btnPurchases;
+        private Guna.UI2.WinForms.Guna2Button btnRecentSales;
+        private Guna.UI2.WinForms.Guna2Button btnAddCustomers;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductIDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn CostPriceGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn SalePriceGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColorGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SizeGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalOfProductGV;
         private System.Windows.Forms.DataGridViewButtonColumn ActionAddGV;
         private System.Windows.Forms.DataGridViewButtonColumn ActionRemoveGV;
-        private System.Windows.Forms.FlowLayoutPanel fpCategories;
-        private System.Windows.Forms.FlowLayoutPanel fpProducts;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }

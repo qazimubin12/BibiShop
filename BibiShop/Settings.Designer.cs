@@ -30,11 +30,11 @@ namespace BibiShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUserSettings = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -82,23 +82,24 @@ namespace BibiShop
             this.btnImport = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtBrowse = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.btnUpdateStore = new System.Windows.Forms.Button();
             this.btnSaveStore = new System.Windows.Forms.Button();
-            this.txtLowStockQty = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtStoreAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtStoreName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSaveMode = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.modetoggle = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnSaveMode = new System.Windows.Forms.Button();
+            this.cboWarehouse = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -110,8 +111,8 @@ namespace BibiShop
             this.tabPage3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -499,35 +500,35 @@ namespace BibiShop
             // 
             this.DgvUsers.AllowUserToAddRows = false;
             this.DgvUsers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.DgvUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DgvUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.DgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvUsers.BackgroundColor = System.Drawing.Color.White;
             this.DgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DgvUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.DgvUsers.ColumnHeadersHeight = 30;
             this.DgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UserNameGV,
             this.NameGV,
             this.PasswordGV,
             this.RoleGV});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvUsers.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvUsers.DefaultCellStyle = dataGridViewCellStyle33;
             this.DgvUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvUsers.EnableHeadersVisualStyles = false;
             this.DgvUsers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
@@ -739,17 +740,18 @@ namespace BibiShop
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Controls.Add(this.cboWarehouse);
             this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.btnUpdateStore);
             this.tabPage3.Controls.Add(this.btnSaveStore);
-            this.tabPage3.Controls.Add(this.txtLowStockQty);
             this.tabPage3.Controls.Add(this.txtStoreAddress);
             this.tabPage3.Controls.Add(this.txtStoreName);
             this.tabPage3.Controls.Add(this.btnSaveMode);
             this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.label11);
@@ -766,9 +768,9 @@ namespace BibiShop
             // 
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 302);
+            this.panel4.Location = new System.Drawing.Point(0, 365);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(907, 323);
+            this.panel4.Size = new System.Drawing.Size(907, 260);
             this.panel4.TabIndex = 42;
             // 
             // panel5
@@ -781,7 +783,7 @@ namespace BibiShop
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(907, 323);
+            this.panel5.Size = new System.Drawing.Size(907, 260);
             this.panel5.TabIndex = 1;
             // 
             // button4
@@ -832,6 +834,39 @@ namespace BibiShop
             this.txtBrowse.Size = new System.Drawing.Size(451, 23);
             this.txtBrowse.TabIndex = 2;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle35;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 84);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(907, 176);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(681, 65);
@@ -875,7 +910,7 @@ namespace BibiShop
             this.btnUpdateStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnUpdateStore.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnUpdateStore.Location = new System.Drawing.Point(428, 254);
+            this.btnUpdateStore.Location = new System.Drawing.Point(428, 235);
             this.btnUpdateStore.Name = "btnUpdateStore";
             this.btnUpdateStore.Size = new System.Drawing.Size(114, 42);
             this.btnUpdateStore.TabIndex = 37;
@@ -891,39 +926,13 @@ namespace BibiShop
             this.btnSaveStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSaveStore.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnSaveStore.Location = new System.Drawing.Point(548, 254);
+            this.btnSaveStore.Location = new System.Drawing.Point(548, 235);
             this.btnSaveStore.Name = "btnSaveStore";
             this.btnSaveStore.Size = new System.Drawing.Size(114, 42);
             this.btnSaveStore.TabIndex = 37;
             this.btnSaveStore.Text = "SAVE";
             this.btnSaveStore.UseVisualStyleBackColor = false;
             this.btnSaveStore.Click += new System.EventHandler(this.btnSaveStore_Click);
-            // 
-            // txtLowStockQty
-            // 
-            this.txtLowStockQty.AutoRoundedCorners = true;
-            this.txtLowStockQty.BorderRadius = 12;
-            this.txtLowStockQty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLowStockQty.DefaultText = "";
-            this.txtLowStockQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLowStockQty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLowStockQty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLowStockQty.DisabledState.Parent = this.txtLowStockQty;
-            this.txtLowStockQty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLowStockQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLowStockQty.FocusedState.Parent = this.txtLowStockQty;
-            this.txtLowStockQty.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLowStockQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLowStockQty.HoverState.Parent = this.txtLowStockQty;
-            this.txtLowStockQty.Location = new System.Drawing.Point(338, 202);
-            this.txtLowStockQty.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLowStockQty.Name = "txtLowStockQty";
-            this.txtLowStockQty.PasswordChar = '\0';
-            this.txtLowStockQty.PlaceholderText = "";
-            this.txtLowStockQty.SelectedText = "";
-            this.txtLowStockQty.ShadowDecoration.Parent = this.txtLowStockQty;
-            this.txtLowStockQty.Size = new System.Drawing.Size(314, 27);
-            this.txtLowStockQty.TabIndex = 36;
             // 
             // txtStoreAddress
             // 
@@ -977,32 +986,16 @@ namespace BibiShop
             this.txtStoreName.Size = new System.Drawing.Size(314, 27);
             this.txtStoreName.TabIndex = 36;
             // 
-            // btnSaveMode
+            // label16
             // 
-            this.btnSaveMode.BackColor = System.Drawing.Color.White;
-            this.btnSaveMode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnSaveMode.FlatAppearance.BorderSize = 2;
-            this.btnSaveMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnSaveMode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnSaveMode.Location = new System.Drawing.Point(33, 201);
-            this.btnSaveMode.Name = "btnSaveMode";
-            this.btnSaveMode.Size = new System.Drawing.Size(212, 42);
-            this.btnSaveMode.TabIndex = 35;
-            this.btnSaveMode.Text = "SAVE";
-            this.btnSaveMode.UseVisualStyleBackColor = false;
-            this.btnSaveMode.Click += new System.EventHandler(this.btnSaveMode_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label12.Location = new System.Drawing.Point(29, 140);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 23);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "OFF";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label16.Location = new System.Drawing.Point(361, 329);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(162, 23);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "Import Products";
             // 
             // label15
             // 
@@ -1011,9 +1004,9 @@ namespace BibiShop
             this.label15.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label15.Location = new System.Drawing.Point(334, 175);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(149, 23);
+            this.label15.Size = new System.Drawing.Size(254, 23);
             this.label15.TabIndex = 34;
-            this.label15.Text = "Low Stock Qty";
+            this.label15.Text = "Shop Default Warehouse:";
             // 
             // label14
             // 
@@ -1026,17 +1019,6 @@ namespace BibiShop
             this.label14.TabIndex = 34;
             this.label14.Text = "Store Address";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label11.Location = new System.Drawing.Point(233, 140);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 23);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "ON";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -1047,17 +1029,6 @@ namespace BibiShop
             this.label13.Size = new System.Drawing.Size(211, 40);
             this.label13.TabIndex = 34;
             this.label13.Text = "Store Name";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label10.Location = new System.Drawing.Point(26, 88);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(278, 40);
-            this.label10.TabIndex = 34;
-            this.label10.Text = "Inventory Mode";
             // 
             // modetoggle
             // 
@@ -1077,38 +1048,62 @@ namespace BibiShop
             this.modetoggle.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.modetoggle.UncheckedState.Parent = this.modetoggle;
             // 
-            // dataGridView1
+            // label10
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(907, 239);
-            this.dataGridView1.TabIndex = 1;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label10.Location = new System.Drawing.Point(26, 88);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(278, 40);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Inventory Mode";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label11.Location = new System.Drawing.Point(233, 140);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 23);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "ON";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label12.Location = new System.Drawing.Point(29, 140);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 23);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "OFF";
+            // 
+            // btnSaveMode
+            // 
+            this.btnSaveMode.BackColor = System.Drawing.Color.White;
+            this.btnSaveMode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnSaveMode.FlatAppearance.BorderSize = 2;
+            this.btnSaveMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSaveMode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnSaveMode.Location = new System.Drawing.Point(33, 201);
+            this.btnSaveMode.Name = "btnSaveMode";
+            this.btnSaveMode.Size = new System.Drawing.Size(212, 42);
+            this.btnSaveMode.TabIndex = 35;
+            this.btnSaveMode.Text = "SAVE";
+            this.btnSaveMode.UseVisualStyleBackColor = false;
+            this.btnSaveMode.Click += new System.EventHandler(this.btnSaveMode_Click);
+            // 
+            // cboWarehouse
+            // 
+            this.cboWarehouse.FormattingEnabled = true;
+            this.cboWarehouse.Location = new System.Drawing.Point(338, 201);
+            this.cboWarehouse.Name = "cboWarehouse";
+            this.cboWarehouse.Size = new System.Drawing.Size(314, 25);
+            this.cboWarehouse.TabIndex = 43;
             // 
             // Settings
             // 
@@ -1143,8 +1138,8 @@ namespace BibiShop
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1191,11 +1186,6 @@ namespace BibiShop
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tabPage3;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch modetoggle;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnSaveMode;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnUpdateStore;
@@ -1203,7 +1193,6 @@ namespace BibiShop
         private Guna.UI2.WinForms.Guna2TextBox txtStoreName;
         private Guna.UI2.WinForms.Guna2TextBox txtStoreAddress;
         private System.Windows.Forms.Label label14;
-        private Guna.UI2.WinForms.Guna2TextBox txtLowStockQty;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
@@ -1215,5 +1204,12 @@ namespace BibiShop
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox txtBrowse;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnSaveMode;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch modetoggle;
+        private System.Windows.Forms.ComboBox cboWarehouse;
     }
 }

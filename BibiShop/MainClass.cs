@@ -1,5 +1,6 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Windows.Forms;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +20,14 @@ namespace BibiShop
         private static string s = @"Data Source=DESKTOP-E7EO3OH;Initial Catalog=BibiShop;Integrated Security = True;MultipleActiveResultSets=true;";
         public static SqlConnection con = new SqlConnection(s);
 
+        public static void RoundedButton(Guna2Button button)
+        {
+            button.AutoRoundedCorners = true;
+            button.BorderRadius = 10;
+            button.BorderColor = Color.FromArgb(28, 35, 64);
+            button.BorderThickness = 2;
+            button.BorderStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+        }
 
 
         public static void HideAllTabsOnTabControl(TabControl theTabControl)
@@ -89,6 +98,38 @@ namespace BibiShop
             {
                 MessageBox.Show(ex.Message);
                 cmb.DataSource = dtCategoryName;
+            }
+
+        }
+
+        public static void FillWarehouses(ComboBox cmb)
+        {
+            DataTable dtWarehouseName = new DataTable();
+            dtWarehouseName.Columns.Add("WarehouseID");
+            dtWarehouseName.Columns.Add("Warehouse");
+            dtWarehouseName.Rows.Add("0", "-----Select-----");
+            try
+            {
+                DataTable dt = Retrieve("select WarehouseID, Warehouse from WarehouseTable");
+                if (dt != null)
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow Warehouse in dt.Rows)
+                        {
+                            dtWarehouseName.Rows.Add(Warehouse["WarehouseID"], Warehouse["Warehouse"]);
+                        }
+                    }
+
+                }
+                cmb.DisplayMember = "Warehouse";
+                cmb.ValueMember = "WarehouseID";
+                cmb.DataSource = dtWarehouseName;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cmb.DataSource = dtWarehouseName;
             }
 
         }
@@ -391,13 +432,14 @@ namespace BibiShop
 
 
 
-        public static void UpdateInventory(Int32 ProductID, float Qty)
+        public static void UpdateInventory(Int32 ProductID, float Qty, int WarehouseID)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("update Inventory set Qty = @Qty where ProductID = @ProductID", MainClass.con);
+                SqlCommand cmd = new SqlCommand("update Inventory set Qty = @Qty where ProductID = @ProductID and WarehouseID = @WarehouseID ", MainClass.con);
                 cmd.Parameters.AddWithValue("@ProductID", ProductID);
                 cmd.Parameters.AddWithValue("@Qty", Qty);
+                cmd.Parameters.AddWithValue("@WarehouseID", WarehouseID);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

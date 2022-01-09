@@ -37,17 +37,22 @@ namespace BibiShop
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddColor = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.txtInvoiceNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtInvoiceDate = new System.Windows.Forms.DateTimePicker();
             this.cboType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cboWarehouse = new System.Windows.Forms.ComboBox();
             this.cboSupplier = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtInHand = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnFinalize = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cboProducts = new System.Windows.Forms.ComboBox();
@@ -62,6 +67,7 @@ namespace BibiShop
             this.cboUnit = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -141,14 +147,18 @@ namespace BibiShop
             // 
             // guna2GroupBox1
             // 
+            this.guna2GroupBox1.Controls.Add(this.button2);
+            this.guna2GroupBox1.Controls.Add(this.btnAddColor);
             this.guna2GroupBox1.Controls.Add(this.btnCancel);
             this.guna2GroupBox1.Controls.Add(this.btnGenerate);
             this.guna2GroupBox1.Controls.Add(this.txtInvoiceNo);
             this.guna2GroupBox1.Controls.Add(this.dtInvoiceDate);
             this.guna2GroupBox1.Controls.Add(this.cboType);
             this.guna2GroupBox1.Controls.Add(this.label2);
+            this.guna2GroupBox1.Controls.Add(this.cboWarehouse);
             this.guna2GroupBox1.Controls.Add(this.cboSupplier);
             this.guna2GroupBox1.Controls.Add(this.label5);
+            this.guna2GroupBox1.Controls.Add(this.label18);
             this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.label4);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.SteelBlue;
@@ -162,6 +172,40 @@ namespace BibiShop
             this.guna2GroupBox1.TabIndex = 26;
             this.guna2GroupBox1.Text = "Invoice Details";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.button2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.button2.Location = new System.Drawing.Point(476, 61);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 33);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "R";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnAddColor
+            // 
+            this.btnAddColor.BackColor = System.Drawing.Color.White;
+            this.btnAddColor.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAddColor.FlatAppearance.BorderSize = 2;
+            this.btnAddColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddColor.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.btnAddColor.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnAddColor.Location = new System.Drawing.Point(440, 61);
+            this.btnAddColor.Name = "btnAddColor";
+            this.btnAddColor.Size = new System.Drawing.Size(30, 34);
+            this.btnAddColor.TabIndex = 33;
+            this.btnAddColor.Text = "+";
+            this.btnAddColor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddColor.UseVisualStyleBackColor = false;
+            this.btnAddColor.Click += new System.EventHandler(this.btnAddColor_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
@@ -171,7 +215,7 @@ namespace BibiShop
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(772, 59);
+            this.btnCancel.Location = new System.Drawing.Point(792, 61);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(119, 32);
             this.btnCancel.TabIndex = 29;
@@ -214,7 +258,7 @@ namespace BibiShop
             this.txtInvoiceNo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoiceNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtInvoiceNo.HoverState.Parent = this.txtInvoiceNo;
-            this.txtInvoiceNo.Location = new System.Drawing.Point(626, 67);
+            this.txtInvoiceNo.Location = new System.Drawing.Point(646, 66);
             this.txtInvoiceNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtInvoiceNo.Name = "txtInvoiceNo";
             this.txtInvoiceNo.PasswordChar = '\0';
@@ -229,9 +273,9 @@ namespace BibiShop
             this.dtInvoiceDate.CustomFormat = "dd/MM/yyyy";
             this.dtInvoiceDate.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.dtInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtInvoiceDate.Location = new System.Drawing.Point(419, 67);
+            this.dtInvoiceDate.Location = new System.Drawing.Point(522, 66);
             this.dtInvoiceDate.Name = "dtInvoiceDate";
-            this.dtInvoiceDate.Size = new System.Drawing.Size(200, 24);
+            this.dtInvoiceDate.Size = new System.Drawing.Size(117, 24);
             this.dtInvoiceDate.TabIndex = 6;
             // 
             // cboType
@@ -246,7 +290,7 @@ namespace BibiShop
             "Credit"});
             this.cboType.Location = new System.Drawing.Point(6, 67);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(140, 25);
+            this.cboType.Size = new System.Drawing.Size(124, 25);
             this.cboType.TabIndex = 5;
             this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             // 
@@ -257,9 +301,21 @@ namespace BibiShop
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(3, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 19);
+            this.label2.Size = new System.Drawing.Size(99, 19);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Select Invoice Type:";
+            this.label2.Text = "Invoice Type:";
+            // 
+            // cboWarehouse
+            // 
+            this.cboWarehouse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboWarehouse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cboWarehouse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboWarehouse.FormattingEnabled = true;
+            this.cboWarehouse.Location = new System.Drawing.Point(288, 68);
+            this.cboWarehouse.Name = "cboWarehouse";
+            this.cboWarehouse.Size = new System.Drawing.Size(146, 25);
+            this.cboWarehouse.TabIndex = 5;
             // 
             // cboSupplier
             // 
@@ -268,9 +324,9 @@ namespace BibiShop
             this.cboSupplier.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cboSupplier.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSupplier.FormattingEnabled = true;
-            this.cboSupplier.Location = new System.Drawing.Point(159, 67);
+            this.cboSupplier.Location = new System.Drawing.Point(136, 67);
             this.cboSupplier.Name = "cboSupplier";
-            this.cboSupplier.Size = new System.Drawing.Size(244, 25);
+            this.cboSupplier.Size = new System.Drawing.Size(146, 25);
             this.cboSupplier.TabIndex = 5;
             // 
             // label5
@@ -278,18 +334,29 @@ namespace BibiShop
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(623, 45);
+            this.label5.Location = new System.Drawing.Point(643, 44);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "Invoice No:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(285, 46);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(138, 19);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Select Warehouse:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(416, 45);
+            this.label3.Location = new System.Drawing.Point(533, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 19);
             this.label3.TabIndex = 4;
@@ -300,7 +367,7 @@ namespace BibiShop
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(156, 45);
+            this.label4.Location = new System.Drawing.Point(133, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 19);
             this.label4.TabIndex = 4;
@@ -308,6 +375,7 @@ namespace BibiShop
             // 
             // guna2GroupBox2
             // 
+            this.guna2GroupBox2.Controls.Add(this.txtInHand);
             this.guna2GroupBox2.Controls.Add(this.btnFinalize);
             this.guna2GroupBox2.Controls.Add(this.btnAdd);
             this.guna2GroupBox2.Controls.Add(this.cboProducts);
@@ -322,6 +390,7 @@ namespace BibiShop
             this.guna2GroupBox2.Controls.Add(this.cboUnit);
             this.guna2GroupBox2.Controls.Add(this.label13);
             this.guna2GroupBox2.Controls.Add(this.label11);
+            this.guna2GroupBox2.Controls.Add(this.label17);
             this.guna2GroupBox2.Controls.Add(this.label10);
             this.guna2GroupBox2.Controls.Add(this.label12);
             this.guna2GroupBox2.Controls.Add(this.label9);
@@ -336,6 +405,33 @@ namespace BibiShop
             this.guna2GroupBox2.Size = new System.Drawing.Size(403, 423);
             this.guna2GroupBox2.TabIndex = 27;
             this.guna2GroupBox2.Text = "Product Entries";
+            // 
+            // txtInHand
+            // 
+            this.txtInHand.AutoRoundedCorners = true;
+            this.txtInHand.BorderRadius = 11;
+            this.txtInHand.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtInHand.DefaultText = "";
+            this.txtInHand.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtInHand.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtInHand.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInHand.DisabledState.Parent = this.txtInHand;
+            this.txtInHand.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInHand.Enabled = false;
+            this.txtInHand.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtInHand.FocusedState.Parent = this.txtInHand;
+            this.txtInHand.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInHand.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtInHand.HoverState.Parent = this.txtInHand;
+            this.txtInHand.Location = new System.Drawing.Point(322, 129);
+            this.txtInHand.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInHand.Name = "txtInHand";
+            this.txtInHand.PasswordChar = '\0';
+            this.txtInHand.PlaceholderText = "";
+            this.txtInHand.SelectedText = "";
+            this.txtInHand.ShadowDecoration.Parent = this.txtInHand;
+            this.txtInHand.Size = new System.Drawing.Size(74, 25);
+            this.txtInHand.TabIndex = 9;
             // 
             // btnFinalize
             // 
@@ -604,6 +700,17 @@ namespace BibiShop
             this.label11.TabIndex = 4;
             this.label11.Text = "Product Total:";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(308, 106);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 19);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "In Hand QTY";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -661,7 +768,7 @@ namespace BibiShop
             this.DGVPurchaseCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -680,7 +787,7 @@ namespace BibiShop
             this.ActionGV});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -706,14 +813,14 @@ namespace BibiShop
             this.DGVPurchaseCart.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DGVPurchaseCart.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DGVPurchaseCart.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DGVPurchaseCart.ThemeStyle.HeaderStyle.Height = 40;
             this.DGVPurchaseCart.ThemeStyle.ReadOnly = true;
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DGVPurchaseCart.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DGVPurchaseCart.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.Height = 22;
             this.DGVPurchaseCart.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
@@ -939,6 +1046,7 @@ namespace BibiShop
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PurchaseInvoice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PurchaseInvoice";
             this.Load += new System.EventHandler(this.PurchaseInvoice_Load);
             this.panel1.ResumeLayout(false);
@@ -1009,5 +1117,11 @@ namespace BibiShop
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnFinalize;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label17;
+        private Guna.UI2.WinForms.Guna2TextBox txtInHand;
+        public System.Windows.Forms.ComboBox cboWarehouse;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnAddColor;
+        private System.Windows.Forms.Button button2;
     }
 }

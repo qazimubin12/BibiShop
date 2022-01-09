@@ -37,9 +37,18 @@ namespace BibiShop
         int proceed = 1;
         int mode2 = 0;
         float ptot = 0;
+        int shopwarehouse = 0;
         public BibiPOS()
         {
             InitializeComponent();
+        }
+        
+        private void FindShopDefault()
+        {
+            MainClass.con.Open();
+            SqlCommand cmd = new SqlCommand("select ShopDefaultWarehouse from StoreTable", MainClass.con);
+            shopwarehouse = int.Parse(cmd.ExecuteScalar().ToString());
+            MainClass.con.Close();
         }
 
 
@@ -192,6 +201,7 @@ namespace BibiShop
             ProductPicClick(tag);
             cboProduct.SelectedIndex = 0;
             txtSearhBarcode.Focus();
+            combosearch = 0;
         }
 
         private void ProductaddButton_Click(object sender, EventArgs e)
@@ -302,15 +312,19 @@ namespace BibiShop
         private void BibiPOS_Load(object sender, EventArgs e)
         {
             lblCashier.Text = LoginScreen.User_NAME.ToString();
+            FindShopDefault();
             MainClass.FillProducts(cboProduct);
             MainClass.FillCustomer(cboCustomer);
             GetCategoryData();
             GetProductData();
+            MainClass.RoundedButton(btnPurchases);
+            MainClass.RoundedButton(btnRecentSales);
+            MainClass.RoundedButton(btnAddCustomers);
 
         }
 
 
-        private string[] ProductsData = new string[5];
+        private string[] ProductsData = new string[10];
         private void cboProduct_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F3)
@@ -354,7 +368,9 @@ namespace BibiShop
                         combosearch = 1;
                         btnAdd_Click(sender, e);
                         cboProduct.SelectedIndex = 0;
+                        combosearch = 0;
                         txtSearhBarcode.Focus();
+                        
                     }
                     else
                     {
@@ -411,7 +427,8 @@ namespace BibiShop
                 MainClass.con.Open();
                 cmd = new SqlCommand("select InventoryMode from ModeSwitching", MainClass.con);
                 mode2 = int.Parse(cmd.ExecuteScalar().ToString());
-                MainClass.con.Close();
+
+               
             }
             catch (Exception ex)
             {
@@ -429,11 +446,11 @@ namespace BibiShop
                     MainClass.con.Open();
                     if (combosearch == 0)
                     {
-                        cmd = new SqlCommand("select Qty from Inventory where Barcode = '" + txtSearhBarcode.Text + "'", MainClass.con);
+                        cmd = new SqlCommand("select Qty from Inventory where Barcode = '" + txtSearhBarcode.Text + "' and WarehouseID = '"+shopwarehouse+"'", MainClass.con);
                     }
                     else
                     {
-                        cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + cboProduct.SelectedValue.ToString() + "'", MainClass.con);
+                        cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + cboProduct.SelectedValue.ToString() + "' and WarehouseID = '" + shopwarehouse + "'", MainClass.con);
                     }
                     object ob = cmd.ExecuteScalar();
                     if (ob != null)
@@ -510,6 +527,41 @@ namespace BibiShop
                             MessageBox.Show(ex.Message);
                             MainClass.con.Close();
                         } //FindingRAtes
+                        try
+                        {
+                            MainClass.con.Open();
+                            cmd = new SqlCommand("select u.Size from ProductsTable p inner join SizeTable u on u.SizeID = p.SizeID where p.Barcode = '" + txtSearhBarcode.Text + "'", MainClass.con);
+                            object ob = cmd.ExecuteScalar();
+                            if (ob != null)
+                            {
+                                ProductsData[5] = ob.ToString();
+                            }
+                            MainClass.con.Close();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            MainClass.con.Close();
+                        } //Size
+                        try
+                        {
+                            MainClass.con.Open();
+                            cmd = new SqlCommand("select u.Color from ProductsTable p inner join ColorsTable u on u.ColorID = p.ColorID where p.Barcode = '" + txtSearhBarcode.Text + "'", MainClass.con);
+                            object ob = cmd.ExecuteScalar();
+                            if (ob != null)
+                            {
+                                ProductsData[6] = ob.ToString();
+                            }
+                            MainClass.con.Close();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            MainClass.con.Close();
+                        } //Color
+
                     }
 
 
@@ -554,63 +606,52 @@ namespace BibiShop
                         MessageBox.Show(ex.Message);
                         MainClass.con.Close();
                     } //FindingRAtes
+                    try
+                    {
+                        MainClass.con.Open();
+                        cmd = new SqlCommand("select u.Size from ProductsTable p inner join SizeTable u on u.SizeID = p.SizeID where p.ProductName = '" + cboProduct.Text + "'", MainClass.con);
+                        object ob = cmd.ExecuteScalar();
+                        if (ob != null)
+                        {
+                            ProductsData[5] = ob.ToString();
+                        }
+                        MainClass.con.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        MainClass.con.Close();
+                    } //Size
+                    try
+                    {
+                        MainClass.con.Open();
+                        cmd = new SqlCommand("select u.Color from ProductsTable p inner join ColorsTable u on u.ColorID = p.ColorID where p.ProductName = '" + cboProduct.Text + "'", MainClass.con);
+                        object ob = cmd.ExecuteScalar();
+                        if (ob != null)
+                        {
+                            ProductsData[6] = ob.ToString();
+                        }
+                        MainClass.con.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        MainClass.con.Close();
+                    } //Color
                 }
 
 
 
             }
-            else
+
+
+            if (ProductsData[3] == "0" && error == 1)
             {
-                if (combosearch == 0)
-                {
-                    error = 1;
-                    try
-                    {
-                        MainClass.con.Open();
-                        cmd = new SqlCommand("select u.Unit from ProductsTable p inner join UnitsTable u on u.UnitID = p.PackUnitID where p.Barcode = '" + txtSearhBarcode.Text + "'", MainClass.con);
-                        object ob = cmd.ExecuteScalar();
-                        if (ob != null)
-                        {
-                            ProductsData[4] = ob.ToString();
-                        }
-                        MainClass.con.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        MainClass.con.Close();
-                    } //Pack Unit
-
-                }
-                else
-                {
-                    error = 1;
-                    try
-                    {
-                        MainClass.con.Open();
-                        cmd = new SqlCommand("select u.Unit from ProductsTable p inner join UnitsTable u on u.UnitID = p.PackUnitID where p.ProductName = '" + cboProduct.Text + "'", MainClass.con);
-                        object ob = cmd.ExecuteScalar();
-                        if (ob != null)
-                        {
-                            ProductsData[4] = ob.ToString();
-                        }
-                        MainClass.con.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        MainClass.con.Close();
-                    } //Pack Unit
-
-                }
-
-                if (ProductsData[3] == "0" && error == 1)
-                {
-                    GatheringData();
-                }
+                GatheringData();
             }
+            
         }
 
         private void GatheringDataProductPic(string tag)
@@ -625,6 +666,8 @@ namespace BibiShop
                 MainClass.con.Open();
                 cmd = new SqlCommand("select InventoryMode from ModeSwitching", MainClass.con);
                 mode2 = int.Parse(cmd.ExecuteScalar().ToString());
+
+                
                 MainClass.con.Close();
             }
             catch (Exception ex)
@@ -640,7 +683,7 @@ namespace BibiShop
                 try
                 {
                     MainClass.con.Open();
-                    cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + tag + "'", MainClass.con);
+                    cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + tag + "' and WarehouseID = '"+shopwarehouse+"'", MainClass.con);
                     object ob = cmd.ExecuteScalar();
                     if (ob != null)
                     {
@@ -696,6 +739,40 @@ namespace BibiShop
                             MessageBox.Show(ex.Message);
                             MainClass.con.Close();
                         } //Unit
+                        try
+                        {
+                            MainClass.con.Open();
+                            cmd = new SqlCommand("select u.Size from ProductsTable p inner join SizeTable u on u.SizeID = p.UnitID where p.ProductID = '" + tag + "'", MainClass.con);
+                            object ob = cmd.ExecuteScalar();
+                            if (ob != null)
+                            {
+                                ProductsData[5] = ob.ToString();
+                            }
+                            MainClass.con.Close();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            MainClass.con.Close();
+                        } //Size
+                        try
+                        {
+                            MainClass.con.Open();
+                            cmd = new SqlCommand("selecT s.Color from ProductsTable p inner join ColorsTable s on s.ColorID = p.ColorID  where p.ProductID = '" + tag + "'", MainClass.con);
+                            object ob = cmd.ExecuteScalar();
+                            if (ob != null)
+                            {
+                                ProductsData[6] = ob.ToString();
+                            }
+                            MainClass.con.Close();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            MainClass.con.Close();
+                        } //Color
                         try
                         {
                             MainClass.con.Open();
@@ -760,24 +837,14 @@ namespace BibiShop
                         MessageBox.Show(ex.Message);
                         MainClass.con.Close();
                     } //FindingRAtes
-                }
-
-
-
-            }
-            else
-            {
-                if (combosearch == 0)
-                {
-                    error = 1;
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("select u.Unit from ProductsTable p inner join UnitsTable u on u.UnitID = p.PackUnitID where p.ProductID = '" + tag + "'", MainClass.con);
+                        cmd = new SqlCommand("select s.Size from ProductsTable p inner join SizeTable s on s.SizeID = p.SizeID  where p.ProductID = '" + tag + "'", MainClass.con);
                         object ob = cmd.ExecuteScalar();
                         if (ob != null)
                         {
-                            ProductsData[4] = ob.ToString();
+                            ProductsData[5] = ob.ToString();
                         }
                         MainClass.con.Close();
 
@@ -786,20 +853,15 @@ namespace BibiShop
                     {
                         MessageBox.Show(ex.Message);
                         MainClass.con.Close();
-                    } //Pack Unit
-
-                }
-                else
-                {
-                    error = 1;
+                    } //Size
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("select u.Unit from ProductsTable p inner join UnitsTable u on u.UnitID = p.PackUnitID where p.ProductID = '" + tag + "'", MainClass.con);
+                        cmd = new SqlCommand("selecT s.Color from ProductsTable p inner join ColorsTable s on s.ColorID = p.ColorID  where p.ProductID = '" + tag + "'", MainClass.con);
                         object ob = cmd.ExecuteScalar();
                         if (ob != null)
                         {
-                            ProductsData[4] = ob.ToString();
+                            ProductsData[6] = ob.ToString();
                         }
                         MainClass.con.Close();
 
@@ -808,15 +870,13 @@ namespace BibiShop
                     {
                         MessageBox.Show(ex.Message);
                         MainClass.con.Close();
-                    } //Pack Unit
-
+                    } //Color
                 }
 
-                if (ProductsData[3] == "0" && error == 1)
-                {
-                    GatheringData();
-                }
+
+
             }
+           
         }
 
 
@@ -830,7 +890,7 @@ namespace BibiShop
 
                 if (DGVSaleCart.Rows.Count == 0)
                 {
-                    DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), fqty, ptot);
+                    DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), ProductsData[6], fqty, ProductsData[5], ptot);
                 }
                 else
                 {
@@ -857,10 +917,10 @@ namespace BibiShop
                                 && (Convert.ToString(ProductsData[4]) == Convert.ToString(item.Cells[2].Value)))
                             {
 
-                                fqty += float.Parse(item.Cells[5].Value.ToString());
+                                fqty += float.Parse(item.Cells[6].Value.ToString());
                                 CheckTotal();
-                                item.Cells[5].Value = fqty.ToString();
-                                item.Cells[6].Value = ptot.ToString();
+                                item.Cells[6].Value = fqty.ToString();
+                                item.Cells[8].Value = ptot.ToString();
                                 break;
 
                             }
@@ -869,7 +929,7 @@ namespace BibiShop
                         {
                             if (productcheck == false)
                             {
-                                DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), fqty, ptot);
+                                DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), ProductsData[6], fqty, ProductsData[5], ptot);
                                 break;
                             }
                         }
@@ -889,7 +949,7 @@ namespace BibiShop
 
                 if (DGVSaleCart.Rows.Count == 0)
                 {
-                    DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), fqty, ptot);
+                    DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), ProductsData[6], fqty, ProductsData[5], ptot);
                 }
                 else
                 {
@@ -916,10 +976,10 @@ namespace BibiShop
                                 && (Convert.ToString(ProductsData[4]) == Convert.ToString(item.Cells[2].Value)))
                             {
 
-                                fqty += float.Parse(item.Cells[5].Value.ToString());
+                                fqty += float.Parse(item.Cells[6].Value.ToString());
                                 CheckTotal();
-                                item.Cells[5].Value = fqty.ToString();
-                                item.Cells[6].Value = ptot.ToString();
+                                item.Cells[6].Value = fqty.ToString();
+                                item.Cells[8].Value = ptot.ToString();
                                 break;
 
                             }
@@ -928,7 +988,7 @@ namespace BibiShop
                         {
                             if (productcheck == false)
                             {
-                                DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), fqty, ptot);
+                                DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), ProductsData[6], fqty, ProductsData[5], ptot);
                                 break;
                             }
                         }
@@ -956,7 +1016,7 @@ namespace BibiShop
         private void CheckTheProductStock(int productID)
         {
             MainClass.con.Open();
-            SqlCommand cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + productID + "'",MainClass.con);
+            SqlCommand cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + productID + "' and WarehouseID = '" + shopwarehouse + "'",MainClass.con);
             stockin = float.Parse(cmd.ExecuteScalar().ToString());
             MainClass.con.Close();
         }
@@ -965,11 +1025,11 @@ namespace BibiShop
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
-                if (e.ColumnIndex == 8)
+                if (e.ColumnIndex == 10)
                 {
                     float qty = 0;
                     float ptot = 0;
-                    qty = float.Parse(DGVSaleCart.CurrentRow.Cells[5].Value.ToString());
+                    qty = float.Parse(DGVSaleCart.CurrentRow.Cells[6].Value.ToString());
                     if (qty == 1)
                     {
                         DGVSaleCart.Rows.RemoveAt(DGVSaleCart.CurrentRow.Index);
@@ -981,22 +1041,22 @@ namespace BibiShop
 
                     if (DGVSaleCart.Rows.Count != 0)
                     {
-                        DGVSaleCart.CurrentRow.Cells[5].Value = qty.ToString();
+                        DGVSaleCart.CurrentRow.Cells[6].Value = qty.ToString();
                         ptot = qty * float.Parse(DGVSaleCart.CurrentRow.Cells[4].Value.ToString());
-                        DGVSaleCart.CurrentRow.Cells[6].Value = ptot.ToString();
+                        DGVSaleCart.CurrentRow.Cells[8].Value = ptot.ToString();
                     }
 
 
                 }
                 else
                 {
-                    if (e.ColumnIndex == 7)
+                    if (e.ColumnIndex == 9)
                     {
                         CheckTheProductStock(int.Parse(DGVSaleCart.CurrentRow.Cells["ProductIDGV"].Value.ToString()));
                         
                         float qty = 0;
                         float ptot = 0;
-                        qty = float.Parse(DGVSaleCart.CurrentRow.Cells[5].Value.ToString());
+                        qty = float.Parse(DGVSaleCart.CurrentRow.Cells[6].Value.ToString());
                         qty += 1;
                         if (stockin < qty)
                         {
@@ -1005,9 +1065,9 @@ namespace BibiShop
                         }
                         else
                         {
-                            DGVSaleCart.CurrentRow.Cells[5].Value = qty.ToString();
+                            DGVSaleCart.CurrentRow.Cells[6].Value = qty.ToString();
                             ptot = qty * float.Parse(DGVSaleCart.CurrentRow.Cells[4].Value.ToString());
-                            DGVSaleCart.CurrentRow.Cells[6].Value = ptot.ToString();
+                            DGVSaleCart.CurrentRow.Cells[8].Value = ptot.ToString();
                         }
                     }
                 }
@@ -1062,6 +1122,7 @@ namespace BibiShop
                             btnAdd_Click(sender, e);
                             txtSearhBarcode.Text = "";
                             txtSearhBarcode.Focus();
+                            combosearch = 0;
                         }
                         else
                         {
@@ -1098,6 +1159,28 @@ namespace BibiShop
         {
             MainClass.FillCustomer(cboCustomer);
             MainClass.FillProducts(cboProduct);
+        }
+
+        private void btnAddCustomers_Click(object sender, EventArgs e)
+        {
+            Persons p = new Persons();
+            p.Show();
+        }
+
+        private void btnRecentSales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPurchases_Click(object sender, EventArgs e)
+        {
+            PurchaseInvoice p = new PurchaseInvoice();
+            p.Show();
+        }
+
+        private void cboProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

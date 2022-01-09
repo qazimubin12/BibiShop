@@ -73,6 +73,7 @@ namespace BibiShop
             GenerateInvoiceNo();
             MainClass.FillSupplier(cboSupplier);
             MainClass.FillProducts(cboProducts);
+            MainClass.FillWarehouses(cboWarehouse);
             cboUnit.Text = "";
         }
             
@@ -124,6 +125,18 @@ namespace BibiShop
             SqlCommand cmd = null;
             
             FillUnitComboBox(cboUnit);
+            MainClass.con.Open();
+            cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + cboProducts.SelectedValue.ToString() + "'", MainClass.con);
+            object ob = cmd.ExecuteScalar();
+            MainClass.con.Close();
+            if(ob == null)
+            {
+                txtInHand.Text = "0";
+            }
+            else
+            {
+                txtInHand.Text = ob.ToString();
+            }
         }
 
 
@@ -199,6 +212,7 @@ namespace BibiShop
         private void FullClear()
         {
             GBClear();
+            txtInHand.Text = "";
             txtGrossTotal.Text = "";
             txtPaymentTotal.Text = "";
             txtBalance.Text = "";
@@ -561,6 +575,7 @@ namespace BibiShop
                     string barcode = "";
                     int unitId = 0;
                     object stockqty = null;
+                    float safetystock = 0;
                     
                     MainClass.con.Open();
                     foreach (DataGridViewRow item in DGVPurchaseCart.Rows)
@@ -569,6 +584,9 @@ namespace BibiShop
                         {
                             cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + item.Cells[0].Value.ToString() + "'", MainClass.con);
                             stockqty = cmd.ExecuteScalar();
+
+                            cmd = new SqlCommand("select SafetyStock from ProductsTable where ProductID = '" + item.Cells[0].Value.ToString() + "'", MainClass.con);
+                            safetystock = float.Parse(cmd.ExecuteScalar().ToString());
                         }
                         catch (Exception ex)
                         {
@@ -619,13 +637,15 @@ namespace BibiShop
                             cmd = new SqlCommand("select CostPrice from ProductsTable where ProductID = '" + productId + "'", MainClass.con);
                             costprice = float.Parse(cmd.ExecuteScalar().ToString());
 
-                            cmd = new SqlCommand("insert into Inventory (ProductID,Unit,Qty,Rate,Barcode) values (@ProductID,@Unit,@Qty,@Rate,@Barcode)", MainClass.con);
+                            cmd = new SqlCommand("insert into Inventory (ProductID,Unit,Qty,Rate,Barcode,SafetyStock,WarehouseID) values (@ProductID,@Unit,@Qty,@Rate,@Barcode,@SafetyStock,@WarehouseID)", MainClass.con);
 
                             cmd.Parameters.AddWithValue("@ProductID", productId);
                             cmd.Parameters.AddWithValue("@Unit", unitId);
                             cmd.Parameters.AddWithValue("@Qty", item.Cells[5].Value.ToString());
                             cmd.Parameters.AddWithValue("@Rate", costprice);
                             cmd.Parameters.AddWithValue("@Barcode", barcode);
+                            cmd.Parameters.AddWithValue("@SafetyStock", safetystock);
+                            cmd.Parameters.AddWithValue("@WarehouseID", cboWarehouse.SelectedValue.ToString());
                             cmd.ExecuteNonQuery();
 
                         } // Inserting 
@@ -635,7 +655,8 @@ namespace BibiShop
                             float qty = 0;
                             float.TryParse(stockqty.ToString(), out qty);
                             qty += float.Parse(item.Cells[5].Value.ToString());
-                            MainClass.UpdateInventory(productId, qty);
+                            int warehouseID = int.Parse(cboWarehouse.SelectedValue.ToString());
+                            MainClass.UpdateInventory(productId, qty,warehouseID);
 
                         } //Updating
                     }
@@ -678,6 +699,17 @@ namespace BibiShop
         {
             this.Dispose();
             
+        }
+
+        private void btnAddColor_Click(object sender, EventArgs e)
+        {
+            Warehouses wc = new Warehouses();
+            wc.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MainClass.FillWarehouses(cboWarehouse);
         }
     }
 }

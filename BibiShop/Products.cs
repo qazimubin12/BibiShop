@@ -434,5 +434,27 @@ namespace BibiShop
                 }
             }
         }
+
+        private void btnAddSize_Click(object sender, EventArgs e)
+        {
+            Sizes sz = new Sizes();
+            sz.Show();
+        }
+
+        private void btnAddColor_Click(object sender, EventArgs e)
+        {
+            Colors col = new Colors();
+            col.Show();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            MainClass.FillSizes(cboSize);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            MainClass.FillColors(cboColor);
+        }
     }
 }

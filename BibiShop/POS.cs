@@ -131,6 +131,7 @@ namespace BibiShop
         int error = 0;
         int proceed = 1;
         int mode2 = 0;
+        int shopwarehouse = 0;
         float ptot = 0;
         private void GatheringData()
         {
@@ -144,6 +145,9 @@ namespace BibiShop
                 MainClass.con.Open();
                 cmd = new SqlCommand("select InventoryMode from ModeSwitching", MainClass.con);
                 mode2 = int.Parse(cmd.ExecuteScalar().ToString());
+
+                cmd = new SqlCommand("select ShopDefaultWarehouse from StoreTable", MainClass.con);
+                shopwarehouse = int.Parse(cmd.ExecuteScalar().ToString());
                 MainClass.con.Close();
             }
             catch (Exception ex)
@@ -159,7 +163,7 @@ namespace BibiShop
                 try
                 {
                     MainClass.con.Open();
-                    cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + cboProducts.SelectedValue.ToString()+ "'", MainClass.con);
+                    cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + cboProducts.SelectedValue.ToString()+ "' and WarehouseID = '"+shopwarehouse+"'", MainClass.con);
                     object ob = cmd.ExecuteScalar();
                     if (ob != null)
                     {
@@ -737,14 +741,11 @@ namespace BibiShop
                 try
                 {
                     object stockqty = null;
-                    object packunit = null;
                     int productId = 0;
-                    float packqty = 0;
-                    
-                    float finalqty = 0;
+                
                     int mode = 0;
                     int unitId = 0;
-                    bool pack = true;
+                    int shopwarehouse = 0;
 
                     MainClass.con.Open();
                     foreach (DataGridViewRow item in DGVSaleCart.Rows)
@@ -754,6 +755,9 @@ namespace BibiShop
                         {
                             cmd = new SqlCommand("select InventoryMode from ModeSwitching", MainClass.con);
                             mode = int.Parse(cmd.ExecuteScalar().ToString());
+
+                            cmd = new SqlCommand("select ShopDefaultWarehouse from StoreTable", MainClass.con);
+                            shopwarehouse = int.Parse(cmd.ExecuteScalar().ToString());
                         }
                         catch (Exception ex)
                         {
@@ -780,24 +784,7 @@ namespace BibiShop
                             } //Finding StockQty
                         }
 
-                        cmd = new SqlCommand("select u.Unit from ProductsTable p inner join UnitsTable u on u.UnitID = p.PackUnitID where p.ProductID = '" + item.Cells[0].Value + "'", MainClass.con);
-                        packunit = cmd.ExecuteScalar();
-
-                        if (packunit != null)
-                        {
-                            if (packunit.ToString() == item.Cells[2].Value.ToString())
-                            {
-                                pack = true;
-                            }
-                            else
-                            {
-                                pack = false;
-                            }
-                        }
-                        else
-                        {
-                            pack = false;
-                        }
+                      
 
                         try
                         {
@@ -811,14 +798,9 @@ namespace BibiShop
                         } // Product ID
                         try
                         {
-                            if (pack == true)
-                            {
-                                cmd = new SqlCommand("select PackUnitID from ProductsTable where ProductID = '" + item.Cells[0].Value.ToString() + "' ", MainClass.con);
-                            }
-                            else
-                            {
-                                cmd = new SqlCommand("select UnitID from ProductsTable where ProductID = '" + item.Cells[0].Value.ToString() + "' ", MainClass.con);
-                            }
+
+                            cmd = new SqlCommand("select UnitID from ProductsTable where ProductID = '" + item.Cells[0].Value.ToString() + "' ", MainClass.con);
+
                             unitId = int.Parse(cmd.ExecuteScalar().ToString());
                         }
                         catch (Exception ex)
@@ -827,8 +809,6 @@ namespace BibiShop
                             MainClass.con.Close();
                         } // Unit ID
 
-                        cmd = new SqlCommand("select PackQty from ProductsTable where ProductID = '" + productId + "'", MainClass.con);
-                        packqty = float.Parse(cmd.ExecuteScalar().ToString());
 
 
                         try
@@ -865,20 +845,12 @@ namespace BibiShop
                         }
                         else
                         {
-                            if (pack == true)
-                            {
-                                float stock = float.Parse(stockqty.ToString());
-                                finalqty = float.Parse(item.Cells[5].Value.ToString()) * float.Parse(packqty.ToString());
-                                stock -= float.Parse(finalqty.ToString());
-                                MainClass.UpdateInventory(productId, stock);
-                            }
-                            else
-                            {
-                                float qty = 0;
-                                float.TryParse(stockqty.ToString(), out qty);
-                                qty -= float.Parse(item.Cells[5].Value.ToString());
-                                MainClass.UpdateInventory(productId, qty);
-                            }
+
+                            float qty = 0;
+                            float.TryParse(stockqty.ToString(), out qty);
+                            qty -= float.Parse(item.Cells[5].Value.ToString());
+                            MainClass.UpdateInventory(productId, qty,shopwarehouse);
+
                         }
 
 

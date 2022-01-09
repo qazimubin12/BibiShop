@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tulpep.NotificationWindow;
 
 namespace BibiShop
 {
@@ -64,6 +65,45 @@ namespace BibiShop
             lblRole.Text = LoginScreen.Role.ToString();
             btnDashboard_Click(sender, e);
             LoadLogo();
+            NotifyCriticalItems();
+        }
+
+        public void NotifyCriticalItems()
+        {
+            string critical = "";
+            MainClass.con.Open();
+            SqlCommand cmd = new SqlCommand("select count(*) from ProductsTable p full outer join Inventory i on p.ProductID = i.ProductID where i.Qty < 0 or i.Qty is null or i.Qty < p.SafetyStock ", MainClass.con);
+
+            int i = 0;
+            string count = cmd.ExecuteScalar().ToString();
+            MainClass.con.Close();
+
+            MainClass.con.Open();
+            cmd = new SqlCommand("select p.ProductName from ProductsTable p full outer join Inventory i on p.ProductID = i.ProductID where i.Qty < 0 or i.Qty is null or i.Qty < p.SafetyStock", MainClass.con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                critical += i + ".  " + dr["ProductName"].ToString() + Environment.NewLine;
+            }
+            dr.Close();
+            MainClass.con.Close();
+            PopupNotifier popup = new PopupNotifier();
+            popup.Image = Properties.Resources.low_battery__1_;
+            popup.ContentFont = new System.Drawing.Font("Tahoma", 8F);
+            //popup.ShowGrip = false;
+            popup.HeaderHeight = 20;
+            popup.TitlePadding = new Padding(3);
+            popup.ContentPadding = new Padding(3);
+            popup.ImagePadding = new Padding(8);
+            popup.AnimationDuration = 1000;
+            popup.AnimationInterval = 1;
+            popup.HeaderColor = Color.FromArgb(252, 164, 2);
+            popup.Scroll = true;
+            popup.ShowCloseButton = false;
+            popup.TitleText = "CRITICAL ITEM(S)";
+            popup.ContentText = critical;
+            popup.Popup();
         }
 
         private void button1_Click(object sender, EventArgs e)

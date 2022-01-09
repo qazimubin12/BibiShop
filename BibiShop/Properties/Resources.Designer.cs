@@ -143,6 +143,26 @@ namespace BibiShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap budget {
+            get {
+                object obj = ResourceManager.GetObject("budget", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap budget1 {
+            get {
+                object obj = ResourceManager.GetObject("budget1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel__2_ {
             get {
                 object obj = ResourceManager.GetObject("cancel (2)", resourceCulture);
@@ -186,6 +206,36 @@ namespace BibiShop.Properties {
         internal static System.Drawing.Bitmap category {
             get {
                 object obj = ResourceManager.GetObject("category", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cubes {
+            get {
+                object obj = ResourceManager.GetObject("cubes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cubes1 {
+            get {
+                object obj = ResourceManager.GetObject("cubes1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap debit_card {
+            get {
+                object obj = ResourceManager.GetObject("debit-card", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
