@@ -135,6 +135,38 @@ namespace BibiShop
 
         }
 
+
+        public static void FillDiscount(ComboBox cmb)
+        {
+            DataTable dtdiscountName = new DataTable();
+            dtdiscountName.Columns.Add("DiscountOfferName");
+            dtdiscountName.Rows.Add("-----Select-----");
+            try
+            {
+                DataTable dt = Retrieve("selecT DiscountOfferName from DiscountOffers union Select PackagedDiscountName from PackagedDiscount");
+                if (dt != null)
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow discount in dt.Rows)
+                        {
+                            dtdiscountName.Rows.Add(discount["DiscountOfferName"]);
+                        }
+                    }
+
+                }
+                cmb.DisplayMember = "DiscountOfferName";
+                cmb.DataSource = dtdiscountName;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cmb.DataSource = dtdiscountName;
+            }
+
+        }
+
+
         public static void FillCoupons(ComboBox cmb)
         {
             DataTable dtcouponName = new DataTable();
@@ -550,11 +582,11 @@ namespace BibiShop
             }
         }
 
-        public static void InsertSale(int CustomerID,string InvoiceNo,string StoreName,string StoreAddress,string SaleDate,string SaleTime,string OrderStatus,byte[] Logo, float Tax= 0,float Paying=0,float Change=0, float Discount = 0, float GrandTotal = 0,string coupontype ="", int couponID = 0)
+        public static void InsertSale(int CustomerID,string InvoiceNo,string StoreName,string StoreAddress,string SaleDate,string SaleTime,string OrderStatus,byte[] Logo, float Tax= 0,float Paying=0,float Change=0, float Discount = 0, float GrandTotal = 0,string coupontype ="", int couponID = 0,string SaleRemarks="")
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("insert into SalesTable (InvoiceNo,Customer_ID,Discount,GrandTotal,StoreName,StoreAddress,SaleDate,SaleTime,OrderStatus,Change,Paying,Tax,Logo,CouponType,CouponID) values (@InvoiceNo,@Customer_ID,@Discount,@GrandTotal,@StoreName,@StoreAddress,@SaleDate,@SaleTime,@OrderStatus,@Change,@Paying,@Tax,@Logo,@CouponType,@CouponID)", con);
+                SqlCommand cmd = new SqlCommand("insert into SalesTable (InvoiceNo,Customer_ID,Discount,GrandTotal,StoreName,StoreAddress,SaleDate,SaleTime,OrderStatus,Change,Paying,Tax,Logo,CouponType,CouponID,SaleRemarks) values (@InvoiceNo,@Customer_ID,@Discount,@GrandTotal,@StoreName,@StoreAddress,@SaleDate,@SaleTime,@OrderStatus,@Change,@Paying,@Tax,@Logo,@CouponType,@CouponID,@SaleRemarks)", con);
                 cmd.Parameters.AddWithValue("@InvoiceNo", InvoiceNo);
                 cmd.Parameters.AddWithValue("@Customer_ID", CustomerID);
                 cmd.Parameters.AddWithValue("@Discount", Discount);
@@ -569,7 +601,8 @@ namespace BibiShop
                 cmd.Parameters.AddWithValue("@Tax", Math.Round(Tax,2));
                 cmd.Parameters.AddWithValue("@Logo", Logo);
                 cmd.Parameters.AddWithValue("@CouponType", coupontype);
-                cmd.Parameters.AddWithValue("@CouponID", couponID);
+                cmd.Parameters.AddWithValue("@CouponID", couponID); 
+                cmd.Parameters.AddWithValue("@SaleRemarks", SaleRemarks);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

@@ -1414,6 +1414,11 @@ namespace BibiShop
             btnSaveSale.FillColor = Color.SlateBlue;
             cboProduct.SelectedIndex = 0;
             cboCustomer.SelectedIndex = 0;
+            txtSaleRemarks.Text = "";
+            btnApplyDiscount.Text = "APPLY";
+            btnApplyDiscount.Enabled = true;
+            btnCloseDiscountPanel.Enabled = true;
+            discountpanel.Visible = false;
         }
 
         private void btnSaveSale_Click(object sender, EventArgs e)
@@ -1449,7 +1454,7 @@ namespace BibiShop
                         coupontype = lblCouponType.Text;
                     }
                     
-                    MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, "Remaining Payment", ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), 0, 0,discount, float.Parse(lblGrandTotal.Text),coupontype,couponId);
+                    MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, "Remaining Payment", ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), 0, 0,discount, float.Parse(lblGrandTotal.Text),coupontype,couponId,txtSaleRemarks.Text);
                     int SALEID = MainClass.FindLastSaleID();
 
                     foreach (DataGridViewRow item in DGVSaleCart.Rows)
@@ -1652,7 +1657,7 @@ namespace BibiShop
                     SqlCommand cmd = new SqlCommand("SELECT CONVERT(varchar(15),  CAST(GETDATE() AS TIME), 100) as SaleTime", MainClass.con);
                     saletime = cmd.ExecuteScalar().ToString();
 
-                    MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, "Completed", ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), float.Parse(txtPayAmount.Text), float.Parse(txtChange.Text), discount, float.Parse(lblGrandTotal.Text), coupontype, couponId);
+                    MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, "Completed", ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), float.Parse(txtPayAmount.Text), float.Parse(txtChange.Text), discount, float.Parse(lblGrandTotal.Text), coupontype, couponId,txtSaleRemarks.t);
                     int SALEID = MainClass.FindLastSaleID();
 
                     foreach (DataGridViewRow item in DGVSaleCart.Rows)
@@ -1753,217 +1758,6 @@ namespace BibiShop
             }
         }
 
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bool isActive = false;
-                bool found = false;
-                object CouponsGenerated = 0;
-                int coupontype = 0;
-                int couponID = 0;
-                MainClass.con.Open();
-                SqlDataReader dr;
-                SqlCommand cmd = new SqlCommand("select * from CouponsTable where CouponCode = @CouponCode ", MainClass.con);
-                cmd.Parameters.AddWithValue("@CouponCode", txtCouponCode.Text);
-                dr = cmd.ExecuteReader();
-                dr.Read();
-                if (dr.HasRows)
-                {
-                    found = true;
-                    isActive = bool.Parse(dr["IsActive"].ToString());
-                    CouponsGenerated = dr["CouponsGenerated"].ToString();
-                    coupontype = int.Parse(dr["CouponUsageType"].ToString());
-                    couponID = int.Parse(dr["CouponID"].ToString());
-                }
-                else
-                {
-                    found = false;
-                    MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                dr.Close();
-                MainClass.con.Close();
-                if (found == true)
-                {
-                    DayOfWeek today = DateTime.Today.DayOfWeek;
-                    int daysvaluesplus = 0;
-                    if (today == DayOfWeek.Sunday)
-                    {
-                        daysvaluesplus = 1;
-                    }
-                    else if (today == DayOfWeek.Monday)
-                    {
-                        daysvaluesplus = 2;
-                    }
-                    else if (today == DayOfWeek.Tuesday)
-                    {
-                        daysvaluesplus = 4;
-                    }
-                    else if (today == DayOfWeek.Wednesday)
-                    {
-                        daysvaluesplus = 8;
-                    }
-                    else if (today == DayOfWeek.Thursday)
-                    {
-                        daysvaluesplus = 16;
-                    }
-                    else if (today == DayOfWeek.Friday)
-                    {
-                        daysvaluesplus = 32;
-                    }
-                    else if (today == DayOfWeek.Saturday)
-                    {
-                        daysvaluesplus = 64;
-                    }
-                    else
-                    {
-                        daysvaluesplus = 0;
-                    }
-
-
-
-                    MainClass.con.Open();
-                    cmd = new SqlCommand("select * from CouponsSettingsTable where (days & "+daysvaluesplus+") > 0 ", MainClass.con);
-                    object ob = cmd.ExecuteScalar();
-                    MainClass.con.Close();
-                    if (ob != null)
-                    {
-                        if (isActive != false)
-                        {
-                            MainClass.con.Open();
-                            cmd = new SqlCommand("select CouponBenefit from CouponsTypesTable where CouponTypeID = '" + coupontype + "'", MainClass.con);
-                            float benefit = float.Parse(cmd.ExecuteScalar().ToString());
-                            lblDiscount.Text = benefit.ToString();
-                            lblCouponID.Text = couponID.ToString();
-
-                            cmd = new SqlCommand("select CouponType from CouponsTypesTable where CouponTypeID = '" + coupontype + "'", MainClass.con);
-                            object type = cmd.ExecuteScalar();
-                            lblCouponType.Text = type.ToString();
-
-                            if (type.ToString() == "Five Percentage Reduction")
-                            {
-                                cmd = new SqlCommand("select MinimumBill from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
-                                float minimumbill = float.Parse(cmd.ExecuteScalar().ToString());
-
-                                cmd = new SqlCommand("select ProductID from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
-                                int couponproduct = int.Parse(cmd.ExecuteScalar().ToString());
-                                if (float.Parse(lblGrandTotal.Text) > minimumbill)
-                                {
-                                    foreach (DataGridViewRow item in DGVSaleCart.Rows)
-                                    {
-                                        if (int.Parse(item.Cells["ProductIDGV"].Value.ToString()) == couponproduct)
-                                        {
-                                            float actualtotal = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
-                                            float tot = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
-                                            tot /= 100;
-                                            tot *= benefit;
-                                            actualtotal -= tot;
-
-                                            item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
-                                            item.Cells["RemarksGV"].Value = "Coupon Applied";
-                                            btnApply.Text = "APPLIED";
-                                            cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
-                                            cmd.ExecuteNonQuery();
-                                            btnApply.Enabled = false;
-                                            button2.Enabled = false;
-                                        }
-                                    }
-                                }
-                                else
-                                {
-
-                                    MessageBox.Show("Current Bill is not fulfilling the criteria of using this coupon");
-                                    return;
-                                }
-
-
-                            }       //Type Percentage 
-                            else if (type.ToString() == "Some Dollar Reduction")
-                            {
-                                cmd = new SqlCommand("select MinimumBill from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
-                                float minimumbill = float.Parse(cmd.ExecuteScalar().ToString());
-
-                                if (float.Parse(lblGrandTotal.Text) > minimumbill)
-                                {
-                                    foreach (DataGridViewRow item in DGVSaleCart.Rows)
-                                    {
-                                        float actualtotal = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
-                                        actualtotal -= benefit;
-
-                                        item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
-                                        item.Cells["RemarksGV"].Value = "Coupon Applied";
-                                        btnApply.Text = "APPLIED";
-                                        cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
-                                        cmd.ExecuteNonQuery();
-                                        btnApply.Enabled = false;
-                                        button2.Enabled = false;
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Current Bill is not fulfilling the criteria of using this coupon");
-                                    return;
-                                }
-
-                            }       // Type Dollar 
-                            else if (type.ToString() == "Free Merchandise Type")
-                            {
-                                cmd = new SqlCommand("select MinimumBill from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
-                                float minimumbill = float.Parse(cmd.ExecuteScalar().ToString());
-
-                                if (float.Parse(lblGrandTotal.Text) > minimumbill)
-                                {
-                                    foreach (DataGridViewRow item in DGVSaleCart.Rows)
-                                    {
-                                        float actualtotal = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
-                                        actualtotal = 0;
-
-                                        item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
-                                        item.Cells["RemarksGV"].Value = "Coupon Applied";
-                                        btnApply.Text = "APPLIED";
-                                        cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
-                                        cmd.ExecuteNonQuery();
-                                        btnApply.Enabled = false;
-                                        button2.Enabled = false;
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-
-                                MainClass.con.Close();
-                            }       // Type Free Merch
-                            else
-                            {
-                                MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Not Active Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Not Accessible Today", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MainClass.con.Close();
-                MessageBox.Show(ex.Message);
-            }
-            FindGrossTotal();
-
-
-        }
 
         private void btnCancelCoupon_Click(object sender, EventArgs e)
         {
@@ -2073,6 +1867,218 @@ namespace BibiShop
             }
             FindGrossTotal();
         }
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool isActive = false;
+                bool found = false;
+                object CouponsGenerated = 0;
+                int coupontype = 0;
+                int couponID = 0;
+                MainClass.con.Open();
+                SqlDataReader dr;
+                SqlCommand cmd = new SqlCommand("select * from CouponsTable where CouponCode = @CouponCode ", MainClass.con);
+                cmd.Parameters.AddWithValue("@CouponCode", txtCouponCode.Text);
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    found = true;
+                    isActive = bool.Parse(dr["IsActive"].ToString());
+                    CouponsGenerated = dr["CouponsGenerated"].ToString();
+                    coupontype = int.Parse(dr["CouponUsageType"].ToString());
+                    couponID = int.Parse(dr["CouponID"].ToString());
+                }
+                else
+                {
+                    found = false;
+                    MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                dr.Close();
+                MainClass.con.Close();
+                if (found == true)
+                {
+                    DayOfWeek today = DateTime.Today.DayOfWeek;
+                    int daysvaluesplus = 0;
+                    if (today == DayOfWeek.Sunday)
+                    {
+                        daysvaluesplus = 1;
+                    }
+                    else if (today == DayOfWeek.Monday)
+                    {
+                        daysvaluesplus = 2;
+                    }
+                    else if (today == DayOfWeek.Tuesday)
+                    {
+                        daysvaluesplus = 4;
+                    }
+                    else if (today == DayOfWeek.Wednesday)
+                    {
+                        daysvaluesplus = 8;
+                    }
+                    else if (today == DayOfWeek.Thursday)
+                    {
+                        daysvaluesplus = 16;
+                    }
+                    else if (today == DayOfWeek.Friday)
+                    {
+                        daysvaluesplus = 32;
+                    }
+                    else if (today == DayOfWeek.Saturday)
+                    {
+                        daysvaluesplus = 64;
+                    }
+                    else
+                    {
+                        daysvaluesplus = 0;
+                    }
+
+
+
+                    MainClass.con.Open();
+                    cmd = new SqlCommand("select * from CouponsSettingsTable where (days & "+daysvaluesplus+") > 0 ", MainClass.con);
+                    object ob = cmd.ExecuteScalar();
+                    MainClass.con.Close();
+                    if (ob != null)
+                    {
+                        if (isActive != false)
+                        {
+                            MainClass.con.Open();
+                            cmd = new SqlCommand("select CouponBenefit from CouponsTypesTable where CouponTypeID = '" + coupontype + "'", MainClass.con);
+                            float benefit = float.Parse(cmd.ExecuteScalar().ToString());
+                            lblDiscount.Text = benefit.ToString();
+                            lblCouponID.Text = couponID.ToString();
+
+                            cmd = new SqlCommand("select CouponType from CouponsTypesTable where CouponTypeID = '" + coupontype + "'", MainClass.con);
+                            object type = cmd.ExecuteScalar();
+                            lblCouponType.Text = type.ToString();
+
+                            if (type.ToString() == "Five Percentage Reduction")
+                            {
+                                cmd = new SqlCommand("select MinimumBill from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
+                                float minimumbill = float.Parse(cmd.ExecuteScalar().ToString());
+
+                                cmd = new SqlCommand("select ProductID from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
+                                int couponproduct = int.Parse(cmd.ExecuteScalar().ToString());
+                                if (float.Parse(lblGrandTotal.Text) > minimumbill)
+                                {
+                                    foreach (DataGridViewRow item in DGVSaleCart.Rows)
+                                    {
+                                        if (int.Parse(item.Cells["ProductIDGV"].Value.ToString()) == couponproduct)
+                                        {
+                                            float actualtotal = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
+                                            float tot = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
+                                            tot /= 100;
+                                            tot *= benefit;
+                                            actualtotal -= tot;
+                                            lblDiscount.Text = tot.ToString();
+                                            item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
+                                            item.Cells["RemarksGV"].Value = "Coupon Applied";
+                                            btnApply.Text = "APPLIED";
+                                            cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
+                                            cmd.ExecuteNonQuery();
+                                            btnApply.Enabled = false;
+                                            button2.Enabled = false;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+
+                                    MessageBox.Show("Current Bill is not fulfilling the criteria of using this coupon");
+                                    return;
+                                }
+
+
+                            }       //Type Percentage 
+                            else if (type.ToString() == "Some Dollar Reduction")
+                            {
+                                cmd = new SqlCommand("select MinimumBill from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
+                                float minimumbill = float.Parse(cmd.ExecuteScalar().ToString());
+
+                                if (float.Parse(lblGrandTotal.Text) > minimumbill)
+                                {
+                                    foreach (DataGridViewRow item in DGVSaleCart.Rows)
+                                    {
+                                        float actualtotal = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
+                                        actualtotal -= benefit;
+                                        lblDiscount.Text = benefit.ToString();
+
+                                        item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
+                                        item.Cells["RemarksGV"].Value = "Coupon Applied";
+                                        btnApply.Text = "APPLIED";
+                                        cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
+                                        cmd.ExecuteNonQuery();
+                                        btnApply.Enabled = false;
+                                        button2.Enabled = false;
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Current Bill is not fulfilling the criteria of using this coupon");
+                                    return;
+                                }
+
+                            }       // Type Dollar 
+                            else if (type.ToString() == "Free Merchandise Type")
+                            {
+                                cmd = new SqlCommand("select MinimumBill from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
+                                float minimumbill = float.Parse(cmd.ExecuteScalar().ToString());
+
+                                if (float.Parse(lblGrandTotal.Text) > minimumbill)
+                                {
+                                    foreach (DataGridViewRow item in DGVSaleCart.Rows)
+                                    {
+                                        float actualtotal = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
+                                        actualtotal = 0;
+
+                                        item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
+                                        item.Cells["RemarksGV"].Value = "Coupon Applied";
+                                        btnApply.Text = "APPLIED";
+                                        cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
+                                        cmd.ExecuteNonQuery();
+                                        btnApply.Enabled = false;
+                                        button2.Enabled = false;
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+
+                                MainClass.con.Close();
+                            }       // Type Free Merch
+                            else
+                            {
+                                MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Not Active Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not Accessible Today", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MessageBox.Show(ex.Message);
+            }
+            FindGrossTotal();
+
+
+        }
 
         private void DGVSaleCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -2083,6 +2089,73 @@ namespace BibiShop
         {
             DiscountOffers d = new DiscountOffers();
             d.Show();
+        }
+
+        private void btnSelectDiscount_Click(object sender, EventArgs e)
+        {
+            discountpanel.Visible = true;
+            MainClass.FillDiscount(cboApplyDiscount);
+        }
+
+        private void btnCloseDiscountPanel_Click(object sender, EventArgs e)
+        {
+            discountpanel.Visible = false;
+        }
+
+        private void btnApplyDiscount_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = null;
+            string offername = cboApplyDiscount.Text;
+            bool isActive = false;
+            float minimumbill, benefit = 0;
+            if(offername == "Dollar Reduction" || offername == "Percentage Reduction")
+            {
+                MainClass.con.Open();
+                cmd = new SqlCommand("select IsActive from DiscountOffers where DiscountOfferName = '"+ offername+ "'", MainClass.con);
+                isActive = bool.Parse(cmd.ExecuteScalar().ToString());
+
+                if(isActive == true)
+                {
+                    cmd = new SqlCommand("select MinimumBill from DiscountOffers  where DiscountOfferName = '" + offername + "'", MainClass.con);
+                    minimumbill = float.Parse(cmd.ExecuteScalar().ToString());
+
+                    cmd = new SqlCommand("select DiscountBenefit from DiscountOffers  where DiscountOfferName = '" + offername + "'", MainClass.con);
+                    benefit = float.Parse(cmd.ExecuteScalar().ToString());
+
+                    if (float.Parse(lblNetTotal.Text) > minimumbill)
+                    {
+                        if (offername == "Percentage Reduction")
+                        {
+                            float actualtotal = float.Parse(lblNetTotal.Text);
+                            float tot = float.Parse(lblNetTotal.Text);
+                            tot /= 100;
+                            tot *= benefit;
+                            actualtotal -= tot;
+                            lblDiscount.Text = tot.ToString();
+                            lblNetTotal.Text = actualtotal.ToString();
+                        }
+                        else
+                        {
+                            float actualtotal = float.Parse(lblNetTotal.Text);
+                            actualtotal -= benefit;
+                            lblDiscount.Text = benefit.ToString();
+                            lblNetTotal.Text = actualtotal.ToString();
+                        }
+                        txtSaleRemarks.Text = offername + " Applied Successfully";
+                        btnApplyDiscount.Text = "APPLIED";
+                        btnApplyDiscount.Enabled = false;
+                        btnCloseDiscountPanel.Enabled = false;
+                    }
+                }
+
+                MainClass.con.Close();
+            }
+            else
+            {
+
+            }
+
+            FindGrossTotal();
         }
     }
 }
