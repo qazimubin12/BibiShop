@@ -29,9 +29,9 @@ namespace BibiShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,14 +41,14 @@ namespace BibiShop
             this.DGVInventory = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cboWarehouseFrom = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnTrasnfer = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboWarehouseTo = new System.Windows.Forms.ComboBox();
             this.ProductGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantityGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnTrasnfer = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboWarehouseTo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVInventory)).BeginInit();
@@ -87,6 +87,7 @@ namespace BibiShop
             this.button1.Size = new System.Drawing.Size(35, 30);
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtSearch
             // 
@@ -146,21 +147,21 @@ namespace BibiShop
             // 
             this.DGVInventory.AllowUserToAddRows = false;
             this.DGVInventory.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.DGVInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DGVInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVInventory.BackgroundColor = System.Drawing.Color.White;
             this.DGVInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVInventory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVInventory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVInventory.ColumnHeadersHeight = 30;
             this.DGVInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductGV,
@@ -168,14 +169,14 @@ namespace BibiShop
             this.QuantityGV,
             this.RateGV,
             this.Select});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVInventory.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVInventory.DefaultCellStyle = dataGridViewCellStyle9;
             this.DGVInventory.EnableHeadersVisualStyles = false;
             this.DGVInventory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.DGVInventory.Location = new System.Drawing.Point(272, 3);
@@ -206,6 +207,8 @@ namespace BibiShop
             this.DGVInventory.ThemeStyle.RowsStyle.Height = 22;
             this.DGVInventory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.DGVInventory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVInventory_CellClick);
+            this.DGVInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVInventory_CellContentClick);
             // 
             // cboWarehouseFrom
             // 
@@ -229,31 +232,6 @@ namespace BibiShop
             this.label2.TabIndex = 29;
             this.label2.Text = "Select Warehouse From:";
             // 
-            // ProductGV
-            // 
-            this.ProductGV.HeaderText = "Product";
-            this.ProductGV.Name = "ProductGV";
-            // 
-            // UnitGV
-            // 
-            this.UnitGV.HeaderText = "Unit";
-            this.UnitGV.Name = "UnitGV";
-            // 
-            // QuantityGV
-            // 
-            this.QuantityGV.HeaderText = "Quantity";
-            this.QuantityGV.Name = "QuantityGV";
-            // 
-            // RateGV
-            // 
-            this.RateGV.HeaderText = "Rate";
-            this.RateGV.Name = "RateGV";
-            // 
-            // Select
-            // 
-            this.Select.HeaderText = "Select";
-            this.Select.Name = "Select";
-            // 
             // btnTrasnfer
             // 
             this.btnTrasnfer.BackColor = System.Drawing.Color.SteelBlue;
@@ -268,6 +246,7 @@ namespace BibiShop
             this.btnTrasnfer.TabIndex = 31;
             this.btnTrasnfer.Text = "&TRANSFER";
             this.btnTrasnfer.UseVisualStyleBackColor = false;
+            this.btnTrasnfer.Click += new System.EventHandler(this.btnTrasnfer_Click);
             // 
             // label3
             // 
@@ -289,6 +268,35 @@ namespace BibiShop
             this.cboWarehouseTo.Name = "cboWarehouseTo";
             this.cboWarehouseTo.Size = new System.Drawing.Size(208, 21);
             this.cboWarehouseTo.TabIndex = 30;
+            // 
+            // ProductGV
+            // 
+            this.ProductGV.HeaderText = "Product";
+            this.ProductGV.Name = "ProductGV";
+            this.ProductGV.ReadOnly = true;
+            // 
+            // UnitGV
+            // 
+            this.UnitGV.HeaderText = "Unit";
+            this.UnitGV.Name = "UnitGV";
+            this.UnitGV.ReadOnly = true;
+            // 
+            // QuantityGV
+            // 
+            this.QuantityGV.HeaderText = "Quantity";
+            this.QuantityGV.Name = "QuantityGV";
+            this.QuantityGV.ReadOnly = true;
+            // 
+            // RateGV
+            // 
+            this.RateGV.HeaderText = "Rate";
+            this.RateGV.Name = "RateGV";
+            this.RateGV.ReadOnly = true;
+            // 
+            // Select
+            // 
+            this.Select.HeaderText = "Select";
+            this.Select.Name = "Select";
             // 
             // Trasnfer
             // 
@@ -324,13 +332,13 @@ namespace BibiShop
         private Guna.UI2.WinForms.Guna2DataGridView DGVInventory;
         private System.Windows.Forms.ComboBox cboWarehouseFrom;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnTrasnfer;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboWarehouseTo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn RateGV;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Select;
-        private System.Windows.Forms.Button btnTrasnfer;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboWarehouseTo;
     }
 }

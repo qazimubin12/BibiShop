@@ -71,5 +71,139 @@ namespace BibiShop
             ShowStocks(DGVInventory, ProductGV, UnitGV, QuantityGV, RateGV,txtSearch.Text.ToString());
 
         }
+
+        private void DGVInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in DGVInventory.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[0].EditedFormattedValue))
+                {
+                    row.Cells[3].ReadOnly = false;
+                }
+                else
+                {
+                    row.Cells[3].ReadOnly = true;
+
+                }
+            }
+        }
+
+        private void DGVInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void CLear()
+        {
+            cboWarehouseFrom.SelectedIndex = 0;
+            cboWarehouseTo.SelectedIndex = 0;
+        }
+
+        private void btnTrasnfer_Click(object sender, EventArgs e)
+        {
+            if (cboWarehouseFrom.SelectedIndex != 0 && cboWarehouseTo.SelectedIndex != 0)
+            {
+                SqlCommand cmd = null;
+                int productID = 0;
+                string barcode = "";
+                int UnitID = 0;
+                int SafetyStock = 0;
+                float rate = 0;
+                object currentwarehousetoqty = 0;
+                object ifnull;
+                object currentwarehousefromqty = 0;
+                int warehousetoID = int.Parse(cboWarehouseTo.SelectedValue.ToString());
+                int warehousefromID = int.Parse(cboWarehouseFrom.SelectedValue.ToString());
+                try
+                {
+                    MainClass.con.Open();
+                    foreach (DataGridViewRow item in DGVInventory.Rows)
+                    {
+                        if (Convert.ToBoolean(item.Cells[0].EditedFormattedValue))
+                        {
+                            cmd = new SqlCommand("select ProductID from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            productID = int.Parse(cmd.ExecuteScalar().ToString());
+
+                            cmd = new SqlCommand("select Barcode from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            barcode = cmd.ExecuteScalar().ToString();
+
+                            cmd = new SqlCommand("select SalePrice from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            rate = float.Parse(cmd.ExecuteScalar().ToString());
+
+                            cmd = new SqlCommand("select UnitID from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            UnitID = int.Parse(cmd.ExecuteScalar().ToString());
+
+                            cmd = new SqlCommand("select SafetyStock from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            SafetyStock = int.Parse(cmd.ExecuteScalar().ToString());
+
+
+                            cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + productID + "' and WarehouseID = '" + cboWarehouseFrom.SelectedValue.ToString() + "'", MainClass.con);
+                            currentwarehousefromqty = cmd.ExecuteScalar();
+
+
+                            cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + productID + "' and WarehouseID = '" + cboWarehouseTo.SelectedValue.ToString() + "'", MainClass.con);
+                            currentwarehousetoqty = cmd.ExecuteScalar();
+
+                            if (currentwarehousetoqty == null)
+                            {
+                                currentwarehousetoqty = 0;
+                            }
+
+                            int warehousechanged = 0;
+                            float fromqty = float.Parse(currentwarehousefromqty.ToString()); //current inventory
+                            fromqty -= float.Parse(item.Cells[3].Value.ToString());
+
+                            float toqty = float.Parse(currentwarehousetoqty.ToString()); //to transferred inventory
+                            toqty += float.Parse(item.Cells[3].Value.ToString());
+                            if(fromqty == 0)
+                            {
+                                warehousechanged = 1;
+                                MainClass.UpdateWarehouse(productID,warehousetoID);
+                            }
+                            else
+                            {
+                                MainClass.UpdateInventory(productID, fromqty, warehousefromID);
+                            }
+
+                            cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + productID + "' and WarehouseID = '" + cboWarehouseTo.SelectedValue.ToString() + "'", MainClass.con);
+                            ifnull = cmd.ExecuteScalar();
+                            if(ifnull == null)
+                            {
+                                MainClass.InsertIntoInventory(productID, toqty,warehousetoID, barcode, UnitID, SafetyStock,rate);
+                            }
+                            else
+                            {
+                                if(warehousechanged != 1)
+                                {
+                                    MainClass.UpdateInventory(productID, toqty, warehousetoID);
+                                }
+                                
+
+                            }
+
+
+
+                        }
+                    }
+                    MainClass.con.Close();
+                    MessageBox.Show("Transfer Completed");
+                    CLear();
+                }
+                catch (Exception ex)
+                {
+                    MainClass.con.Close();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select Warehouses");
+                return;
+            }
+        }
     }
 }

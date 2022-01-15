@@ -32,7 +32,7 @@ namespace BibiShop
                 }
                 else
                 {
-                    cmd = new SqlCommand("select PersonID,Name,Type,Contact,Address from PersonsTable order by Name", MainClass.con);
+                    cmd = new SqlCommand("select PersonID,Name,Type,Contact,Address,Birthday from PersonsTable order by Name", MainClass.con);
                 }
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

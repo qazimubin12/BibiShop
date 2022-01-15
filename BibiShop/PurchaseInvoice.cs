@@ -660,6 +660,25 @@ namespace BibiShop
 
                         } //Updating
                     }
+                    try
+                    {
+                        string InsertPayment = "insert into SupplierLedgersTable (SupplierInvoice_ID,Supplier_ID,InvoiceType,InvoiceDate,InvoiceNo,TotalAmount,PaidAmount,Balance) values(@SupplierInvoice_ID,@Supplier_ID,@InvoiceType,@InvoiceDate,@InvoiceNo,@TotalAmount,@PaidAmount,@Balance)";
+                        cmd = new SqlCommand(InsertPayment, MainClass.con);
+                        cmd.Parameters.AddWithValue("@SupplierInvoice_ID", SupplierInvoiceID);
+                        cmd.Parameters.AddWithValue("@Supplier_ID", cboSupplier.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@InvoiceType", cboType.Text);
+                        cmd.Parameters.AddWithValue("@InvoiceNo", invoiceno);
+                        cmd.Parameters.AddWithValue("@InvoiceDate", dtInvoiceDate.Value.ToShortDateString());
+                        cmd.Parameters.AddWithValue("@TotalAmount", txtPaymentTotal.Text);
+                        cmd.Parameters.AddWithValue("@PaidAmount", txtPaying.Text);
+                        cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MainClass.con.Close();
+                        MessageBox.Show(ex.Message);
+                    } //Inserting Ledgers
                     MainClass.con.Close();
 
                 }
@@ -668,29 +687,11 @@ namespace BibiShop
                     MessageBox.Show(ex.Message);
                     MainClass.con.Close();
                 } // Inserting and Updating Inventory
-                try
-                {
-                    MainClass.con.Open();
-                    string InsertPayment = "insert into SupplierLedgersTable (SupplierInvoice_ID,Supplier_ID,InvoiceType,InvoiceDate,InvoiceNo,TotalAmount,PaidAmount,Balance) values(@SupplierInvoice_ID,@Supplier_ID,@InvoiceType,@InvoiceDate,@InvoiceNo,@TotalAmount,@PaidAmount,@Balance)";
-                    cmd = new SqlCommand(InsertPayment, MainClass.con);
-                    cmd.Parameters.AddWithValue("@SupplierInvoice_ID", SupplierInvoiceID);
-                    cmd.Parameters.AddWithValue("@Supplier_ID", cboSupplier.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@InvoiceType", cboType.Text);
-                    cmd.Parameters.AddWithValue("@InvoiceNo", invoiceno);
-                    cmd.Parameters.AddWithValue("@InvoiceDate", dtInvoiceDate.Value.ToShortDateString());
-                    cmd.Parameters.AddWithValue("@TotalAmount", txtPaymentTotal.Text);
-                    cmd.Parameters.AddWithValue("@PaidAmount", txtPaying.Text);
-                    cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
-                    cmd.ExecuteNonQuery();
-                    MainClass.con.Close();
-                }
-                catch (Exception ex)
-                {
-                    MainClass.con.Close();
-                    MessageBox.Show(ex.Message);
-                } //Inserting Ledgers
+
+
+
             }
-            btnGenerate.PerformClick();
+            btnGenerate_Click(sender, e);
             MessageBox.Show("Purchase Successfuly");
             FullClear();
         }

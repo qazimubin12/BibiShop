@@ -87,11 +87,35 @@
     <Compile Include="Categories.Designer.cs">
       <DependentUpon>Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Coupons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coupons.Designer.cs">
+      <DependentUpon>Coupons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CouponsSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CouponsSettings.Designer.cs">
+      <DependentUpon>CouponsSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PackagedDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PackagedDiscount.Designer.cs">
+      <DependentUpon>PackagedDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiscountOffers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiscountOffers.Designer.cs">
+      <DependentUpon>DiscountOffers.cs</DependentUpon>
     </Compile>
     <Compile Include="Expenses.cs">
       <SubType>Form</SubType>
@@ -118,6 +142,12 @@
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="MainClass.cs" />
+    <Compile Include="PackagedDiscountItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PackagedDiscountItems.Designer.cs">
+      <DependentUpon>PackagedDiscountItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +179,12 @@
     </Compile>
     <Compile Include="QuantityForm.Designer.cs">
       <DependentUpon>QuantityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecentSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecentSales.Designer.cs">
+      <DependentUpon>RecentSales.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports.cs">
       <SubType>Form</SubType>
@@ -182,6 +218,12 @@
     </Compile>
     <Compile Include="Colors.Designer.cs">
       <DependentUpon>Colors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CouponsTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CouponsTypes.Designer.cs">
+      <DependentUpon>CouponsTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Trasnfer.cs">
       <SubType>Form</SubType>
@@ -221,8 +263,20 @@
       <DependentUpon>Categories.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Coupons.resx">
+      <DependentUpon>Coupons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CouponsSettings.resx">
+      <DependentUpon>CouponsSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PackagedDiscount.resx">
+      <DependentUpon>PackagedDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiscountOffers.resx">
+      <DependentUpon>DiscountOffers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expenses.resx">
       <DependentUpon>Expenses.cs</DependentUpon>
@@ -235,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PackagedDiscountItems.resx">
+      <DependentUpon>PackagedDiscountItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons.resx">
       <DependentUpon>Persons.cs</DependentUpon>
@@ -261,6 +318,9 @@
     <EmbeddedResource Include="QuantityForm.resx">
       <DependentUpon>QuantityForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecentSales.resx">
+      <DependentUpon>RecentSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colors.resx">
       <DependentUpon>Colors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CouponsTypes.resx">
+      <DependentUpon>CouponsTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trasnfer.resx">
       <DependentUpon>Trasnfer.cs</DependentUpon>
