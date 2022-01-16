@@ -304,6 +304,8 @@ namespace BibiShop
             cmb.Items.Insert(0, "Select");
             cmb.Items.Insert(1, "Completed");
             cmb.Items.Insert(2, "Remaining Payment");
+            cmb.Items.Insert(3, "Waiting for delivery");
+
         }
 
         public static void FillSizes(ComboBox cmb)

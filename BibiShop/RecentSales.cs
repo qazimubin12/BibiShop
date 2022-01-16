@@ -15,6 +15,7 @@ namespace BibiShop
     {
         BibiPOS bp;
         int shopwarehouse = 0;
+        public static int SAVED_SALES_ID = 0;
         public RecentSales()
         {
             InitializeComponent();
@@ -42,6 +43,8 @@ namespace BibiShop
         {
             try
             {
+                FindShopDefault();
+
                 MainClass.con.Open();
                 MainClass.FillOrderType(cboOrderStatus);
                 cboOrderStatus.SelectedIndex = 0;
@@ -63,6 +66,12 @@ namespace BibiShop
                 ActionGV.Text = "PAYMENT";
                 MainClass.ShowRecentSales(DGVRecentSales, SaleIDGV, InvoiceNoGV, CustomerGV, SaleDateGV, SaleTimeGV, GrandTotalGV, cboOrderStatus.Text);
             }
+
+            else if(cboOrderStatus.Text == "Waiting for delivery")
+            {
+                ActionGV.Text = "DELIVERED";
+                MainClass.ShowRecentSales(DGVRecentSales, SaleIDGV, InvoiceNoGV, CustomerGV, SaleDateGV, SaleTimeGV, GrandTotalGV, cboOrderStatus.Text);
+            }
             else
             {
                 ActionGV.Text = "VIEW RECEIPT";
@@ -77,11 +86,11 @@ namespace BibiShop
         {
             SqlCommand cmd = null;
             SqlDataReader dr;
-         
-                if (DGVRecentSales.Rows.Count != 0)
+
+            if (DGVRecentSales.Rows.Count != 0)
+            {
+                if (DGVRecentSales.SelectedRows.Count == 1)
                 {
-                    if (DGVRecentSales.SelectedRows.Count == 1)
-                    {
                     if (e.RowIndex != -1 && e.ColumnIndex != -1)
                     {
                         if (DGVRecentSales.CurrentRow.Cells[0].Value.ToString() == "PAYMENT")
@@ -136,7 +145,7 @@ namespace BibiShop
                                 try
                                 {
                                     MainClass.con.Open();
-                                    cmd = new SqlCommand("select CouponCode from CouponsTable where CouponID = '"+bp.lblCouponID.Text+"'", MainClass.con);
+                                    cmd = new SqlCommand("select CouponCode from CouponsTable where CouponID = '" + bp.lblCouponID.Text + "'", MainClass.con);
                                     dr = cmd.ExecuteReader();
                                     while (dr.Read())
                                     {
@@ -159,14 +168,25 @@ namespace BibiShop
 
                             }
                         }
+                        else if (DGVRecentSales.CurrentRow.Cells[0].Value.ToString() == "DELIVERED")
+                        {
+                            MainClass.con.Open();
+                            cmd = new SqlCommand("update SalesTable set OrderStatus = @OrderStatus where SaleID = '" + DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString() + "' ", MainClass.con);
+                            cmd.Parameters.AddWithValue("@OrderStatus", "Remaining Payment");
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Order Has been Delivered, Select Remaining Order to Complete Payment");
+                            MainClass.con.Close();
+                            cboOrderStatus.SelectedIndex = 1;
+                        }
                         else
                         {
+                            SAVED_SALES_ID = int.Parse(DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString());
                             SaleReceiptForm srf = new SaleReceiptForm();
                             srf.ShowDialog();
                         }
                     }
-                    }
                 }
+            }
          
 
         }

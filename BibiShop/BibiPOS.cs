@@ -338,7 +338,7 @@ namespace BibiShop
         private void BibiPOS_Load(object sender, EventArgs e)
         {
             lblCashier.Text = LoginScreen.User_NAME.ToString();
-           
+            cboOrderType.SelectedIndex = 1;
             FindShopDefault();
             MainClass.FillProducts(cboProduct);
             MainClass.FillCustomer(cboCustomer);
@@ -481,7 +481,7 @@ namespace BibiShop
                 {
                     gross += float.Parse(item.Cells[8].Value.ToString());
                 }
-                lblGrandTotal.Text = gross.ToString();
+                gross += float.Parse(lblPackagedDiscountedRate.Text);
                 lblNetTotal.Text = gross.ToString();
 
 
@@ -495,17 +495,17 @@ namespace BibiShop
                     TAX = float.Parse(TAX.ToString()) / 100;
                     lblTax.Text = TAX.ToString();
 
-                    float finalTotal = float.Parse(lblGrandTotal.Text) * float.Parse(TAX.ToString());
+                    float finalTotal = float.Parse(lblNetTotal.Text) * float.Parse(TAX.ToString());
                     lblTax.Text = finalTotal.ToString();
-                    float total = float.Parse(lblGrandTotal.Text);
+                    float total = float.Parse(lblNetTotal.Text);
                     total += finalTotal;
-
                     lblGrandTotal.Text = Math.Round(total, 0).ToString();
 
                 }
                 else
                 {
                     float finalTotal = float.Parse(lblGrandTotal.Text) * 1;
+                    finalTotal += float.Parse(lblPackagedDiscountedRate.Text);
                     lblGrandTotal.Text = finalTotal.ToString();
                 }
 
@@ -1396,35 +1396,40 @@ namespace BibiShop
         private void CompleteClear()
         {
             DGVSaleCart.Rows.Clear();
-            
-            txtPayAmount.Text = "";
-            txtChange.Text = "";
+            txtPayAmount.Clear();
+            txtChange.Clear();
             paymentpanel.Visible = false;
             lblGrandTotal.Text = "0.00";
             lblNetTotal.Text = "0.00";
             lblTax.Text = "0.00";
+            lblPackagedDiscountedRate.Text = "0";
             btnApply.Enabled = true;
             button2.Enabled = true;
-            txtCouponCode.Text = "";
+            txtCouponCode.Clear();
             btnApply.Text = "APPLY";
             couponpanel.Visible = false;
             lblSaleID.Text = "";
             lblInvoiceNo.Text = "";
             btnSaveSale.Text = "SAVE SALE";
             btnSaveSale.FillColor = Color.SlateBlue;
-            cboProduct.SelectedIndex = 0;
-            cboCustomer.SelectedIndex = 0;
-            txtSaleRemarks.Text = "";
+            txtChange.Clear();
+            txtSaleRemarks.Clear();
             btnApplyDiscount.Text = "APPLY";
             btnApplyDiscount.Enabled = true;
             btnCloseDiscountPanel.Enabled = true;
             discountpanel.Visible = false;
+            cboProduct.SelectedIndex = 0;
+            cboOrderType.SelectedIndex = 0;
+            cboCustomer.SelectedIndex = 0;
         }
 
+        public static int SALES_ID = 0;
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
+
             if (btnSaveSale.Text != "Update Sale")
             {
+
                 try
                 {
                     MainClass.con.Open();
@@ -1432,6 +1437,7 @@ namespace BibiShop
                     string saletime = "";
                     float discount = 0;
                     int couponId = 0;
+                    string orderststatus = "";
                     string coupontype = "";
                     SqlCommand cmd = new SqlCommand("SELECT CONVERT(varchar(15),  CAST(GETDATE() AS TIME), 100) as SaleTime", MainClass.con);
                     saletime = cmd.ExecuteScalar().ToString();
@@ -1453,10 +1459,23 @@ namespace BibiShop
                         couponId = int.Parse(lblCouponID.Text);
                         coupontype = lblCouponType.Text;
                     }
-                    
-                    MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, "Remaining Payment", ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), 0, 0,discount, float.Parse(lblGrandTotal.Text),coupontype,couponId,txtSaleRemarks.Text);
-                    int SALEID = MainClass.FindLastSaleID();
 
+                  
+                    if(btnSaveSale.Text == "Deliver IT")
+                    {
+                        orderststatus = "Waiting for delivery";
+                    }
+                    else if(btnSaveSale.Text == "SAVE SALE")
+                    {
+                        orderststatus = "Remaining Payment";
+                    }
+                    else
+                    {
+                        orderststatus = "Completed";
+                    }
+                    MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, orderststatus, ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), 0, 0,discount, float.Parse(lblGrandTotal.Text),coupontype,couponId,txtSaleRemarks.Text);
+                    int SALEID = MainClass.FindLastSaleID();
+                    SALES_ID = SALEID;
                     foreach (DataGridViewRow item in DGVSaleCart.Rows)
                     {
 
@@ -1657,7 +1676,7 @@ namespace BibiShop
                     SqlCommand cmd = new SqlCommand("SELECT CONVERT(varchar(15),  CAST(GETDATE() AS TIME), 100) as SaleTime", MainClass.con);
                     saletime = cmd.ExecuteScalar().ToString();
 
-                    MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, "Completed", ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), float.Parse(txtPayAmount.Text), float.Parse(txtChange.Text), discount, float.Parse(lblGrandTotal.Text), coupontype, couponId,txtSaleRemarks.t);
+                    MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, "Completed", ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), float.Parse(txtPayAmount.Text), float.Parse(txtChange.Text), discount, float.Parse(lblGrandTotal.Text), coupontype, couponId,txtSaleRemarks.Text);
                     int SALEID = MainClass.FindLastSaleID();
 
                     foreach (DataGridViewRow item in DGVSaleCart.Rows)
@@ -2108,6 +2127,8 @@ namespace BibiShop
             string offername = cboApplyDiscount.Text;
             bool isActive = false;
             float minimumbill, benefit = 0;
+            int OfferID = 0;
+            float actualcosting = 0;
             if(offername == "Dollar Reduction" || offername == "Percentage Reduction")
             {
                 MainClass.con.Open();
@@ -2152,10 +2173,98 @@ namespace BibiShop
             }
             else
             {
+                //Pacakged 
+                try
+                {
+                    MainClass.con.Open();
 
+                    cmd = new SqlCommand("select IsActive from PackagedDiscount where PackagedDiscountName = '" + offername + "'", MainClass.con);
+                    isActive = bool.Parse(cmd.ExecuteScalar().ToString());
+
+
+                    cmd = new SqlCommand("selecT PackagedDiscountID from PackagedDiscount where PackagedDiscountName = '" + offername + "'", MainClass.con);
+                    OfferID = int.Parse(cmd.ExecuteScalar().ToString());
+
+                    cmd = new SqlCommand("selecT count(ProductID) from PackagedDiscountItems where PackagedDiscount_ID = '" + OfferID + "'", MainClass.con);
+                    int noofproducts = int.Parse(cmd.ExecuteScalar().ToString());
+
+                    cmd = new SqlCommand("select PackagedDiscountRate  from PackagedDiscount where PackagedDiscountID = '" + OfferID + "'", MainClass.con);
+                    float discountedpackagedrate = float.Parse(cmd.ExecuteScalar().ToString());
+
+                    cmd = new SqlCommand("select ProductID from PackagedDiscountItems where PackagedDiscount_ID = '" + OfferID + "'", MainClass.con);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    int i = 0;
+
+                    if(isActive == true)
+                    {
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                foreach (DataGridViewRow item in DGVSaleCart.Rows)
+                                {
+                                    if(item.Cells["ProductIDGV"].Value.ToString() == dr[0].ToString())
+                                    {
+                                        i++;
+                                        actualcosting += float.Parse(item.Cells["QuantityGV"].Value.ToString()) * float.Parse(item.Cells["SalePriceGV"].Value.ToString());
+                                        item.Cells["TotalOfProductGV"].Value = "0";
+                                        item.Cells["RemarksGV"].Value = offername + " Applied";
+                                        
+
+                                    }
+                                }
+                            }
+                        }
+                        dr.Close();
+                        if(i == noofproducts )
+                        {
+                            lblDiscount.Text = Convert.ToString(actualcosting - discountedpackagedrate);
+                            lblPackagedDiscountedRate.Text = discountedpackagedrate.ToString();
+                            txtSaleRemarks.Text = offername + " Applied";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Products in the cart not available for the discount");
+                            return;
+                        }
+                    }
+                    
+                    MainClass.con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    MainClass.con.Close();
+                }
             }
-
+            btnApplyDiscount.Enabled = false;
+            btnCloseDiscountPanel.Enabled = false;
+            btnApplyDiscount.Text = "APPLIED";
             FindGrossTotal();
+         
+
+            MainClass.con.Close();
+
+        }
+
+        private void cboOrderType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+
+            if (cboOrderType.Text == "---Select---")
+            {
+                btnSaveSale.Enabled = false;
+            }
+            else if(cboOrderType.Text == "Delivery")
+            {
+                btnSaveSale.Enabled = true;
+                btnSaveSale.Text = "Deliver IT";
+            }
+            else if(cboOrderType.Text == "In Store" || cboOrderType.Text == "Wating For Confirmation")
+            {
+                btnSaveSale.Text = "SAVE SALE";
+            }
         }
     }
 }
