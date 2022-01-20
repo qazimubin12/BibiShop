@@ -276,6 +276,48 @@ namespace BibiShop
             CouponsSettings cs = new CouponsSettings();
             cs.Show();
         }
+
+        public static int Coupon_ID = 0;
+        public static string Benefit = "";
+        public static string Type = "";
+        public static string Code = "";
+        public static DateTime Expiry = DateTime.Now;
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          Coupon_ID =  int.Parse(DGVCoupon.CurrentRow.Cells["CouponIDGV"].Value.ToString());
+            MainClass.con.Open();
+            SqlCommand cmd = new SqlCommand("select c.CouponBenefit,ct.CouponCode,ct.CouponExpirationDate,c.CouponType from CouponsTable ct inner join CouponsTypesTable c on c.CouponTypeID = ct.CouponUsageType where ct.CouponID = '" + Coupon_ID + "' ", MainClass.con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if(dr.HasRows)
+            {
+                while(dr.Read())
+                {
+                    if(dr[3].ToString() == "Free Merchandise Type")
+                    {
+                        Benefit = "Free Merchandise";
+                    }
+                    else if(dr[3].ToString() == "Five Percentage Reduction")
+                    {
+                        Benefit = dr[0].ToString() + "% Off";
+                    }
+                    else if(dr[3].ToString() == "Some Dollar Reduction")
+                    {
+                        Benefit = dr[0].ToString() + "$ Off";
+                    }
+                    else
+                    {
+                        Benefit = "";
+                    }
+
+                    Code = dr[1].ToString();
+                    Expiry = DateTime.Parse(dr[2].ToString());
+                    Type = dr[3].ToString();
+                }
+            }
+            MainClass.con.Close();
+            CouponPrinting c = new CouponPrinting();
+            c.Show();
+        }
     }
 }
 

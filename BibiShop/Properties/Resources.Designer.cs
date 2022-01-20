@@ -213,6 +213,16 @@ namespace BibiShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clock {
+            get {
+                object obj = ResourceManager.GetObject("clock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cubes {
             get {
                 object obj = ResourceManager.GetObject("cubes", resourceCulture);
@@ -286,6 +296,16 @@ namespace BibiShop.Properties {
         internal static System.Drawing.Bitmap ezgif_com_gif_maker {
             get {
                 object obj = ResourceManager.GetObject("ezgif.com-gif-maker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Free_Blank_Birthday_Coupon_Template {
+            get {
+                object obj = ResourceManager.GetObject("Free-Blank-Birthday-Coupon-Template", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

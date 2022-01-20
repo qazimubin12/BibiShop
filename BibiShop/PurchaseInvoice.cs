@@ -506,6 +506,7 @@ namespace BibiShop
                         MessageBox.Show("Please Check The Error or Try Again");
                         return;
                     }
+                    Purchase_ID = int.Parse(PurchaseID);
                     MainClass.con.Close();
                 }
                 catch (Exception ex)
@@ -522,7 +523,7 @@ namespace BibiShop
                         int UnitID = 0;
                         try
                         {
-                            cmd = new SqlCommand("select ProductID from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            cmd = new SqlCommand("select ProductID from ProductsTable where ProductName = N'" + item.Cells[1].Value.ToString() + "'", MainClass.con);
                             ProductID = int.Parse(cmd.ExecuteScalar().ToString());
                         }
                         catch (Exception ex)
@@ -597,7 +598,7 @@ namespace BibiShop
                       
                         try
                         {
-                            cmd = new SqlCommand("select ProductID from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "' ", MainClass.con);
+                            cmd = new SqlCommand("select ProductID from ProductsTable where ProductName = N'" + item.Cells[1].Value.ToString() + "' ", MainClass.con);
                             productId = int.Parse(cmd.ExecuteScalar().ToString());
                         }
                         catch (Exception ex)
@@ -608,7 +609,7 @@ namespace BibiShop
 
                         try
                         {
-                            cmd = new SqlCommand("select Barcode from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "' ", MainClass.con);
+                            cmd = new SqlCommand("select Barcode from ProductsTable where ProductName = N'" + item.Cells[1].Value.ToString() + "' ", MainClass.con);
                             barcode = cmd.ExecuteScalar().ToString();
                         }
                         catch (Exception ex)
@@ -691,11 +692,15 @@ namespace BibiShop
 
 
             }
+
             btnGenerate_Click(sender, e);
             MessageBox.Show("Purchase Successfuly");
             FullClear();
+            PurchaseReceiptForm pf = new PurchaseReceiptForm();
+            pf.Show();
         }
 
+        public static int Purchase_ID = 0;
         private void button3_Click(object sender, EventArgs e)
         {
             this.Dispose();

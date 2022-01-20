@@ -32,18 +32,13 @@ namespace BibiShop
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnCustomerLedgers = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSupplierLedgers = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.GBPayment = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -62,36 +57,20 @@ namespace BibiShop
             this.lblPreviousBalance = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.SupplierLedger = new System.Windows.Forms.TabPage();
             this.DGVSupplierLedger = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.IDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceNoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaidAmountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BalanceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActionGV = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.CustomerLedger = new System.Windows.Forms.TabPage();
-            this.DGVCustomerLedger = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.CIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CInvoiceNoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CInvoiceDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CTotalAmountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPaidAmountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CBalanceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CActionGV = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BalanceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaidAmountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceNoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.GBPayment.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.SupplierLedger.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSupplierLedger)).BeginInit();
-            this.CustomerLedger.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVCustomerLedger)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -134,9 +113,7 @@ namespace BibiShop
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtSearch);
-            this.panel2.Controls.Add(this.btnCustomerLedgers);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnSupplierLedgers);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
@@ -181,22 +158,6 @@ namespace BibiShop
             this.txtSearch.TabIndex = 31;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // btnCustomerLedgers
-            // 
-            this.btnCustomerLedgers.BackColor = System.Drawing.Color.White;
-            this.btnCustomerLedgers.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnCustomerLedgers.FlatAppearance.BorderSize = 2;
-            this.btnCustomerLedgers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomerLedgers.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnCustomerLedgers.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnCustomerLedgers.Location = new System.Drawing.Point(391, 6);
-            this.btnCustomerLedgers.Name = "btnCustomerLedgers";
-            this.btnCustomerLedgers.Size = new System.Drawing.Size(175, 42);
-            this.btnCustomerLedgers.TabIndex = 31;
-            this.btnCustomerLedgers.Text = "CUSOMTER LEDGERS";
-            this.btnCustomerLedgers.UseVisualStyleBackColor = false;
-            this.btnCustomerLedgers.Click += new System.EventHandler(this.btnCustomerLedgers_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -207,22 +168,6 @@ namespace BibiShop
             this.label2.Size = new System.Drawing.Size(214, 33);
             this.label2.TabIndex = 2;
             this.label2.Text = "Select Ledgers:";
-            // 
-            // btnSupplierLedgers
-            // 
-            this.btnSupplierLedgers.BackColor = System.Drawing.Color.White;
-            this.btnSupplierLedgers.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnSupplierLedgers.FlatAppearance.BorderSize = 2;
-            this.btnSupplierLedgers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupplierLedgers.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnSupplierLedgers.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnSupplierLedgers.Location = new System.Drawing.Point(229, 7);
-            this.btnSupplierLedgers.Name = "btnSupplierLedgers";
-            this.btnSupplierLedgers.Size = new System.Drawing.Size(156, 42);
-            this.btnSupplierLedgers.TabIndex = 32;
-            this.btnSupplierLedgers.Text = "SUPPLIER LEDGERS";
-            this.btnSupplierLedgers.UseVisualStyleBackColor = false;
-            this.btnSupplierLedgers.Click += new System.EventHandler(this.btnSupplierLedgers_Click);
             // 
             // panel3
             // 
@@ -548,28 +493,6 @@ namespace BibiShop
             this.label4.TabIndex = 4;
             this.label4.Text = "Name:";
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.SupplierLedger);
-            this.tabControl1.Controls.Add(this.CustomerLedger);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(297, 133);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(618, 616);
-            this.tabControl1.TabIndex = 28;
-            // 
-            // SupplierLedger
-            // 
-            this.SupplierLedger.BackColor = System.Drawing.Color.White;
-            this.SupplierLedger.Controls.Add(this.DGVSupplierLedger);
-            this.SupplierLedger.Location = new System.Drawing.Point(4, 26);
-            this.SupplierLedger.Name = "SupplierLedger";
-            this.SupplierLedger.Padding = new System.Windows.Forms.Padding(3);
-            this.SupplierLedger.Size = new System.Drawing.Size(610, 586);
-            this.SupplierLedger.TabIndex = 0;
-            this.SupplierLedger.Text = "Supplier Ledgers";
-            // 
             // DGVSupplierLedger
             // 
             this.DGVSupplierLedger.AllowUserToAddRows = false;
@@ -610,12 +533,12 @@ namespace BibiShop
             this.DGVSupplierLedger.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVSupplierLedger.EnableHeadersVisualStyles = false;
             this.DGVSupplierLedger.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.DGVSupplierLedger.Location = new System.Drawing.Point(3, 3);
+            this.DGVSupplierLedger.Location = new System.Drawing.Point(297, 133);
             this.DGVSupplierLedger.Name = "DGVSupplierLedger";
             this.DGVSupplierLedger.ReadOnly = true;
             this.DGVSupplierLedger.RowHeadersVisible = false;
             this.DGVSupplierLedger.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVSupplierLedger.Size = new System.Drawing.Size(604, 580);
+            this.DGVSupplierLedger.Size = new System.Drawing.Size(618, 616);
             this.DGVSupplierLedger.TabIndex = 0;
             this.DGVSupplierLedger.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.DGVSupplierLedger.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
@@ -641,49 +564,6 @@ namespace BibiShop
             this.DGVSupplierLedger.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DGVSupplierLedger.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSupplierLedger_CellClick);
             // 
-            // IDGV
-            // 
-            this.IDGV.HeaderText = "ID";
-            this.IDGV.Name = "IDGV";
-            this.IDGV.ReadOnly = true;
-            this.IDGV.Visible = false;
-            // 
-            // NameGV
-            // 
-            this.NameGV.HeaderText = "Name";
-            this.NameGV.Name = "NameGV";
-            this.NameGV.ReadOnly = true;
-            // 
-            // InvoiceNoGV
-            // 
-            this.InvoiceNoGV.HeaderText = "InvoiceNo";
-            this.InvoiceNoGV.Name = "InvoiceNoGV";
-            this.InvoiceNoGV.ReadOnly = true;
-            // 
-            // InvoiceDateGV
-            // 
-            this.InvoiceDateGV.HeaderText = "Invoice Date";
-            this.InvoiceDateGV.Name = "InvoiceDateGV";
-            this.InvoiceDateGV.ReadOnly = true;
-            // 
-            // TotalAmountGV
-            // 
-            this.TotalAmountGV.HeaderText = "Total";
-            this.TotalAmountGV.Name = "TotalAmountGV";
-            this.TotalAmountGV.ReadOnly = true;
-            // 
-            // PaidAmountGV
-            // 
-            this.PaidAmountGV.HeaderText = "Paid";
-            this.PaidAmountGV.Name = "PaidAmountGV";
-            this.PaidAmountGV.ReadOnly = true;
-            // 
-            // BalanceGV
-            // 
-            this.BalanceGV.HeaderText = "Balance";
-            this.BalanceGV.Name = "BalanceGV";
-            this.BalanceGV.ReadOnly = true;
-            // 
             // ActionGV
             // 
             this.ActionGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -693,139 +573,48 @@ namespace BibiShop
             this.ActionGV.Text = "PAY";
             this.ActionGV.UseColumnTextForButtonValue = true;
             // 
-            // CustomerLedger
+            // BalanceGV
             // 
-            this.CustomerLedger.BackColor = System.Drawing.Color.White;
-            this.CustomerLedger.Controls.Add(this.DGVCustomerLedger);
-            this.CustomerLedger.Location = new System.Drawing.Point(4, 26);
-            this.CustomerLedger.Name = "CustomerLedger";
-            this.CustomerLedger.Padding = new System.Windows.Forms.Padding(3);
-            this.CustomerLedger.Size = new System.Drawing.Size(610, 586);
-            this.CustomerLedger.TabIndex = 1;
-            this.CustomerLedger.Text = "Customer Ledgers";
+            this.BalanceGV.HeaderText = "Balance";
+            this.BalanceGV.Name = "BalanceGV";
+            this.BalanceGV.ReadOnly = true;
             // 
-            // DGVCustomerLedger
+            // PaidAmountGV
             // 
-            this.DGVCustomerLedger.AllowUserToAddRows = false;
-            this.DGVCustomerLedger.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.DGVCustomerLedger.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.DGVCustomerLedger.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGVCustomerLedger.BackgroundColor = System.Drawing.Color.White;
-            this.DGVCustomerLedger.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DGVCustomerLedger.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DGVCustomerLedger.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVCustomerLedger.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.DGVCustomerLedger.ColumnHeadersHeight = 35;
-            this.DGVCustomerLedger.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CIDGV,
-            this.CNameGV,
-            this.CInvoiceNoGV,
-            this.CInvoiceDateGV,
-            this.CTotalAmountGV,
-            this.CPaidAmountGV,
-            this.CBalanceGV,
-            this.CActionGV});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVCustomerLedger.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DGVCustomerLedger.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVCustomerLedger.EnableHeadersVisualStyles = false;
-            this.DGVCustomerLedger.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.DGVCustomerLedger.Location = new System.Drawing.Point(3, 3);
-            this.DGVCustomerLedger.Name = "DGVCustomerLedger";
-            this.DGVCustomerLedger.ReadOnly = true;
-            this.DGVCustomerLedger.RowHeadersVisible = false;
-            this.DGVCustomerLedger.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVCustomerLedger.Size = new System.Drawing.Size(604, 580);
-            this.DGVCustomerLedger.TabIndex = 1;
-            this.DGVCustomerLedger.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
-            this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.DGVCustomerLedger.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.DGVCustomerLedger.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DGVCustomerLedger.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DGVCustomerLedger.ThemeStyle.HeaderStyle.Height = 35;
-            this.DGVCustomerLedger.ThemeStyle.ReadOnly = true;
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.Height = 22;
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            this.DGVCustomerLedger.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVCustomerLedger.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCustomerLedger_CellClick);
+            this.PaidAmountGV.HeaderText = "Paid";
+            this.PaidAmountGV.Name = "PaidAmountGV";
+            this.PaidAmountGV.ReadOnly = true;
             // 
-            // CIDGV
+            // TotalAmountGV
             // 
-            this.CIDGV.HeaderText = "ID";
-            this.CIDGV.Name = "CIDGV";
-            this.CIDGV.ReadOnly = true;
-            this.CIDGV.Visible = false;
+            this.TotalAmountGV.HeaderText = "Total";
+            this.TotalAmountGV.Name = "TotalAmountGV";
+            this.TotalAmountGV.ReadOnly = true;
             // 
-            // CNameGV
+            // InvoiceDateGV
             // 
-            this.CNameGV.HeaderText = "Name";
-            this.CNameGV.Name = "CNameGV";
-            this.CNameGV.ReadOnly = true;
+            this.InvoiceDateGV.HeaderText = "Invoice Date";
+            this.InvoiceDateGV.Name = "InvoiceDateGV";
+            this.InvoiceDateGV.ReadOnly = true;
             // 
-            // CInvoiceNoGV
+            // InvoiceNoGV
             // 
-            this.CInvoiceNoGV.HeaderText = "InvoiceNo";
-            this.CInvoiceNoGV.Name = "CInvoiceNoGV";
-            this.CInvoiceNoGV.ReadOnly = true;
+            this.InvoiceNoGV.HeaderText = "InvoiceNo";
+            this.InvoiceNoGV.Name = "InvoiceNoGV";
+            this.InvoiceNoGV.ReadOnly = true;
             // 
-            // CInvoiceDateGV
+            // NameGV
             // 
-            this.CInvoiceDateGV.HeaderText = "Invoice Date";
-            this.CInvoiceDateGV.Name = "CInvoiceDateGV";
-            this.CInvoiceDateGV.ReadOnly = true;
+            this.NameGV.HeaderText = "Name";
+            this.NameGV.Name = "NameGV";
+            this.NameGV.ReadOnly = true;
             // 
-            // CTotalAmountGV
+            // IDGV
             // 
-            this.CTotalAmountGV.HeaderText = "TotalAmount";
-            this.CTotalAmountGV.Name = "CTotalAmountGV";
-            this.CTotalAmountGV.ReadOnly = true;
-            // 
-            // CPaidAmountGV
-            // 
-            this.CPaidAmountGV.HeaderText = "Paid Amount";
-            this.CPaidAmountGV.Name = "CPaidAmountGV";
-            this.CPaidAmountGV.ReadOnly = true;
-            // 
-            // CBalanceGV
-            // 
-            this.CBalanceGV.HeaderText = "Balance";
-            this.CBalanceGV.Name = "CBalanceGV";
-            this.CBalanceGV.ReadOnly = true;
-            // 
-            // CActionGV
-            // 
-            this.CActionGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CActionGV.HeaderText = "ACTION";
-            this.CActionGV.Name = "CActionGV";
-            this.CActionGV.ReadOnly = true;
-            this.CActionGV.Text = "PAY";
-            this.CActionGV.UseColumnTextForButtonValue = true;
+            this.IDGV.HeaderText = "ID";
+            this.IDGV.Name = "IDGV";
+            this.IDGV.ReadOnly = true;
+            this.IDGV.Visible = false;
             // 
             // Ledgers
             // 
@@ -833,7 +622,7 @@ namespace BibiShop
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(915, 749);
             this.ControlBox = false;
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.DGVSupplierLedger);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -851,11 +640,7 @@ namespace BibiShop
             this.panel3.ResumeLayout(false);
             this.GBPayment.ResumeLayout(false);
             this.GBPayment.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.SupplierLedger.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVSupplierLedger)).EndInit();
-            this.CustomerLedger.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVCustomerLedger)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -866,14 +651,8 @@ namespace BibiShop
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSupplierLedgers;
-        private System.Windows.Forms.Button btnCustomerLedgers;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage SupplierLedger;
-        private System.Windows.Forms.TabPage CustomerLedger;
-        private Guna.UI2.WinForms.Guna2DataGridView DGVSupplierLedger;
         private Guna.UI2.WinForms.Guna2GroupBox GBPayment;
         private Guna.UI2.WinForms.Guna2TextBox txtTotalAmount;
         private System.Windows.Forms.Label label5;
@@ -891,17 +670,9 @@ namespace BibiShop
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblPreviousBalance;
-        private Guna.UI2.WinForms.Guna2DataGridView DGVCustomerLedger;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CNameGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CInvoiceNoGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CInvoiceDateGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CTotalAmountGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPaidAmountGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CBalanceGV;
-        private System.Windows.Forms.DataGridViewButtonColumn CActionGV;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2DataGridView DGVSupplierLedger;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceNoGV;

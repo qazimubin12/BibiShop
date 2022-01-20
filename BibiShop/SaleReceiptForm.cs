@@ -32,20 +32,9 @@ namespace BibiShop
             {
                 MainClass.ShowSaleRecieptSavedCustomer(rd, crystalReportViewer1, "SaleRecieptOfSavedCustomer", "@SaleID", RecentSales.SAVED_SALES_ID);
             }
-            else
+            else if(Reports.SALES_ID != 0)
             {
-                //MainClass.con.Open();
-                //SqlCommand cmd = new SqlCommand("select Customer_ID from SalesTable where SaleID = '" + Reports.SALES_ID + "'", MainClass.con);
-                //object pb = cmd.ExecuteScalar();
-                //MainClass.con.Close();
-                //if (pb.ToString() == "")
-                //{
-                //    MainClass.ShowSaleReciept(rd, crystalReportViewer1, "SaleRecieptOfWalkingCustomer", "@SaleID", Reports.SALES_ID);
-                //}
-                //else
-                //{
-                //    MainClass.ShowSaleRecieptSavedCustomer(rd, crystalReportViewer1, "SaleRecieptOfSavedCustomer", "@SaleID", Reports.SALES_ID);
-                //}
+                MainClass.ShowSaleRecieptSavedCustomer(rd, crystalReportViewer1, "SaleRecieptOfSavedCustomer", "@SaleID", Reports.SALES_ID);
             }
         }
 

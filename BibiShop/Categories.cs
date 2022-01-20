@@ -27,7 +27,7 @@ namespace BibiShop
                 MainClass.con.Open();
                 if (data != "")
                 {
-                    cmd = new SqlCommand("select * from CategoriesTable  where Category  like '%" + data + "%'", MainClass.con);
+                    cmd = new SqlCommand("select * from CategoriesTable  where Category  like N'%" + data + "%'", MainClass.con);
                 }
                 else
                 {

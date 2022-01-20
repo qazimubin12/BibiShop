@@ -125,19 +125,19 @@ namespace BibiShop
                     {
                         if (Convert.ToBoolean(item.Cells[0].EditedFormattedValue))
                         {
-                            cmd = new SqlCommand("select ProductID from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            cmd = new SqlCommand("select ProductID from ProductsTable where ProductName N= '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
                             productID = int.Parse(cmd.ExecuteScalar().ToString());
 
-                            cmd = new SqlCommand("select Barcode from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            cmd = new SqlCommand("select Barcode from ProductsTable where ProductName N= '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
                             barcode = cmd.ExecuteScalar().ToString();
 
-                            cmd = new SqlCommand("select SalePrice from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            cmd = new SqlCommand("select SalePrice from ProductsTable where ProductName N= '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
                             rate = float.Parse(cmd.ExecuteScalar().ToString());
 
-                            cmd = new SqlCommand("select UnitID from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            cmd = new SqlCommand("select UnitID from ProductsTable where ProductName N= '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
                             UnitID = int.Parse(cmd.ExecuteScalar().ToString());
 
-                            cmd = new SqlCommand("select SafetyStock from ProductsTable where ProductName = '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
+                            cmd = new SqlCommand("select SafetyStock from ProductsTable where ProductName N= '" + item.Cells[1].Value.ToString() + "'", MainClass.con);
                             SafetyStock = int.Parse(cmd.ExecuteScalar().ToString());
 
 
@@ -157,32 +157,41 @@ namespace BibiShop
                             float fromqty = float.Parse(currentwarehousefromqty.ToString()); //current inventory
                             fromqty -= float.Parse(item.Cells[3].Value.ToString());
 
-                            float toqty = float.Parse(currentwarehousetoqty.ToString()); //to transferred inventory
-                            toqty += float.Parse(item.Cells[3].Value.ToString());
-                            if(fromqty == 0)
-                            {
-                                warehousechanged = 1;
-                                MainClass.UpdateWarehouse(productID,warehousetoID);
-                            }
-                            else
+
+                            if (cboWarehouseTo.SelectedIndex == 1)
                             {
                                 MainClass.UpdateInventory(productID, fromqty, warehousefromID);
                             }
-
-                            cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + productID + "' and WarehouseID = '" + cboWarehouseTo.SelectedValue.ToString() + "'", MainClass.con);
-                            ifnull = cmd.ExecuteScalar();
-                            if(ifnull == null)
-                            {
-                                MainClass.InsertIntoInventory(productID, toqty,warehousetoID, barcode, UnitID, SafetyStock,rate);
-                            }
                             else
                             {
-                                if(warehousechanged != 1)
-                                {
-                                    MainClass.UpdateInventory(productID, toqty, warehousetoID);
-                                }
-                                
 
+                                float toqty = float.Parse(currentwarehousetoqty.ToString()); //to transferred inventory
+                                toqty += float.Parse(item.Cells[3].Value.ToString());
+                                if (fromqty == 0)
+                                {
+                                    warehousechanged = 1;
+                                    MainClass.UpdateWarehouse(productID, warehousetoID);
+                                }
+                                else
+                                {
+                                    MainClass.UpdateInventory(productID, fromqty, warehousefromID);
+                                }
+
+                                cmd = new SqlCommand("select Qty from Inventory where ProductID = '" + productID + "' and WarehouseID = '" + cboWarehouseTo.SelectedValue.ToString() + "'", MainClass.con);
+                                ifnull = cmd.ExecuteScalar();
+                                if (ifnull == null)
+                                {
+                                    MainClass.InsertIntoInventory(productID, toqty, warehousetoID, barcode, UnitID, SafetyStock, rate);
+                                }
+                                else
+                                {
+                                    if (warehousechanged != 1)
+                                    {
+                                        MainClass.UpdateInventory(productID, toqty, warehousetoID);
+                                    }
+
+
+                                }
                             }
 
 

@@ -29,21 +29,26 @@ namespace BibiShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnProfitLossReports = new System.Windows.Forms.Button();
-            this.btnExpenseReports = new System.Windows.Forms.Button();
+            this.btnPrintPerson = new System.Windows.Forms.Button();
             this.btnLedgerReports = new System.Windows.Forms.Button();
             this.btnSaleReports = new System.Windows.Forms.Button();
             this.btnPurchaseReports = new System.Windows.Forms.Button();
@@ -58,13 +63,6 @@ namespace BibiShop
             this.dtPurchase1 = new System.Windows.Forms.DateTimePicker();
             this.label32 = new System.Windows.Forms.Label();
             this.DGVPurchases = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.SupplierInvoiceIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentTypeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceNoGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrandTotalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActionGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.SaleReports = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,11 +82,32 @@ namespace BibiShop
             this.ViewButtonGVC = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.LedgerReports = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.DGVSalePrintingAll = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.ExpenseReports = new System.Windows.Forms.TabPage();
+            this.DGVPersons = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.PersonIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BdayGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cboType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ProfitLossReports = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.IDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierInvoiceIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentTypeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceNoGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrandTotalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActionGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -98,7 +117,9 @@ namespace BibiShop
             this.SaleReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSales)).BeginInit();
             this.LedgerReports.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSalePrintingAll)).BeginInit();
             this.ExpenseReports.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVPersons)).BeginInit();
             this.ProfitLossReports.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,18 +133,6 @@ namespace BibiShop
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(915, 94);
             this.panel1.TabIndex = 24;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::BibiShop.Properties.Resources.cancel__2_;
-            this.button3.Location = new System.Drawing.Point(870, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 36);
-            this.button3.TabIndex = 5;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -151,7 +160,7 @@ namespace BibiShop
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.btnProfitLossReports, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnExpenseReports, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnPrintPerson, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnLedgerReports, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnSaleReports, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnPurchaseReports, 0, 0);
@@ -184,21 +193,21 @@ namespace BibiShop
             this.btnProfitLossReports.UseVisualStyleBackColor = true;
             this.btnProfitLossReports.Click += new System.EventHandler(this.button5_Click);
             // 
-            // btnExpenseReports
+            // btnPrintPerson
             // 
-            this.btnExpenseReports.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExpenseReports.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnExpenseReports.FlatAppearance.BorderSize = 2;
-            this.btnExpenseReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpenseReports.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnExpenseReports.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnExpenseReports.Location = new System.Drawing.Point(3, 330);
-            this.btnExpenseReports.Name = "btnExpenseReports";
-            this.btnExpenseReports.Size = new System.Drawing.Size(270, 103);
-            this.btnExpenseReports.TabIndex = 3;
-            this.btnExpenseReports.Text = "EXPENSE REPORTS";
-            this.btnExpenseReports.UseVisualStyleBackColor = true;
-            this.btnExpenseReports.Click += new System.EventHandler(this.button4_Click);
+            this.btnPrintPerson.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrintPerson.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPrintPerson.FlatAppearance.BorderSize = 2;
+            this.btnPrintPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintPerson.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnPrintPerson.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnPrintPerson.Location = new System.Drawing.Point(3, 330);
+            this.btnPrintPerson.Name = "btnPrintPerson";
+            this.btnPrintPerson.Size = new System.Drawing.Size(270, 103);
+            this.btnPrintPerson.TabIndex = 3;
+            this.btnPrintPerson.Text = "PRINT PERSONS";
+            this.btnPrintPerson.UseVisualStyleBackColor = true;
+            this.btnPrintPerson.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnLedgerReports
             // 
@@ -212,7 +221,7 @@ namespace BibiShop
             this.btnLedgerReports.Name = "btnLedgerReports";
             this.btnLedgerReports.Size = new System.Drawing.Size(270, 103);
             this.btnLedgerReports.TabIndex = 2;
-            this.btnLedgerReports.Text = "LEDGER REPORTS";
+            this.btnLedgerReports.Text = "SALE ALL RECORDS";
             this.btnLedgerReports.UseVisualStyleBackColor = true;
             this.btnLedgerReports.Click += new System.EventHandler(this.btnLedgerReports_Click);
             // 
@@ -377,23 +386,24 @@ namespace BibiShop
             // 
             this.DGVPurchases.AllowUserToAddRows = false;
             this.DGVPurchases.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.DGVPurchases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVPurchases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVPurchases.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVPurchases.BackgroundColor = System.Drawing.Color.White;
             this.DGVPurchases.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVPurchases.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVPurchases.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVPurchases.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVPurchases.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVPurchases.ColumnHeadersHeight = 30;
             this.DGVPurchases.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDGV,
             this.SupplierInvoiceIDGV,
             this.PaymentTypeGV,
             this.InvoiceNoGv,
@@ -401,22 +411,22 @@ namespace BibiShop
             this.SupplierNameGV,
             this.GrandTotalGV,
             this.ActionGV});
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVPurchases.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVPurchases.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVPurchases.EnableHeadersVisualStyles = false;
             this.DGVPurchases.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.DGVPurchases.Location = new System.Drawing.Point(15, 114);
             this.DGVPurchases.Name = "DGVPurchases";
             this.DGVPurchases.ReadOnly = true;
             this.DGVPurchases.RowHeadersVisible = false;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DGVPurchases.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DGVPurchases.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVPurchases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVPurchases.Size = new System.Drawing.Size(610, 509);
             this.DGVPurchases.TabIndex = 7;
@@ -442,52 +452,7 @@ namespace BibiShop
             this.DGVPurchases.ThemeStyle.RowsStyle.Height = 22;
             this.DGVPurchases.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.DGVPurchases.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // SupplierInvoiceIDGV
-            // 
-            this.SupplierInvoiceIDGV.HeaderText = "SupplierInvoiceID";
-            this.SupplierInvoiceIDGV.Name = "SupplierInvoiceIDGV";
-            this.SupplierInvoiceIDGV.ReadOnly = true;
-            this.SupplierInvoiceIDGV.Visible = false;
-            // 
-            // PaymentTypeGV
-            // 
-            this.PaymentTypeGV.HeaderText = "Payment Type";
-            this.PaymentTypeGV.Name = "PaymentTypeGV";
-            this.PaymentTypeGV.ReadOnly = true;
-            // 
-            // InvoiceNoGv
-            // 
-            this.InvoiceNoGv.HeaderText = "Invoice No";
-            this.InvoiceNoGv.Name = "InvoiceNoGv";
-            this.InvoiceNoGv.ReadOnly = true;
-            // 
-            // InvoiceDateGV
-            // 
-            this.InvoiceDateGV.HeaderText = "InvoiceDate";
-            this.InvoiceDateGV.Name = "InvoiceDateGV";
-            this.InvoiceDateGV.ReadOnly = true;
-            // 
-            // SupplierNameGV
-            // 
-            this.SupplierNameGV.HeaderText = "Supplier";
-            this.SupplierNameGV.Name = "SupplierNameGV";
-            this.SupplierNameGV.ReadOnly = true;
-            // 
-            // GrandTotalGV
-            // 
-            this.GrandTotalGV.HeaderText = "Grand Total";
-            this.GrandTotalGV.Name = "GrandTotalGV";
-            this.GrandTotalGV.ReadOnly = true;
-            // 
-            // ActionGV
-            // 
-            this.ActionGV.HeaderText = "ACTION";
-            this.ActionGV.Name = "ActionGV";
-            this.ActionGV.ReadOnly = true;
-            this.ActionGV.Text = "VIEW";
-            this.ActionGV.ToolTipText = "VIEW";
-            this.ActionGV.UseColumnTextForButtonValue = true;
+            this.DGVPurchases.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPurchases_CellClick);
             // 
             // label2
             // 
@@ -559,7 +524,7 @@ namespace BibiShop
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(230, 81);
+            this.button8.Location = new System.Drawing.Point(185, 79);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(116, 27);
             this.button8.TabIndex = 24;
@@ -574,7 +539,7 @@ namespace BibiShop
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(110, 81);
+            this.button9.Location = new System.Drawing.Point(65, 79);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(114, 27);
             this.button9.TabIndex = 25;
@@ -616,21 +581,21 @@ namespace BibiShop
             // 
             this.DGVSales.AllowUserToAddRows = false;
             this.DGVSales.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.DGVSales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVSales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVSales.BackgroundColor = System.Drawing.Color.White;
             this.DGVSales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVSales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVSales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGVSales.ColumnHeadersHeight = 30;
             this.DGVSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SaleIDCC,
@@ -639,22 +604,22 @@ namespace BibiShop
             this.DiscountGVC,
             this.GrandTotalGVC,
             this.ViewButtonGVC});
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSales.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSales.DefaultCellStyle = dataGridViewCellStyle7;
             this.DGVSales.EnableHeadersVisualStyles = false;
             this.DGVSales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.DGVSales.Location = new System.Drawing.Point(6, 112);
             this.DGVSales.Name = "DGVSales";
             this.DGVSales.ReadOnly = true;
             this.DGVSales.RowHeadersVisible = false;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DGVSales.RowsDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DGVSales.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVSales.Size = new System.Drawing.Size(617, 511);
             this.DGVSales.TabIndex = 8;
@@ -680,6 +645,7 @@ namespace BibiShop
             this.DGVSales.ThemeStyle.RowsStyle.Height = 22;
             this.DGVSales.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.DGVSales.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVSales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSales_CellClick);
             this.DGVSales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSales_CellContentClick);
             // 
             // SaleIDCC
@@ -737,12 +703,89 @@ namespace BibiShop
             // LedgerReports
             // 
             this.LedgerReports.BackColor = System.Drawing.Color.White;
+            this.LedgerReports.Controls.Add(this.button2);
+            this.LedgerReports.Controls.Add(this.DGVSalePrintingAll);
             this.LedgerReports.Controls.Add(this.label4);
             this.LedgerReports.Location = new System.Drawing.Point(4, 22);
             this.LedgerReports.Name = "LedgerReports";
             this.LedgerReports.Size = new System.Drawing.Size(631, 629);
             this.LedgerReports.TabIndex = 2;
-            this.LedgerReports.Text = "LedgerReports";
+            this.LedgerReports.Text = "Sale Prints";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Teal;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(228, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 27);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "&PRINT";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // DGVSalePrintingAll
+            // 
+            this.DGVSalePrintingAll.AllowUserToAddRows = false;
+            this.DGVSalePrintingAll.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVSalePrintingAll.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.DGVSalePrintingAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVSalePrintingAll.BackgroundColor = System.Drawing.Color.White;
+            this.DGVSalePrintingAll.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGVSalePrintingAll.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGVSalePrintingAll.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSalePrintingAll.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.DGVSalePrintingAll.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSalePrintingAll.DefaultCellStyle = dataGridViewCellStyle11;
+            this.DGVSalePrintingAll.EnableHeadersVisualStyles = false;
+            this.DGVSalePrintingAll.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.DGVSalePrintingAll.Location = new System.Drawing.Point(14, 121);
+            this.DGVSalePrintingAll.Name = "DGVSalePrintingAll";
+            this.DGVSalePrintingAll.ReadOnly = true;
+            this.DGVSalePrintingAll.RowHeadersVisible = false;
+            this.DGVSalePrintingAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVSalePrintingAll.Size = new System.Drawing.Size(609, 426);
+            this.DGVSalePrintingAll.TabIndex = 8;
+            this.DGVSalePrintingAll.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
+            this.DGVSalePrintingAll.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVSalePrintingAll.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DGVSalePrintingAll.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DGVSalePrintingAll.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DGVSalePrintingAll.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DGVSalePrintingAll.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DGVSalePrintingAll.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.DGVSalePrintingAll.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            this.DGVSalePrintingAll.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DGVSalePrintingAll.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DGVSalePrintingAll.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DGVSalePrintingAll.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DGVSalePrintingAll.ThemeStyle.HeaderStyle.Height = 30;
+            this.DGVSalePrintingAll.ThemeStyle.ReadOnly = true;
+            this.DGVSalePrintingAll.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.DGVSalePrintingAll.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGVSalePrintingAll.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DGVSalePrintingAll.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGVSalePrintingAll.ThemeStyle.RowsStyle.Height = 22;
+            this.DGVSalePrintingAll.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            this.DGVSalePrintingAll.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // label4
             // 
@@ -750,21 +793,171 @@ namespace BibiShop
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(192, 6);
+            this.label4.Location = new System.Drawing.Point(221, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(263, 40);
+            this.label4.Size = new System.Drawing.Size(209, 40);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Ledger Reports";
+            this.label4.Text = "SALES PRINT";
             // 
             // ExpenseReports
             // 
             this.ExpenseReports.BackColor = System.Drawing.Color.White;
+            this.ExpenseReports.Controls.Add(this.DGVPersons);
+            this.ExpenseReports.Controls.Add(this.button1);
+            this.ExpenseReports.Controls.Add(this.label8);
+            this.ExpenseReports.Controls.Add(this.cboType);
             this.ExpenseReports.Controls.Add(this.label5);
             this.ExpenseReports.Location = new System.Drawing.Point(4, 22);
             this.ExpenseReports.Name = "ExpenseReports";
             this.ExpenseReports.Size = new System.Drawing.Size(631, 629);
             this.ExpenseReports.TabIndex = 3;
-            this.ExpenseReports.Text = "ExpenseReports";
+            this.ExpenseReports.Text = "Person\'s Reports";
+            // 
+            // DGVPersons
+            // 
+            this.DGVPersons.AllowUserToAddRows = false;
+            this.DGVPersons.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVPersons.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.DGVPersons.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVPersons.BackgroundColor = System.Drawing.Color.White;
+            this.DGVPersons.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGVPersons.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGVPersons.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVPersons.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.DGVPersons.ColumnHeadersHeight = 30;
+            this.DGVPersons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PersonIDGV,
+            this.NameGV,
+            this.TypeGV,
+            this.ContactGV,
+            this.AddressGV,
+            this.BdayGV});
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVPersons.DefaultCellStyle = dataGridViewCellStyle14;
+            this.DGVPersons.EnableHeadersVisualStyles = false;
+            this.DGVPersons.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.DGVPersons.Location = new System.Drawing.Point(-1, 92);
+            this.DGVPersons.Name = "DGVPersons";
+            this.DGVPersons.ReadOnly = true;
+            this.DGVPersons.RowHeadersVisible = false;
+            this.DGVPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVPersons.Size = new System.Drawing.Size(620, 531);
+            this.DGVPersons.TabIndex = 27;
+            this.DGVPersons.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
+            this.DGVPersons.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVPersons.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DGVPersons.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DGVPersons.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DGVPersons.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DGVPersons.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DGVPersons.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.DGVPersons.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            this.DGVPersons.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DGVPersons.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DGVPersons.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DGVPersons.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DGVPersons.ThemeStyle.HeaderStyle.Height = 30;
+            this.DGVPersons.ThemeStyle.ReadOnly = true;
+            this.DGVPersons.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.DGVPersons.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGVPersons.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DGVPersons.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGVPersons.ThemeStyle.RowsStyle.Height = 22;
+            this.DGVPersons.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            this.DGVPersons.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
+            // PersonIDGV
+            // 
+            this.PersonIDGV.HeaderText = "PersonID";
+            this.PersonIDGV.Name = "PersonIDGV";
+            this.PersonIDGV.ReadOnly = true;
+            this.PersonIDGV.Visible = false;
+            // 
+            // NameGV
+            // 
+            this.NameGV.HeaderText = "Name";
+            this.NameGV.Name = "NameGV";
+            this.NameGV.ReadOnly = true;
+            // 
+            // TypeGV
+            // 
+            this.TypeGV.HeaderText = "Type";
+            this.TypeGV.Name = "TypeGV";
+            this.TypeGV.ReadOnly = true;
+            // 
+            // ContactGV
+            // 
+            this.ContactGV.HeaderText = "Contact";
+            this.ContactGV.Name = "ContactGV";
+            this.ContactGV.ReadOnly = true;
+            // 
+            // AddressGV
+            // 
+            this.AddressGV.HeaderText = "Address";
+            this.AddressGV.Name = "AddressGV";
+            this.AddressGV.ReadOnly = true;
+            // 
+            // BdayGV
+            // 
+            this.BdayGV.HeaderText = "Birthday";
+            this.BdayGV.Name = "BdayGV";
+            this.BdayGV.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(462, 59);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 27);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "&PRINT";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(113, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 19);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Select Type:";
+            // 
+            // cboType
+            // 
+            this.cboType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboType.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cboType.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Items.AddRange(new object[] {
+            "Customer",
+            "Supplier"});
+            this.cboType.Location = new System.Drawing.Point(210, 59);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(246, 25);
+            this.cboType.TabIndex = 8;
+            this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -772,11 +965,11 @@ namespace BibiShop
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(189, 6);
+            this.label5.Location = new System.Drawing.Point(203, 6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(287, 40);
+            this.label5.Size = new System.Drawing.Size(253, 40);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Expense Reports";
+            this.label5.Text = "Persons Export";
             // 
             // ProfitLossReports
             // 
@@ -799,6 +992,71 @@ namespace BibiShop
             this.label6.Size = new System.Drawing.Size(306, 40);
             this.label6.TabIndex = 7;
             this.label6.Text = "Profit Loss Reports";
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::BibiShop.Properties.Resources.cancel__2_;
+            this.button3.Location = new System.Drawing.Point(870, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(45, 36);
+            this.button3.TabIndex = 5;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // IDGV
+            // 
+            this.IDGV.HeaderText = "PurchaseID";
+            this.IDGV.Name = "IDGV";
+            this.IDGV.ReadOnly = true;
+            this.IDGV.Visible = false;
+            // 
+            // SupplierInvoiceIDGV
+            // 
+            this.SupplierInvoiceIDGV.HeaderText = "SupplierInvoiceID";
+            this.SupplierInvoiceIDGV.Name = "SupplierInvoiceIDGV";
+            this.SupplierInvoiceIDGV.ReadOnly = true;
+            this.SupplierInvoiceIDGV.Visible = false;
+            // 
+            // PaymentTypeGV
+            // 
+            this.PaymentTypeGV.HeaderText = "Payment Type";
+            this.PaymentTypeGV.Name = "PaymentTypeGV";
+            this.PaymentTypeGV.ReadOnly = true;
+            // 
+            // InvoiceNoGv
+            // 
+            this.InvoiceNoGv.HeaderText = "Invoice No";
+            this.InvoiceNoGv.Name = "InvoiceNoGv";
+            this.InvoiceNoGv.ReadOnly = true;
+            // 
+            // InvoiceDateGV
+            // 
+            this.InvoiceDateGV.HeaderText = "InvoiceDate";
+            this.InvoiceDateGV.Name = "InvoiceDateGV";
+            this.InvoiceDateGV.ReadOnly = true;
+            // 
+            // SupplierNameGV
+            // 
+            this.SupplierNameGV.HeaderText = "Supplier";
+            this.SupplierNameGV.Name = "SupplierNameGV";
+            this.SupplierNameGV.ReadOnly = true;
+            // 
+            // GrandTotalGV
+            // 
+            this.GrandTotalGV.HeaderText = "Grand Total";
+            this.GrandTotalGV.Name = "GrandTotalGV";
+            this.GrandTotalGV.ReadOnly = true;
+            // 
+            // ActionGV
+            // 
+            this.ActionGV.HeaderText = "ACTION";
+            this.ActionGV.Name = "ActionGV";
+            this.ActionGV.ReadOnly = true;
+            this.ActionGV.Text = "VIEW";
+            this.ActionGV.ToolTipText = "VIEW";
+            this.ActionGV.UseColumnTextForButtonValue = true;
             // 
             // Reports
             // 
@@ -827,8 +1085,10 @@ namespace BibiShop
             ((System.ComponentModel.ISupportInitialize)(this.DGVSales)).EndInit();
             this.LedgerReports.ResumeLayout(false);
             this.LedgerReports.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSalePrintingAll)).EndInit();
             this.ExpenseReports.ResumeLayout(false);
             this.ExpenseReports.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVPersons)).EndInit();
             this.ProfitLossReports.ResumeLayout(false);
             this.ProfitLossReports.PerformLayout();
             this.ResumeLayout(false);
@@ -844,7 +1104,7 @@ namespace BibiShop
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnPurchaseReports;
         private System.Windows.Forms.Button btnProfitLossReports;
-        private System.Windows.Forms.Button btnExpenseReports;
+        private System.Windows.Forms.Button btnPrintPerson;
         private System.Windows.Forms.Button btnLedgerReports;
         private System.Windows.Forms.Button btnSaleReports;
         private System.Windows.Forms.TabControl tabControl1;
@@ -859,13 +1119,6 @@ namespace BibiShop
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2DataGridView DGVPurchases;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierInvoiceIDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentTypeGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceNoGv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceDateGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierNameGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GrandTotalGV;
-        private System.Windows.Forms.DataGridViewButtonColumn ActionGV;
         private Guna.UI2.WinForms.Guna2DataGridView DGVSales;
         private System.Windows.Forms.TextBox txtSearchPurhcaseInvoice;
         private System.Windows.Forms.Button button10;
@@ -889,5 +1142,25 @@ namespace BibiShop
         private System.Windows.Forms.DataGridViewTextBoxColumn DiscountGVC;
         private System.Windows.Forms.DataGridViewTextBoxColumn GrandTotalGVC;
         private System.Windows.Forms.DataGridViewButtonColumn ViewButtonGVC;
+        public System.Windows.Forms.ComboBox cboType;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private Guna.UI2.WinForms.Guna2DataGridView DGVPersons;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonIDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContactGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AddressGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BdayGV;
+        private Guna.UI2.WinForms.Guna2DataGridView DGVSalePrintingAll;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierInvoiceIDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentTypeGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceNoGv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceDateGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierNameGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GrandTotalGV;
+        private System.Windows.Forms.DataGridViewButtonColumn ActionGV;
     }
 }

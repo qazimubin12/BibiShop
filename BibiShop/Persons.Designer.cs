@@ -38,6 +38,7 @@ namespace BibiShop
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@ namespace BibiShop
             this.btnSave = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtContact = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,12 +60,11 @@ namespace BibiShop
             this.TypeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BdayGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label6 = new System.Windows.Forms.Label();
-            this.BDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.BdayGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblBirthday = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,6 +147,7 @@ namespace BibiShop
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.lblID);
             this.panel2.Controls.Add(this.txtAddress);
+            this.panel2.Controls.Add(this.lblBirthday);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtContact);
@@ -158,6 +160,25 @@ namespace BibiShop
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(376, 676);
             this.panel2.TabIndex = 0;
+            // 
+            // BDay
+            // 
+            this.BDay.AutoRoundedCorners = true;
+            this.BDay.BorderRadius = 17;
+            this.BDay.BorderThickness = 2;
+            this.BDay.CheckedState.Parent = this.BDay;
+            this.BDay.CustomFormat = "dd/MM/yyyy";
+            this.BDay.FillColor = System.Drawing.Color.White;
+            this.BDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.BDay.HoverState.Parent = this.BDay;
+            this.BDay.Location = new System.Drawing.Point(21, 362);
+            this.BDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.BDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.BDay.Name = "BDay";
+            this.BDay.ShadowDecoration.Parent = this.BDay;
+            this.BDay.Size = new System.Drawing.Size(305, 36);
+            this.BDay.TabIndex = 46;
+            this.BDay.Value = new System.DateTime(2022, 1, 6, 19, 9, 25, 352);
             // 
             // pictureBox1
             // 
@@ -209,7 +230,7 @@ namespace BibiShop
             "Supplier"});
             this.cboType.Location = new System.Drawing.Point(21, 177);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(313, 25);
+            this.cboType.Size = new System.Drawing.Size(314, 25);
             this.cboType.TabIndex = 1;
             // 
             // btnCancel
@@ -280,6 +301,17 @@ namespace BibiShop
             this.txtAddress.ShadowDecoration.Parent = this.txtAddress;
             this.txtAddress.Size = new System.Drawing.Size(314, 27);
             this.txtAddress.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(22, 340);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 19);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Birthday:";
             // 
             // label5
             // 
@@ -479,6 +511,12 @@ namespace BibiShop
             this.AddressGV.Name = "AddressGV";
             this.AddressGV.ReadOnly = true;
             // 
+            // BdayGV
+            // 
+            this.BdayGV.HeaderText = "Birthday";
+            this.BdayGV.Name = "BdayGV";
+            this.BdayGV.ReadOnly = true;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -501,41 +539,16 @@ namespace BibiShop
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
-            // label6
+            // lblBirthday
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(22, 340);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 19);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Birthday:";
-            // 
-            // BDay
-            // 
-            this.BDay.AutoRoundedCorners = true;
-            this.BDay.BorderRadius = 10;
-            this.BDay.BorderThickness = 2;
-            this.BDay.CheckedState.Parent = this.BDay;
-            this.BDay.CustomFormat = "dd/MM/yyyy";
-            this.BDay.FillColor = System.Drawing.Color.White;
-            this.BDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.BDay.HoverState.Parent = this.BDay;
-            this.BDay.Location = new System.Drawing.Point(21, 362);
-            this.BDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.BDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.BDay.Name = "BDay";
-            this.BDay.ShadowDecoration.Parent = this.BDay;
-            this.BDay.Size = new System.Drawing.Size(305, 36);
-            this.BDay.TabIndex = 46;
-            this.BDay.Value = new System.DateTime(2022, 1, 6, 19, 9, 25, 352);
-            // 
-            // BdayGV
-            // 
-            this.BdayGV.HeaderText = "Birthday";
-            this.BdayGV.Name = "BdayGV";
-            this.BdayGV.ReadOnly = true;
+            this.lblBirthday.AutoSize = true;
+            this.lblBirthday.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblBirthday.ForeColor = System.Drawing.Color.Black;
+            this.lblBirthday.Location = new System.Drawing.Point(98, 340);
+            this.lblBirthday.Name = "lblBirthday";
+            this.lblBirthday.Size = new System.Drawing.Size(93, 19);
+            this.lblBirthday.TabIndex = 2;
+            this.lblBirthday.Text = "DD-MM-YYYY";
             // 
             // Persons
             // 
@@ -583,11 +596,6 @@ namespace BibiShop
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox cboType;
         private Guna.UI2.WinForms.Guna2DataGridView DGVPersons;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PersonIDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TypeGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ContactGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AddressGV;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
@@ -596,6 +604,12 @@ namespace BibiShop
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2DateTimePicker BDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonIDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContactGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AddressGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn BdayGV;
+        private System.Windows.Forms.Label lblBirthday;
     }
 }

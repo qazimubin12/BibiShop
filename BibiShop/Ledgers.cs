@@ -60,57 +60,12 @@ namespace BibiShop
             }
         }
 
-        private void ShowCustomerLedgers(DataGridView dgv, DataGridViewColumn ID, DataGridViewColumn Name, DataGridViewColumn No,
-          DataGridViewColumn Date, DataGridViewColumn Total, DataGridViewColumn Paid, DataGridViewColumn Balance, string data = null)
-        {
-            try
-            {
-                SqlCommand cmd = null;
-                MainClass.con.Open();
-                if (data != "")
-                {
-                    cmd = new SqlCommand("select sl.CustomerLedgerID,p.Name,sl.InvoiceNo,sl.InvoiceDate,sl.TotalAmount,sl.PaidAmount,sl.Balance from CustomerLedgersTable sl inner join PersonsTable p on p.PersonID = sl.Customer_ID where sl.Balance > 0 and  Name  like '%" + data + "%' ", MainClass.con);
-                }
-                else
-                {
-                    cmd = new SqlCommand("select sl.CustomerLedgerID,p.Name,sl.InvoiceNo,sl.InvoiceDate,sl.TotalAmount,sl.PaidAmount,sl.Balance from CustomerLedgersTable sl inner join PersonsTable p on p.PersonID = sl.Customer_ID where sl.Balance > 0", MainClass.con);
-                }
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
 
-                Name.DataPropertyName = dt.Columns["Name"].ToString();
-                ID.DataPropertyName = dt.Columns["CustomerLedgerID"].ToString();
-                No.DataPropertyName = dt.Columns["InvoiceNo"].ToString();
-                Date.DataPropertyName = dt.Columns["InvoiceDate"].ToString();
-                Total.DataPropertyName = dt.Columns["TotalAmount"].ToString();
-                Paid.DataPropertyName = dt.Columns["PaidAmount"].ToString();
-                Balance.DataPropertyName = dt.Columns["Balance"].ToString();
-                dgv.DataSource = dt;
-                MainClass.con.Close();
-            }
-            catch (Exception ex)
-            {
-                MainClass.con.Close();
-                MessageBox.Show(ex.Message);
-            }
-        }
         private void Ledgers_Load(object sender, EventArgs e)
         {
             ShowSupplierLedgers(DGVSupplierLedger, IDGV, NameGV, InvoiceNoGV, InvoiceDateGV, TotalAmountGV, PaidAmountGV, BalanceGV);
-            ShowCustomerLedgers(DGVCustomerLedger, CIDGV, CNameGV, CInvoiceNoGV, CInvoiceDateGV, CTotalAmountGV, CPaidAmountGV, CBalanceGV);
-            MainClass.HideAllTabsOnTabControl(tabControl1);
         }
 
-        private void btnSupplierLedgers_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedIndex = 0;
-        }
-
-        private void btnCustomerLedgers_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedIndex = 1;
-        }
 
         private void Clear()
         {
@@ -188,78 +143,41 @@ namespace BibiShop
             }
             else
             {
-                if (tabControl1.SelectedIndex == 0)
+
+                try
                 {
-                    try
-                    {
-                        MainClass.con.Open();
-                        cmd = new SqlCommand("select PersonID from PersonsTable where Name = '" + txtName.Text + "' ", MainClass.con);
-                        int SupplierID = int.Parse(cmd.ExecuteScalar().ToString());
+                    MainClass.con.Open();
+                    cmd = new SqlCommand("select PersonID from PersonsTable where Name N= '" + txtName.Text + "' ", MainClass.con);
+                    int SupplierID = int.Parse(cmd.ExecuteScalar().ToString());
 
 
-                        cmd = new SqlCommand("insert into SupplierLedgersInfoTable (SupplierLedger_ID,Supplier_ID,PayingDate,InvoiceNo,TotalAmount,PreviousPaid,TodayPaid,NewBalance) values (@SupplierLedger_ID,@Supplier_ID,@PayingDate,@InvoiceNo,@TotalAmount,@PreviousPaid,@TodayPaid,@NewBalance)", MainClass.con);
-                        cmd.Parameters.AddWithValue("@SupplierLedger_ID", lblID.Text);
-                        cmd.Parameters.AddWithValue("@Supplier_ID", SupplierID);
-                        cmd.Parameters.AddWithValue("@PayingDate", TodaysDate);
-                        cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
-                        cmd.Parameters.AddWithValue("@TotalAmount", txtTotalAmount.Text);
-                        cmd.Parameters.AddWithValue("@PreviousPaid", txtPaidAmount.Text);
-                        cmd.Parameters.AddWithValue("@TodayPaid", txtPayingNow.Text);
-                        cmd.Parameters.AddWithValue("@NewBalance", txtBalance.Text);
-                        cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("insert into SupplierLedgersInfoTable (SupplierLedger_ID,Supplier_ID,PayingDate,InvoiceNo,TotalAmount,PreviousPaid,TodayPaid,NewBalance) values (@SupplierLedger_ID,@Supplier_ID,@PayingDate,@InvoiceNo,@TotalAmount,@PreviousPaid,@TodayPaid,@NewBalance)", MainClass.con);
+                    cmd.Parameters.AddWithValue("@SupplierLedger_ID", lblID.Text);
+                    cmd.Parameters.AddWithValue("@Supplier_ID", SupplierID);
+                    cmd.Parameters.AddWithValue("@PayingDate", TodaysDate);
+                    cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
+                    cmd.Parameters.AddWithValue("@TotalAmount", txtTotalAmount.Text);
+                    cmd.Parameters.AddWithValue("@PreviousPaid", txtPaidAmount.Text);
+                    cmd.Parameters.AddWithValue("@TodayPaid", txtPayingNow.Text);
+                    cmd.Parameters.AddWithValue("@NewBalance", txtBalance.Text);
+                    cmd.ExecuteNonQuery();
 
 
-                        cmd = new SqlCommand("update SupplierLedgersTable set PaidAmount = @PaidAmount , Balance = @Balance where SupplerLedgerID = @SupplerLedgerID", MainClass.con);
-                        cmd.Parameters.AddWithValue("@PaidAmount", totpaying);
-                        cmd.Parameters.AddWithValue("@Balance", newbalance);
-                        cmd.Parameters.AddWithValue("@SupplerLedgerID", lblID.Text);
-                        cmd.ExecuteNonQuery();
-                        MainClass.con.Close();
-                    }
-
-
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        MainClass.con.Close();
-                    } //Supplier Ledgers
+                    cmd = new SqlCommand("update SupplierLedgersTable set PaidAmount = @PaidAmount , Balance = @Balance where SupplerLedgerID = @SupplerLedgerID", MainClass.con);
+                    cmd.Parameters.AddWithValue("@PaidAmount", totpaying);
+                    cmd.Parameters.AddWithValue("@Balance", newbalance);
+                    cmd.Parameters.AddWithValue("@SupplerLedgerID", lblID.Text);
+                    cmd.ExecuteNonQuery();
+                    MainClass.con.Close();
                 }
-                else
+
+
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        MainClass.con.Open();
-                        cmd = new SqlCommand("select PersonID from PersonsTable where Name = '" + txtName.Text + "' ", MainClass.con);
-                        int CustomerID = int.Parse(cmd.ExecuteScalar().ToString());
+                    MessageBox.Show(ex.Message);
+                    MainClass.con.Close();
+                } //Supplier Ledgers
 
-
-                        cmd = new SqlCommand("insert into CustomerLedgersInfoTable (CustomerLedger_ID,Customer_ID,PayingDate,InvoiceNo,TotalAmount,PreviousPaid,TodayPaid,NewBalance) values (@CustomerLedger_ID,@Customer_ID,@PayingDate,@InvoiceNo,@TotalAmount,@PreviousPaid,@TodayPaid,@NewBalance)", MainClass.con);
-                        cmd.Parameters.AddWithValue("@CustomerLedger_ID", lblID.Text);
-                        cmd.Parameters.AddWithValue("@Customer_ID", CustomerID);
-                        cmd.Parameters.AddWithValue("@PayingDate", TodaysDate);
-                        cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
-                        cmd.Parameters.AddWithValue("@TotalAmount", txtTotalAmount.Text);
-                        cmd.Parameters.AddWithValue("@PreviousPaid", txtPaidAmount.Text);
-                        cmd.Parameters.AddWithValue("@TodayPaid", txtPayingNow.Text);
-                        cmd.Parameters.AddWithValue("@NewBalance", txtBalance.Text);
-                        cmd.ExecuteNonQuery();
-
-
-                        cmd = new SqlCommand("update CustomerLedgersTable set PaidAmount = @PaidAmount , Balance = @Balance where CustomerLedgerID = @CustomerLedgerID", MainClass.con);
-                        cmd.Parameters.AddWithValue("@PaidAmount", totpaying);
-                        cmd.Parameters.AddWithValue("@Balance", newbalance);
-                        cmd.Parameters.AddWithValue("@CustomerLedgerID", lblID.Text);
-                        cmd.ExecuteNonQuery();
-                        MainClass.con.Close();
-                    }
-
-
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        MainClass.con.Close();
-                    } //Customer Ledgers
-                }
             }
             
             
@@ -267,42 +185,13 @@ namespace BibiShop
 
             MessageBox.Show("Payment Successful");
             ShowSupplierLedgers(DGVSupplierLedger, IDGV, NameGV, InvoiceNoGV, InvoiceDateGV, TotalAmountGV, PaidAmountGV, BalanceGV);
-            ShowCustomerLedgers(DGVCustomerLedger, CIDGV, CNameGV, CInvoiceNoGV, CInvoiceDateGV, CTotalAmountGV, CPaidAmountGV, CBalanceGV);
             Clear();
         }
 
-        private void DGVCustomerLedger_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (DGVCustomerLedger.SelectedRows.Count == 1)
-            {
-                if (e.RowIndex != -1 && e.ColumnIndex != -1)
-                {
-                    if (e.ColumnIndex == 0)
-                    {
-                        lblID.Text = DGVCustomerLedger.CurrentRow.Cells[1].Value.ToString();
-                        txtName.Text = DGVCustomerLedger.CurrentRow.Cells[2].Value.ToString();
-                        txtInvoiceNo.Text = DGVCustomerLedger.CurrentRow.Cells[3].Value.ToString();
-                        txtTotalAmount.Text = DGVCustomerLedger.CurrentRow.Cells[5].Value.ToString();
-                        txtPaidAmount.Text = DGVCustomerLedger.CurrentRow.Cells[6].Value.ToString();
-                        txtBalance.Text = DGVCustomerLedger.CurrentRow.Cells[7].Value.ToString();
-                        lblPreviousBalance.Text = DGVCustomerLedger.CurrentRow.Cells[7].Value.ToString();
-                        txtPayingNow.Enabled = true;
-                        GBPayment.Text = "PAYMENT MODE";
-                    }
-                }
-            }
-        }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if(tabControl1.SelectedIndex == 0)
-            {
-                ShowSupplierLedgers(DGVSupplierLedger, IDGV, NameGV, InvoiceNoGV, InvoiceDateGV, TotalAmountGV, PaidAmountGV, BalanceGV,txtSearch.Text);
-            }
-            else
-            {
-                ShowCustomerLedgers(DGVCustomerLedger, CIDGV, CNameGV, CInvoiceNoGV, CInvoiceDateGV, CTotalAmountGV, CPaidAmountGV, CBalanceGV, txtSearch.Text);
-            }
+            ShowSupplierLedgers(DGVSupplierLedger, IDGV, NameGV, InvoiceNoGV, InvoiceDateGV, TotalAmountGV, PaidAmountGV, BalanceGV, txtSearch.Text);
         }
     }
 }

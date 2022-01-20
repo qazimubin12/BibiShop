@@ -37,7 +37,6 @@ namespace BibiShop
         int proceed = 1;
         int mode2 = 0;
         float ptot = 0;
-        int shopwarehouse = 0;
 
         int couponId = 0;
         string coupontype = "";
@@ -45,7 +44,8 @@ namespace BibiShop
         {
             InitializeComponent();
         }
-        
+        int shopwarehouse = 0;
+
         private void FindShopDefault()
         {
             MainClass.con.Open();
@@ -78,7 +78,7 @@ namespace BibiShop
                 }
                 else
                 {
-                    cmd = new SqlCommand("select Image,ProductID,ProductName,SalePrice from ProductsTable where ProductName like '%" + search + "%'", MainClass.con);
+                    cmd = new SqlCommand("select Image,ProductID,ProductName,SalePrice from ProductsTable where ProductName like N'%" + search + "%'", MainClass.con);
                 }
                 dr = cmd.ExecuteReader();
                 productaddButton = new Guna2Button();
@@ -421,7 +421,7 @@ namespace BibiShop
                         try
                         {
                             MainClass.con.Open();
-                            cmd = new SqlCommand("select ProductID,ProductName from ProductsTable where ProductName = '" + cboProduct.Text + "'", MainClass.con);
+                            cmd = new SqlCommand("select ProductID,ProductName from ProductsTable where ProductName N= '" + cboProduct.Text + "'", MainClass.con);
                             SqlDataReader dr = cmd.ExecuteReader();
                             if (dr.HasRows)
                             {
@@ -713,7 +713,7 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("select CostPrice,SalePrice from ProductsTable  where ProductName = '" + cboProduct.Text + "'", MainClass.con);
+                        cmd = new SqlCommand("select CostPrice,SalePrice from ProductsTable  where ProductName N= '" + cboProduct.Text + "'", MainClass.con);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.HasRows)
                         {

@@ -204,6 +204,7 @@ namespace BibiShop
             dtWarehouseName.Columns.Add("WarehouseID");
             dtWarehouseName.Columns.Add("Warehouse");
             dtWarehouseName.Rows.Add("0", "-----Select-----");
+            dtWarehouseName.Rows.Add("1", "REMOVE FROM INVENTORY");
             try
             {
                 DataTable dt = Retrieve("select WarehouseID, Warehouse from WarehouseTable");
@@ -759,6 +760,58 @@ namespace BibiShop
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 rd.Load(Application.StartupPath + "\\Reports\\SaleReciept_SavedCustomer.rpt");
+                rd.SetDataSource(dt);
+                crv.ReportSource = rd;
+                crv.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        public static void ShowPurchaseReceipt(ReportDocument rd, CrystalReportViewer crv, string proc, string param1 = "", object val1 = null)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (param1 != "")
+                {
+                    cmd.Parameters.AddWithValue(param1, val1);
+                }
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+               rd.Load(Application.StartupPath + "\\Reports\\PurchaseReceipt.rpt");
+                rd.SetDataSource(dt);
+                crv.ReportSource = rd;
+                crv.RefreshReport();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        public static void PrintCoupon(ReportDocument rd, CrystalReportViewer crv, string proc, string param1 = "", object val1 = null)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (param1 != "")
+                {
+                    cmd.Parameters.AddWithValue(param1, val1);
+                }
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                rd.Load(Application.StartupPath + "\\Reports\\.rpt");
                 rd.SetDataSource(dt);
                 crv.ReportSource = rd;
                 crv.RefreshReport();

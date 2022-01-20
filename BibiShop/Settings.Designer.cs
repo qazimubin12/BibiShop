@@ -89,19 +89,21 @@ namespace BibiShop
             this.label17 = new System.Windows.Forms.Label();
             this.btnUpdateStore = new System.Windows.Forms.Button();
             this.btnSaveStore = new System.Windows.Forms.Button();
+            this.txtTax = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtStoreAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtStoreName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSaveMode = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.modetoggle = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtTax = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnPersonBrowse = new System.Windows.Forms.Button();
+            this.btnPersonImportt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -788,6 +790,8 @@ namespace BibiShop
             // panel5
             // 
             this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.btnPersonImportt);
+            this.panel5.Controls.Add(this.btnPersonBrowse);
             this.panel5.Controls.Add(this.btnImport);
             this.panel5.Controls.Add(this.btnBrowse);
             this.panel5.Controls.Add(this.txtBrowse);
@@ -805,7 +809,7 @@ namespace BibiShop
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(303, 43);
+            this.button4.Location = new System.Drawing.Point(387, 43);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(78, 35);
             this.button4.TabIndex = 7;
@@ -815,13 +819,14 @@ namespace BibiShop
             // btnImport
             // 
             this.btnImport.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnImport.Enabled = false;
             this.btnImport.FlatAppearance.BorderSize = 2;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnImport.ForeColor = System.Drawing.Color.White;
-            this.btnImport.Location = new System.Drawing.Point(387, 43);
+            this.btnImport.Location = new System.Drawing.Point(471, 49);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(78, 35);
+            this.btnImport.Size = new System.Drawing.Size(150, 35);
             this.btnImport.TabIndex = 7;
             this.btnImport.Text = "&IMPORT";
             this.btnImport.UseVisualStyleBackColor = false;
@@ -833,9 +838,9 @@ namespace BibiShop
             this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnBrowse.Location = new System.Drawing.Point(471, 6);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(66, 37);
+            this.btnBrowse.Size = new System.Drawing.Size(150, 37);
             this.btnBrowse.TabIndex = 3;
-            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.Text = "Browse Products File";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
@@ -946,6 +951,32 @@ namespace BibiShop
             this.btnSaveStore.UseVisualStyleBackColor = false;
             this.btnSaveStore.Click += new System.EventHandler(this.btnSaveStore_Click);
             // 
+            // txtTax
+            // 
+            this.txtTax.AutoRoundedCorners = true;
+            this.txtTax.BorderRadius = 12;
+            this.txtTax.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTax.DefaultText = "";
+            this.txtTax.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTax.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTax.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTax.DisabledState.Parent = this.txtTax;
+            this.txtTax.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTax.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTax.FocusedState.Parent = this.txtTax;
+            this.txtTax.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTax.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTax.HoverState.Parent = this.txtTax;
+            this.txtTax.Location = new System.Drawing.Point(338, 187);
+            this.txtTax.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTax.Name = "txtTax";
+            this.txtTax.PasswordChar = '\0';
+            this.txtTax.PlaceholderText = "";
+            this.txtTax.SelectedText = "";
+            this.txtTax.ShadowDecoration.Parent = this.txtTax;
+            this.txtTax.Size = new System.Drawing.Size(314, 27);
+            this.txtTax.TabIndex = 36;
+            // 
             // txtStoreAddress
             // 
             this.txtStoreAddress.AutoRoundedCorners = true;
@@ -1030,11 +1061,23 @@ namespace BibiShop
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label16.Location = new System.Drawing.Point(361, 329);
+            this.label16.Location = new System.Drawing.Point(405, 339);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(162, 23);
+            this.label16.Size = new System.Drawing.Size(125, 23);
             this.label16.TabIndex = 34;
-            this.label16.Text = "Import Products";
+            this.label16.Text = "Import Data";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.label18.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label18.Location = new System.Drawing.Point(334, 159);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(47, 23);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "TAX";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label15
             // 
@@ -1109,43 +1152,33 @@ namespace BibiShop
             this.modetoggle.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.modetoggle.UncheckedState.Parent = this.modetoggle;
             // 
-            // label18
+            // btnPersonBrowse
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.label18.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label18.Location = new System.Drawing.Point(334, 159);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(47, 23);
-            this.label18.TabIndex = 34;
-            this.label18.Text = "TAX";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersonBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonBrowse.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnPersonBrowse.Location = new System.Drawing.Point(627, 6);
+            this.btnPersonBrowse.Name = "btnPersonBrowse";
+            this.btnPersonBrowse.Size = new System.Drawing.Size(150, 37);
+            this.btnPersonBrowse.TabIndex = 3;
+            this.btnPersonBrowse.Text = "Browse Persons File";
+            this.btnPersonBrowse.UseVisualStyleBackColor = true;
+            this.btnPersonBrowse.Click += new System.EventHandler(this.btnPersonBrowse_Click);
             // 
-            // txtTax
+            // btnPersonImportt
             // 
-            this.txtTax.AutoRoundedCorners = true;
-            this.txtTax.BorderRadius = 12;
-            this.txtTax.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTax.DefaultText = "";
-            this.txtTax.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTax.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTax.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTax.DisabledState.Parent = this.txtTax;
-            this.txtTax.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTax.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTax.FocusedState.Parent = this.txtTax;
-            this.txtTax.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTax.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTax.HoverState.Parent = this.txtTax;
-            this.txtTax.Location = new System.Drawing.Point(338, 187);
-            this.txtTax.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTax.Name = "txtTax";
-            this.txtTax.PasswordChar = '\0';
-            this.txtTax.PlaceholderText = "";
-            this.txtTax.SelectedText = "";
-            this.txtTax.ShadowDecoration.Parent = this.txtTax;
-            this.txtTax.Size = new System.Drawing.Size(314, 27);
-            this.txtTax.TabIndex = 36;
+            this.btnPersonImportt.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnPersonImportt.Enabled = false;
+            this.btnPersonImportt.FlatAppearance.BorderSize = 2;
+            this.btnPersonImportt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonImportt.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnPersonImportt.ForeColor = System.Drawing.Color.White;
+            this.btnPersonImportt.Location = new System.Drawing.Point(627, 49);
+            this.btnPersonImportt.Name = "btnPersonImportt";
+            this.btnPersonImportt.Size = new System.Drawing.Size(150, 35);
+            this.btnPersonImportt.TabIndex = 7;
+            this.btnPersonImportt.Text = "&IMPORT";
+            this.btnPersonImportt.UseVisualStyleBackColor = false;
+            this.btnPersonImportt.Click += new System.EventHandler(this.btnPersonImportt_Click);
             // 
             // Settings
             // 
@@ -1255,5 +1288,7 @@ namespace BibiShop
         private System.Windows.Forms.ComboBox cboWarehouse;
         private Guna.UI2.WinForms.Guna2TextBox txtTax;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnPersonImportt;
+        private System.Windows.Forms.Button btnPersonBrowse;
     }
 }

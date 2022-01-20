@@ -19,8 +19,18 @@ namespace BibiShop
         {
             InitializeComponent();
         }
+        int shopwarehouse = 0;
 
-       
+        private void FindShopDefault()
+        {
+            MainClass.con.Open();
+            SqlCommand cmd = new SqlCommand("select ShopDefaultWarehouse from StoreTable", MainClass.con);
+            shopwarehouse = int.Parse(cmd.ExecuteScalar().ToString());
+            MainClass.con.Close();
+        }
+
+
+
         public Image ConvertByteArraytoImage(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream(data))
@@ -72,14 +82,14 @@ namespace BibiShop
         {
             string critical = "";
             MainClass.con.Open();
-            SqlCommand cmd = new SqlCommand("select count(*) from ProductsTable p full outer join Inventory i on p.ProductID = i.ProductID where i.Qty < 0 or i.Qty is null or i.Qty < p.SafetyStock ", MainClass.con);
+            SqlCommand cmd = new SqlCommand("select count(*) from ProductsTable p full outer join Inventory i on p.ProductID = i.ProductID where i.Qty < 0 or i.Qty is null or i.Qty < p.SafetyStock   and i.WareHouseID = '"+shopwarehouse+"'", MainClass.con);
 
             int i = 0;
             string count = cmd.ExecuteScalar().ToString();
             MainClass.con.Close();
 
             MainClass.con.Open();
-            cmd = new SqlCommand("select p.ProductName from ProductsTable p full outer join Inventory i on p.ProductID = i.ProductID where i.Qty < 0 or i.Qty is null or i.Qty < p.SafetyStock", MainClass.con);
+            cmd = new SqlCommand("select p.ProductName from ProductsTable p full outer join Inventory i on p.ProductID = i.ProductID where i.Qty < 0 or i.Qty is null or i.Qty < p.SafetyStock   and i.WareHouseID = '" + shopwarehouse + "'", MainClass.con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -101,7 +111,7 @@ namespace BibiShop
             popup.HeaderColor = Color.FromArgb(252, 164, 2);
             popup.Scroll = true;
             popup.ShowCloseButton = false;
-            popup.TitleText = "CRITICAL ITEM(S)";
+            popup.TitleText = "CRITICAL ITEM(S) : " + i.ToString();
             popup.ContentText = critical;
             popup.Popup();
         }

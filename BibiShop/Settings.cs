@@ -2,7 +2,9 @@
 
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 
 using System.Windows.Forms;
@@ -545,6 +547,7 @@ namespace BibiShop
             {
                 MessageBox.Show(ex.Message);
             }
+            btnImport.Enabled = true;
         }
 
         byte[] ReadFile(string sPath)
@@ -604,13 +607,13 @@ namespace BibiShop
 
 
                     ProductName = Convert.ToString(dr["ProductName"].ToString());
-                    cmd = new SqlCommand("select ProductName from ProductsTable where ProductName = '" + ProductName + "'", MainClass.con);
+                    cmd = new SqlCommand("select ProductName from ProductsTable where ProductName N= '" + ProductName + "'", MainClass.con);
                     object ob = cmd.ExecuteScalar();
                     if (ob == null)
                     {
 
                         barcode = Convert.ToString(dr["Barcode"].ToString());
-                        cmd = new SqlCommand("select CategoryID from CategoriesTable where Category like '%" + dr["Category"] + "%'", MainClass.con);
+                        cmd = new SqlCommand("select CategoryID from CategoriesTable where Category like N'%" + dr["Category"] + "%'", MainClass.con);
                         categoryID = cmd.ExecuteScalar();
                         if (categoryID ==null)
                         {
@@ -618,7 +621,7 @@ namespace BibiShop
                             cmd.Parameters.AddWithValue("@Category", dr["Category"]);
                             cmd.ExecuteNonQuery();
 
-                            cmd = new SqlCommand("select CategoryID from CategoriesTable where Category like '%" + dr["Category"] + "%'", MainClass.con);
+                            cmd = new SqlCommand("select CategoryID from CategoriesTable where Category like N'%" + dr["Category"] + "%'", MainClass.con);
                             categoryID = cmd.ExecuteScalar();
                         }
 
@@ -712,6 +715,150 @@ namespace BibiShop
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MainClass.con.Close();
+            }
+        }
+
+        private void btnPersonBrowse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.ShowDialog();
+                int ImportedRecord = 0, inValidItem = 0;
+                string SourceURl = "";
+
+                if (dialog.FileName != "")
+                {
+                    if (dialog.FileName.EndsWith(".csv"))
+                    {
+                        DataTable dtNew = new DataTable();
+                        dtNew = GetDataTabletFromCSVFile(dialog.FileName);
+                        if (Convert.ToString(dtNew.Columns[1]) != "Name")
+                        {
+                            MessageBox.Show("Invalid Items File");
+                            btnImport.Enabled = false;
+                            return;
+                        }
+                        txtBrowse.Text = dialog.SafeFileName;
+                        SourceURl = dialog.FileName;
+                        if (dtNew.Rows != null && dtNew.Rows.ToString() != String.Empty)
+                        {
+                            dataGridView1.DataSource = dtNew;
+                        }
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            if (Convert.ToString(row.Cells["Name"].Value) == "" || row.Cells["Name"].Value == null)
+                            {
+                                row.DefaultCellStyle.BackColor = Color.Red;
+                                inValidItem += 1;
+                            }
+                            else
+                            {
+                                ImportedRecord += 1;
+                            }
+                        }
+                        if (dataGridView1.Rows.Count == 0)
+                        {
+                            btnImport.Enabled = false;
+                            MessageBox.Show("There is no data in this file", "__", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selected File is Invalid, Please Select valid csv file.", "____", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            btnPersonImportt.Enabled = true;
+
+        }
+
+        private void btnPersonImportt_Click(object sender, EventArgs e)
+        {
+            if (txtBrowse.Text == "")
+            {
+                MessageBox.Show("Please Select File First");
+                return;
+            }
+            MainClass.con.Open();
+            try
+            {
+                SqlCommand cmd = null;
+                DataTable dtItem = (DataTable)(dataGridView1.DataSource);
+                string Name;
+                string Type;
+                string Contact;
+                string Address;
+                String PersonImage = String.Empty;
+                String filename = String.Empty;
+                string Birthday = "";
+
+
+                int count = 0;
+
+                foreach (DataRow dr in dtItem.Rows)
+                {
+                    byte[] imageData = null;
+                    PersonImage = dr["PersonImage"].ToString();
+                    if (dr["PersonImage"].ToString() != "")
+                    {
+                        imageData = ReadFile(PersonImage);
+                    }
+
+
+                    Name = Convert.ToString(dr["Name"].ToString());
+                    cmd = new SqlCommand("select Name from PersonsTable where Name = N'" +Name+ "'", MainClass.con);
+                    object ob = cmd.ExecuteScalar();
+                    if (ob == null)
+                    {
+
+                        Type = Convert.ToString(dr["Type"].ToString());
+                        Contact = dr["Contact"].ToString();
+                        Address = dr["Address"].ToString();
+                        string birthday = dr["Birthday"].ToString();
+                        if (birthday != "NULL")
+                        {
+                            Birthday = birthday;
+                        }
+                        else
+                        {
+                            Birthday = "";
+                        }
+
+
+
+                        cmd = new SqlCommand("insert into PersonsTable (Type,Name,Contact,Address,Birthday,PersonImage) values(@Type,@Name,@Contact,@Address,@Birthday,@PersonImage)", MainClass.con);
+                        cmd.Parameters.AddWithValue("@Type", Type);
+                        cmd.Parameters.AddWithValue("@Name", Name);
+                        cmd.Parameters.AddWithValue("@Contact", Contact);
+                        cmd.Parameters.AddWithValue("@Address", Address);
+                        cmd.Parameters.AddWithValue("@Birthday", Birthday);
+                        cmd.Parameters.AddWithValue("@PersonImage", imageData);
+                        cmd.ExecuteNonQuery();
+                        count++;
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                }
+
+                MainClass.con.Close();
+                MessageBox.Show(count.ToString() + " Person Imported Imported Successfully Duplicate Name Skipped", "_____", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView1.DataSource = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MainClass.con.Close();
             }
         }
     }

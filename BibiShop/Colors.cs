@@ -127,7 +127,7 @@ namespace BibiShop
                 MainClass.con.Open();
                 if (data != "")
                 {
-                    cmd = new SqlCommand("select * from ColorsTable  where Color  like '%" + data + "%'", MainClass.con);
+                    cmd = new SqlCommand("select * from ColorsTable  where Color  like N'%" + data + "%'", MainClass.con);
                 }
                 else
                 {

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace BibiShop
                 MainClass.con.Open();
                 if (data != "")
                 {
-                    cmd = new SqlCommand("select PersonID,Name,Type,Contact,Address,Birthday from PersonsTable  where Name  like '%" + data + "%' or Type like '%" + data + "%'", MainClass.con);
+                    cmd = new SqlCommand("select PersonID,Name,Type,Contact,Address,Birthday from PersonsTable  where Name  like N'%" + data + "%' or Type like '%" + data + "%'", MainClass.con);
                 }
                 else
                 {
@@ -44,7 +45,6 @@ namespace BibiShop
                 Contact.DataPropertyName = dt.Columns["Contact"].ToString();
                 Address.DataPropertyName = dt.Columns["Address"].ToString();
                 Birthday.DataPropertyName = dt.Columns["Birthday"].ToString();
-               
                 dgv.DataSource = dt;
                 MainClass.con.Close();
             }
@@ -67,6 +67,7 @@ namespace BibiShop
             txtName.Text = "";
             txtSearch.Text = "";
             cboType.SelectedIndex = 0;
+            lblBirthday.Text = "DD-MM-YYYY";
             pictureBox1.Image = null;
         }
 
@@ -169,10 +170,11 @@ namespace BibiShop
             cboType.Text = DGVPersons.CurrentRow.Cells[2].Value.ToString();
             txtContact.Text = DGVPersons.CurrentRow.Cells[3].Value.ToString();
             txtAddress.Text = DGVPersons.CurrentRow.Cells[4].Value.ToString();
-            BDay.Text = DGVPersons.CurrentRow.Cells[5].Value.ToString();
+            lblBirthday.Text = DGVPersons.CurrentRow.Cells[5].Value.ToString();
             btnSave.Text = "UPDATE";
             btnSave.BackColor = Color.Orange;
         }
+
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -38,12 +38,10 @@ namespace BibiShop
         private void LoadCriticalItemCount()
         {
             MainClass.con.Open();
-            SqlCommand cmd = new SqlCommand("select count(*) from ProductsTable p full outer join Inventory i on p.ProductID = i.ProductID where i.Qty < 0 or i.Qty is null or i.Qty < p.SafetyStock ", MainClass.con);
-
-            int i = 0;
+            SqlCommand cmd = new SqlCommand("select count(*) from SalesTable where OrderStatus = 'Remaining Payment'", MainClass.con);
             string count = cmd.ExecuteScalar().ToString();
             MainClass.con.Close();
-            lblLowStock.Text = count;
+            lblPendingPayment.Text = count;
         }
 
         private void LoadSales()

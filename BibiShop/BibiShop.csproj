@@ -87,6 +87,12 @@
     <Compile Include="Categories.Designer.cs">
       <DependentUpon>Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="CouponPrinting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CouponPrinting.Designer.cs">
+      <DependentUpon>CouponPrinting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Coupons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,12 @@
     </Compile>
     <Compile Include="PurchaseInvoice.Designer.cs">
       <DependentUpon>PurchaseInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseReceiptForm.Designer.cs">
+      <DependentUpon>PurchaseReceiptForm.cs</DependentUpon>
     </Compile>
     <Compile Include="QuantityForm.cs">
       <SubType>Form</SubType>
@@ -263,6 +275,9 @@
       <DependentUpon>Categories.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="CouponPrinting.resx">
+      <DependentUpon>CouponPrinting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Coupons.resx">
       <DependentUpon>Coupons.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +329,9 @@
     </Compile>
     <EmbeddedResource Include="PurchaseInvoice.resx">
       <DependentUpon>PurchaseInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseReceiptForm.resx">
+      <DependentUpon>PurchaseReceiptForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuantityForm.resx">
       <DependentUpon>QuantityForm.cs</DependentUpon>
@@ -555,6 +573,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\debit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Bitmap1.bmp" />
+    <None Include="Resources\clock.png" />
+    <Content Include="Resources\coupon.jpeg" />
+    <None Include="Resources\Free-Blank-Birthday-Coupon-Template.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

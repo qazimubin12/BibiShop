@@ -176,7 +176,7 @@ namespace BibiShop
             MainClass.con.Open();
 
             //CatUnit
-            cmd = new SqlCommand("select CategoryID from CategoriesTable where Category like '" + cboCategory.Text + "'", MainClass.con);
+            cmd = new SqlCommand("select CategoryID from CategoriesTable where Category like N'" + cboCategory.Text + "'", MainClass.con);
             dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -216,7 +216,7 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("insert into ProductsTable (Barcode,ProductName,BrandID,CatID,UnitID,CostPrice,SalePrice,Remarks,Image,ColorID,SizeID) values(@Barcode,@ProductName,@BrandID,@CatID,@UnitID,@CostPrice,@SalePrice,@Remarks,@Image,@ColorID,@SizeID)", MainClass.con);
+                        cmd = new SqlCommand("insert into ProductsTable (Barcode,ProductName,BrandID,CatID,UnitID,CostPrice,SalePrice,Remarks,Image,ColorID,SizeID,SafetyStock) values(@Barcode,@ProductName,@BrandID,@CatID,@UnitID,@CostPrice,@SalePrice,@Remarks,@Image,@ColorID,@SizeID,@SafetyStock)", MainClass.con);
                         cmd.Parameters.AddWithValue("@Barcode", txtBarcode.Text);
                         cmd.Parameters.AddWithValue("@ProductName", txtProductName.Text);
                         cmd.Parameters.AddWithValue("@BrandID", cboBrand.SelectedValue.ToString());
@@ -225,7 +225,17 @@ namespace BibiShop
                         cmd.Parameters.AddWithValue("@CostPrice", txtCostPrice.Text);
                         cmd.Parameters.AddWithValue("@SalePrice", txtSalePrice.Text);
                         cmd.Parameters.AddWithValue("@Remarks", txtRemarks.Text);
-                        cmd.Parameters.AddWithValue("@Image", ConvertImageToBytes(pictureBox1.Image));
+                        cmd.Parameters.AddWithValue("@SafetyStock",txtSafetyStock.Text);
+                        if(pictureBox1.Image == null)
+                        {
+                            byte[] imageBT = null;
+                            cmd.Parameters.AddWithValue("@Image", imageBT);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@Image", ConvertImageToBytes(pictureBox1.Image));
+                        }
+                        
                         cmd.Parameters.AddWithValue("@SizeID", cboSize.SelectedValue.ToString());
                         cmd.Parameters.AddWithValue("@ColorID", cboColor.SelectedValue.ToString());
 
@@ -250,7 +260,7 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("UPDATE ProductsTable SET Barcode =@Barcode,Image=@Image,ProductName =@ProductName,ColorID= @ColorID,SizeID = @SizeID,CatID =@CatID,UnitID =@UnitID,BrandID = @BrandID,CostPrice =@CostPrice,SalePrice =@SalePrice, Remarks =@Remarks where ProductID = @ProductID", MainClass.con);
+                        cmd = new SqlCommand("UPDATE ProductsTable SET Barcode =@Barcode,Image=@Image,ProductName =@ProductName,SafetyStock = @SafetyStock,ColorID= @ColorID,SizeID = @SizeID,CatID =@CatID,UnitID =@UnitID,BrandID = @BrandID,CostPrice =@CostPrice,SalePrice =@SalePrice, Remarks =@Remarks where ProductID = @ProductID", MainClass.con);
                         cmd.Parameters.AddWithValue("@ProductID", lblID.Text);
                         cmd.Parameters.AddWithValue("@Barcode", txtBarcode.Text);
                         cmd.Parameters.AddWithValue("@ProductName", txtProductName.Text);
@@ -262,9 +272,18 @@ namespace BibiShop
                         cmd.Parameters.AddWithValue("@Remarks", txtRemarks.Text);
                         cmd.Parameters.AddWithValue("@SizeID", cboSize.SelectedValue.ToString());
                         cmd.Parameters.AddWithValue("@ColorID", cboColor.SelectedValue.ToString());
-                        cmd.Parameters.AddWithValue("@Image", ConvertImageToBytes(pictureBox1.Image));
+                        cmd.Parameters.AddWithValue("@SafetyStock", txtSafetyStock.Text);
 
-                       
+                        if (pictureBox1.Image == null)
+                        {
+                            byte[] imageBT = null;
+                            cmd.Parameters.AddWithValue("@Image", imageBT);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@Image", ConvertImageToBytes(pictureBox1.Image));
+                        }
+
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
                         MessageBox.Show("Product Updated Successfully.");

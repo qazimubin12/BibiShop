@@ -93,96 +93,99 @@ namespace BibiShop
                 {
                     if (e.RowIndex != -1 && e.ColumnIndex != -1)
                     {
-                        if (DGVRecentSales.CurrentRow.Cells[0].Value.ToString() == "PAYMENT")
+                        if (e.ColumnIndex == 0)
                         {
-                            if (e.ColumnIndex == 0)
+                            if (DGVRecentSales.CurrentRow.Cells[0].Value.ToString() == "PAYMENT")
                             {
-                                bp.lblInvoiceNo.Text = DGVRecentSales.CurrentRow.Cells["InvoiceNoGV"].Value.ToString();
-                                bp.lblSaleID.Text = DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString();
-                                bp.cboCustomer.Text = DGVRecentSales.CurrentRow.Cells["CustomerGV"].Value.ToString();
-
-                                try
+                                if (e.ColumnIndex == 0)
                                 {
-                                    MainClass.con.Open();
-                                    cmd = new SqlCommand("selecT si.ProductID,p.ProductName,si.Unit,si.CostPrice,si.SalePrice,si.Color,si.Quantity,si.Size,si.TotalOfProduct from SalesTable st inner join SalesInfo si on si.Sales_ID = st.SaleID inner join ProductsTable p on p.ProductID = si.ProductID  where st.InvoiceNo = '" + DGVRecentSales.CurrentRow.Cells["InvoiceNoGV"].Value.ToString() + "'", MainClass.con);
-                                    dr = cmd.ExecuteReader();
-                                    while (dr.Read())
+                                    bp.lblInvoiceNo.Text = DGVRecentSales.CurrentRow.Cells["InvoiceNoGV"].Value.ToString();
+                                    bp.lblSaleID.Text = DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString();
+                                    bp.cboCustomer.Text = DGVRecentSales.CurrentRow.Cells["CustomerGV"].Value.ToString();
+
+                                    try
                                     {
-                                        bp.DGVSaleCart.Rows.Add(dr["ProductID"].ToString(), dr["ProductName"].ToString(), dr["Unit"].ToString(), float.Parse(dr["CostPrice"].ToString()), float.Parse(dr["SalePrice"].ToString()), dr["Color"].ToString(), dr["Quantity"].ToString(), dr["Size"].ToString(), float.Parse(dr["TotalOfProduct"].ToString()));
+                                        MainClass.con.Open();
+                                        cmd = new SqlCommand("selecT si.ProductID,p.ProductName,si.Unit,si.CostPrice,si.SalePrice,si.Color,si.Quantity,si.Size,si.TotalOfProduct from SalesTable st inner join SalesInfo si on si.Sales_ID = st.SaleID inner join ProductsTable p on p.ProductID = si.ProductID  where st.InvoiceNo = '" + DGVRecentSales.CurrentRow.Cells["InvoiceNoGV"].Value.ToString() + "'", MainClass.con);
+                                        dr = cmd.ExecuteReader();
+                                        while (dr.Read())
+                                        {
+                                            bp.DGVSaleCart.Rows.Add(dr["ProductID"].ToString(), dr["ProductName"].ToString(), dr["Unit"].ToString(), float.Parse(dr["CostPrice"].ToString()), float.Parse(dr["SalePrice"].ToString()), dr["Color"].ToString(), dr["Quantity"].ToString(), dr["Size"].ToString(), float.Parse(dr["TotalOfProduct"].ToString()));
+                                        }
+                                        MainClass.con.Close();
+
+
                                     }
-                                    MainClass.con.Close();
-
-
-                                }
-                                catch (Exception ex)
-                                {
-                                    MainClass.con.Close();
-                                    MessageBox.Show(ex.Message);
-                                } //Product getting
-                                try
-                                {
-                                    MainClass.con.Open();
-                                    cmd = new SqlCommand("select GrandTotal,Round(tax,2) as 'tax',Round((GrandTotal-tax),2) as 'Net',CouponType,CouponID from SalesTable  where InvoiceNo = '" + DGVRecentSales.CurrentRow.Cells["InvoiceNoGV"].Value.ToString() + "'", MainClass.con);
-                                    dr = cmd.ExecuteReader();
-                                    while (dr.Read())
+                                    catch (Exception ex)
                                     {
-                                        bp.lblGrandTotal.Text = dr["GrandTotal"].ToString();
-                                        bp.lblNetTotal.Text = dr["Net"].ToString();
-                                        bp.lblTax.Text = dr["tax"].ToString();
-                                        bp.lblCouponID.Text = dr["CouponID"].ToString();
-                                        bp.lblCouponType.Text = dr["CouponType"].ToString();
-                                    }
-                                    MainClass.con.Close();
-
-
-                                }
-                                catch (Exception ex)
-                                {
-                                    MainClass.con.Close();
-                                    MessageBox.Show(ex.Message);
-                                } //Calculation getting and CouponGetting
-
-                                try
-                                {
-                                    MainClass.con.Open();
-                                    cmd = new SqlCommand("select CouponCode from CouponsTable where CouponID = '" + bp.lblCouponID.Text + "'", MainClass.con);
-                                    dr = cmd.ExecuteReader();
-                                    while (dr.Read())
+                                        MainClass.con.Close();
+                                        MessageBox.Show(ex.Message);
+                                    } //Product getting
+                                    try
                                     {
-                                        bp.txtCouponCode.Text = dr["CouponCode"].ToString();
+                                        MainClass.con.Open();
+                                        cmd = new SqlCommand("select GrandTotal,Round(tax,2) as 'tax',Round((GrandTotal-tax),2) as 'Net',CouponType,CouponID from SalesTable  where InvoiceNo = '" + DGVRecentSales.CurrentRow.Cells["InvoiceNoGV"].Value.ToString() + "'", MainClass.con);
+                                        dr = cmd.ExecuteReader();
+                                        while (dr.Read())
+                                        {
+                                            bp.lblGrandTotal.Text = dr["GrandTotal"].ToString();
+                                            bp.lblNetTotal.Text = dr["Net"].ToString();
+                                            bp.lblTax.Text = dr["tax"].ToString();
+                                            bp.lblCouponID.Text = dr["CouponID"].ToString();
+                                            bp.lblCouponType.Text = dr["CouponType"].ToString();
+                                        }
+                                        MainClass.con.Close();
+
+
                                     }
-                                    MainClass.con.Close();
+                                    catch (Exception ex)
+                                    {
+                                        MainClass.con.Close();
+                                        MessageBox.Show(ex.Message);
+                                    } //Calculation getting and CouponGetting
 
+                                    try
+                                    {
+                                        MainClass.con.Open();
+                                        cmd = new SqlCommand("select CouponCode from CouponsTable where CouponID = '" + bp.lblCouponID.Text + "'", MainClass.con);
+                                        dr = cmd.ExecuteReader();
+                                        while (dr.Read())
+                                        {
+                                            bp.txtCouponCode.Text = dr["CouponCode"].ToString();
+                                        }
+                                        MainClass.con.Close();
+
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MainClass.con.Close();
+                                        MessageBox.Show(ex.Message);
+                                    }
+
+                                    bp.btnSaveSale.Text = "Update Sale";
+                                    bp.btnSaveSale.FillColor = Color.Teal;
+                                    bp.couponpanel.Visible = true;
+                                    this.Close();
 
                                 }
-                                catch (Exception ex)
-                                {
-                                    MainClass.con.Close();
-                                    MessageBox.Show(ex.Message);
-                                }
-
-                                bp.btnSaveSale.Text = "Update Sale";
-                                bp.btnSaveSale.FillColor = Color.Teal;
-                                bp.couponpanel.Visible = true;
-                                this.Close();
-
                             }
-                        }
-                        else if (DGVRecentSales.CurrentRow.Cells[0].Value.ToString() == "DELIVERED")
-                        {
-                            MainClass.con.Open();
-                            cmd = new SqlCommand("update SalesTable set OrderStatus = @OrderStatus where SaleID = '" + DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString() + "' ", MainClass.con);
-                            cmd.Parameters.AddWithValue("@OrderStatus", "Remaining Payment");
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Order Has been Delivered, Select Remaining Order to Complete Payment");
-                            MainClass.con.Close();
-                            cboOrderStatus.SelectedIndex = 1;
-                        }
-                        else
-                        {
-                            SAVED_SALES_ID = int.Parse(DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString());
-                            SaleReceiptForm srf = new SaleReceiptForm();
-                            srf.ShowDialog();
+                            else if (DGVRecentSales.CurrentRow.Cells[0].Value.ToString() == "DELIVERED")
+                            {
+                                MainClass.con.Open();
+                                cmd = new SqlCommand("update SalesTable set OrderStatus = @OrderStatus where SaleID = '" + DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString() + "' ", MainClass.con);
+                                cmd.Parameters.AddWithValue("@OrderStatus", "Remaining Payment");
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Order Has been Delivered, Select Remaining Order to Complete Payment");
+                                MainClass.con.Close();
+                                cboOrderStatus.SelectedIndex = 1;
+                            }
+                            else
+                            {
+                                SAVED_SALES_ID = int.Parse(DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString());
+                                SaleReceiptForm srf = new SaleReceiptForm();
+                                srf.ShowDialog();
+                            }
                         }
                     }
                 }
