@@ -30,6 +30,7 @@ namespace BibiShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Warehouses));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,11 +45,11 @@ namespace BibiShop
             this.txtWarehouse = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.DgvWarehouse = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.WarehouseIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WarehouseGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.WarehouseIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WarehouseGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvWarehouse)).BeginInit();
@@ -57,30 +58,25 @@ namespace BibiShop
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 73);
-            this.panel1.TabIndex = 24;
             // 
             // button1
             // 
+            resources.ApplyResources(this.button1, "button1");
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::BibiShop.Properties.Resources.cancel__2_;
-            this.button1.Location = new System.Drawing.Point(880, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 30);
-            this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtSearch
             // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.AutoRoundedCorners = true;
             this.txtSearch.BorderRadius = 12;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -96,87 +92,61 @@ namespace BibiShop
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconLeft = global::BibiShop.Properties.Resources.icons8_search_50px;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.txtSearch.Location = new System.Drawing.Point(423, 34);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(12);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Search Warehouse";
+            this.txtSearch.PlaceholderText = "搜索倉庫";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(418, 27);
-            this.txtSearch.TabIndex = 3;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 40);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Warehouses";
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.lblID);
             this.panel2.Controls.Add(this.txtWarehouse);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(423, 676);
-            this.panel2.TabIndex = 25;
             // 
             // btnCancel
             // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
             this.btnCancel.FlatAppearance.BorderSize = 2;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(15, 112);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(87, 42);
-            this.btnCancel.TabIndex = 28;
-            this.btnCancel.Text = "&CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnSave.FlatAppearance.BorderSize = 2;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(121, 111);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(212, 42);
-            this.btnSave.TabIndex = 29;
-            this.btnSave.Text = "&SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblID
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.lblID, "lblID");
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "ID";
-            this.lblID.Visible = false;
             // 
             // txtWarehouse
             // 
+            resources.ApplyResources(this.txtWarehouse, "txtWarehouse");
             this.txtWarehouse.AutoRoundedCorners = true;
             this.txtWarehouse.BorderRadius = 12;
             this.txtWarehouse.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -188,32 +158,23 @@ namespace BibiShop
             this.txtWarehouse.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtWarehouse.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtWarehouse.FocusedState.Parent = this.txtWarehouse;
-            this.txtWarehouse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWarehouse.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtWarehouse.HoverState.Parent = this.txtWarehouse;
-            this.txtWarehouse.Location = new System.Drawing.Point(19, 77);
-            this.txtWarehouse.Margin = new System.Windows.Forms.Padding(4);
             this.txtWarehouse.Name = "txtWarehouse";
             this.txtWarehouse.PasswordChar = '\0';
             this.txtWarehouse.PlaceholderText = "";
             this.txtWarehouse.SelectedText = "";
             this.txtWarehouse.ShadowDecoration.Parent = this.txtWarehouse;
-            this.txtWarehouse.Size = new System.Drawing.Size(314, 27);
-            this.txtWarehouse.TabIndex = 4;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(16, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Enter Warehouse:";
             // 
             // DgvWarehouse
             // 
+            resources.ApplyResources(this.DgvWarehouse, "DgvWarehouse");
             this.DgvWarehouse.AllowUserToAddRows = false;
             this.DgvWarehouse.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
@@ -231,7 +192,6 @@ namespace BibiShop
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvWarehouse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvWarehouse.ColumnHeadersHeight = 30;
             this.DgvWarehouse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.WarehouseIDGV,
             this.WarehouseGV});
@@ -244,16 +204,12 @@ namespace BibiShop
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvWarehouse.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DgvWarehouse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvWarehouse.EnableHeadersVisualStyles = false;
             this.DgvWarehouse.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.DgvWarehouse.Location = new System.Drawing.Point(423, 73);
             this.DgvWarehouse.Name = "DgvWarehouse";
             this.DgvWarehouse.ReadOnly = true;
             this.DgvWarehouse.RowHeadersVisible = false;
             this.DgvWarehouse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvWarehouse.Size = new System.Drawing.Size(492, 676);
-            this.DgvWarehouse.TabIndex = 27;
             this.DgvWarehouse.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.DgvWarehouse.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.DgvWarehouse.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -277,47 +233,43 @@ namespace BibiShop
             this.DgvWarehouse.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.DgvWarehouse.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // WarehouseIDGV
+            // 
+            resources.ApplyResources(this.WarehouseIDGV, "WarehouseIDGV");
+            this.WarehouseIDGV.Name = "WarehouseIDGV";
+            this.WarehouseIDGV.ReadOnly = true;
+            // 
+            // WarehouseGV
+            // 
+            resources.ApplyResources(this.WarehouseGV, "WarehouseGV");
+            this.WarehouseGV.Name = "WarehouseGV";
+            this.WarehouseGV.ReadOnly = true;
+            // 
             // contextMenuStrip1
             // 
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 48);
             // 
             // editToolStripMenuItem
             // 
+            resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click_1);
-            // 
-            // WarehouseIDGV
-            // 
-            this.WarehouseIDGV.HeaderText = "WarehouseID";
-            this.WarehouseIDGV.Name = "WarehouseIDGV";
-            this.WarehouseIDGV.ReadOnly = true;
-            this.WarehouseIDGV.Visible = false;
-            // 
-            // WarehouseGV
-            // 
-            this.WarehouseGV.HeaderText = "Warehouse";
-            this.WarehouseGV.Name = "WarehouseGV";
-            this.WarehouseGV.ReadOnly = true;
             // 
             // Warehouses
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(915, 749);
             this.ControlBox = false;
             this.Controls.Add(this.DgvWarehouse);
             this.Controls.Add(this.panel2);
@@ -326,7 +278,6 @@ namespace BibiShop
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Warehouses";
-            this.Text = "Units";
             this.Load += new System.EventHandler(this.Units_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

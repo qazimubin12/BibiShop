@@ -14,6 +14,7 @@ namespace BibiShop
     public partial class Brands : Form
     {
         int bedit = 0;
+        object language = null;
         public Brands()
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace BibiShop
                 ID.DataPropertyName = dt.Columns["BrandID"].ToString();
                 dgv.DataSource = dt;
                 MainClass.con.Close();
+                language = MainClass.LanguageCheck();
             }
             catch (Exception ex)
             {
@@ -66,7 +68,15 @@ namespace BibiShop
             {
                 if (txtBrand.Text == "")
                 {
-                    MessageBox.Show("Please Input Details");
+                    if(language.ToString() == "English")
+                    {
+                        MessageBox.Show("Please Input Details");
+                    }
+                    else
+                    {
+                        MessageBox.Show("請輸入詳細信息");
+
+                    }
                 }
                 else
                 {
@@ -78,7 +88,14 @@ namespace BibiShop
 
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
-                        MessageBox.Show("Brand Inserted Successfully.");
+                        if (language.ToString() == "English")
+                        {
+                            MessageBox.Show("Brand Inserted Successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("品牌插入成功");
+                        }
                         Clear();
                         ShowBrands(DgvBrands, BrandIDGV, BrandGV);
                     }
@@ -102,8 +119,16 @@ namespace BibiShop
                         cmd.Parameters.AddWithValue("@Brand", txtBrand.Text);
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
-                        MessageBox.Show("Brand Updated Successfully.");
-                        btnSave.Text = "SAVE";
+                        if (language.ToString() == "English")
+                        {
+                            btnSave.Text = "SAVE";
+                            MessageBox.Show("Brand Updated Successfully.");
+                        }
+                        else
+                        {
+                            btnSave.Text = "保存";
+                            MessageBox.Show("品 牌 更 新 成 功");
+                        }
                         btnSave.BackColor = Color.SteelBlue;
                         Clear();
                         ShowBrands(DgvBrands, BrandIDGV, BrandGV);
@@ -123,7 +148,8 @@ namespace BibiShop
             bedit = 1;
             lblID.Text = DgvBrands.CurrentRow.Cells[0].Value.ToString();
             txtBrand.Text = DgvBrands.CurrentRow.Cells[1].Value.ToString();
-            btnSave.Text = "UPDATE";
+            if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{    btnSave.Text = "UPDATE";}
+           
             btnSave.BackColor = Color.Orange;
         }
 
@@ -141,7 +167,14 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from BrandsTable where BrandID = @BrandID", MainClass.con);
                             cmd.Parameters.AddWithValue("@BrandID", DgvBrands.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                            if (language.ToString() == "English")
+                            {
+                                MessageBox.Show("Record Deleted Successfully");
+                            }
+                            else
+                            {
+                                MessageBox.Show("記錄刪除成功");
+                            }
                             MainClass.con.Close();
                             ShowBrands(DgvBrands, BrandIDGV, BrandGV);
                         }
@@ -160,7 +193,14 @@ namespace BibiShop
             bedit = 0;
             if (btnSave.BackColor == Color.Orange)
             {
-                btnSave.Text = "SAVE";
+                if (language.ToString() == "English")
+                {
+                    btnSave.Text = "SAVE";
+                }
+                else
+                {
+                    btnSave.Text = "保存";
+                }
                 btnSave.BackColor = Color.SteelBlue;
                 txtBrand.Text = "";
             }
@@ -191,7 +231,7 @@ namespace BibiShop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose(); BibiHomeScreen ds = new BibiHomeScreen();  
+            this.Dispose();
            
         }
     }

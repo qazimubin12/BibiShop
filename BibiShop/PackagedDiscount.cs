@@ -14,6 +14,8 @@ namespace BibiShop
     public partial class PackagedDiscount : Form
     {
         int uedit = 0;
+        object language = MainClass.LanguageCheck();
+
         public PackagedDiscount()
         {
             InitializeComponent();
@@ -135,7 +137,7 @@ namespace BibiShop
             lblID.Text = DGVCouponTypes.CurrentRow.Cells[0].Value.ToString();
             txtPackagedDiscountName.Text = DGVCouponTypes.CurrentRow.Cells[1].Value.ToString();
             txtRate.Text = DGVCouponTypes.CurrentRow.Cells[2].Value.ToString();
-            btnSave.Text = "UPDATE";
+                        if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
             btnSave.BackColor = Color.Orange;
         }
 
@@ -195,7 +197,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from PackagedDiscount where PackagedDiscountID = @PackagedDiscountID", MainClass.con);
                             cmd.Parameters.AddWithValue("@PackagedDiscountID", DGVCouponTypes.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Packaged Discount Deleted Successfully");
+                                            if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowPackagedDiscounts(DGVCouponTypes, PackagedDiscountIDGV, PackagedDiscountNameGV, RateGV, txtSearch.Text.ToString());
                         }

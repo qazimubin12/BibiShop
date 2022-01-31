@@ -14,6 +14,7 @@ namespace BibiShop
     {
         int edit = 0;
         int mode = 0;
+        object language = MainClass.LanguageCheck();
         public Settings()
         {
             InitializeComponent();
@@ -111,6 +112,7 @@ namespace BibiShop
                 txtStoreAddress.Text = dr["StoreAddress"].ToString();
                 cboWarehouse.SelectedValue = dr["ShopDefaultWarehouse"].ToString();
                 txtTax.Text = dr["Tax"].ToString();
+                cboLanguage.Text = dr["Language"].ToString();
             }
             else
             {
@@ -241,7 +243,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from Users where Username = @Username", MainClass.con);
                             cmd.Parameters.AddWithValue("@Username", DgvUsers.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                            if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowUsers(DgvUsers, NameGV, UserNameGV, PasswordGV, RoleGV);
                         }
@@ -396,12 +398,13 @@ namespace BibiShop
         private void btnSaveStore_Click(object sender, EventArgs e)
         {
             MainClass.con.Open();
-            SqlCommand cmd = new SqlCommand("insert into StoreTable (StoreName,StoreAddress,ShopDefaultWarehouse,Tax,Logo) values (@StoreName,@StoreAddress,@ShopDefaultWarehouse,@Tax,@Logo) ", MainClass.con);
+            SqlCommand cmd = new SqlCommand("insert into StoreTable (StoreName,StoreAddress,ShopDefaultWarehouse,Tax,Logo,Language) values (@StoreName,@StoreAddress,@ShopDefaultWarehouse,@Tax,@Logo,@Language) ", MainClass.con);
             cmd.Parameters.AddWithValue("@StoreName", txtStoreName.Text);
             cmd.Parameters.AddWithValue("@StoreAddress", txtStoreAddress.Text);
             cmd.Parameters.AddWithValue("@ShopDefaultWarehouse", cboWarehouse.SelectedValue);
             cmd.Parameters.AddWithValue("@Logo", ConvertImageToBytes(pictureBox1.Image));
             cmd.Parameters.AddWithValue("@Tax", float.Parse(txtTax.Text));
+            cmd.Parameters.AddWithValue("@Language", cboLanguage.Text);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Store Saved Successfully");
             MainClass.con.Close();
@@ -427,17 +430,19 @@ namespace BibiShop
         private void btnUpdateStore_Click(object sender, EventArgs e)
         {
             MainClass.con.Open();
-            SqlCommand cmd = new SqlCommand("update StoreTable set StoreName = @StoreName, StoreAddress= @StoreAddress ,Tax= @Tax, ShopDefaultWarehouse = @ShopDefaultWarehouse, Logo = @Logo ", MainClass.con);
+            SqlCommand cmd = new SqlCommand("update StoreTable set StoreName = @StoreName,Language = @Language, StoreAddress= @StoreAddress ,Tax= @Tax, ShopDefaultWarehouse = @ShopDefaultWarehouse, Logo = @Logo ", MainClass.con);
             cmd.Parameters.AddWithValue("@StoreName", txtStoreName.Text);
             cmd.Parameters.AddWithValue("@StoreAddress", txtStoreAddress.Text);
             cmd.Parameters.AddWithValue("@ShopDefaultWarehouse", cboWarehouse.SelectedValue.ToString());
             cmd.Parameters.AddWithValue("@Logo", ConvertImageToBytes(pictureBox1.Image));
             cmd.Parameters.AddWithValue("@Tax", float.Parse(txtTax.Text));
+            cmd.Parameters.AddWithValue("@Language", cboLanguage.Text);
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Store Updated Successfully");
             MainClass.con.Close();
             ShowStore();
+            MainClass.ChangeLanguage();
         }
 
         private void button2_Click(object sender, EventArgs e)

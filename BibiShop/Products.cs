@@ -17,6 +17,7 @@ namespace BibiShop
     {
         int show = 0;
         int pedit = 0;
+        object language = MainClass.LanguageCheck();
         public Products()
         {
             InitializeComponent();
@@ -320,7 +321,7 @@ namespace BibiShop
             txtRemarks.Text = DGVSomeProducts.CurrentRow.Cells[8].Value.ToString();
             cboSize.Text = DGVSomeProducts.CurrentRow.Cells[9].Value.ToString();
             cboColor.Text = DGVSomeProducts.CurrentRow.Cells[10].Value.ToString();
-            btnSave.Text = "UPDATE";
+                        if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
             btnSave.BackColor = Color.Orange;
         }
 
@@ -338,7 +339,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from ProductsTable where ProductID = @ProductID", MainClass.con);
                             cmd.Parameters.AddWithValue("@ProductID", DGVSomeProducts.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                            if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowProductSID(DGVSomeProducts, ProSID, BarcodeSID, NameSID, CategorySID, BrandGV2, CostSID, SaleSID, RemarksSID, UnitSID, ColorGV, SizeGV, txtSearch.Text.ToString());
                         }
@@ -357,7 +358,7 @@ namespace BibiShop
             pedit = 0;
             if (btnSave.BackColor == Color.Orange)
             {
-                btnSave.Text = "SAVE";
+                if (language.ToString() == "English") { btnSave.Text = "SAVE"; } else { btnSave.Text = "保存"; }
                 btnSave.BackColor = Color.SteelBlue;
                 Clear();
             }

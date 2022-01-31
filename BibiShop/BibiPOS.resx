@@ -117,37 +117,2116 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ProductIDGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="btnApplyDiscount.Text" xml:space="preserve">
+    <value>&amp;APPLY</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDiscount.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;SizeGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblNetTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;UnitGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSelectDiscount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 17</value>
+  </data>
+  <data name="btnSaveSale.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="guna2Button4.Text" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="btnNewSale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="&gt;&gt;ProductGV.Name" xml:space="preserve">
+    <value>ProductGV</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnGenerate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnApplyDiscount.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnRecentSales.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtSaleRemarks.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnFinalize.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnAdd.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnAddCustomers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="lblPackagedDiscountedRate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>471, 117</value>
+  </data>
+  <data name="cboOrderType.Items3" xml:space="preserve">
+    <value>Wating For Confirmation</value>
+  </data>
+  <data name="txtInvoiceNo.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;QuantityGV.Name" xml:space="preserve">
+    <value>QuantityGV</value>
+  </data>
+  <data name="btnCancelCoupon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.5pt</value>
+  </data>
+  <data name="&gt;&gt;txtInvoiceNo.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="DGVSaleCart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>618, 304</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;lblStoreName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRecentSales.Name" xml:space="preserve">
+    <value>btnRecentSales</value>
+  </data>
+  <data name="&gt;&gt;couponpanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TotalOfProductGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 2</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnAddCustomers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtInHandQty.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;fpProducts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnNewSale.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="txtSaleRemarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 546</value>
+  </data>
+  <data name="cboProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 70</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblGrandTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 40</value>
+  </data>
+  <data name="txtInvoiceNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>491, 68</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSaleID.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="pictureBox1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 148</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Pay Amount:</value>
+  </data>
+  <data name="&gt;&gt;txtSearhBarcode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnCancelCoupon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 32</value>
+  </data>
+  <data name="cboOrderType.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtSearhBarcode.Name" xml:space="preserve">
+    <value>txtSearhBarcode</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Select Customer</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnFinalize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 22pt</value>
+  </data>
+  <data name="DGVSaleCart.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;CostPriceGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblStoreName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 19</value>
+  </data>
+  <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cboCustomer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 50</value>
+  </data>
+  <data name="&gt;&gt;lblStoreName.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="&gt;&gt;couponpanel.Name" xml:space="preserve">
+    <value>couponpanel</value>
+  </data>
+  <data name="txtPayAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 27</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 50</value>
+  </data>
+  <data name="cboOrderType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 32</value>
+  </data>
+  <data name="&gt;&gt;cboCustomer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblGrandTotal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 24.75pt</value>
+  </data>
+  <data name="&gt;&gt;btnSaveSale.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="cboOrderType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 25</value>
+  </data>
+  <data name="paymentpanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 7</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblStoreAddress.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>473, 25</value>
+  </data>
+  <data name="&gt;&gt;txtInvoiceNo.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;fpProducts.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnPurchases.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 287</value>
+  </data>
+  <data name="txtInHandQty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>491, 120</value>
+  </data>
+  <data name="txtChange.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCoupons.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblCashier.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="lblPackagedDiscountedRate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
+  <data name="&gt;&gt;cboCustomer.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;txtPayAmount.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="&gt;&gt;lblCashier.Name" xml:space="preserve">
+    <value>lblCashier</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>CSS POS</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cboApplyDiscount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 5</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnSelectDiscount.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>BibiPOS</value>
+  </data>
+  <data name="fpProducts.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnAddCustomers.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnCancelCoupon.Parent" xml:space="preserve">
+    <value>couponpanel</value>
+  </data>
+  <data name="&gt;&gt;txtCouponCode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>&amp;APPLY</value>
+  </data>
+  <data name="&gt;&gt;btnCoupons.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblStoreAddress.Text" xml:space="preserve">
+    <value>StoreAddress</value>
+  </data>
+  <data name="btnDiscount.Text" xml:space="preserve">
+    <value>DISCOUNT</value>
+  </data>
+  <data name="btnPurchases.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>TOTAL</value>
+  </data>
+  <data name="lblCouponID.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="lblGrandTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="btnApplyDiscount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="lblSaleID.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;SizeGV.Name" xml:space="preserve">
+    <value>SizeGV</value>
+  </data>
+  <data name="txtPayAmount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnRecentSales.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 287</value>
+  </data>
+  <data name="lblInvoiceNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 53</value>
+  </data>
+  <data name="&gt;&gt;ColorGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="guna2Button4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 45</value>
+  </data>
+  <data name="btnSelectDiscount.Text" xml:space="preserve">
+    <value>&amp;SELECT DISCOUNT</value>
+  </data>
+  <data name="btnNewSale.Text" xml:space="preserve">
+    <value>NEW SALE</value>
+  </data>
+  <data name="couponpanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 97</value>
+  </data>
+  <data name="txtSaleRemarks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;btnRecentSales.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="&gt;&gt;lblTax.Name" xml:space="preserve">
+    <value>lblTax</value>
+  </data>
+  <data name="&gt;&gt;cboApplyDiscount.Parent" xml:space="preserve">
+    <value>discountpanel</value>
+  </data>
+  <data name="&gt;&gt;UnitGV.Name" xml:space="preserve">
+    <value>UnitGV</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnInventory.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnCoupons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 287</value>
+  </data>
+  <data name="&gt;&gt;btnPurchases.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="lblInvoiceNo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblStoreAddress.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;btnAddCustomers.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="&gt;&gt;ColorGV.Name" xml:space="preserve">
+    <value>ColorGV</value>
+  </data>
+  <data name="&gt;&gt;btnLogout.Name" xml:space="preserve">
+    <value>btnLogout</value>
+  </data>
+  <data name="txtChange.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="lblCouponID.Text" xml:space="preserve">
+    <value>CouponID</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;ProductIDGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>486, 2</value>
+  </data>
+  <data name="DGVSaleCart.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="lblInvoiceNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 19</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 549</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblStoreName.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;fpCategories.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;SalePriceGV.Name" xml:space="preserve">
+    <value>SalePriceGV</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="dataGridViewImageColumn1.Width" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 580</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cboOrderType.Items" xml:space="preserve">
+    <value>---Select---</value>
+  </data>
+  <data name="btnDiscount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 378</value>
+  </data>
+  <data name="lblStoreName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStoreAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="lblCouponType.Text" xml:space="preserve">
+    <value>CouponType</value>
+  </data>
+  <data name="&gt;&gt;btnCloseDiscountPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;lblCouponType.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;lblNetTotal.Name" xml:space="preserve">
+    <value>lblNetTotal</value>
+  </data>
+  <data name="&gt;&gt;paymentpanel.Name" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="lblNetTotal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="txtChange.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 84</value>
+  </data>
+  <data name="cboCustomer.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblCashier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>836, 9</value>
+  </data>
+  <data name="&gt;&gt;txtInvoiceNo.Name" xml:space="preserve">
+    <value>txtInvoiceNo</value>
+  </data>
+  <data name="btnPay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SalePriceGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fpCategories.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 96</value>
+  </data>
+  <data name="btnCloseDiscountPanel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCloseDiscountPanel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="&gt;&gt;btnCloseDiscountPanel.Parent" xml:space="preserve">
+    <value>discountpanel</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>636, 37</value>
+  </data>
+  <data name="btnDiscount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;lblStoreAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>NET</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnDiscount.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;paymentpanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="&gt;&gt;txtChange.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="DGVSaleCart.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblCashier.Font" type="System.Drawing.Font, System.Drawing">
+    <value>OCR A Extended, 12pt</value>
+  </data>
+  <data name="&gt;&gt;btnFinalize.Name" xml:space="preserve">
+    <value>btnFinalize</value>
+  </data>
+  <data name="lblPackagedDiscountedRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 19</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>305, 51</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txtChange.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 27</value>
+  </data>
+  <data name="lblGrandTotal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>BibiPOS</value>
+  </data>
+  <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 19</value>
+  </data>
+  <data name="paymentpanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 487</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="btnPurchases.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="txtSearhBarcode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>412, 30</value>
+  </data>
+  <data name="&gt;&gt;fpCategories.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="btnGenerate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>573, 2</value>
+  </data>
+  <data name="&gt;&gt;btnPurchases.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="btnAddCustomers.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblTax.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="&gt;&gt;btnSelectDiscount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txtSaleRemarks.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnDiscount.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>couponpanel</value>
+  </data>
+  <data name="fpProducts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 96</value>
+  </data>
+  <data name="&gt;&gt;lblTax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGenerate.Name" xml:space="preserve">
+    <value>btnGenerate</value>
+  </data>
+  <data name="guna2Button4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 23</value>
+  </data>
+  <data name="&gt;&gt;lblInvoiceNo.Name" xml:space="preserve">
+    <value>lblInvoiceNo</value>
+  </data>
+  <data name="&gt;&gt;btnSelectDiscount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblCouponType.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="cboCustomer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 25</value>
+  </data>
+  <data name="&gt;&gt;btnGenerate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtInvoiceNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 25</value>
+  </data>
+  <data name="&gt;&gt;cboOrderType.Name" xml:space="preserve">
+    <value>cboOrderType</value>
+  </data>
+  <data name="lblCouponType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Select Product</value>
+  </data>
+  <data name="lblNetTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>438, 671</value>
+  </data>
+  <data name="lblTax.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="ProductGV.HeaderText" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 21</value>
+  </data>
+  <data name="txtInHandQty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 25</value>
+  </data>
+  <data name="CostPriceGV.HeaderText" xml:space="preserve">
+    <value>CostPrice</value>
+  </data>
+  <data name="&gt;&gt;lblNetTotal.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;btnCoupons.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="lblSaleID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 19</value>
+  </data>
+  <data name="&gt;&gt;lblCouponID.Name" xml:space="preserve">
+    <value>lblCouponID</value>
+  </data>
+  <data name="&gt;&gt;txtChange.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="cboApplyDiscount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="ActionAddGV.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 21</value>
+  </data>
+  <data name="lblStoreAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 19</value>
+  </data>
+  <data name="&gt;&gt;cboApplyDiscount.Name" xml:space="preserve">
+    <value>cboApplyDiscount</value>
+  </data>
+  <data name="&gt;&gt;btnPay.Name" xml:space="preserve">
+    <value>btnPay</value>
+  </data>
+  <data name="&gt;&gt;lblCouponID.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="dataGridViewImageColumn2.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;lblCouponID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RemarksGV.Name" xml:space="preserve">
+    <value>RemarksGV</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RemarksGV.HeaderText" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="txtInvoiceNo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="cboOrderType.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;txtInHandQty.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cboApplyDiscount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 17</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;btnAddCustomers.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cboCustomer.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnRecentSales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="cboOrderType.Items2" xml:space="preserve">
+    <value>In Store</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1200, 788</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;lblTax.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 19</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1200, 37</value>
+  </data>
+  <data name="&gt;&gt;lblDiscount.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="txtCouponCode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="&gt;&gt;btnCloseDiscountPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblInvoiceNo.Text" xml:space="preserve">
+    <value>InvoiceNo</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;btnSaveSale.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Name" xml:space="preserve">
+    <value>btnReset</value>
+  </data>
+  <data name="&gt;&gt;lblCashier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnGenerate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 32</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPackagedDiscountedRate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNetTotal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPackagedDiscountedRate.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="btnInventory.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cboCustomer.Name" xml:space="preserve">
+    <value>cboCustomer</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Old English Text MT, 18pt</value>
+  </data>
+  <data name="&gt;&gt;btnApplyDiscount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Invoice No:</value>
+  </data>
+  <data name="lblDiscount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 19</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="txtInvoiceNo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="lblInvoiceNo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewImageColumn2.Name" xml:space="preserve">
+    <value>dataGridViewImageColumn2</value>
+  </data>
+  <data name="cboProduct.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 28</value>
+  </data>
+  <data name="&gt;&gt;ActionRemoveGV.Name" xml:space="preserve">
+    <value>ActionRemoveGV</value>
+  </data>
+  <data name="&gt;&gt;fpCategories.Name" xml:space="preserve">
+    <value>fpCategories</value>
+  </data>
+  <data name="btnFinalize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 85</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;DGVSaleCart.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="SizeGV.HeaderText" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="lblStoreAddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewImageColumn1.Name" xml:space="preserve">
+    <value>dataGridViewImageColumn1</value>
+  </data>
+  <data name="&gt;&gt;btnFinalize.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnRecentSales.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblTax.Text" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 40</value>
+  </data>
+  <data name="&gt;&gt;txtChange.Name" xml:space="preserve">
+    <value>txtChange</value>
+  </data>
+  <data name="btnPurchases.Text" xml:space="preserve">
+    <value>ADD PURCHASES</value>
+  </data>
+  <data name="btnInventory.Text" xml:space="preserve">
+    <value>INVENTORY</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="&gt;&gt;fpProducts.Name" xml:space="preserve">
+    <value>fpProducts</value>
+  </data>
+  <data name="&gt;&gt;txtCouponCode.Name" xml:space="preserve">
+    <value>txtCouponCode</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Name" xml:space="preserve">
+    <value>lblGrandTotal</value>
+  </data>
+  <data name="&gt;&gt;lblDiscount.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnLogout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1169, 4</value>
+  </data>
+  <data name="&gt;&gt;guna2Button4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="dataGridViewImageColumn1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCouponCode.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;txtPayAmount.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSelectDiscount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 148</value>
+  </data>
+  <data name="&gt;&gt;txtChange.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>TAX</value>
+  </data>
+  <data name="lblTax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>438, 641</value>
+  </data>
+  <data name="&gt;&gt;lblStoreAddress.Name" xml:space="preserve">
+    <value>lblStoreAddress</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblPackagedDiscountedRate.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblStoreName.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;btnDiscount.Name" xml:space="preserve">
+    <value>btnDiscount</value>
+  </data>
+  <data name="&gt;&gt;btnLogout.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnCloseDiscountPanel.Name" xml:space="preserve">
+    <value>btnCloseDiscountPanel</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;lblCouponType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPackagedDiscountedRate.Name" xml:space="preserve">
+    <value>lblPackagedDiscountedRate</value>
+  </data>
+  <data name="ProductIDGV.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblDiscount.Name" xml:space="preserve">
+    <value>lblDiscount</value>
+  </data>
+  <data name="btnApply.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="lblSaleID.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btnApplyDiscount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 2</value>
+  </data>
+  <data name="btnDiscount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="&gt;&gt;lblSaleID.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="fpCategories.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblCouponType.Name" xml:space="preserve">
+    <value>lblCouponType</value>
+  </data>
+  <data name="lblStoreAddress.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnCloseDiscountPanel.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="cboProduct.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="lblCouponID.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="btnInventory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 287</value>
+  </data>
+  <data name="&gt;&gt;txtPayAmount.Name" xml:space="preserve">
+    <value>txtPayAmount</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblCouponType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 19</value>
+  </data>
+  <data name="lblGrandTotal.Text" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="fpCategories.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnAdd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;RemarksGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtSearhBarcode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>49, 46, 49, 46</value>
+  </data>
+  <data name="txtPayAmount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="btnPay.Text" xml:space="preserve">
+    <value>PAY</value>
+  </data>
+  <data name="btnFinalize.Text" xml:space="preserve">
+    <value>FINALIZE</value>
+  </data>
+  <data name="&gt;&gt;btnSelectDiscount.Name" xml:space="preserve">
+    <value>btnSelectDiscount</value>
+  </data>
+  <data name="btnPay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 378</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="lblDiscount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="lblSaleID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 74</value>
+  </data>
+  <data name="&gt;&gt;btnAddCustomers.Name" xml:space="preserve">
+    <value>btnAddCustomers</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;cboProduct.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="btnNewSale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 378</value>
+  </data>
+  <data name="&gt;&gt;btnPay.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblDiscount.Text" xml:space="preserve">
+    <value>DISCOUNT</value>
+  </data>
+  <data name="&gt;&gt;btnNewSale.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 19</value>
+  </data>
+  <data name="&gt;&gt;btnDiscount.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewImageColumn1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSelectDiscount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="lblNetTotal.Text" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="txtSaleRemarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 27</value>
+  </data>
+  <data name="&gt;&gt;lblTax.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblCouponID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 19</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>&amp;HAVE COUPON?</value>
+  </data>
+  <data name="cboProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 25</value>
+  </data>
+  <data name="lblTax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 21</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Remarks:</value>
+  </data>
+  <data name="&gt;&gt;discountpanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="fpCategories.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 751</value>
+  </data>
+  <data name="lblDiscount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 95</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="fpCategories.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;txtSaleRemarks.Name" xml:space="preserve">
+    <value>txtSaleRemarks</value>
+  </data>
+  <data name="btnFinalize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 26</value>
+  </data>
+  <data name="btnApply.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCancelCoupon.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cboCustomer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 70</value>
+  </data>
+  <data name="btnRecentSales.Text" xml:space="preserve">
+    <value>RECENT SALES</value>
+  </data>
+  <data name="fpCategories.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="paymentpanel.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="txtPayAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="txtChange.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="fpProducts.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="QuantityGV.HeaderText" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblStoreName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="txtInHandQty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 19</value>
+  </data>
+  <data name="&gt;&gt;btnGenerate.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="lblCashier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="btnInventory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="&gt;&gt;btnCancelCoupon.Name" xml:space="preserve">
+    <value>btnCancelCoupon</value>
+  </data>
+  <data name="guna2Button4.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnCoupons.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="btnAddCustomers.Text" xml:space="preserve">
+    <value>ADD CUSTOMERS</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="lblSaleID.Text" xml:space="preserve">
+    <value>SaleID</value>
+  </data>
+  <data name="&gt;&gt;btnReset.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnLogout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 31</value>
+  </data>
+  <data name="&gt;&gt;guna2Button4.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txtInvoiceNo.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;lblCashier.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="discountpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 34</value>
+  </data>
+  <data name="btnSaveSale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 378</value>
+  </data>
+  <data name="lblGrandTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>410, 598</value>
+  </data>
+  <data name="couponpanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 183</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="btnGenerate.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblCashier.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Available QTY</value>
+  </data>
+  <data name="btnCancelCoupon.Text" xml:space="preserve">
+    <value>CANCEL  COUPON</value>
+  </data>
+  <data name="btnGenerate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="&gt;&gt;txtPayAmount.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="couponpanel.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;lblPackagedDiscountedRate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;QuantityGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnGenerate.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;couponpanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblSaleID.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;guna2Button4.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewImageColumn2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPurchases.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="&gt;&gt;txtSearhBarcode.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;discountpanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblNetTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 21</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;DGVSaleCart.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2DataGridView, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="lblCouponType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="txtChange.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="&gt;&gt;CostPriceGV.Name" xml:space="preserve">
+    <value>CostPriceGV</value>
+  </data>
+  <data name="&gt;&gt;fpCategories.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>488, 46</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="btnApplyDiscount.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="lblPackagedDiscountedRate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="btnCoupons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 671</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnNewSale.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblDiscount.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;lblInvoiceNo.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="btnCloseDiscountPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 32</value>
+  </data>
+  <data name="txtSearhBarcode.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;cboOrderType.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;cboApplyDiscount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCoupons.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;ProductGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txtInHandQty.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="cboProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 32</value>
+  </data>
+  <data name="btnApply.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="cboCustomer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>&amp;ADD</value>
+  </data>
+  <data name="lblCashier.Text" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="txtCouponCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 5</value>
+  </data>
+  <data name="&gt;&gt;lblStoreName.Name" xml:space="preserve">
+    <value>lblStoreName</value>
+  </data>
+  <data name="cboOrderType.Items1" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="DGVSaleCart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 223</value>
+  </data>
+  <data name="guna2Button4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="&gt;&gt;lblPackagedDiscountedRate.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnPurchases.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="cboOrderType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>305, 70</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="btnRecentSales.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtInHandQty.Name" xml:space="preserve">
+    <value>txtInHandQty</value>
+  </data>
+  <data name="discountpanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 147</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="txtCouponCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 25</value>
+  </data>
+  <data name="&gt;&gt;ActionAddGV.Name" xml:space="preserve">
+    <value>ActionAddGV</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cboOrderType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="fpProducts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 185</value>
+  </data>
+  <data name="&gt;&gt;TotalOfProductGV.Name" xml:space="preserve">
+    <value>TotalOfProductGV</value>
+  </data>
+  <data name="&gt;&gt;lblInvoiceNo.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="lblCouponID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 76</value>
+  </data>
+  <data name="lblStoreName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 8</value>
+  </data>
+  <data name="btnLogout.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btnSaveSale.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="fpProducts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="cboApplyDiscount.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;btnInventory.Name" xml:space="preserve">
+    <value>btnInventory</value>
+  </data>
+  <data name="&gt;&gt;btnCancelCoupon.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;DGVSaleCart.Name" xml:space="preserve">
+    <value>DGVSaleCart</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 2</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 7</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;couponpanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 32</value>
+  </data>
+  <data name="lblCouponType.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;btnApplyDiscount.Name" xml:space="preserve">
+    <value>btnApplyDiscount</value>
+  </data>
+  <data name="ProductIDGV.HeaderText" xml:space="preserve">
+    <value>ProductID</value>
+  </data>
+  <data name="&gt;&gt;lblNetTotal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnCloseDiscountPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 641</value>
+  </data>
+  <data name="btnSelectDiscount.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10pt</value>
+  </data>
+  <data name="lblCashier.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;txtSaleRemarks.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;discountpanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionAddGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnNewSale.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
+  <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 378</value>
+  </data>
+  <data name="btnFinalize.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="txtCouponCode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Name" xml:space="preserve">
+    <value>btnApply</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="&gt;&gt;txtInHandQty.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnSelectDiscount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 32</value>
+  </data>
+  <data name="lblCouponType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 53</value>
+  </data>
+  <data name="UnitGV.HeaderText" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="&gt;&gt;ProductIDGV.Name" xml:space="preserve">
+    <value>ProductIDGV</value>
+  </data>
+  <data name="paymentpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>568, 184</value>
+  </data>
+  <data name="lblInvoiceNo.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="btnSaveSale.Text" xml:space="preserve">
+    <value>SAVE SALE</value>
+  </data>
+  <data name="&gt;&gt;lblSaleID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>RESET ALL</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;lblNetTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnPay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 22pt</value>
+  </data>
+  <data name="&gt;&gt;DGVSaleCart.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="couponpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>614, 34</value>
+  </data>
+  <data name="&gt;&gt;btnInventory.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnFinalize.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnInventory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="&gt;&gt;btnLogout.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;paymentpanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnPay.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;discountpanel.Name" xml:space="preserve">
+    <value>discountpanel</value>
+  </data>
+  <data name="btnSaveSale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 1</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ColorGV.HeaderText" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="lblDiscount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblDiscount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnNewSale.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnApplyDiscount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 32</value>
+  </data>
+  <data name="&gt;&gt;btnRecentSales.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Parent" xml:space="preserve">
+    <value>couponpanel</value>
+  </data>
+  <data name="dataGridViewImageColumn2.Width" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;btnInventory.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="lblStoreName.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnApply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fpProducts.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="btnApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 32</value>
+  </data>
+  <data name="&gt;&gt;txtInvoiceNo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnCancelCoupon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>494, 2</value>
+  </data>
+  <data name="&gt;&gt;txtCouponCode.Parent" xml:space="preserve">
+    <value>couponpanel</value>
+  </data>
+  <data name="CostPriceGV.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;cboProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="discountpanel.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 19</value>
+  </data>
+  <data name="cboApplyDiscount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 25</value>
+  </data>
+  <data name="&gt;&gt;ActionRemoveGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtInHandQty.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="cboApplyDiscount.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 598</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtPayAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 30</value>
+  </data>
+  <data name="txtSearhBarcode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 115</value>
+  </data>
+  <data name="&gt;&gt;txtCouponCode.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="lblCouponID.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblInvoiceNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnGenerate.Text" xml:space="preserve">
+    <value>&amp;GENERATE</value>
+  </data>
+  <data name="&gt;&gt;btnApplyDiscount.Parent" xml:space="preserve">
+    <value>discountpanel</value>
+  </data>
+  <data name="&gt;&gt;btnSaveSale.Name" xml:space="preserve">
+    <value>btnSaveSale</value>
+  </data>
+  <data name="&gt;&gt;lblStoreAddress.Parent" xml:space="preserve">
+    <value>paymentpanel</value>
+  </data>
+  <data name="&gt;&gt;lblCouponID.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btnLogout.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;lblSaleID.Name" xml:space="preserve">
+    <value>lblSaleID</value>
+  </data>
+  <data name="txtSaleRemarks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="btnLogout.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnCancelCoupon.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;txtSaleRemarks.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="lblStoreName.Text" xml:space="preserve">
+    <value>StoreName</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 67</value>
+  </data>
+  <data name="SalePriceGV.HeaderText" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="&gt;&gt;btnCancelCoupon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSaveSale.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="btnCoupons.Text" xml:space="preserve">
+    <value>COUPONS</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPay.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;guna2Button4.Name" xml:space="preserve">
+    <value>guna2Button4</value>
+  </data>
+  <data name="txtInHandQty.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;btnApplyDiscount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 85</value>
+  </data>
+  <data name="&gt;&gt;btnGenerate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboProduct.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 24.75pt</value>
+  </data>
+  <data name="lblTax.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Select Order Type:</value>
+  </data>
+  <data name="lblStoreAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 34</value>
+  </data>
+  <data name="&gt;&gt;paymentpanel.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;btnNewSale.Name" xml:space="preserve">
+    <value>btnNewSale</value>
+  </data>
+  <data name="&gt;&gt;btnPay.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="ActionRemoveGV.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtSearhBarcode.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="btnAddCustomers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 287</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Change:</value>
+  </data>
+  <data name="btnCloseDiscountPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>292, 2</value>
+  </data>
+  <data name="discountpanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;cboOrderType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPurchases.Name" xml:space="preserve">
+    <value>btnPurchases</value>
+  </data>
+  <data name="TotalOfProductGV.HeaderText" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="&gt;&gt;btnCoupons.Name" xml:space="preserve">
+    <value>btnCoupons</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 61</value>
+  </data>
+  <data name="&gt;&gt;cboProduct.Name" xml:space="preserve">
+    <value>cboProduct</value>
+  </data>
+  <data name="btnReset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 10pt</value>
+  </data>
   <metadata name="ProductGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="UnitGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CostPriceGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SalePriceGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColorGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ActionAddGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="QuantityGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="SizeGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TotalOfProductGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ColorGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="RemarksGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ActionAddGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="SizeGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ProductIDGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SalePriceGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CostPriceGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>zh-TW</value>
+  </metadata>
+  <metadata name="TotalOfProductGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="UnitGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ActionRemoveGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -32,6 +32,7 @@ namespace BibiShop
             ShowSales(DGVSales, SaleIDCC, InvoiceNoGVC, InvoiceDateGVC, DiscountGVC, GrandTotalGVC);
             ShowSalesforPrint(DGVSalePrintingAll);
            
+           
 
         }
 
@@ -41,11 +42,12 @@ namespace BibiShop
             SqlCommand cmd = null;
             if(purchasedate == 1)
             {
-                cmd = new SqlCommand("select pp.PurchaseID, st.SupplierInvoiceID,st.PaymentType,pp.InvoiceNo,format(st.InvoiceDate, 'dd/MM/yyyy') as 'Date',pt.Name,pp.GrandTotal from PurchasesInfo p inner join PurchasesTable pp on pp.PurchaseID = p.Purchase_ID  inner join PersonsTable pt on pt.PersonID = pp.Supplier_ID inner join SupplierInvoicesTable st on st.SupplierInvoiceID = pp.SupplierInvoice_ID where st.InvoiceDate between '" + dtPurchase1.Value.ToShortDateString() + "' and '" + dtPurchase2.Value.ToShortDateString() + "'", MainClass.con);
+                cmd = new SqlCommand("select p.PurchaseID,st.SupplierInvoiceID,st.PaymentType,p.InvoiceNo,format(st.InvoiceDate, 'dd/MM/yyyy') as 'Date',pt.Name,p.GrandTotal from PurchasesTable p inner join PersonsTable pt on pt.PersonID = p.Supplier_ID inner join SupplierInvoicesTable st on st.SupplierInvoiceID = p.SupplierInvoice_ID" +
+                    " where st.InvoiceDate between '" + dtPurchase1.Value.ToShortDateString() + "' and '" + dtPurchase2.Value.ToShortDateString() + "'", MainClass.con);
             }
             else
             {
-                cmd = new SqlCommand("select pp.PurchaseID,st.SupplierInvoiceID,st.PaymentType,pp.InvoiceNo,format(st.InvoiceDate, 'dd/MM/yyyy') as 'Date',pt.Name,pp.GrandTotal from PurchasesInfo p inner join PurchasesTable pp on pp.PurchaseID = p.Purchase_ID  inner join PersonsTable pt on pt.PersonID = pp.Supplier_ID inner join SupplierInvoicesTable st on st.SupplierInvoiceID = pp.SupplierInvoice_ID", MainClass.con);
+                cmd = new SqlCommand("select p.PurchaseID,st.SupplierInvoiceID,st.PaymentType,p.InvoiceNo,format(st.InvoiceDate, 'dd/MM/yyyy') as 'Date',pt.Name,p.GrandTotal from PurchasesTable p inner join PersonsTable pt on pt.PersonID = p.Supplier_ID inner join SupplierInvoicesTable st on st.SupplierInvoiceID = p.SupplierInvoice_ID", MainClass.con);
             }
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -383,6 +385,20 @@ namespace BibiShop
                     Purchase_ID = 0;
 
                 }
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DGVPurchases_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                DGVPurchases.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(92, 137, 253);
+                DGVPurchases.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
             }
         }
     }

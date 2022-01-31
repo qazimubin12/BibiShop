@@ -15,7 +15,9 @@ namespace BibiShop
 {
     public partial class Persons : Form
     {
-        int pedit = 0;
+        int pedit = 0; 
+        object language = MainClass.LanguageCheck();
+
         public Persons()
         {
             InitializeComponent();
@@ -171,7 +173,7 @@ namespace BibiShop
             txtContact.Text = DGVPersons.CurrentRow.Cells[3].Value.ToString();
             txtAddress.Text = DGVPersons.CurrentRow.Cells[4].Value.ToString();
             lblBirthday.Text = DGVPersons.CurrentRow.Cells[5].Value.ToString();
-            btnSave.Text = "UPDATE";
+                        if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
             btnSave.BackColor = Color.Orange;
         }
 
@@ -190,7 +192,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from PersonsTable where PersonID = @PersonID", MainClass.con);
                             cmd.Parameters.AddWithValue("@PersonID", DGVPersons.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                                           if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowPersons(DGVPersons, PersonIDGV, NameGV, TypeGV, ContactGV, AddressGV, BdayGV);
                         }

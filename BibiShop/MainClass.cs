@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +19,7 @@ namespace BibiShop
     class MainClass
     {
 
+        //  private static string s = @"Data Source=DESKTOP-QHHLI3L\SQLEXPRESS;Initial Catalog=BibiShop;Integrated Security = True;MultipleActiveResultSets=true;";
         private static string s = @"Data Source=DESKTOP-E7EO3OH;Initial Catalog=BibiShop;Integrated Security = True;MultipleActiveResultSets=true;";
         public static SqlConnection con = new SqlConnection(s);
 
@@ -29,7 +32,49 @@ namespace BibiShop
             button.BorderStyle = System.Drawing.Drawing2D.DashStyle.Solid;
         }
 
+        public static void ChangeLanguage()
+        {
+            try
+            {
+                MainClass.con.Open();
+                SqlCommand cmd = new SqlCommand("select Language from StoreTable", MainClass.con);
+                object language = cmd.ExecuteScalar();
+                MainClass.con.Close();
+                if (language.ToString() == "Chinese")
+                {
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-TW");
+                }
+                else
+                {
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MainClass.con.Close();
+            }
+        }
 
+        public static void DataGridViewButton(DataGridViewButtonCell button)
+        {
+            button.FlatStyle = FlatStyle.Flat;
+            button.Style.BackColor = Color.FromArgb(92, 137, 253);
+            button.Style.ForeColor = Color.White;
+           
+        }
+
+        public static string LanguageCheck()
+        {
+            MainClass.con.Open();
+            SqlCommand cmd = new SqlCommand("select Language from StoreTable", MainClass.con);
+            string language = cmd.ExecuteScalar().ToString();
+            MainClass.con.Close();
+
+            return language;
+        }
+
+      
         public static void HideAllTabsOnTabControl(TabControl theTabControl)
         {
             theTabControl.Appearance = TabAppearance.FlatButtons;
@@ -302,12 +347,45 @@ namespace BibiShop
 
         public static void FillOrderType(ComboBox cmb)
         {
-            cmb.Items.Insert(0, "Select");
-            cmb.Items.Insert(1, "Completed");
-            cmb.Items.Insert(2, "Remaining Payment");
-            cmb.Items.Insert(3, "Waiting for delivery");
+            object lang = LanguageCheck();
+            if (lang.ToString() == "Chinese")
+            {
+                cmb.Items.Insert(0, "選擇");
+                cmb.Items.Insert(1, "完全的");
+                cmb.Items.Insert(2, "剩餘款項");
+                cmb.Items.Insert(3, "等待發貨");
+            }
+            else
+            {
+                cmb.Items.Insert(0, "Select");
+                cmb.Items.Insert(1, "Completed");
+                cmb.Items.Insert(2, "Remaining Payment");
+                cmb.Items.Insert(3, "Waiting for delivery");
+            }
 
         }
+
+        public static void FillORderTpy(ComboBox cmb)
+        {
+            object lang = LanguageCheck();
+            if (lang.ToString() == "Chinese")
+            {
+                cmb.Items.Insert(0, "選擇");
+                cmb.Items.Insert(1, "完全的");
+                cmb.Items.Insert(2, "有存貨");
+            }
+            else
+            {
+                cmb.Items.Insert(0, "Select");
+                cmb.Items.Insert(1, "Delivery");
+                cmb.Items.Insert(2, "In Store");
+            }
+
+        }
+
+       
+
+
 
         public static void FillSizes(ComboBox cmb)
         {
@@ -720,30 +798,30 @@ namespace BibiShop
         }
 
 
-        public static void ShowSaleReciept(ReportDocument rd, CrystalReportViewer crv, string proc, string param1 = "", object val1 = null)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand(proc, MainClass.con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                if (param1 != "")
-                {
-                    cmd.Parameters.AddWithValue(param1, val1);
-                }
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                rd.Load(Application.StartupPath + "\\Reports\\SaleReciept.rpt");
-                rd.SetDataSource(dt);
-                crv.ReportSource = rd;
-                crv.RefreshReport();
+        //public static void ShowSaleReciept(ReportDocument rd, CrystalReportViewer crv, string proc, string param1 = "", object val1 = null)
+        //{
+        //    try
+        //    {
+        //        SqlCommand cmd = new SqlCommand(proc, MainClass.con);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        if (param1 != "")
+        //        {
+        //            cmd.Parameters.AddWithValue(param1, val1);
+        //        }
+        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //        DataTable dt = new DataTable();
+        //        da.Fill(dt);
+        //        rd.Load(Application.StartupPath + "\\Reports\\SaleReciept.rpt");
+        //        rd.SetDataSource(dt);
+        //        crv.ReportSource = rd;
+        //        crv.RefreshReport();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
 
         public static void ShowSaleRecieptSavedCustomer(ReportDocument rd, CrystalReportViewer crv, string proc, string param1 = "", object val1 = null)
@@ -759,7 +837,15 @@ namespace BibiShop
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                rd.Load(Application.StartupPath + "\\Reports\\SaleReciept_SavedCustomer.rpt");
+                object lang = LanguageCheck();
+                if (lang.ToString() == "English")
+                {
+                    rd.Load(Application.StartupPath + "\\Reports\\SaleReciept_SavedCustomer.rpt");
+                }
+                else
+                {
+                    rd.Load(Application.StartupPath + "\\Reports\\SaleReciept_SavedCustomerChinese.rpt");
+                }
                 rd.SetDataSource(dt);
                 crv.ReportSource = rd;
                 crv.RefreshReport();
@@ -785,7 +871,15 @@ namespace BibiShop
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-               rd.Load(Application.StartupPath + "\\Reports\\PurchaseReceipt.rpt");
+                object lang = LanguageCheck();
+                if (lang.ToString() == "English")
+                {
+                    rd.Load(Application.StartupPath + "\\Reports\\PurchaseReceipt.rpt");
+                }
+                else
+                {
+                    rd.Load(Application.StartupPath + "\\Reports\\PurchaseReceiptChinese.rpt");
+                }
                 rd.SetDataSource(dt);
                 crv.ReportSource = rd;
                 crv.RefreshReport();

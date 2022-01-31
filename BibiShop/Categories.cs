@@ -14,6 +14,8 @@ namespace BibiShop
     public partial class Categories : Form
     {
         int cedit = 0;
+        object language = null;
+
         public Categories()
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace BibiShop
                 ID.DataPropertyName = dt.Columns["CategoryID"].ToString();
                 dgv.DataSource = dt;
                 MainClass.con.Close();
+                language = MainClass.LanguageCheck();
             }
             catch (Exception ex)
             {
@@ -64,7 +67,15 @@ namespace BibiShop
             {
                 if (txtCategory.Text == "")
                 {
-                    MessageBox.Show("Please Input Details");
+                    if(language.ToString() == "English")
+                    {
+                        MessageBox.Show("Please Input Details");
+                    }
+                    else
+                    {
+                        MessageBox.Show("請輸入詳細信息");
+
+                    }
                 }
                 else
                 {
@@ -76,7 +87,14 @@ namespace BibiShop
 
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
-                        MessageBox.Show("Category Inserted Successfully.");
+                        if (language.ToString() == "English")
+                        {
+                            MessageBox.Show("Category Inserted Successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("類別插入成功");
+                        }
                         Clear();
                         ShowCategorys(DgvCategory, CatIDGV, CategoryGV);
                     }
@@ -100,7 +118,14 @@ namespace BibiShop
                         cmd.Parameters.AddWithValue("@Category", txtCategory.Text);
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
-                        MessageBox.Show("Category Updated Successfully.");
+                        if (language.ToString() == "English")
+                        {
+                            MessageBox.Show("Category Updated Successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("類別更新成功.");
+                        }
                         btnSave.Text = "SAVE";
                         btnSave.BackColor = Color.SteelBlue;
                         Clear();
@@ -121,7 +146,14 @@ namespace BibiShop
             cedit = 1;
             lblID.Text = DgvCategory.CurrentRow.Cells[0].Value.ToString();
             txtCategory.Text = DgvCategory.CurrentRow.Cells[1].Value.ToString();
-            btnSave.Text = "UPDATE";
+            if (language.ToString() == "Chinese")
+            {
+                btnSave.Text = "更新";
+            }
+            else
+            {
+               btnSave.Text = "UPDATE";
+            }
             btnSave.BackColor = Color.Orange;
         }
 
@@ -139,7 +171,14 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from CategoriesTable where CategoryID = @CategoryID", MainClass.con);
                             cmd.Parameters.AddWithValue("@CategoryID", DgvCategory.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                            if (language.ToString() == "English")
+                            {
+                               MessageBox.Show("Record Deleted Successfully");
+                            }
+                            else
+                            {
+                                MessageBox.Show("記錄刪除成功");
+                            }
                             MainClass.con.Close();
                             ShowCategorys(DgvCategory, CatIDGV, CategoryGV);
                         }
@@ -158,7 +197,14 @@ namespace BibiShop
             cedit = 0;
             if (btnSave.BackColor == Color.Orange)
             {
-                btnSave.Text = "SAVE";
+                if (language.ToString() == "English")
+                {
+                    btnSave.Text = "SAVE";
+                }
+                else
+                {
+                    btnSave.Text = "保存";
+                }
                 btnSave.BackColor = Color.SteelBlue;
                 txtCategory.Text = "";
             }

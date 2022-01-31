@@ -83,6 +83,16 @@ namespace BibiShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddButton {
+            get {
+                object obj = ResourceManager.GetObject("AddButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baby_pink_flannel_500x500 {
             get {
                 object obj = ResourceManager.GetObject("baby-pink-flannel-500x500", resourceCulture);
@@ -466,6 +476,16 @@ namespace BibiShop.Properties {
         internal static System.Drawing.Bitmap product {
             get {
                 object obj = ResourceManager.GetObject("product", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Removebutton {
+            get {
+                object obj = ResourceManager.GetObject("Removebutton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

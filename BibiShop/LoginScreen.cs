@@ -94,7 +94,10 @@ namespace BibiShop
                                 MessageBox.Show(ex.Message);
                             }
                         }
-
+                        MainClass.con.Open();
+                        SqlCommand cmd2 = new SqlCommand("update StoreTable set Language = '"+cboLanguage.Text+"'", MainClass.con);
+                        cmd2.ExecuteNonQuery();
+                        MainClass.con.Close();
                         MessageBox.Show("Welcome " + User_NAME);
                         this.Hide();
                         BibiHomeScreen das = new BibiHomeScreen();
@@ -103,6 +106,11 @@ namespace BibiShop
                     }
                     else
                     {
+                        MainClass.con.Open();
+                        SqlCommand cmd2 = new SqlCommand("update StoreTable set Language = '" + cboLanguage.Text + "'", MainClass.con);
+                        cmd2.ExecuteNonQuery();
+                        MainClass.con.Close();
+
                         MessageBox.Show("Welcome " + User_NAME);
                         this.Hide();
                         BibiPOS das = new BibiPOS();

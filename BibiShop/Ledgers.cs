@@ -13,6 +13,8 @@ namespace BibiShop
 {
     public partial class Ledgers : Form
     {
+        object lang = MainClass.LanguageCheck();
+        
         public Ledgers()
         {
             InitializeComponent();
@@ -93,7 +95,14 @@ namespace BibiShop
                         txtBalance.Text = DGVSupplierLedger.CurrentRow.Cells[7].Value.ToString();
                         lblPreviousBalance.Text = DGVSupplierLedger.CurrentRow.Cells[7].Value.ToString();
                         txtPayingNow.Enabled = true;
-                        GBPayment.Text = "PAYMENT MODE";
+                        if(lang.ToString() == "English")
+                        {
+                            GBPayment.Text = "PAYMENT MODE";
+                        }
+                        else
+                        {
+                            GBPayment.Text = "付款方式";
+                        }
                     }
                 }
             }
@@ -104,7 +113,15 @@ namespace BibiShop
             Clear();
             txtPayingNow.Enabled = false;
 
-            GBPayment.Text = "PAYMENT INFO";
+            if (lang.ToString() == "English")
+            {
+                GBPayment.Text = "PAYMENT INFO";
+            }
+            else
+            {
+                GBPayment.Text = "付款信息";
+            }
+            
             this.Dispose(); BibiHomeScreen ds = new BibiHomeScreen();  
         }
 
@@ -136,9 +153,18 @@ namespace BibiShop
         {
             SqlCommand cmd = null;
             DateTime TodaysDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            
             if (txtInvoiceNo.Text == "")
             {
-                MessageBox.Show("Please Enter the Pay button in the field");
+                if (lang.ToString() == "English")
+                {
+                    MessageBox.Show("Please Enter the Pay button in the field");
+                }
+                else
+                {
+                    MessageBox.Show("請在字段中輸入支付按鈕");
+
+                }
                 return;
             }
             else
@@ -182,8 +208,15 @@ namespace BibiShop
             
             
            
+            if(lang.ToString() == "English")
+            {
+                MessageBox.Show("Payment Successful");
+            }
+            else
+            {
+                MessageBox.Show("支付成功");
 
-            MessageBox.Show("Payment Successful");
+            }
             ShowSupplierLedgers(DGVSupplierLedger, IDGV, NameGV, InvoiceNoGV, InvoiceDateGV, TotalAmountGV, PaidAmountGV, BalanceGV);
             Clear();
         }

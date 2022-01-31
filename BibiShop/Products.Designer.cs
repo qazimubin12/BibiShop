@@ -30,6 +30,7 @@ namespace BibiShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -55,6 +56,7 @@ namespace BibiShop
             this.lblID = new System.Windows.Forms.Label();
             this.txtSalePrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtRemarks = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSafetyStock = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCostPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtProductName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtBarcode = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,6 +64,7 @@ namespace BibiShop
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -84,8 +87,6 @@ namespace BibiShop
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtSafetyStock = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,64 +97,49 @@ namespace BibiShop
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnAddColor);
             this.panel1.Controls.Add(this.btnAddSize);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 94);
-            this.panel1.TabIndex = 23;
             // 
             // btnAddColor
             // 
+            resources.ApplyResources(this.btnAddColor, "btnAddColor");
             this.btnAddColor.BackColor = System.Drawing.Color.White;
             this.btnAddColor.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnAddColor.FlatAppearance.BorderSize = 2;
-            this.btnAddColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddColor.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.btnAddColor.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnAddColor.Location = new System.Drawing.Point(388, 43);
             this.btnAddColor.Name = "btnAddColor";
-            this.btnAddColor.Size = new System.Drawing.Size(116, 42);
-            this.btnAddColor.TabIndex = 32;
-            this.btnAddColor.Text = "ADD COLOR";
             this.btnAddColor.UseVisualStyleBackColor = false;
             this.btnAddColor.Click += new System.EventHandler(this.btnAddColor_Click);
             // 
             // btnAddSize
             // 
+            resources.ApplyResources(this.btnAddSize, "btnAddSize");
             this.btnAddSize.BackColor = System.Drawing.Color.White;
             this.btnAddSize.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnAddSize.FlatAppearance.BorderSize = 2;
-            this.btnAddSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSize.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.btnAddSize.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnAddSize.Location = new System.Drawing.Point(510, 43);
             this.btnAddSize.Name = "btnAddSize";
-            this.btnAddSize.Size = new System.Drawing.Size(96, 42);
-            this.btnAddSize.TabIndex = 32;
-            this.btnAddSize.Text = "ADD SIZE";
             this.btnAddSize.UseVisualStyleBackColor = false;
             this.btnAddSize.Click += new System.EventHandler(this.btnAddSize_Click);
             // 
             // button3
             // 
+            resources.ApplyResources(this.button3, "button3");
             this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::BibiShop.Properties.Resources.cancel__2_;
-            this.button3.Location = new System.Drawing.Point(870, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 36);
-            this.button3.TabIndex = 5;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtSearch
             // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.AutoRoundedCorners = true;
             this.txtSearch.BorderRadius = 15;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -169,30 +155,22 @@ namespace BibiShop
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconLeft = global::BibiShop.Properties.Resources.icons8_search_50px;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.txtSearch.Location = new System.Drawing.Point(621, 51);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(12);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Search Products";
+            this.txtSearch.PlaceholderText = "搜索產品";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(282, 32);
-            this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 40);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Products";
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.guna2Button4);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -223,15 +201,12 @@ namespace BibiShop
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 94);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(333, 655);
-            this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // guna2Button1
             // 
+            resources.ApplyResources(this.guna2Button1, "guna2Button1");
             this.guna2Button1.AutoRoundedCorners = true;
             this.guna2Button1.BackColor = System.Drawing.Color.White;
             this.guna2Button1.BorderColor = System.Drawing.Color.LightSteelBlue;
@@ -240,19 +215,15 @@ namespace BibiShop
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(301, 234);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(26, 26);
-            this.guna2Button1.TabIndex = 48;
-            this.guna2Button1.Text = "R";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button4
             // 
+            resources.ApplyResources(this.guna2Button4, "guna2Button4");
             this.guna2Button4.AutoRoundedCorners = true;
             this.guna2Button4.BackColor = System.Drawing.Color.White;
             this.guna2Button4.BorderColor = System.Drawing.Color.LightSteelBlue;
@@ -261,159 +232,107 @@ namespace BibiShop
             this.guna2Button4.CheckedState.Parent = this.guna2Button4;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
             this.guna2Button4.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button4.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(149, 237);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(26, 26);
-            this.guna2Button4.TabIndex = 48;
-            this.guna2Button4.Text = "R";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(18, 354);
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 164);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
+            resources.ApplyResources(this.button2, "button2");
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.button2.Location = new System.Drawing.Point(230, 476);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 42);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "BROWSE";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label8.Location = new System.Drawing.Point(14, 328);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 23);
-            this.label8.TabIndex = 45;
-            this.label8.Text = "Upload Picture";
             // 
             // btnCancel
             // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
             this.btnCancel.FlatAppearance.BorderSize = 2;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(21, 539);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(78, 42);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "&CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnSave.FlatAppearance.BorderSize = 2;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(105, 539);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(207, 42);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "&SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cboUnits
             // 
+            resources.ApplyResources(this.cboUnits, "cboUnits");
             this.cboUnits.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboUnits.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboUnits.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cboUnits.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUnits.FormattingEnabled = true;
-            this.cboUnits.Location = new System.Drawing.Point(189, 203);
             this.cboUnits.Name = "cboUnits";
-            this.cboUnits.Size = new System.Drawing.Size(135, 25);
-            this.cboUnits.TabIndex = 4;
             // 
             // cboColor
             // 
+            resources.ApplyResources(this.cboColor, "cboColor");
             this.cboColor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboColor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboColor.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cboColor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboColor.FormattingEnabled = true;
-            this.cboColor.Location = new System.Drawing.Point(182, 266);
             this.cboColor.Name = "cboColor";
-            this.cboColor.Size = new System.Drawing.Size(144, 25);
-            this.cboColor.TabIndex = 2;
             // 
             // cboSize
             // 
+            resources.ApplyResources(this.cboSize, "cboSize");
             this.cboSize.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboSize.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSize.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cboSize.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSize.FormattingEnabled = true;
-            this.cboSize.Location = new System.Drawing.Point(18, 266);
             this.cboSize.Name = "cboSize";
-            this.cboSize.Size = new System.Drawing.Size(154, 25);
-            this.cboSize.TabIndex = 2;
             // 
             // cboBrand
             // 
+            resources.ApplyResources(this.cboBrand, "cboBrand");
             this.cboBrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboBrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboBrand.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cboBrand.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBrand.FormattingEnabled = true;
-            this.cboBrand.Location = new System.Drawing.Point(23, 146);
             this.cboBrand.Name = "cboBrand";
-            this.cboBrand.Size = new System.Drawing.Size(154, 25);
-            this.cboBrand.TabIndex = 2;
             // 
             // cboCategory
             // 
+            resources.ApplyResources(this.cboCategory, "cboCategory");
             this.cboCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboCategory.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cboCategory.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(23, 81);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(154, 25);
-            this.cboCategory.TabIndex = 1;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // lblID
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.lblID, "lblID");
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "ID";
-            this.lblID.Visible = false;
             // 
             // txtSalePrice
             // 
+            resources.ApplyResources(this.txtSalePrice, "txtSalePrice");
             this.txtSalePrice.AutoRoundedCorners = true;
             this.txtSalePrice.BorderRadius = 12;
             this.txtSalePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -425,21 +344,17 @@ namespace BibiShop
             this.txtSalePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSalePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSalePrice.FocusedState.Parent = this.txtSalePrice;
-            this.txtSalePrice.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSalePrice.HoverState.Parent = this.txtSalePrice;
-            this.txtSalePrice.Location = new System.Drawing.Point(22, 203);
-            this.txtSalePrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalePrice.Name = "txtSalePrice";
             this.txtSalePrice.PasswordChar = '\0';
             this.txtSalePrice.PlaceholderText = "";
             this.txtSalePrice.SelectedText = "";
             this.txtSalePrice.ShadowDecoration.Parent = this.txtSalePrice;
-            this.txtSalePrice.Size = new System.Drawing.Size(154, 27);
-            this.txtSalePrice.TabIndex = 3;
             // 
             // txtRemarks
             // 
+            resources.ApplyResources(this.txtRemarks, "txtRemarks");
             this.txtRemarks.AutoRoundedCorners = true;
             this.txtRemarks.BorderRadius = 12;
             this.txtRemarks.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -451,21 +366,39 @@ namespace BibiShop
             this.txtRemarks.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtRemarks.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRemarks.FocusedState.Parent = this.txtRemarks;
-            this.txtRemarks.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRemarks.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRemarks.HoverState.Parent = this.txtRemarks;
-            this.txtRemarks.Location = new System.Drawing.Point(191, 33);
-            this.txtRemarks.Margin = new System.Windows.Forms.Padding(4);
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.PasswordChar = '\0';
             this.txtRemarks.PlaceholderText = "";
             this.txtRemarks.SelectedText = "";
             this.txtRemarks.ShadowDecoration.Parent = this.txtRemarks;
-            this.txtRemarks.Size = new System.Drawing.Size(135, 27);
-            this.txtRemarks.TabIndex = 5;
+            // 
+            // txtSafetyStock
+            // 
+            resources.ApplyResources(this.txtSafetyStock, "txtSafetyStock");
+            this.txtSafetyStock.AutoRoundedCorners = true;
+            this.txtSafetyStock.BorderRadius = 12;
+            this.txtSafetyStock.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSafetyStock.DefaultText = "";
+            this.txtSafetyStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSafetyStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSafetyStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSafetyStock.DisabledState.Parent = this.txtSafetyStock;
+            this.txtSafetyStock.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSafetyStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSafetyStock.FocusedState.Parent = this.txtSafetyStock;
+            this.txtSafetyStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSafetyStock.HoverState.Parent = this.txtSafetyStock;
+            this.txtSafetyStock.Name = "txtSafetyStock";
+            this.txtSafetyStock.PasswordChar = '\0';
+            this.txtSafetyStock.PlaceholderText = "";
+            this.txtSafetyStock.SelectedText = "";
+            this.txtSafetyStock.ShadowDecoration.Parent = this.txtSafetyStock;
             // 
             // txtCostPrice
             // 
+            resources.ApplyResources(this.txtCostPrice, "txtCostPrice");
             this.txtCostPrice.AutoRoundedCorners = true;
             this.txtCostPrice.BorderRadius = 12;
             this.txtCostPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -477,21 +410,17 @@ namespace BibiShop
             this.txtCostPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCostPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCostPrice.FocusedState.Parent = this.txtCostPrice;
-            this.txtCostPrice.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCostPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCostPrice.HoverState.Parent = this.txtCostPrice;
-            this.txtCostPrice.Location = new System.Drawing.Point(189, 144);
-            this.txtCostPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtCostPrice.Name = "txtCostPrice";
             this.txtCostPrice.PasswordChar = '\0';
             this.txtCostPrice.PlaceholderText = "";
             this.txtCostPrice.SelectedText = "";
             this.txtCostPrice.ShadowDecoration.Parent = this.txtCostPrice;
-            this.txtCostPrice.Size = new System.Drawing.Size(135, 27);
-            this.txtCostPrice.TabIndex = 7;
             // 
             // txtProductName
             // 
+            resources.ApplyResources(this.txtProductName, "txtProductName");
             this.txtProductName.AutoRoundedCorners = true;
             this.txtProductName.BorderRadius = 12;
             this.txtProductName.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -503,21 +432,17 @@ namespace BibiShop
             this.txtProductName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtProductName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProductName.FocusedState.Parent = this.txtProductName;
-            this.txtProductName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProductName.HoverState.Parent = this.txtProductName;
-            this.txtProductName.Location = new System.Drawing.Point(23, 33);
-            this.txtProductName.Margin = new System.Windows.Forms.Padding(4);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.PasswordChar = '\0';
             this.txtProductName.PlaceholderText = "";
             this.txtProductName.SelectedText = "";
             this.txtProductName.ShadowDecoration.Parent = this.txtProductName;
-            this.txtProductName.Size = new System.Drawing.Size(154, 27);
-            this.txtProductName.TabIndex = 0;
             // 
             // txtBarcode
             // 
+            resources.ApplyResources(this.txtBarcode, "txtBarcode");
             this.txtBarcode.AutoRoundedCorners = true;
             this.txtBarcode.BorderRadius = 12;
             this.txtBarcode.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -529,135 +454,87 @@ namespace BibiShop
             this.txtBarcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtBarcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBarcode.FocusedState.Parent = this.txtBarcode;
-            this.txtBarcode.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBarcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBarcode.HoverState.Parent = this.txtBarcode;
-            this.txtBarcode.Location = new System.Drawing.Point(189, 87);
-            this.txtBarcode.Margin = new System.Windows.Forms.Padding(4);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.PasswordChar = '\0';
             this.txtBarcode.PlaceholderText = "";
             this.txtBarcode.SelectedText = "";
             this.txtBarcode.ShadowDecoration.Parent = this.txtBarcode;
-            this.txtBarcode.Size = new System.Drawing.Size(135, 27);
-            this.txtBarcode.TabIndex = 6;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label11, "label11");
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(198, 16);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 19);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Enter Remarks:";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label13, "label13");
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(188, 185);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 19);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Unit:";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label10, "label10");
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(181, 244);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 19);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Select Color";
             this.label10.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(21, 184);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 19);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Enter Sale Price:";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Name = "label12";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(21, 244);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 19);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Select Size";
             this.label9.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(193, 124);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 19);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Enter Cost Price:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(22, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Select Brand";
             this.label4.Click += new System.EventHandler(this.label5_Click);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(22, 63);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 19);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Select Category:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(22, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Enter Product Name:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(196, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Enter Barcode:";
             // 
             // DGVSomeProducts
             // 
+            resources.ApplyResources(this.DGVSomeProducts, "DGVSomeProducts");
             this.DGVSomeProducts.AllowUserToAddRows = false;
             this.DGVSomeProducts.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
@@ -675,7 +552,6 @@ namespace BibiShop
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVSomeProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DGVSomeProducts.ColumnHeadersHeight = 40;
             this.DGVSomeProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProSID,
             this.BarcodeSID,
@@ -697,16 +573,12 @@ namespace BibiShop
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVSomeProducts.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DGVSomeProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVSomeProducts.EnableHeadersVisualStyles = false;
             this.DGVSomeProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.DGVSomeProducts.Location = new System.Drawing.Point(0, 0);
             this.DGVSomeProducts.Name = "DGVSomeProducts";
             this.DGVSomeProducts.ReadOnly = true;
             this.DGVSomeProducts.RowHeadersVisible = false;
             this.DGVSomeProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVSomeProducts.Size = new System.Drawing.Size(582, 655);
-            this.DGVSomeProducts.TabIndex = 26;
             this.DGVSomeProducts.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.FeterRiver;
             this.DGVSomeProducts.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
             this.DGVSomeProducts.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -733,146 +605,101 @@ namespace BibiShop
             // 
             // ProSID
             // 
-            this.ProSID.HeaderText = "ProductID";
+            resources.ApplyResources(this.ProSID, "ProSID");
             this.ProSID.Name = "ProSID";
             this.ProSID.ReadOnly = true;
-            this.ProSID.Visible = false;
             // 
             // BarcodeSID
             // 
-            this.BarcodeSID.HeaderText = "Barcode";
+            resources.ApplyResources(this.BarcodeSID, "BarcodeSID");
             this.BarcodeSID.Name = "BarcodeSID";
             this.BarcodeSID.ReadOnly = true;
-            this.BarcodeSID.Visible = false;
             // 
             // NameSID
             // 
-            this.NameSID.HeaderText = "Product";
+            resources.ApplyResources(this.NameSID, "NameSID");
             this.NameSID.Name = "NameSID";
             this.NameSID.ReadOnly = true;
             // 
             // BrandGV2
             // 
-            this.BrandGV2.HeaderText = "Brand";
+            resources.ApplyResources(this.BrandGV2, "BrandGV2");
             this.BrandGV2.Name = "BrandGV2";
             this.BrandGV2.ReadOnly = true;
             // 
             // CategorySID
             // 
-            this.CategorySID.HeaderText = "Category";
+            resources.ApplyResources(this.CategorySID, "CategorySID");
             this.CategorySID.Name = "CategorySID";
             this.CategorySID.ReadOnly = true;
             // 
             // CostSID
             // 
-            this.CostSID.HeaderText = "Cost Price";
+            resources.ApplyResources(this.CostSID, "CostSID");
             this.CostSID.Name = "CostSID";
             this.CostSID.ReadOnly = true;
             // 
             // SaleSID
             // 
-            this.SaleSID.HeaderText = "Sale Price";
+            resources.ApplyResources(this.SaleSID, "SaleSID");
             this.SaleSID.Name = "SaleSID";
             this.SaleSID.ReadOnly = true;
             // 
             // RemarksSID
             // 
-            this.RemarksSID.HeaderText = "Remarks";
+            resources.ApplyResources(this.RemarksSID, "RemarksSID");
             this.RemarksSID.Name = "RemarksSID";
             this.RemarksSID.ReadOnly = true;
             // 
             // UnitSID
             // 
-            this.UnitSID.HeaderText = "Unit";
+            resources.ApplyResources(this.UnitSID, "UnitSID");
             this.UnitSID.Name = "UnitSID";
             this.UnitSID.ReadOnly = true;
             // 
             // SizeGV
             // 
-            this.SizeGV.HeaderText = "Size";
+            resources.ApplyResources(this.SizeGV, "SizeGV");
             this.SizeGV.Name = "SizeGV";
             this.SizeGV.ReadOnly = true;
             // 
             // ColorGV
             // 
-            this.ColorGV.HeaderText = "Color";
+            resources.ApplyResources(this.ColorGV, "ColorGV");
             this.ColorGV.Name = "ColorGV";
             this.ColorGV.ReadOnly = true;
             // 
             // CS1
             // 
+            resources.ApplyResources(this.CS1, "CS1");
             this.CS1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.CS1.Name = "CS1";
-            this.CS1.Size = new System.Drawing.Size(108, 48);
             // 
             // editToolStripMenuItem
             // 
+            resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // panel3
             // 
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Controls.Add(this.DGVSomeProducts);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(333, 94);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(582, 655);
-            this.panel3.TabIndex = 27;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(189, 300);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(132, 19);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Enter Safety Stock";
-            // 
-            // txtSafetyStock
-            // 
-            this.txtSafetyStock.AutoRoundedCorners = true;
-            this.txtSafetyStock.BorderRadius = 12;
-            this.txtSafetyStock.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSafetyStock.DefaultText = "";
-            this.txtSafetyStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSafetyStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSafetyStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSafetyStock.DisabledState.Parent = this.txtSafetyStock;
-            this.txtSafetyStock.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSafetyStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSafetyStock.FocusedState.Parent = this.txtSafetyStock;
-            this.txtSafetyStock.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSafetyStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSafetyStock.HoverState.Parent = this.txtSafetyStock;
-            this.txtSafetyStock.Location = new System.Drawing.Point(185, 320);
-            this.txtSafetyStock.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSafetyStock.Name = "txtSafetyStock";
-            this.txtSafetyStock.PasswordChar = '\0';
-            this.txtSafetyStock.PlaceholderText = "";
-            this.txtSafetyStock.SelectedText = "";
-            this.txtSafetyStock.ShadowDecoration.Parent = this.txtSafetyStock;
-            this.txtSafetyStock.Size = new System.Drawing.Size(135, 27);
-            this.txtSafetyStock.TabIndex = 7;
             // 
             // Products
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(915, 749);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -881,7 +708,6 @@ namespace BibiShop
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Products";
-            this.Text = "Products";
             this.Load += new System.EventHandler(this.Products_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

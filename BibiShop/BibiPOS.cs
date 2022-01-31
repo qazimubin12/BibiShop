@@ -40,6 +40,7 @@ namespace BibiShop
 
         int couponId = 0;
         string coupontype = "";
+        object language = null;
         public BibiPOS()
         {
             InitializeComponent();
@@ -337,11 +338,12 @@ namespace BibiShop
         }
         private void BibiPOS_Load(object sender, EventArgs e)
         {
+            language = MainClass.LanguageCheck();
             lblCashier.Text = LoginScreen.User_NAME.ToString();
-            cboOrderType.SelectedIndex = 1;
             FindShopDefault();
             MainClass.FillProducts(cboProduct);
             MainClass.FillCustomer(cboCustomer);
+            MainClass.FillORderTpy(cboOrderType);
             GetCategoryData();
             GetProductData();
             MainClass.RoundedButton(btnPurchases);
@@ -357,7 +359,9 @@ namespace BibiShop
             MainClass.RoundedButton(btnReset);
             GenerateInvoiceNo();
             ShowStore();
-           
+
+        
+
 
         }
 
@@ -421,7 +425,7 @@ namespace BibiShop
                         try
                         {
                             MainClass.con.Open();
-                            cmd = new SqlCommand("select ProductID,ProductName from ProductsTable where ProductName N= '" + cboProduct.Text + "'", MainClass.con);
+                            cmd = new SqlCommand("select ProductID,ProductName from ProductsTable where ProductName = N'" + cboProduct.Text + "'", MainClass.con);
                             SqlDataReader dr = cmd.ExecuteReader();
                             if (dr.HasRows)
                             {
@@ -573,7 +577,15 @@ namespace BibiShop
                         {
                             if(float.Parse(ob.ToString()) > stockin)
                             {
-                                MessageBox.Show("NO STOCKS");
+                                if (language.ToString() == "Chinese")
+                                {
+                                    MessageBox.Show("庫存不足");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Not Enough Stock");
+
+                                }
                                 proceed = 0;
                                 MainClass.con.Close();
                                 return;
@@ -585,7 +597,15 @@ namespace BibiShop
                         }
                         else
                         {
-                            MessageBox.Show("NO STOCKS");
+                            if (language.ToString() == "Chinese")
+                            {
+                                MessageBox.Show("庫存不足");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Not Enough Stock");
+
+                            }
                             proceed = 0;
                             MainClass.con.Close();
                             return;
@@ -593,7 +613,15 @@ namespace BibiShop
                     }
                     else
                     {
-                        MessageBox.Show("NO STOCKS");
+                        if (language.ToString() == "Chinese")
+                        {
+                            MessageBox.Show("庫存不足");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Not Enough Stock");
+
+                        }
                         proceed = 0;
                         MainClass.con.Close();
                         return;
@@ -696,7 +724,7 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("select u.Unit from ProductsTable p inner join UnitsTable u on u.UnitID = p.UnitID where p.ProductName = '" + cboProduct.Text + "'", MainClass.con);
+                        cmd = new SqlCommand("select u.Unit from ProductsTable p inner join UnitsTable u on u.UnitID = p.UnitID where p.ProductName = N'" + cboProduct.Text + "'", MainClass.con);
                         object ob = cmd.ExecuteScalar();
                         if (ob != null)
                         {
@@ -713,7 +741,7 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("select CostPrice,SalePrice from ProductsTable  where ProductName N= '" + cboProduct.Text + "'", MainClass.con);
+                        cmd = new SqlCommand("select CostPrice,SalePrice from ProductsTable  where ProductName = N'" + cboProduct.Text + "'", MainClass.con);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.HasRows)
                         {
@@ -733,7 +761,7 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("select u.Size from ProductsTable p inner join SizeTable u on u.SizeID = p.SizeID where p.ProductName = '" + cboProduct.Text + "'", MainClass.con);
+                        cmd = new SqlCommand("select u.Size from ProductsTable p inner join SizeTable u on u.SizeID = p.SizeID where p.ProductName = N'" + cboProduct.Text + "'", MainClass.con);
                         object ob = cmd.ExecuteScalar();
                         if (ob != null)
                         {
@@ -750,7 +778,7 @@ namespace BibiShop
                     try
                     {
                         MainClass.con.Open();
-                        cmd = new SqlCommand("select u.Color from ProductsTable p inner join ColorsTable u on u.ColorID = p.ColorID where p.ProductName = '" + cboProduct.Text + "'", MainClass.con);
+                        cmd = new SqlCommand("select u.Color from ProductsTable p inner join ColorsTable u on u.ColorID = p.ColorID where p.ProductName = N'" + cboProduct.Text + "'", MainClass.con);
                         object ob = cmd.ExecuteScalar();
                         if (ob != null)
                         {
@@ -839,7 +867,15 @@ namespace BibiShop
                         }
                         else
                         {
-                            MessageBox.Show("NO STOCKS");
+                            if (language.ToString() == "Chinese")
+                            {
+                                MessageBox.Show("庫存不足");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Not Enough Stock");
+
+                            }
                             proceed = 0;
                             MainClass.con.Close();
                             return;
@@ -847,7 +883,15 @@ namespace BibiShop
                     }
                     else
                     {
-                        MessageBox.Show("NO STOCKS");
+                        if (language.ToString() == "Chinese")
+                        {
+                            MessageBox.Show("庫存不足");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Not Enough Stock");
+
+                        }
                         proceed = 0;
                         MainClass.con.Close();
                         return;
@@ -1024,7 +1068,15 @@ namespace BibiShop
             }
             else
             {
-                MessageBox.Show("NO STOCKS");
+                if (language.ToString() == "Chinese")
+                {
+                    MessageBox.Show("庫存不足");
+                }
+                else
+                {
+                    MessageBox.Show("Not Enough Stock");
+
+                }
                 proceed = 0;
                 MainClass.con.Close();
                 return;
@@ -1044,6 +1096,8 @@ namespace BibiShop
                 if (DGVSaleCart.Rows.Count == 0)
                 {
                     DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), ProductsData[6], fqty, ProductsData[5], ptot,"");
+                    DGVSaleCart.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                    DGVSaleCart.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(105, 104, 94);
                 }
                 else
                 {
@@ -1083,6 +1137,8 @@ namespace BibiShop
                             if (productcheck == false)
                             {
                                 DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), ProductsData[6], fqty, ProductsData[5], ptot, "");
+                                DGVSaleCart.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                                DGVSaleCart.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(105, 104, 94);
                                 break;
                             }
                         }
@@ -1111,6 +1167,8 @@ namespace BibiShop
                 if (DGVSaleCart.Rows.Count == 0)
                 {
                     DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), ProductsData[6], fqty, ProductsData[5], ptot, "");
+                    DGVSaleCart.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                    DGVSaleCart.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(105, 104, 94);
                 }
                 else
                 {
@@ -1150,6 +1208,8 @@ namespace BibiShop
                             if (productcheck == false)
                             {
                                 DGVSaleCart.Rows.Add(Convert.ToInt32(ProductsData[0]), Convert.ToString(ProductsData[1]), Convert.ToString(ProductsData[4]), float.Parse(ProductsData[2]), float.Parse(ProductsData[3]), ProductsData[6], fqty, ProductsData[5], ptot, "");
+                                DGVSaleCart.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                                DGVSaleCart.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(105, 104, 94);
                                 break;
                             }
                         }
@@ -1167,7 +1227,14 @@ namespace BibiShop
             }
             else
             {
-                MessageBox.Show("NO STOCKS");
+                if (language.ToString() == "Chinese")
+                {
+                    MessageBox.Show("庫存不足");
+                }
+                else
+                {
+                    MessageBox.Show("Not Enough Stock");
+                }
                 proceed = 0;
                 MainClass.con.Close();
                 return;
@@ -1236,7 +1303,15 @@ namespace BibiShop
                         qty += 1;
                         if (stockin < qty)
                         {
-                            MessageBox.Show("Not Enough Stock");
+                            if (language.ToString() == "Chinese")
+                            {
+                                MessageBox.Show("庫存不足");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Not Enough Stock");
+
+                            }
                             return;
                         }
                         else
@@ -1406,28 +1481,36 @@ namespace BibiShop
             btnApply.Enabled = true;
             button2.Enabled = true;
             txtCouponCode.Clear();
-            btnApply.Text = "APPLY";
             couponpanel.Visible = false;
             lblSaleID.Text = "";
             lblInvoiceNo.Text = "";
-            btnSaveSale.Text = "SAVE SALE";
             btnSaveSale.FillColor = Color.SlateBlue;
             txtChange.Clear();
             txtSaleRemarks.Clear();
-            btnApplyDiscount.Text = "APPLY";
             btnApplyDiscount.Enabled = true;
             btnCloseDiscountPanel.Enabled = true;
             discountpanel.Visible = false;
             cboProduct.SelectedIndex = 0;
             cboOrderType.SelectedIndex = 0;
             cboCustomer.SelectedIndex = 0;
+            if (language.ToString() == "English")
+            {
+                btnSaveSale.Text = "SAVE SALE";
+                btnApplyDiscount.Text = "APPLY";
+                btnApply.Text = "APPLY";
+            }
+            else
+            {
+                btnSaveSale.Text = "保存銷售";
+                btnApplyDiscount.Text = "申請";
+                btnApply.Text = "申請";
+            }
         }
 
         public static int SALES_ID = 0;
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
-
-            if (btnSaveSale.Text != "Update Sale")
+            if (btnSaveSale.Text != "Update Sale" || btnSaveSale.Text != "更新銷售")
             {
 
                 try
@@ -1441,7 +1524,7 @@ namespace BibiShop
                     string coupontype = "";
                     SqlCommand cmd = new SqlCommand("SELECT CONVERT(varchar(15),  CAST(GETDATE() AS TIME), 100) as SaleTime", MainClass.con);
                     saletime = cmd.ExecuteScalar().ToString();
-                    if(lblDiscount.Text == "DISCOUNT")
+                    if(lblDiscount.Text == "DISCOUNT" || lblDiscount.Text == "折扣") 
                     {
                         discount = 0;
                     }
@@ -1461,17 +1544,39 @@ namespace BibiShop
                     }
 
                   
-                    if(btnSaveSale.Text == "Deliver IT")
+                    if(btnSaveSale.Text == "Deliver IT" || btnSaveSale.Text == "交付它")
                     {
-                        orderststatus = "Waiting for delivery";
+                        if (language.ToString() != "Chinese")
+                        {
+                            orderststatus = "Waiting for delivery";
+                        }
+                        else
+                        {
+                            orderststatus = "等待發貨";
+
+                        }
                     }
-                    else if(btnSaveSale.Text == "SAVE SALE")
+                    else if(btnSaveSale.Text == "SAVE SALE" || btnSaveSale.Text == "交付它")
                     {
-                        orderststatus = "Remaining Payment";
+                        if (language.ToString() != "Chinese")
+                        {
+                            orderststatus = "Remaining Payment";
+                        }
+                        else
+                        {
+                            orderststatus = "剩餘款項";
+                        }
                     }
                     else
                     {
-                        orderststatus = "Completed";
+                        if (language.ToString() != "Chinese")
+                        {
+                           orderststatus = "Completed";
+                        }
+                        else
+                        {
+                            orderststatus = "完全的";
+                        }
                     }
                     MainClass.InsertSale(int.Parse(cboCustomer.SelectedValue.ToString()), invoiceNo, lblStoreName.Text, lblStoreAddress.Text, DateTime.Now.ToShortDateString(), saletime, orderststatus, ConvertImageToBytes(pictureBox1.Image), float.Parse(lblTax.Text), 0, 0,discount, float.Parse(lblGrandTotal.Text),coupontype,couponId,txtSaleRemarks.Text);
                     int SALEID = MainClass.FindLastSaleID();
@@ -1498,7 +1603,15 @@ namespace BibiShop
                     }            
                     MainClass.con.Close();
                     btnGenerate_Click(sender, e);
-                    MessageBox.Show("SALE SAVED SUCCESSFULLY");
+                    if (language.ToString() != "Chinese")
+                    {
+                        MessageBox.Show("SALE SAVED SUCCESSFULLY");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("銷售成功保存");
+                    }
                     CompleteClear();
                 }
                 catch (Exception ex)
@@ -1514,7 +1627,7 @@ namespace BibiShop
                     MainClass.con.Open();
                     float discount;
                    
-                    if (lblDiscount.Text == "DISCOUNT")
+                    if (lblDiscount.Text == "DISCOUNT" || lblDiscount.Text == "折扣")
                     {
                         discount = 0;
                     }
@@ -1524,8 +1637,15 @@ namespace BibiShop
                     }
                     SqlCommand cmd = new SqlCommand("SELECT CONVERT(varchar(15),  CAST(GETDATE() AS TIME), 100) as SaleTime", MainClass.con);
                     string saletime = cmd.ExecuteScalar().ToString();
-                    MainClass.UpdateSale(int.Parse(lblSaleID.Text), int.Parse(cboCustomer.SelectedValue.ToString()), DateTime.Now.ToShortDateString(), saletime, "Remaining Payment", float.Parse(lblTax.Text), 0, 0, discount, float.Parse(lblGrandTotal.Text),int.Parse(lblCouponID.Text),lblCouponType.Text);
+                    if (language.ToString() == "English")
+                    {
+                        MainClass.UpdateSale(int.Parse(lblSaleID.Text), int.Parse(cboCustomer.SelectedValue.ToString()), DateTime.Now.ToShortDateString(), saletime, "Remaining Payment", float.Parse(lblTax.Text), 0, 0, discount, float.Parse(lblGrandTotal.Text), int.Parse(lblCouponID.Text), lblCouponType.Text);
+                    }
+                    else
+                    {
+                        MainClass.UpdateSale(int.Parse(lblSaleID.Text), int.Parse(cboCustomer.SelectedValue.ToString()), DateTime.Now.ToShortDateString(), saletime, "剩餘款項", float.Parse(lblTax.Text), 0, 0, discount, float.Parse(lblGrandTotal.Text), int.Parse(lblCouponID.Text), lblCouponType.Text);
 
+                    }
                     cmd = new SqlCommand("select si.ProductID,u.UnitID,si.Quantity,p.Barcode,si.SalePrice,p.SafetyStock from SalesInfo si inner join ProductsTable p on p.ProductID = si.ProductID inner join UnitsTable u on u.UnitID = p.UnitID where Sales_ID = '" + lblSaleID.Text + "' ", MainClass.con);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.HasRows)
@@ -1573,7 +1693,14 @@ namespace BibiShop
 
                     MainClass.con.Close();
                     btnGenerate_Click(sender, e);
-                    MessageBox.Show("SALE UPDATED SUCCESSFULLY");
+                    if (language.ToString() == "English")
+                    {
+                        MessageBox.Show("SALE UPDATED SUCCESSFULLY");
+                    }
+                    else
+                    {
+                        MessageBox.Show("銷售更新成功");
+                    }
                     CompleteClear();
                 }
                 catch (Exception ex)
@@ -1694,7 +1821,14 @@ namespace BibiShop
                     }
                     MainClass.con.Close();
                     btnGenerate_Click(sender, e);
-                    MessageBox.Show("SALE FINALIZED SUCCESSFULLY");
+                    if (language.ToString() == "English")
+                    {
+                        MessageBox.Show("SALE FINALIZED SUCCESSFULLY");
+                    }
+                    else
+                    {
+                        MessageBox.Show("銷售成功完成");
+                    }
                     CompleteClear();
                 }
                 catch (Exception ex)
@@ -1728,7 +1862,14 @@ namespace BibiShop
 
                     MainClass.con.Close();
                     btnGenerate_Click(sender, e);
-                    MessageBox.Show("SALE FINALIZED SUCCESSFULLY");
+                    if (language.ToString() == "English")
+                    {
+                        MessageBox.Show("SALE FINALIZED SUCCESSFULLY");
+                    }
+                    else
+                    {
+                        MessageBox.Show("銷售成功完成");
+                    }
                     CompleteClear();
                 }
                 catch (Exception ex)
@@ -1780,7 +1921,7 @@ namespace BibiShop
 
         private void btnCancelCoupon_Click(object sender, EventArgs e)
         {
-            if (btnSaveSale.Text == "Update Sale")
+            if (btnSaveSale.Text == "Update Sale" || btnSaveSale.Text == "更新銷售")
             {
                 SqlCommand cmd = null;
 
@@ -1835,7 +1976,14 @@ namespace BibiShop
                             actualtotal += benefit;
                             item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
                             item.Cells["RemarksGV"].Value = "";
-                            btnApply.Text = "APPLY";
+                            if (language.ToString() == "English")
+                            {
+                                btnApply.Text = "APPLY";
+                            }
+                            else
+                            {
+                                btnApply.Text = "申請";
+                            }
                             cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated + 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
                             cmd.ExecuteNonQuery();
                             btnApply.Enabled = true;
@@ -1861,7 +2009,14 @@ namespace BibiShop
                             float actualtotal = qty * cost;
                             item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
                             item.Cells["RemarksGV"].Value = "";
-                            btnApply.Text = "APPLY";
+                            if (language.ToString() == "English")
+                            {
+                                btnApply.Text = "APPLY";
+                            }
+                            else
+                            {
+                                btnApply.Text = "申請";
+                            }
                             cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated + 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
                             cmd.ExecuteNonQuery();
 
@@ -1994,8 +2149,17 @@ namespace BibiShop
                                             actualtotal -= tot;
                                             lblDiscount.Text = tot.ToString();
                                             item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
-                                            item.Cells["RemarksGV"].Value = "Coupon Applied";
-                                            btnApply.Text = "APPLIED";
+                                            if (language.ToString() == "English")
+                                            {
+                                                item.Cells["RemarksGV"].Value = "Coupon Applied";
+                                                btnApply.Text = "APPLIED";
+                                            }
+                                            else
+                                            {
+                                                item.Cells["RemarksGV"].Value = "已申請優惠券";
+                                                btnApply.Text = "應用";
+                                            }
+
                                             cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
                                             cmd.ExecuteNonQuery();
                                             btnApply.Enabled = false;
@@ -2005,8 +2169,15 @@ namespace BibiShop
                                 }
                                 else
                                 {
+                                    if (language.ToString() == "English")
+                                    {
+                                        MessageBox.Show("Current Bill is not fulfilling the criteria of using this coupon");
 
-                                    MessageBox.Show("Current Bill is not fulfilling the criteria of using this coupon");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("當前賬單不符合使用此優惠券的標準");
+                                    }
                                     return;
                                 }
 
@@ -2026,8 +2197,16 @@ namespace BibiShop
                                         lblDiscount.Text = benefit.ToString();
 
                                         item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
-                                        item.Cells["RemarksGV"].Value = "Coupon Applied";
-                                        btnApply.Text = "APPLIED";
+                                        if (language.ToString() == "English")
+                                        {
+                                            item.Cells["RemarksGV"].Value = "Coupon Applied";
+                                            btnApply.Text = "APPLIED";
+                                        }
+                                        else
+                                        {
+                                            item.Cells["RemarksGV"].Value = "已申請優惠券";
+                                            btnApply.Text = "應用";
+                                        }
                                         cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
                                         cmd.ExecuteNonQuery();
                                         btnApply.Enabled = false;
@@ -2036,7 +2215,15 @@ namespace BibiShop
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Current Bill is not fulfilling the criteria of using this coupon");
+                                    if (language.ToString() == "English")
+                                    {
+                                        MessageBox.Show("Current Bill is not fulfilling the criteria of using this coupon");
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("當前賬單不符合使用此優惠券的標準");
+                                    }
                                     return;
                                 }
 
@@ -2054,8 +2241,17 @@ namespace BibiShop
                                         actualtotal = 0;
 
                                         item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
-                                        item.Cells["RemarksGV"].Value = "Coupon Applied";
-                                        btnApply.Text = "APPLIED";
+
+                                        if (language.ToString() == "English")
+                                        {
+                                            item.Cells["RemarksGV"].Value = "Coupon Applied";
+                                            btnApply.Text = "APPLIED";
+                                        }
+                                        else
+                                        {
+                                            item.Cells["RemarksGV"].Value = "已申請優惠券";
+                                            btnApply.Text = "應用";
+                                        }
                                         cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
                                         cmd.ExecuteNonQuery();
                                         btnApply.Enabled = false;
@@ -2064,7 +2260,14 @@ namespace BibiShop
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    if (language.ToString() == "English")
+                                    {
+                                        MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("優惠券無效或過期", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                     return;
                                 }
 
@@ -2072,19 +2275,41 @@ namespace BibiShop
                             }       // Type Free Merch
                             else
                             {
-                                MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                if (language.ToString() == "English")
+                                {
+                                    MessageBox.Show("Invalid Or Expired Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("優惠券無效或過期", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                                 return;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Not Active Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (language.ToString() == "English")
+                            {
+                                MessageBox.Show("Not Active Coupon", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                MessageBox.Show("非活動優惠券", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                             return;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Not Accessible Today", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (language.ToString() == "English")
+                        {
+                            MessageBox.Show("Not Accessible Today", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("今天無法訪問", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
                         return;
                     }
                 }
@@ -2162,8 +2387,16 @@ namespace BibiShop
                             lblDiscount.Text = benefit.ToString();
                             lblNetTotal.Text = actualtotal.ToString();
                         }
-                        txtSaleRemarks.Text = offername + " Applied Successfully";
-                        btnApplyDiscount.Text = "APPLIED";
+                        if (language.ToString() == "English")
+                        {
+                            txtSaleRemarks.Text = offername + " Applied Successfully";
+                            btnApplyDiscount.Text = "APPLIED";
+                        }
+                        else
+                        {
+                            txtSaleRemarks.Text = offername + " 申請成功";
+                            btnApplyDiscount.Text = "已應用";
+                        }
                         btnApplyDiscount.Enabled = false;
                         btnCloseDiscountPanel.Enabled = false;
                     }
@@ -2208,8 +2441,15 @@ namespace BibiShop
                                         i++;
                                         actualcosting += float.Parse(item.Cells["QuantityGV"].Value.ToString()) * float.Parse(item.Cells["SalePriceGV"].Value.ToString());
                                         item.Cells["TotalOfProductGV"].Value = "0";
-                                        item.Cells["RemarksGV"].Value = offername + " Applied";
-                                        
+                                        if (language.ToString() == "English")
+                                        {
+                                            item.Cells["RemarksGV"].Value = offername + " Applied";
+                                        }
+                                        else
+                                        {
+                                            item.Cells["RemarksGV"].Value = offername + " 已應用";
+                                        }
+
 
                                     }
                                 }
@@ -2220,11 +2460,26 @@ namespace BibiShop
                         {
                             lblDiscount.Text = Convert.ToString(actualcosting - discountedpackagedrate);
                             lblPackagedDiscountedRate.Text = discountedpackagedrate.ToString();
-                            txtSaleRemarks.Text = offername + " Applied";
+                            if (language.ToString() == "English")
+                            {
+                                txtSaleRemarks.Text = offername + " Applied";
+                            }
+                            else
+                            {
+                                txtSaleRemarks.Text = offername + " 已應用";
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Products in the cart not available for the discount");
+                            if (language.ToString() == "English")
+                            {
+                                MessageBox.Show("Products in the cart not available for the discount");
+                            }
+                            else
+                            {
+                                MessageBox.Show("購物車中的產品無法享受折扣");
+
+                            }
                             return;
                         }
                     }
@@ -2239,7 +2494,15 @@ namespace BibiShop
             }
             btnApplyDiscount.Enabled = false;
             btnCloseDiscountPanel.Enabled = false;
-            btnApplyDiscount.Text = "APPLIED";
+            if (language.ToString() == "English")
+            {
+                btnApplyDiscount.Text = "APPLIED";
+            }
+            else
+            {
+                btnApplyDiscount.Text = "已應用";
+
+            }
             FindGrossTotal();
          
 
@@ -2249,22 +2512,38 @@ namespace BibiShop
 
         private void cboOrderType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-
-
             if (cboOrderType.Text == "---Select---")
             {
                 btnSaveSale.Enabled = false;
             }
-            else if(cboOrderType.Text == "Delivery")
+            else if(cboOrderType.Text == "Delivery" || cboOrderType.Text == "完全的")
             {
                 btnSaveSale.Enabled = true;
-                btnSaveSale.Text = "Deliver IT";
+                if (language.ToString() == "Chinese")
+                {
+                    btnSaveSale.Text = "交付它";
+                }
+                else
+                {
+                    btnSaveSale.Text = "Deliver IT";
+                }
             }
-            else if(cboOrderType.Text == "In Store" || cboOrderType.Text == "Wating For Confirmation")
+            else if(cboOrderType.Text == "In Store" || cboOrderType.Text == "有存貨")
             {
-                btnSaveSale.Text = "SAVE SALE";
+                if (language.ToString() == "Chinese")
+                {
+                    btnSaveSale.Text = "節省銷售";
+                }
+                else
+                {
+                    btnSaveSale.Text = "SAVE SALE";
+                }
             }
+        }
+
+        private void DGVSaleCart_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+           
         }
     }
 }

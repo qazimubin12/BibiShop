@@ -15,6 +15,7 @@ namespace BibiShop
     {
         BibiPOS bp;
         int shopwarehouse = 0;
+        object language = MainClass.LanguageCheck();
         public static int SAVED_SALES_ID = 0;
         public RecentSales()
         {
@@ -45,8 +46,8 @@ namespace BibiShop
             {
                 FindShopDefault();
 
-                MainClass.con.Open();
                 MainClass.FillOrderType(cboOrderStatus);
+                MainClass.con.Open();
                 cboOrderStatus.SelectedIndex = 0;
                 MainClass.ShowRecentSales(DGVRecentSales, SaleIDGV, InvoiceNoGV, CustomerGV, SaleDateGV, SaleTimeGV, GrandTotalGV, cboOrderStatus.Text);
                 MainClass.con.Close();
@@ -230,7 +231,7 @@ namespace BibiShop
                 cmd = new SqlCommand("delete from SalesTable where SaleID = '" + DGVRecentSales.CurrentRow.Cells["SaleIDGV"].Value.ToString() + "'", MainClass.con);
                 cmd.ExecuteNonQuery();
                 MainClass.con.Close();
-                MessageBox.Show("Sale Deleted Successfully");
+              if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                 MainClass.ShowRecentSales(DGVRecentSales, SaleIDGV, InvoiceNoGV, CustomerGV, SaleDateGV, SaleTimeGV, GrandTotalGV, cboOrderStatus.Text);
             }
             catch (Exception ex)

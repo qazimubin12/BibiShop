@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tulpep.NotificationWindow;
@@ -17,18 +18,12 @@ namespace BibiShop
     {
         public BibiHomeScreen()
         {
+            MainClass.ChangeLanguage();
             InitializeComponent();
         }
         int shopwarehouse = 0;
 
-        private void FindShopDefault()
-        {
-            MainClass.con.Open();
-            SqlCommand cmd = new SqlCommand("select ShopDefaultWarehouse from StoreTable", MainClass.con);
-            shopwarehouse = int.Parse(cmd.ExecuteScalar().ToString());
-            MainClass.con.Close();
-        }
-
+       
 
 
         public Image ConvertByteArraytoImage(byte[] data)

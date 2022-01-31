@@ -29,6 +29,7 @@ namespace BibiShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -52,6 +53,7 @@ namespace BibiShop
             // 
             // DGVInventory
             // 
+            resources.ApplyResources(this.DGVInventory, "DGVInventory");
             this.DGVInventory.AllowUserToAddRows = false;
             this.DGVInventory.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
@@ -69,7 +71,6 @@ namespace BibiShop
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DGVInventory.ColumnHeadersHeight = 30;
             this.DGVInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductGV,
             this.BarcodeGV,
@@ -85,16 +86,12 @@ namespace BibiShop
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVInventory.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DGVInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVInventory.EnableHeadersVisualStyles = false;
             this.DGVInventory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.DGVInventory.Location = new System.Drawing.Point(0, 73);
             this.DGVInventory.Name = "DGVInventory";
             this.DGVInventory.ReadOnly = true;
             this.DGVInventory.RowHeadersVisible = false;
             this.DGVInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVInventory.Size = new System.Drawing.Size(915, 676);
-            this.DGVInventory.TabIndex = 26;
             this.DGVInventory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.DGVInventory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.DGVInventory.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -121,75 +118,64 @@ namespace BibiShop
             // 
             // ProductGV
             // 
-            this.ProductGV.HeaderText = "Product";
+            resources.ApplyResources(this.ProductGV, "ProductGV");
             this.ProductGV.Name = "ProductGV";
             this.ProductGV.ReadOnly = true;
             // 
             // BarcodeGV
             // 
-            this.BarcodeGV.HeaderText = "Barcode";
+            resources.ApplyResources(this.BarcodeGV, "BarcodeGV");
             this.BarcodeGV.Name = "BarcodeGV";
             this.BarcodeGV.ReadOnly = true;
             // 
             // UnitGV
             // 
-            this.UnitGV.HeaderText = "Unit";
+            resources.ApplyResources(this.UnitGV, "UnitGV");
             this.UnitGV.Name = "UnitGV";
             this.UnitGV.ReadOnly = true;
             // 
             // QuantityGV
             // 
-            this.QuantityGV.HeaderText = "Quantity";
+            resources.ApplyResources(this.QuantityGV, "QuantityGV");
             this.QuantityGV.Name = "QuantityGV";
             this.QuantityGV.ReadOnly = true;
             // 
             // RateGV
             // 
-            this.RateGV.HeaderText = "Rate";
+            resources.ApplyResources(this.RateGV, "RateGV");
             this.RateGV.Name = "RateGV";
             this.RateGV.ReadOnly = true;
             // 
             // SafetyStockGV
             // 
-            this.SafetyStockGV.HeaderText = "SafetyStock";
+            resources.ApplyResources(this.SafetyStockGV, "SafetyStockGV");
             this.SafetyStockGV.Name = "SafetyStockGV";
             this.SafetyStockGV.ReadOnly = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 40);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Inventory";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(362, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Select Warehouse:";
             // 
             // cboWarehouse
             // 
+            resources.ApplyResources(this.cboWarehouse, "cboWarehouse");
             this.cboWarehouse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboWarehouse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboWarehouse.FormattingEnabled = true;
-            this.cboWarehouse.Location = new System.Drawing.Point(366, 39);
             this.cboWarehouse.Name = "cboWarehouse";
-            this.cboWarehouse.Size = new System.Drawing.Size(208, 25);
-            this.cboWarehouse.TabIndex = 5;
             this.cboWarehouse.SelectedIndexChanged += new System.EventHandler(this.cboWarehouse_SelectedIndexChanged);
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnTrasnfer);
             this.panel1.Controls.Add(this.cboWarehouse);
@@ -197,43 +183,33 @@ namespace BibiShop
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 73);
-            this.panel1.TabIndex = 25;
             // 
             // btnTrasnfer
             // 
+            resources.ApplyResources(this.btnTrasnfer, "btnTrasnfer");
             this.btnTrasnfer.CheckedState.Parent = this.btnTrasnfer;
             this.btnTrasnfer.CustomImages.Parent = this.btnTrasnfer;
             this.btnTrasnfer.FillColor = System.Drawing.Color.SeaGreen;
-            this.btnTrasnfer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTrasnfer.ForeColor = System.Drawing.Color.White;
             this.btnTrasnfer.HoverState.Parent = this.btnTrasnfer;
-            this.btnTrasnfer.Location = new System.Drawing.Point(219, 21);
             this.btnTrasnfer.Name = "btnTrasnfer";
             this.btnTrasnfer.PressedColor = System.Drawing.Color.RoyalBlue;
             this.btnTrasnfer.ShadowDecoration.Parent = this.btnTrasnfer;
-            this.btnTrasnfer.Size = new System.Drawing.Size(127, 45);
-            this.btnTrasnfer.TabIndex = 6;
-            this.btnTrasnfer.Text = "TRANSFER";
             this.btnTrasnfer.Click += new System.EventHandler(this.btnTrasnfer_Click);
             // 
             // button1
             // 
+            resources.ApplyResources(this.button1, "button1");
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::BibiShop.Properties.Resources.cancel__2_;
-            this.button1.Location = new System.Drawing.Point(881, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 32);
-            this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtSearch
             // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.AutoRoundedCorners = true;
             this.txtSearch.BorderRadius = 12;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -249,32 +225,25 @@ namespace BibiShop
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconLeft = global::BibiShop.Properties.Resources.icons8_search_50px;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.txtSearch.Location = new System.Drawing.Point(583, 39);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Search Products in Stocks";
+            this.txtSearch.PlaceholderText = "在股票中搜索產品";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(316, 27);
-            this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // Inventory
             // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(915, 749);
             this.ControlBox = false;
             this.Controls.Add(this.DGVInventory);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inventory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inventory";
             this.Load += new System.EventHandler(this.Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVInventory)).EndInit();
             this.panel1.ResumeLayout(false);

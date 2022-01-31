@@ -14,6 +14,7 @@ namespace BibiShop
     public partial class Units : Form
     {
         int uedit = 0;
+        object language = MainClass.LanguageCheck();
         public Units()
         {
             InitializeComponent();
@@ -91,7 +92,7 @@ namespace BibiShop
             uedit = 0;
             if (btnSave.BackColor == Color.Orange)
             {
-                btnSave.Text = "SAVE";
+                if (language.ToString() == "English") { btnSave.Text = "SAVE"; } else { btnSave.Text = "保存"; }
                 btnSave.BackColor = Color.SteelBlue;
                 txtUnit.Text = "";
             }
@@ -113,7 +114,7 @@ namespace BibiShop
              uedit = 1;
             lblID.Text = DgvUnits.CurrentRow.Cells[0].Value.ToString();
             txtUnit.Text = DgvUnits.CurrentRow.Cells[1].Value.ToString();
-            btnSave.Text = "UPDATE";
+                        if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
             btnSave.BackColor = Color.Orange;
         }
 
@@ -171,7 +172,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from UnitsTable where UnitID = @UnitID", MainClass.con);
                             cmd.Parameters.AddWithValue("@UnitID", DgvUnits.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                                            if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowUnits(DgvUnits, UNITIDDGV, UnitGV);
                         }

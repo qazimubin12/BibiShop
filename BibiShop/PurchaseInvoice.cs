@@ -12,6 +12,7 @@ namespace BibiShop
 {
     public partial class PurchaseInvoice : Form
     {
+        object language = null;
         public PurchaseInvoice()
         {
             InitializeComponent();
@@ -70,6 +71,7 @@ namespace BibiShop
 
         private void PurchaseInvoice_Load(object sender, EventArgs e)
         {
+            language = MainClass.LanguageCheck();
             GenerateInvoiceNo();
             MainClass.FillSupplier(cboSupplier);
             MainClass.FillProducts(cboProducts);
@@ -228,15 +230,31 @@ namespace BibiShop
             bool productalready = false;
             if(txtProductTotal.Text == "" || txtProductTotal.Text == "0")
             {
-                if (txtQuantity.Text == "")
+                if (language.ToString() == "English")
                 {
-                    MessageBox.Show("Please Enter Quantity", "Input Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (txtQuantity.Text == "")
+                    {
+                        MessageBox.Show("Please Enter Quantity", "Input Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (txtCostPrice.Text == "")
+                    {
+                        MessageBox.Show("Please Get Rate", "Input Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
-                if (txtCostPrice.Text == "")
+                else
                 {
-                    MessageBox.Show("Please Get Rate", "Input Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (txtQuantity.Text == "")
+                    {
+                        MessageBox.Show("請輸入數量", "輸入字段", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (txtCostPrice.Text == "")
+                    {
+                        MessageBox.Show("Please Get Rate", "輸入字段", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
             }
             else
@@ -412,7 +430,7 @@ namespace BibiShop
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cboType.Text == "Credit")
+            if(cboType.Text == "Credit" || cboType.Text == "信用")
             {
                 GBPayments.Visible = true;
             }
@@ -432,7 +450,15 @@ namespace BibiShop
         {
             if (cboType.Text == "" || cboSupplier.SelectedIndex == 0 || DGVPurchaseCart.Rows.Count == 0)
             {
-                MessageBox.Show("Please Check Info");
+                if (language.ToString() == "English")
+                {
+                    MessageBox.Show("Please Check Info");
+                }
+                else
+                {
+                    MessageBox.Show("請檢查信息");
+
+                }
                 return;
             }
             else
@@ -694,7 +720,15 @@ namespace BibiShop
             }
 
             btnGenerate_Click(sender, e);
-            MessageBox.Show("Purchase Successfuly");
+            if (language.ToString() == "English")
+            {
+                MessageBox.Show("Purchase Successfuly");
+
+            }
+            else
+            {
+                MessageBox.Show("購買成功");
+            }
             FullClear();
             PurchaseReceiptForm pf = new PurchaseReceiptForm();
             pf.Show();

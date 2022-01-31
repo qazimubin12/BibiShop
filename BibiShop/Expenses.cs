@@ -13,7 +13,9 @@ namespace BibiShop
     public partial class Expenses : Form
     {
         int edit = 0;
-        int date = 0;
+        int date = 0; 
+        object language = MainClass.LanguageCheck();
+
         public Expenses()
         {
             InitializeComponent();
@@ -170,7 +172,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from ExpensesTable where ExpenseID = @ExpenseID", MainClass.con);
                             cmd.Parameters.AddWithValue("@ExpenseID", lblID.Text);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Expense Deleted Successfully");
+                                            if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowExpense(DGVExpenses, ExpenseID, ExpenseNameGV, ExpensePriceGV, DateGV);
                         }

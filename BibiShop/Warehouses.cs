@@ -14,6 +14,7 @@ namespace BibiShop
     public partial class Warehouses : Form
     {
         int uedit = 0;
+        object language = MainClass.LanguageCheck();
         public Warehouses()
         {
             InitializeComponent();
@@ -113,7 +114,7 @@ namespace BibiShop
              uedit = 1;
             lblID.Text = DgvWarehouse.CurrentRow.Cells[0].Value.ToString();
             txtWarehouse.Text = DgvWarehouse.CurrentRow.Cells[1].Value.ToString();
-            btnSave.Text = "UPDATE";
+                        if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
             btnSave.BackColor = Color.Orange;
         }
 
@@ -171,7 +172,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from WarehouseTable where WarehouseID = @WarehouseID", MainClass.con);
                             cmd.Parameters.AddWithValue("@WarehouseID", DgvWarehouse.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                            if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowUnits(DgvWarehouse, WarehouseIDGV, WarehouseGV, txtSearch.Text.ToString());
                         }

@@ -14,6 +14,7 @@ namespace BibiShop
     public partial class CouponsTypes : Form
     {
         int uedit = 0;
+        object language = MainClass.LanguageCheck();
         public CouponsTypes()
         {
             InitializeComponent();
@@ -118,7 +119,7 @@ namespace BibiShop
             lblID.Text = DGVCouponTypes.CurrentRow.Cells[0].Value.ToString();
             txtCouponType.Text = DGVCouponTypes.CurrentRow.Cells[1].Value.ToString();
             txtBenefit.Text = DGVCouponTypes.CurrentRow.Cells[2].Value.ToString();
-            btnSave.Text = "UPDATE";
+            if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
             btnSave.BackColor = Color.Orange;
         }
 
@@ -178,7 +179,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from CouponsTypesTable where CouponTypeID = @CouponTypeID", MainClass.con);
                             cmd.Parameters.AddWithValue("@CouponTypeID", DGVCouponTypes.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Coupon Type Deleted Successfully");
+                                            if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowCouponTypes(DGVCouponTypes, CoupnTypeIDGV, CouponTypeGV, CouponBenefitGV, txtSearch.Text.ToString());
                         }

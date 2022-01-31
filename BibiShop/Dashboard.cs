@@ -104,5 +104,17 @@ namespace BibiShop
             Inventory p = new Inventory();
             p.Show();
         }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            Expenses et = new Expenses();
+            et.Show();
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Reports r = new Reports();
+            r.Show();
+        }
     }
 }

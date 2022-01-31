@@ -14,6 +14,8 @@ namespace BibiShop
     public partial class Sizes : Form
     {
         int uedit = 0;
+        object language = MainClass.LanguageCheck();
+
         public Sizes()
         {
             InitializeComponent();
@@ -113,7 +115,7 @@ namespace BibiShop
              uedit = 1;
             lblID.Text = DgvSize.CurrentRow.Cells[0].Value.ToString();
             txtSize.Text = DgvSize.CurrentRow.Cells[1].Value.ToString();
-            btnSave.Text = "UPDATE";
+                        if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
             btnSave.BackColor = Color.Orange;
         }
 
@@ -171,7 +173,7 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from SizeTable where SizeID = @SizeID", MainClass.con);
                             cmd.Parameters.AddWithValue("@SizeID", DgvSize.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                                            if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
                             MainClass.con.Close();
                             ShowUnits(DgvSize, SizeIDGV, SizeGV, txtSearch.Text.ToString());
                         }

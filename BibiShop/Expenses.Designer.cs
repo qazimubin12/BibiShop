@@ -30,9 +30,10 @@ namespace BibiShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expenses));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
@@ -67,31 +68,26 @@ namespace BibiShop
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtTotal);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 73);
-            this.panel1.TabIndex = 25;
             // 
             // button1
             // 
+            resources.ApplyResources(this.button1, "button1");
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::BibiShop.Properties.Resources.cancel__2_;
-            this.button1.Location = new System.Drawing.Point(870, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 36);
-            this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtTotal
             // 
+            resources.ApplyResources(this.txtTotal, "txtTotal");
             this.txtTotal.AutoRoundedCorners = true;
             this.txtTotal.BorderRadius = 17;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -101,46 +97,31 @@ namespace BibiShop
             this.txtTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTotal.DisabledState.Parent = this.txtTotal;
             this.txtTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotal.Enabled = false;
             this.txtTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.FocusedState.Parent = this.txtTotal;
-            this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.HoverState.Parent = this.txtTotal;
-            this.txtTotal.Location = new System.Drawing.Point(657, 28);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
             this.txtTotal.PlaceholderText = "";
             this.txtTotal.SelectedText = "";
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
-            this.txtTotal.Size = new System.Drawing.Size(217, 37);
-            this.txtTotal.TabIndex = 4;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 40);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Expenses";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(592, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 23);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Total";
             // 
             // txtSearch
             // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.AutoRoundedCorners = true;
             this.txtSearch.BorderRadius = 12;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -156,19 +137,16 @@ namespace BibiShop
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconLeft = global::BibiShop.Properties.Resources.icons8_search_50px;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.txtSearch.Location = new System.Drawing.Point(6, 28);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(12);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search Expenses";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(375, 27);
-            this.txtSearch.TabIndex = 3;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dt2);
             this.panel2.Controls.Add(this.txtSearch);
@@ -182,101 +160,65 @@ namespace BibiShop
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtExpenseName);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(423, 676);
-            this.panel2.TabIndex = 26;
             // 
             // dt2
             // 
-            this.dt2.CustomFormat = "dd/MM/yyyy";
-            this.dt2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.dt2, "dt2");
             this.dt2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt2.Location = new System.Drawing.Point(243, 81);
             this.dt2.Name = "dt2";
-            this.dt2.Size = new System.Drawing.Size(138, 24);
-            this.dt2.TabIndex = 31;
             this.dt2.ValueChanged += new System.EventHandler(this.dt1_ValueChanged_1);
             // 
             // dt1
             // 
-            this.dt1.CustomFormat = "dd/MM/yyyy";
-            this.dt1.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.dt1, "dt1");
             this.dt1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt1.Location = new System.Drawing.Point(64, 81);
             this.dt1.Name = "dt1";
-            this.dt1.Size = new System.Drawing.Size(138, 24);
-            this.dt1.TabIndex = 31;
             this.dt1.ValueChanged += new System.EventHandler(this.dt1_ValueChanged_1);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(214, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 19);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "To";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label13, "label13");
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(11, 84);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 19);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Date:";
             // 
             // btnCancel
             // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
             this.btnCancel.FlatAppearance.BorderSize = 2;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(20, 257);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(87, 42);
-            this.btnCancel.TabIndex = 28;
-            this.btnCancel.Text = "&CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnSave.FlatAppearance.BorderSize = 2;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(115, 257);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(212, 42);
-            this.btnSave.TabIndex = 29;
-            this.btnSave.Text = "&SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblID
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.lblID, "lblID");
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "ID";
-            this.lblID.Visible = false;
             // 
             // txtPrice
             // 
+            resources.ApplyResources(this.txtPrice, "txtPrice");
             this.txtPrice.AutoRoundedCorners = true;
             this.txtPrice.BorderRadius = 12;
             this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -288,32 +230,23 @@ namespace BibiShop
             this.txtPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.FocusedState.Parent = this.txtPrice;
-            this.txtPrice.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.HoverState.Parent = this.txtPrice;
-            this.txtPrice.Location = new System.Drawing.Point(19, 209);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "";
             this.txtPrice.SelectedText = "";
             this.txtPrice.ShadowDecoration.Parent = this.txtPrice;
-            this.txtPrice.Size = new System.Drawing.Size(314, 27);
-            this.txtPrice.TabIndex = 4;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(16, 188);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Enter Price:";
             // 
             // txtExpenseName
             // 
+            resources.ApplyResources(this.txtExpenseName, "txtExpenseName");
             this.txtExpenseName.AutoRoundedCorners = true;
             this.txtExpenseName.BorderRadius = 12;
             this.txtExpenseName.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -325,157 +258,138 @@ namespace BibiShop
             this.txtExpenseName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtExpenseName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtExpenseName.FocusedState.Parent = this.txtExpenseName;
-            this.txtExpenseName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExpenseName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtExpenseName.HoverState.Parent = this.txtExpenseName;
-            this.txtExpenseName.Location = new System.Drawing.Point(13, 150);
-            this.txtExpenseName.Margin = new System.Windows.Forms.Padding(4);
             this.txtExpenseName.Name = "txtExpenseName";
             this.txtExpenseName.PasswordChar = '\0';
             this.txtExpenseName.PlaceholderText = "";
             this.txtExpenseName.SelectedText = "";
             this.txtExpenseName.ShadowDecoration.Parent = this.txtExpenseName;
-            this.txtExpenseName.Size = new System.Drawing.Size(314, 27);
-            this.txtExpenseName.TabIndex = 4;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10F);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(10, 129);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Enter Expense:";
             // 
             // DGVExpenses
             // 
+            resources.ApplyResources(this.DGVExpenses, "DGVExpenses");
             this.DGVExpenses.AllowUserToAddRows = false;
             this.DGVExpenses.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.DGVExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DGVExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVExpenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVExpenses.BackgroundColor = System.Drawing.Color.White;
             this.DGVExpenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVExpenses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVExpenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.DGVExpenses.ColumnHeadersHeight = 35;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVExpenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ExpenseID,
             this.ExpenseNameGV,
             this.ExpensePriceGV,
             this.DateGV});
             this.DGVExpenses.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVExpenses.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DGVExpenses.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVExpenses.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVExpenses.EnableHeadersVisualStyles = false;
-            this.DGVExpenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.DGVExpenses.Location = new System.Drawing.Point(423, 73);
+            this.DGVExpenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGVExpenses.Name = "DGVExpenses";
             this.DGVExpenses.ReadOnly = true;
             this.DGVExpenses.RowHeadersVisible = false;
             this.DGVExpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVExpenses.Size = new System.Drawing.Size(492, 676);
-            this.DGVExpenses.TabIndex = 27;
-            this.DGVExpenses.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
-            this.DGVExpenses.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.DGVExpenses.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.DGVExpenses.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DGVExpenses.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.DGVExpenses.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.DGVExpenses.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.DGVExpenses.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.DGVExpenses.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DGVExpenses.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.DGVExpenses.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            this.DGVExpenses.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DGVExpenses.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DGVExpenses.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVExpenses.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.DGVExpenses.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DGVExpenses.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DGVExpenses.ThemeStyle.HeaderStyle.Height = 35;
+            this.DGVExpenses.ThemeStyle.HeaderStyle.Height = 40;
             this.DGVExpenses.ThemeStyle.ReadOnly = true;
-            this.DGVExpenses.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.DGVExpenses.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DGVExpenses.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVExpenses.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.DGVExpenses.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGVExpenses.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DGVExpenses.ThemeStyle.RowsStyle.Height = 22;
-            this.DGVExpenses.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            this.DGVExpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVExpenses.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DGVExpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // ExpenseID
             // 
-            this.ExpenseID.HeaderText = "ExpenseID";
+            resources.ApplyResources(this.ExpenseID, "ExpenseID");
             this.ExpenseID.Name = "ExpenseID";
             this.ExpenseID.ReadOnly = true;
-            this.ExpenseID.Visible = false;
             // 
             // ExpenseNameGV
             // 
-            this.ExpenseNameGV.HeaderText = "Expense Name";
+            resources.ApplyResources(this.ExpenseNameGV, "ExpenseNameGV");
             this.ExpenseNameGV.Name = "ExpenseNameGV";
             this.ExpenseNameGV.ReadOnly = true;
             // 
             // ExpensePriceGV
             // 
-            this.ExpensePriceGV.HeaderText = "Expenses Price";
+            resources.ApplyResources(this.ExpensePriceGV, "ExpensePriceGV");
             this.ExpensePriceGV.Name = "ExpensePriceGV";
             this.ExpensePriceGV.ReadOnly = true;
             // 
             // DateGV
             // 
-            this.DateGV.HeaderText = "Date";
+            resources.ApplyResources(this.DateGV, "DateGV");
             this.DateGV.Name = "DateGV";
             this.DateGV.ReadOnly = true;
             // 
             // contextMenuStrip1
             // 
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 48);
             // 
             // editToolStripMenuItem
             // 
+            resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // Expenses
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(915, 749);
             this.ControlBox = false;
             this.Controls.Add(this.DGVExpenses);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Expenses";
-            this.Text = "Expenses";
             this.Load += new System.EventHandler(this.Expenses_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

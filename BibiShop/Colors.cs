@@ -13,6 +13,7 @@ namespace BibiShop
 {
     public partial class Colors : Form
     {
+        object language = MainClass.LanguageCheck();
         int uedit = 0;
         public Colors()
         {
@@ -31,12 +32,20 @@ namespace BibiShop
 
                 if (uedit == 0)
                 {
-                    if (txtColor.Text == "")
+                if (txtColor.Text == "")
+                {
+                    if (language.ToString() == "English")
                     {
                         MessageBox.Show("Please Input Details");
                     }
                     else
                     {
+                        MessageBox.Show("請輸入詳細信息");
+
+                    }
+                }
+                else
+                {
                     try
                     {
                         MainClass.con.Open();
@@ -45,7 +54,14 @@ namespace BibiShop
 
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
-                        MessageBox.Show("Color Inserted Successfully.");
+                        if (language.ToString() == "English")
+                        {
+                            MessageBox.Show("Color Inserted Successfully");
+                        }
+                        else
+                        {
+                            MessageBox.Show("顏色插入成功");
+                        }
                         Clear();
                         ShowUnits(DgvColors, ColorIDGV, ColorGV, txtSearch.Text.ToString());
                     }
@@ -55,7 +71,7 @@ namespace BibiShop
                         MessageBox.Show(ex.Message);
                     }
 
-                    }
+                }
                 }
                 else
                 {
@@ -70,7 +86,14 @@ namespace BibiShop
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
                         MessageBox.Show("Color Updated Successfully.");
-                        btnSave.Text = "SAVE";
+                        if (language.ToString() == "English")
+                        {
+                            btnSave.Text = "SAVE";
+                        }
+                        else
+                        {
+                            btnSave.Text = "保存";
+                        }
                         btnSave.BackColor = Color.SteelBlue;
                         Clear();
                         ShowUnits(DgvColors, ColorIDGV, ColorGV, txtSearch.Text.ToString());
@@ -91,7 +114,7 @@ namespace BibiShop
             uedit = 0;
             if (btnSave.BackColor == Color.Orange)
             {
-                btnSave.Text = "SAVE";
+                if(language.ToString() == "English"){btnSave.Text = "SAVE";} else{ btnSave.Text = "保存"; }
                 btnSave.BackColor = Color.SteelBlue;
                 txtColor.Text = "";
             }
@@ -113,7 +136,14 @@ namespace BibiShop
              uedit = 1;
             lblID.Text = DgvColors.CurrentRow.Cells[0].Value.ToString();
             txtColor.Text = DgvColors.CurrentRow.Cells[1].Value.ToString();
-            btnSave.Text = "UPDATE";
+            if (language.ToString() == "English")
+            {
+                            if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
+            }
+            else
+            {
+                btnSave.Text = "更新";
+            }
             btnSave.BackColor = Color.Orange;
         }
 
@@ -171,7 +201,14 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from ColorsTable where ColorID = @ColorID", MainClass.con);
                             cmd.Parameters.AddWithValue("@ColorID", DgvColors.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Record Deleted Successfully");
+                            if (language.ToString() == "English")
+                            {
+                                MessageBox.Show("Record Deleted Successfully");
+                            }
+                            else
+                            {
+                                MessageBox.Show("記錄刪除成功");
+                            }
                             MainClass.con.Close();
                             ShowUnits(DgvColors, ColorIDGV, ColorGV, txtSearch.Text.ToString());
                         }

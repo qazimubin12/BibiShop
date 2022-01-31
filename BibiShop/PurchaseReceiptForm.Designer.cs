@@ -29,38 +29,24 @@ namespace BibiShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseReceiptForm));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
             // 
+            resources.ApplyResources(this.crystalReportViewer1, "crystalReportViewer1");
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowCopyButton = false;
-            this.crystalReportViewer1.ShowGotoPageButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(453, 450);
-            this.crystalReportViewer1.TabIndex = 1;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // PurchaseReceiptForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 450);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "PurchaseReceiptForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PurchaseReceiptForm";
             this.Load += new System.EventHandler(this.PurchaseReceiptForm_Load);
             this.ResumeLayout(false);
 

@@ -14,6 +14,7 @@ namespace BibiShop
     public partial class Coupons : Form
     {
         int uedit = 0;
+        object language = MainClass.LanguageCheck();
         public Coupons()
         {
             InitializeComponent();
@@ -96,8 +97,16 @@ namespace BibiShop
                         }
                         cmd.ExecuteNonQuery();
                         MainClass.con.Close();
-                        MessageBox.Show("Coupon Updated Successfully.");
-                        btnSave.Text = "SAVE";
+                        if (language.ToString() == "English")
+                        {
+                            MessageBox.Show("Coupon Updated Successfully.");
+                            btnSave.Text = "SAVE";
+                        }
+                        else
+                        {
+                            MessageBox.Show("優惠券更新成功");
+                            btnSave.Text = "保存";
+                        }
                         btnSave.BackColor = Color.SteelBlue;
                         Clear();
                         ShowCoupons(DGVCoupon, CouponIDGV, CouponNameGV, CouponsGeneratedGV, CouponCodeGV, CouponActivationDateGV, CouponExpiryDateGV, CouponUsageTypeGV, txtSearch.Text.ToString());
@@ -147,7 +156,7 @@ namespace BibiShop
             dtActivation.Value = DateTime.Parse(DGVCoupon.CurrentRow.Cells[4].Value.ToString());
             dtExpiry.Value = DateTime.Parse(DGVCoupon.CurrentRow.Cells[5].Value.ToString());
             cboCouponType.Text = DGVCoupon.CurrentRow.Cells[6].Value.ToString();
-            btnSave.Text = "UPDATE";
+                        if(language.ToString() == "Chinese"){btnSave.Text = "更新";}else{btnSave.Text = "UPDATE";}
             btnSave.BackColor = Color.Orange;
         }
 
@@ -217,7 +226,14 @@ namespace BibiShop
                             SqlCommand cmd = new SqlCommand("delete from CouponsTable where CouponID = @CouponID", MainClass.con);
                             cmd.Parameters.AddWithValue("@CouponID", DGVCoupon.CurrentRow.Cells[0].Value.ToString());
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Coupon Deleted Successfully");
+                            if (language.ToString() == "English")
+                            {
+                                                if(language.ToString() == "English"){MessageBox.Show("Record Deleted Successfully");}else {MessageBox.Show("記錄刪除成功");}
+                            }
+                            else
+                            {
+                                MessageBox.Show("記錄刪除成功");
+                            }
                             MainClass.con.Close();
                             ShowCoupons(DGVCoupon, CouponIDGV, CouponNameGV, CouponsGeneratedGV, CouponCodeGV, CouponActivationDateGV, CouponExpiryDateGV, CouponUsageTypeGV, txtSearch.Text.ToString());
                         }
