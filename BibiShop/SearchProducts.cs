@@ -17,14 +17,14 @@ namespace BibiShop
         BibiPOS bp;
         public SearchProducts(POS ps)
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
             this.p = ps;
             MainClass.ShowProducts(DGVSearchProducts, ProductIDGV, ProductGV, QuantityGV, txtSearch.Text);
         }
 
         public SearchProducts(BibiPOS ps)
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
             this.bp = ps;
             MainClass.ShowProducts(DGVSearchProducts, ProductIDGV, ProductGV, QuantityGV, txtSearch.Text);
         }

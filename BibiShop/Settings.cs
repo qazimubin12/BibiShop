@@ -17,7 +17,7 @@ namespace BibiShop
         object language = MainClass.LanguageCheck();
         public Settings()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void LoadLogo()
@@ -443,6 +443,7 @@ namespace BibiShop
             MainClass.con.Close();
             ShowStore();
             MainClass.ChangeLanguage();
+            Application.Restart();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -16,18 +16,18 @@ namespace BibiShop
         BibiPOS bp;
         public QuantityForm()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         public QuantityForm(POS ps)
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
             p = ps;
         }
 
         public QuantityForm(BibiPOS ps)
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
             bp = ps;
         }
 

@@ -17,7 +17,7 @@ namespace BibiShop
         int purchasedate = 0;
         public Reports()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void btnPurchaseReports_Click(object sender, EventArgs e)

@@ -19,8 +19,8 @@ namespace BibiShop
     class MainClass
     {
 
-        //  private static string s = @"Data Source=DESKTOP-QHHLI3L\SQLEXPRESS;Initial Catalog=BibiShop;Integrated Security = True;MultipleActiveResultSets=true;";
-        private static string s = @"Data Source=DESKTOP-E7EO3OH;Initial Catalog=BibiShop;Integrated Security = True;MultipleActiveResultSets=true;";
+        private static string s = @"Data Source=DESKTOP-QHHLI3L\SQLEXPRESS;Initial Catalog=BibiShop;Integrated Security = True;MultipleActiveResultSets=true;";
+      //  private static string s = @"Data Source=DESKTOP-E7EO3OH;Initial Catalog=BibiShop;Integrated Security = True;MultipleActiveResultSets=true;";
         public static SqlConnection con = new SqlConnection(s);
 
         public static void RoundedButton(Guna2Button button)

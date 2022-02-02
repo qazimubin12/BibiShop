@@ -18,7 +18,7 @@ namespace BibiShop
 
         public Sizes()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

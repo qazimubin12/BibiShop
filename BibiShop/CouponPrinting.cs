@@ -18,7 +18,7 @@ namespace BibiShop
         ReportDocument rd = new ReportDocument();
         public CouponPrinting()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void CouponPrinting_Load(object sender, EventArgs e)

@@ -44,6 +44,8 @@ namespace BibiShop
         public BibiPOS()
         {
             InitializeComponent();
+            MainClass.ChangeLanguage();
+
         }
         int shopwarehouse = 0;
 

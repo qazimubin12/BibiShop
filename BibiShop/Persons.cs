@@ -20,7 +20,7 @@ namespace BibiShop
 
         public Persons()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void ShowPersons(DataGridView dgv, DataGridViewColumn ID, DataGridViewColumn Name, DataGridViewColumn Type, DataGridViewColumn Contact, DataGridViewColumn Address,DataGridViewColumn Birthday ,string data = null)

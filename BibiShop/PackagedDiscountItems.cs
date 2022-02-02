@@ -15,7 +15,7 @@ namespace BibiShop
     {
         public PackagedDiscountItems()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void PackagedDiscountItems_Load(object sender, EventArgs e)

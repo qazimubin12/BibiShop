@@ -17,7 +17,8 @@ namespace BibiShop
         object language = MainClass.LanguageCheck();
         public Coupons()
         {
-            InitializeComponent();
+            MainClass.ChangeLanguage();
+            InitializeComponent(); 
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

@@ -21,6 +21,7 @@ namespace BibiShop
         public LoginScreen()
         {
             InitializeComponent();
+            MainClass.ChangeLanguage();
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -102,7 +103,6 @@ namespace BibiShop
                         this.Hide();
                         BibiHomeScreen das = new BibiHomeScreen();
                         das.Show();
-                     //   this.Dispose(); BibiHomeScreen ds = new BibiHomeScreen();  
                     }
                     else
                     {
@@ -155,12 +155,13 @@ namespace BibiShop
             MainClass.con.Open();
             try
             {
-                SqlCommand cmd = new SqlCommand("select Logo from StoreTable", MainClass.con);
+                SqlCommand cmd = new SqlCommand("select Logo,Language from StoreTable", MainClass.con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows)
                 {
                     LogoPic.Image = ConvertByteArraytoImage((byte[])dr["Logo"]);
+                    cboLanguage.Text = dr["Language"].ToString();
                 }
                 else
                 {

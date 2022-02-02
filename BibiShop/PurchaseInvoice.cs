@@ -15,7 +15,7 @@ namespace BibiShop
         object language = null;
         public PurchaseInvoice()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void button1_Click(object sender, EventArgs e)

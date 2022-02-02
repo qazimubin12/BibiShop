@@ -236,12 +236,6 @@
   <data name="btnBackup.Text" xml:space="preserve">
     <value>備份</value>
   </data>
-  <data name="cboLanguage.Items" xml:space="preserve">
-    <value>英語</value>
-  </data>
-  <data name="cboLanguage.Items1" xml:space="preserve">
-    <value>中國人</value>
-  </data>
   <data name="button4.Text" xml:space="preserve">
     <value>取消</value>
   </data>

@@ -19,7 +19,7 @@ namespace BibiShop
 
         public SaleReceiptForm()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void SaleReceiptForm_Load(object sender, EventArgs e)

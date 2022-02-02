@@ -46,7 +46,7 @@ namespace BibiShop
         }
         public Inventory()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void Inventory_Load(object sender, EventArgs e)

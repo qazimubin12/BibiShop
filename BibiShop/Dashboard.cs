@@ -15,7 +15,7 @@ namespace BibiShop
     {
         public Dashboard()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
         private void LoadChart()
         {

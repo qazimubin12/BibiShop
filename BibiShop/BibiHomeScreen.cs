@@ -18,12 +18,10 @@ namespace BibiShop
     {
         public BibiHomeScreen()
         {
-            MainClass.ChangeLanguage();
             InitializeComponent();
+            MainClass.ChangeLanguage();
         }
-        int shopwarehouse = 0;
-
-       
+        int shopwarehouse = 0;       
 
 
         public Image ConvertByteArraytoImage(byte[] data)

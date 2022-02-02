@@ -17,7 +17,7 @@ namespace BibiShop
         ReportDocument rd = new ReportDocument();
         public PurchaseReceiptForm()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void PurchaseReceiptForm_Load(object sender, EventArgs e)

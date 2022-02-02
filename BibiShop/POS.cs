@@ -19,7 +19,7 @@ namespace BibiShop
         public static bool savedcustomercheck = false;
         public POS()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void button1_Click(object sender, EventArgs e)

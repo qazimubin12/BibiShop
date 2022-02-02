@@ -17,7 +17,7 @@ namespace BibiShop
         object language = null;
         public Brands()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void ShowBrands(DataGridView dgv, DataGridViewColumn ID, DataGridViewColumn Brand, string data = null)

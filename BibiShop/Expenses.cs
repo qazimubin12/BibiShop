@@ -18,7 +18,7 @@ namespace BibiShop
 
         public Expenses()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void ShowExpense(DataGridView dgv, DataGridViewColumn expid, DataGridViewColumn Expense, DataGridViewColumn expenseprice, DataGridViewColumn dates, string search = "")

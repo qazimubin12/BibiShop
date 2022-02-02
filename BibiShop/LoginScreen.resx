@@ -321,8 +321,8 @@
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="guna2ControlBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;txtPassword.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -333,14 +333,11 @@
   <data name="&gt;&gt;guna2ControlBox2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>guna2Panel2</value>
+  <data name="&gt;&gt;cboLanguage.Name" xml:space="preserve">
+    <value>cboLanguage</value>
   </data>
   <data name="&gt;&gt;txtPassword.Name" xml:space="preserve">
     <value>txtPassword</value>
-  </data>
-  <data name="&gt;&gt;txtPassword.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -377,6 +374,9 @@
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>CYBER SOFT SERVICES</value>
+  </data>
+  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+    <value>guna2Panel2</value>
   </data>
   <data name="btnLogin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -477,8 +477,8 @@
   <data name="cboLanguage.Items" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="&gt;&gt;cboLanguage.Name" xml:space="preserve">
-    <value>cboLanguage</value>
+  <data name="guna2ControlBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;label19.Name" xml:space="preserve">
     <value>label19</value>

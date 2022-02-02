@@ -20,7 +20,7 @@ namespace BibiShop
         object language = MainClass.LanguageCheck();
         public Products()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void CheckMode()

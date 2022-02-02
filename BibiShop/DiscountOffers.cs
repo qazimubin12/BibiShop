@@ -18,7 +18,7 @@ namespace BibiShop
 
         public DiscountOffers()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void button1_Click(object sender, EventArgs e)

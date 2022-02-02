@@ -18,7 +18,7 @@ namespace BibiShop
 
         public Categories()
         {
-            InitializeComponent();
+InitializeComponent(); MainClass.ChangeLanguage();
         }
 
         private void ShowCategorys(DataGridView dgv, DataGridViewColumn ID, DataGridViewColumn Category, string data = null)
