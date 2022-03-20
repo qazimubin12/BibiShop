@@ -34,18 +34,18 @@ namespace BibiShop
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,6 +66,14 @@ namespace BibiShop
             this.dtPurchase1 = new System.Windows.Forms.DateTimePicker();
             this.label32 = new System.Windows.Forms.Label();
             this.DGVPurchases = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.IDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierInvoiceIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentTypeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceNoGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrandTotalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActionGV = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.SaleReports = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -77,6 +85,12 @@ namespace BibiShop
             this.dtSale2 = new System.Windows.Forms.DateTimePicker();
             this.dtSale1 = new System.Windows.Forms.DateTimePicker();
             this.DGVSales = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.SaleIDCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceNoGVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvoiceDateGVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountGVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrandTotalGVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ViewButtonGVC = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.LedgerReports = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -94,20 +108,6 @@ namespace BibiShop
             this.label8 = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.IDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierInvoiceIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentTypeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceNoGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrandTotalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActionGV = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.SaleIDCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceNoGVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceDateGVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscountGVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrandTotalGVC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ViewButtonGVC = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -355,6 +355,63 @@ namespace BibiShop
             this.DGVPurchases.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPurchases_CellClick);
             this.DGVPurchases.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVPurchases_CellPainting);
             // 
+            // IDGV
+            // 
+            resources.ApplyResources(this.IDGV, "IDGV");
+            this.IDGV.Name = "IDGV";
+            this.IDGV.ReadOnly = true;
+            // 
+            // SupplierInvoiceIDGV
+            // 
+            resources.ApplyResources(this.SupplierInvoiceIDGV, "SupplierInvoiceIDGV");
+            this.SupplierInvoiceIDGV.Name = "SupplierInvoiceIDGV";
+            this.SupplierInvoiceIDGV.ReadOnly = true;
+            // 
+            // PaymentTypeGV
+            // 
+            resources.ApplyResources(this.PaymentTypeGV, "PaymentTypeGV");
+            this.PaymentTypeGV.Name = "PaymentTypeGV";
+            this.PaymentTypeGV.ReadOnly = true;
+            // 
+            // InvoiceNoGv
+            // 
+            resources.ApplyResources(this.InvoiceNoGv, "InvoiceNoGv");
+            this.InvoiceNoGv.Name = "InvoiceNoGv";
+            this.InvoiceNoGv.ReadOnly = true;
+            // 
+            // InvoiceDateGV
+            // 
+            resources.ApplyResources(this.InvoiceDateGV, "InvoiceDateGV");
+            this.InvoiceDateGV.Name = "InvoiceDateGV";
+            this.InvoiceDateGV.ReadOnly = true;
+            // 
+            // SupplierNameGV
+            // 
+            resources.ApplyResources(this.SupplierNameGV, "SupplierNameGV");
+            this.SupplierNameGV.Name = "SupplierNameGV";
+            this.SupplierNameGV.ReadOnly = true;
+            // 
+            // GrandTotalGV
+            // 
+            resources.ApplyResources(this.GrandTotalGV, "GrandTotalGV");
+            this.GrandTotalGV.Name = "GrandTotalGV";
+            this.GrandTotalGV.ReadOnly = true;
+            // 
+            // ActionGV
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(137)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(137)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.ActionGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ActionGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.ActionGV, "ActionGV");
+            this.ActionGV.Name = "ActionGV";
+            this.ActionGV.ReadOnly = true;
+            this.ActionGV.Text = "VIEW";
+            this.ActionGV.UseColumnTextForButtonValue = true;
+            // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
@@ -502,6 +559,52 @@ namespace BibiShop
             this.DGVSales.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DGVSales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSales_CellClick);
             this.DGVSales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSales_CellContentClick);
+            this.DGVSales.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVSales_CellPainting);
+            // 
+            // SaleIDCC
+            // 
+            resources.ApplyResources(this.SaleIDCC, "SaleIDCC");
+            this.SaleIDCC.Name = "SaleIDCC";
+            this.SaleIDCC.ReadOnly = true;
+            // 
+            // InvoiceNoGVC
+            // 
+            resources.ApplyResources(this.InvoiceNoGVC, "InvoiceNoGVC");
+            this.InvoiceNoGVC.Name = "InvoiceNoGVC";
+            this.InvoiceNoGVC.ReadOnly = true;
+            // 
+            // InvoiceDateGVC
+            // 
+            resources.ApplyResources(this.InvoiceDateGVC, "InvoiceDateGVC");
+            this.InvoiceDateGVC.Name = "InvoiceDateGVC";
+            this.InvoiceDateGVC.ReadOnly = true;
+            // 
+            // DiscountGVC
+            // 
+            resources.ApplyResources(this.DiscountGVC, "DiscountGVC");
+            this.DiscountGVC.Name = "DiscountGVC";
+            this.DiscountGVC.ReadOnly = true;
+            // 
+            // GrandTotalGVC
+            // 
+            resources.ApplyResources(this.GrandTotalGVC, "GrandTotalGVC");
+            this.GrandTotalGVC.Name = "GrandTotalGVC";
+            this.GrandTotalGVC.ReadOnly = true;
+            // 
+            // ViewButtonGVC
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(137)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(137)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.ViewButtonGVC.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ViewButtonGVC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.ViewButtonGVC, "ViewButtonGVC");
+            this.ViewButtonGVC.Name = "ViewButtonGVC";
+            this.ViewButtonGVC.ReadOnly = true;
+            this.ViewButtonGVC.Text = "VIEW";
+            this.ViewButtonGVC.UseColumnTextForButtonValue = true;
             // 
             // label3
             // 
@@ -738,108 +841,6 @@ namespace BibiShop
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
             this.label5.Name = "label5";
-            // 
-            // IDGV
-            // 
-            resources.ApplyResources(this.IDGV, "IDGV");
-            this.IDGV.Name = "IDGV";
-            this.IDGV.ReadOnly = true;
-            // 
-            // SupplierInvoiceIDGV
-            // 
-            resources.ApplyResources(this.SupplierInvoiceIDGV, "SupplierInvoiceIDGV");
-            this.SupplierInvoiceIDGV.Name = "SupplierInvoiceIDGV";
-            this.SupplierInvoiceIDGV.ReadOnly = true;
-            // 
-            // PaymentTypeGV
-            // 
-            resources.ApplyResources(this.PaymentTypeGV, "PaymentTypeGV");
-            this.PaymentTypeGV.Name = "PaymentTypeGV";
-            this.PaymentTypeGV.ReadOnly = true;
-            // 
-            // InvoiceNoGv
-            // 
-            resources.ApplyResources(this.InvoiceNoGv, "InvoiceNoGv");
-            this.InvoiceNoGv.Name = "InvoiceNoGv";
-            this.InvoiceNoGv.ReadOnly = true;
-            // 
-            // InvoiceDateGV
-            // 
-            resources.ApplyResources(this.InvoiceDateGV, "InvoiceDateGV");
-            this.InvoiceDateGV.Name = "InvoiceDateGV";
-            this.InvoiceDateGV.ReadOnly = true;
-            // 
-            // SupplierNameGV
-            // 
-            resources.ApplyResources(this.SupplierNameGV, "SupplierNameGV");
-            this.SupplierNameGV.Name = "SupplierNameGV";
-            this.SupplierNameGV.ReadOnly = true;
-            // 
-            // GrandTotalGV
-            // 
-            resources.ApplyResources(this.GrandTotalGV, "GrandTotalGV");
-            this.GrandTotalGV.Name = "GrandTotalGV";
-            this.GrandTotalGV.ReadOnly = true;
-            // 
-            // ActionGV
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(137)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(137)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.ActionGV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ActionGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            resources.ApplyResources(this.ActionGV, "ActionGV");
-            this.ActionGV.Name = "ActionGV";
-            this.ActionGV.ReadOnly = true;
-            this.ActionGV.Text = "VIEW";
-            this.ActionGV.UseColumnTextForButtonValue = true;
-            // 
-            // SaleIDCC
-            // 
-            resources.ApplyResources(this.SaleIDCC, "SaleIDCC");
-            this.SaleIDCC.Name = "SaleIDCC";
-            this.SaleIDCC.ReadOnly = true;
-            // 
-            // InvoiceNoGVC
-            // 
-            resources.ApplyResources(this.InvoiceNoGVC, "InvoiceNoGVC");
-            this.InvoiceNoGVC.Name = "InvoiceNoGVC";
-            this.InvoiceNoGVC.ReadOnly = true;
-            // 
-            // InvoiceDateGVC
-            // 
-            resources.ApplyResources(this.InvoiceDateGVC, "InvoiceDateGVC");
-            this.InvoiceDateGVC.Name = "InvoiceDateGVC";
-            this.InvoiceDateGVC.ReadOnly = true;
-            // 
-            // DiscountGVC
-            // 
-            resources.ApplyResources(this.DiscountGVC, "DiscountGVC");
-            this.DiscountGVC.Name = "DiscountGVC";
-            this.DiscountGVC.ReadOnly = true;
-            // 
-            // GrandTotalGVC
-            // 
-            resources.ApplyResources(this.GrandTotalGVC, "GrandTotalGVC");
-            this.GrandTotalGVC.Name = "GrandTotalGVC";
-            this.GrandTotalGVC.ReadOnly = true;
-            // 
-            // ViewButtonGVC
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(137)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(137)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.ViewButtonGVC.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ViewButtonGVC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            resources.ApplyResources(this.ViewButtonGVC, "ViewButtonGVC");
-            this.ViewButtonGVC.Name = "ViewButtonGVC";
-            this.ViewButtonGVC.ReadOnly = true;
-            this.ViewButtonGVC.Text = "VIEW";
-            this.ViewButtonGVC.UseColumnTextForButtonValue = true;
             // 
             // Reports
             // 

@@ -126,13 +126,14 @@
   <data name="&gt;&gt;btnPrintPerson.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtSearchPurhcaseInvoice.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 10pt</value>
   </data>
@@ -160,25 +161,21 @@
   <data name="&gt;&gt;button11.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
   <data name="&gt;&gt;dtPurchase2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>915, 749</value>
+  </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
-  </data>
-  <data name="dtSale2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 55</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 17</value>
   </data>
   <data name="&gt;&gt;SaleReports.Parent" xml:space="preserve">
     <value>tabControl1</value>
@@ -228,6 +225,9 @@
   <data name="btnPrintPerson.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt</value>
   </data>
+  <data name="button11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
   <data name="&gt;&gt;PaymentTypeGV.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -255,6 +255,9 @@
   <data name="&gt;&gt;button8.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cboType.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
   <data name="ExpenseReports.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
@@ -264,11 +267,14 @@
   <data name="button10.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 27</value>
   </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;SaleIDCC.Name" xml:space="preserve">
     <value>SaleIDCC</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>panel2</value>
+  <data name="DGVSales.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>30</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>LedgerReports</value>
@@ -282,11 +288,8 @@
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;DGVSales.Parent" xml:space="preserve">
-    <value>SaleReports</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="LedgerReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>631, 629</value>
   </data>
   <data name="&gt;&gt;GrandTotalGVC.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -315,17 +318,23 @@
   <data name="btnPrintPerson.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="&gt;&gt;SaleReports.Name" xml:space="preserve">
-    <value>SaleReports</value>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 62</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnPurchaseReports.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="button11.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 27</value>
   </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>ExpenseReports</value>
+  </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>276, 94</value>
+  </data>
+  <data name="&gt;&gt;button9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnPrintPerson.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 330</value>
@@ -333,14 +342,14 @@
   <data name="&gt;&gt;DGVSalePrintingAll.Parent" xml:space="preserve">
     <value>LedgerReports</value>
   </data>
+  <data name="btnPurchaseReports.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;IDGV.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SaleReports.Text" xml:space="preserve">
-    <value>SaleReports</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -354,11 +363,14 @@
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 57</value>
+  <data name="&gt;&gt;txtSearchPurhcaseInvoice.Parent" xml:space="preserve">
+    <value>PurchaseReports</value>
   </data>
   <data name="button8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 19</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -405,9 +417,6 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnSaleReports.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
   <data name="txtSearchSaleInvoice.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 23</value>
   </data>
@@ -416,9 +425,6 @@
   </data>
   <data name="&gt;&gt;label30.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 27</value>
   </data>
   <data name="&gt;&gt;InvoiceDateGV.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -440,12 +446,6 @@
   </data>
   <data name="GrandTotalGV.HeaderText" xml:space="preserve">
     <value>Grand Total</value>
-  </data>
-  <data name="SupplierInvoiceIDGV.HeaderText" xml:space="preserve">
-    <value>SupplierInvoiceID</value>
-  </data>
-  <data name="&gt;&gt;dtPurchase2.Parent" xml:space="preserve">
-    <value>PurchaseReports</value>
   </data>
   <data name="SaleReports.Size" type="System.Drawing.Size, System.Drawing">
     <value>631, 629</value>
@@ -489,20 +489,17 @@
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;dtPurchase1.Name" xml:space="preserve">
-    <value>dtPurchase1</value>
-  </data>
-  <data name="btnSaleReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 103</value>
-  </data>
   <data name="&gt;&gt;label30.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PaymentTypeGV.Name" xml:space="preserve">
     <value>PaymentTypeGV</value>
   </data>
-  <data name="DGVSalePrintingAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 121</value>
+  <data name="PersonIDGV.HeaderText" xml:space="preserve">
+    <value>PersonID</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtSearchSaleInvoice.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -524,6 +521,9 @@
   </data>
   <data name="SupplierNameGV.HeaderText" xml:space="preserve">
     <value>Supplier</value>
+  </data>
+  <data name="txtSearchPurhcaseInvoice.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="&gt;&gt;label31.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -591,6 +591,9 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 40</value>
   </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
   </data>
@@ -602,6 +605,9 @@
   </data>
   <data name="&gt;&gt;cboType.Parent" xml:space="preserve">
     <value>ExpenseReports</value>
+  </data>
+  <data name="&gt;&gt;dtSale2.Name" xml:space="preserve">
+    <value>dtSale2</value>
   </data>
   <data name="PurchaseReports.Size" type="System.Drawing.Size, System.Drawing">
     <value>631, 629</value>
@@ -620,9 +626,6 @@
   </data>
   <data name="InvoiceNoGVC.HeaderText" xml:space="preserve">
     <value>Invoice No</value>
-  </data>
-  <data name="&gt;&gt;btnLedgerReports.Name" xml:space="preserve">
-    <value>btnLedgerReports</value>
   </data>
   <data name="txtSearchPurhcaseInvoice.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -672,6 +675,9 @@
   <data name="&gt;&gt;DGVPurchases.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;GrandTotalGV.Name" xml:space="preserve">
+    <value>GrandTotalGV</value>
+  </data>
   <data name="btnLedgerReports.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 103</value>
   </data>
@@ -686,9 +692,6 @@
   </data>
   <data name="&gt;&gt;dtSale1.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="&gt;&gt;label32.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 655</value>
@@ -723,14 +726,11 @@
   <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 17</value>
   </data>
-  <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 79</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
   <data name="&gt;&gt;InvoiceNoGv.Name" xml:space="preserve">
     <value>InvoiceNoGv</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 6</value>
   </data>
   <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 25</value>
@@ -765,14 +765,20 @@
   <data name="&gt;&gt;BdayGV.Name" xml:space="preserve">
     <value>BdayGV</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 19</value>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 27</value>
   </data>
   <data name="label31.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
   <data name="label30.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
+  </data>
+  <data name="LedgerReports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="DGVSales.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -785,9 +791,6 @@
   </data>
   <data name="&gt;&gt;dtSale2.Parent" xml:space="preserve">
     <value>SaleReports</value>
-  </data>
-  <data name="btnLedgerReports.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="&gt;&gt;ActionGV.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -836,6 +839,9 @@
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnSaleReports.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;NameGV.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -897,11 +903,11 @@
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 94</value>
   </data>
+  <data name="&gt;&gt;PersonIDGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="button1.Text" xml:space="preserve">
     <value>&amp;PRINT</value>
-  </data>
-  <data name="&gt;&gt;label32.Name" xml:space="preserve">
-    <value>label32</value>
   </data>
   <data name="SaleReports.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -936,9 +942,6 @@
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>915, 94</value>
   </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="&gt;&gt;txtSearchPurhcaseInvoice.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -950,6 +953,9 @@
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtPurchase1.Parent" xml:space="preserve">
+    <value>PurchaseReports</value>
   </data>
   <data name="PurchaseReports.Text" xml:space="preserve">
     <value>PurchaseReports</value>
@@ -963,17 +969,20 @@
   <data name="&gt;&gt;button3.Name" xml:space="preserve">
     <value>button3</value>
   </data>
+  <data name="&gt;&gt;button11.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;button10.Name" xml:space="preserve">
     <value>button10</value>
   </data>
   <data name="ActionGV.ToolTipText" xml:space="preserve">
     <value>VIEW</value>
   </data>
-  <data name="DGVSales.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
   <data name="label32.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
   <data name="button11.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -996,14 +1005,14 @@
   <data name="&gt;&gt;button3.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;btnSaleReports.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="DGVSalePrintingAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 121</value>
   </data>
   <data name="SupplierInvoiceIDGV.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;GrandTotalGV.Name" xml:space="preserve">
-    <value>GrandTotalGV</value>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>PurchaseReports</value>
@@ -1011,17 +1020,11 @@
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 25pt, style=Bold</value>
-  </data>
   <data name="&gt;&gt;label30.Parent" xml:space="preserve">
     <value>PurchaseReports</value>
   </data>
   <data name="&gt;&gt;IDGV.Name" xml:space="preserve">
     <value>IDGV</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 25pt, style=Bold</value>
   </data>
   <data name="label30.Text" xml:space="preserve">
     <value>To</value>
@@ -1071,8 +1074,8 @@
   <data name="AddressGV.HeaderText" xml:space="preserve">
     <value>Address</value>
   </data>
-  <data name="PersonIDGV.HeaderText" xml:space="preserve">
-    <value>PersonID</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 17</value>
   </data>
   <data name="&gt;&gt;button10.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1113,14 +1116,11 @@
   <data name="&gt;&gt;btnLedgerReports.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cboType.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
+  <data name="&gt;&gt;label32.Name" xml:space="preserve">
+    <value>label32</value>
   </data>
   <data name="label31.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
-  </data>
-  <data name="button9.Text" xml:space="preserve">
-    <value>&amp;LOAD</value>
   </data>
   <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -1167,14 +1167,14 @@
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 27</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 79</value>
   </data>
   <data name="&gt;&gt;ExpenseReports.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dtSale2.Name" xml:space="preserve">
-    <value>dtSale2</value>
+  <data name="SupplierInvoiceIDGV.HeaderText" xml:space="preserve">
+    <value>SupplierInvoiceID</value>
   </data>
   <data name="button8.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1182,8 +1182,8 @@
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 62</value>
+  <data name="&gt;&gt;DGVSales.Parent" xml:space="preserve">
+    <value>SaleReports</value>
   </data>
   <data name="btnLedgerReports.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 221</value>
@@ -1203,8 +1203,8 @@
   <data name="label28.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="dtSale1.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 20</value>
@@ -1215,8 +1215,8 @@
   <data name="ViewButtonGVC.HeaderText" xml:space="preserve">
     <value>ACTION</value>
   </data>
-  <data name="label32.Text" xml:space="preserve">
-    <value>Search Purchase Invoices</value>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnLedgerReports.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt</value>
@@ -1224,8 +1224,8 @@
   <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="DGVSalePrintingAll.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="&gt;&gt;cboType.Name" xml:space="preserve">
+    <value>cboType</value>
   </data>
   <data name="DGVPurchases.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 114</value>
@@ -1233,11 +1233,8 @@
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DGVSales.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2DataGridView, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  <data name="&gt;&gt;label32.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="DGVSalePrintingAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>609, 426</value>
@@ -1257,8 +1254,8 @@
   <data name="&gt;&gt;ExpenseReports.Name" xml:space="preserve">
     <value>ExpenseReports</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnSaleReports.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;DGVPersons.Type" xml:space="preserve">
     <value>Guna.UI2.WinForms.Guna2DataGridView, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
@@ -1269,14 +1266,17 @@
   <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="&gt;&gt;LedgerReports.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
   <data name="&gt;&gt;ActionGV.Name" xml:space="preserve">
     <value>ActionGV</value>
   </data>
   <data name="GrandTotalGVC.HeaderText" xml:space="preserve">
     <value>Grand Total</value>
   </data>
-  <data name="LedgerReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>631, 629</value>
+  <data name="DGVSalePrintingAll.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>30</value>
   </data>
   <data name="&gt;&gt;btnPrintPerson.Name" xml:space="preserve">
     <value>btnPrintPerson</value>
@@ -1287,17 +1287,14 @@
   <data name="InvoiceDateGVC.HeaderText" xml:space="preserve">
     <value>InvoiceDate</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
   <data name="&gt;&gt;LedgerReports.Name" xml:space="preserve">
     <value>LedgerReports</value>
   </data>
   <data name="&gt;&gt;button1.Parent" xml:space="preserve">
     <value>ExpenseReports</value>
   </data>
-  <data name="&gt;&gt;txtSearchPurhcaseInvoice.Parent" xml:space="preserve">
-    <value>PurchaseReports</value>
+  <data name="dtSale2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>245, 55</value>
   </data>
   <data name="&gt;&gt;button9.Parent" xml:space="preserve">
     <value>SaleReports</value>
@@ -1311,17 +1308,17 @@
   <data name="btnPrintPerson.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>915, 749</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 25pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;label32.Parent" xml:space="preserve">
     <value>PurchaseReports</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 25pt, style=Bold</value>
   </data>
-  <data name="btnPurchaseReports.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;dtPurchase2.Parent" xml:space="preserve">
+    <value>PurchaseReports</value>
   </data>
   <data name="SaleReports.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1338,8 +1335,8 @@
   <data name="cboType.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="LedgerReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="label32.Text" xml:space="preserve">
+    <value>Search Purchase Invoices</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Reports</value>
@@ -1350,11 +1347,8 @@
   <data name="SaleReports.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="&gt;&gt;button9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label31.Text" xml:space="preserve">
-    <value>From</value>
+  <data name="&gt;&gt;DGVSales.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2DataGridView, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -1365,8 +1359,11 @@
   <data name="&gt;&gt;label33.Parent" xml:space="preserve">
     <value>SaleReports</value>
   </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>ExpenseReports</value>
+  </data>
+  <data name="btnLedgerReports.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="InvoiceNoGv.HeaderText" xml:space="preserve">
     <value>Invoice No</value>
@@ -1380,20 +1377,23 @@
   <data name="&gt;&gt;SupplierNameGV.Name" xml:space="preserve">
     <value>SupplierNameGV</value>
   </data>
-  <data name="&gt;&gt;dtPurchase1.Parent" xml:space="preserve">
-    <value>PurchaseReports</value>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
-  <data name="&gt;&gt;PersonIDGV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="button9.Text" xml:space="preserve">
+    <value>&amp;LOAD</value>
   </data>
   <data name="button10.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
+  <data name="DGVPurchases.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 509</value>
+  </data>
   <data name="dtSale2.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 6</value>
+  <data name="&gt;&gt;btnLedgerReports.Name" xml:space="preserve">
+    <value>btnLedgerReports</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1434,14 +1434,14 @@
   <data name="&gt;&gt;label28.Name" xml:space="preserve">
     <value>label28</value>
   </data>
-  <data name="&gt;&gt;LedgerReports.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="btnSaleReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 103</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnPurchaseReports.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="SaleIDCC.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1458,17 +1458,17 @@
   <data name="button8.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 79</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>ExpenseReports</value>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 57</value>
   </data>
   <data name="LedgerReports.Text" xml:space="preserve">
     <value>Sale Prints</value>
   </data>
-  <data name="button11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+  <data name="&gt;&gt;dtPurchase1.Name" xml:space="preserve">
+    <value>dtPurchase1</value>
   </data>
-  <data name="&gt;&gt;cboType.Name" xml:space="preserve">
-    <value>cboType</value>
+  <data name="&gt;&gt;SaleReports.Name" xml:space="preserve">
+    <value>SaleReports</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -1485,8 +1485,8 @@
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 36</value>
   </data>
-  <data name="&gt;&gt;button11.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="SaleReports.Text" xml:space="preserve">
+    <value>SaleReports</value>
   </data>
   <data name="&gt;&gt;button11.Parent" xml:space="preserve">
     <value>PurchaseReports</value>
@@ -1497,8 +1497,8 @@
   <data name="ContactGV.HeaderText" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="DGVPurchases.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 509</value>
+  <data name="label31.Text" xml:space="preserve">
+    <value>From</value>
   </data>
   <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 56</value>
@@ -1512,7 +1512,7 @@
   <metadata name="ContactGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="btnSaleReports.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ActionGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="DiscountGVC.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1536,13 +1536,13 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ActionGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="IDGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="AddressGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnLedgerReports.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="BdayGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1584,7 +1584,7 @@
   <metadata name="ViewButtonGVC.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="btnLedgerReports.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="btnSaleReports.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

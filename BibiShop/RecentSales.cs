@@ -19,7 +19,7 @@ namespace BibiShop
         public static int SAVED_SALES_ID = 0;
         public RecentSales()
         {
-InitializeComponent(); MainClass.ChangeLanguage();
+            InitializeComponent(); MainClass.ChangeLanguage();
         }
         private void FindShopDefault()
         {
@@ -31,7 +31,8 @@ InitializeComponent(); MainClass.ChangeLanguage();
 
         public RecentSales(BibiPOS s)
         {
-InitializeComponent(); MainClass.ChangeLanguage();
+            InitializeComponent(); 
+            MainClass.ChangeLanguage();
             this.bp = s;
         }
 

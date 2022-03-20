@@ -190,6 +190,9 @@ namespace BibiShop
                 Type.DataPropertyName = dt.Columns["CouponType"].ToString();
                 dgv.DataSource = dt;
                 MainClass.con.Close();
+
+                
+
             }
             catch (Exception ex)
             {
@@ -197,10 +200,28 @@ namespace BibiShop
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void ActivationCouponCheck()
+        {
+            foreach (DataGridViewRow item in DGVCoupon.Rows)
+            {
+                MainClass.con.Open();
+                SqlCommand cmd = new SqlCommand("select CouponExpirationDate from CouponsTable where CouponName = '" + item.Cells["CouponNameGV"].Value.ToString() + "'", MainClass.con);
+                object ob = cmd.ExecuteScalar();
+                if(DateTime.Parse(ob.ToString()) < DateTime.Now)
+                {
+                    cmd = new SqlCommand("update CouponsTable set IsActive = 0 where CouponName = '" + item.Cells["CouponNameGV"].Value.ToString() + "' ", MainClass.con);
+                    cmd.ExecuteNonQuery();
+                }
+                MainClass.con.Close();
+            }
+        }
+
         private void Units_Load(object sender, EventArgs e)
         {
             MainClass.FillCouponTypes(cboCouponType);
             ShowCoupons(DGVCoupon, CouponIDGV,CouponNameGV,CouponsGeneratedGV,CouponCodeGV,CouponActivationDateGV,CouponExpiryDateGV,CouponUsageTypeGV, txtSearch.Text.ToString());
+            ActivationCouponCheck();
         }
 
         private void Clear()

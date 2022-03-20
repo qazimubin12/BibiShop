@@ -1473,28 +1473,27 @@ namespace BibiShop
         private void CompleteClear()
         {
             DGVSaleCart.Rows.Clear();
-            txtPayAmount.Clear();
-            txtChange.Clear();
-            paymentpanel.Visible = false;
-            lblGrandTotal.Text = "0.00";
-            lblNetTotal.Text = "0.00";
-            lblTax.Text = "0.00";
-            lblPackagedDiscountedRate.Text = "0";
-            btnApply.Enabled = true;
-            button2.Enabled = true;
-            txtCouponCode.Clear();
-            couponpanel.Visible = false;
-            lblSaleID.Text = "";
-            lblInvoiceNo.Text = "";
-            btnSaveSale.FillColor = Color.SlateBlue;
-            txtChange.Clear();
-            txtSaleRemarks.Clear();
-            btnApplyDiscount.Enabled = true;
-            btnCloseDiscountPanel.Enabled = true;
-            discountpanel.Visible = false;
-            cboProduct.SelectedIndex = 0;
-            cboOrderType.SelectedIndex = 0;
-            cboCustomer.SelectedIndex = 0;
+            foreach (Control item in panel4.Controls)
+            {
+                if (item is Guna2TextBox)
+                {
+                    ((Guna2TextBox)item).Text = String.Empty;
+                }
+                if (item is ComboBox)
+                {
+                    ((ComboBox)item).Text = "";
+                }
+                if (item is DateTimePicker)
+                {
+                    ((DateTimePicker)item).Value = DateTime.Now;
+                }
+                if (item is Guna2ToggleSwitch)
+                {
+                    ((Guna2ToggleSwitch)item).Checked = false;
+                }
+            }
+
+           
             if (language.ToString() == "English")
             {
                 btnSaveSale.Text = "SAVE SALE";
@@ -2235,29 +2234,35 @@ namespace BibiShop
                                 cmd = new SqlCommand("select MinimumBill from CouponsSettingsTable where CouponID = '" + couponID + "' ", MainClass.con);
                                 float minimumbill = float.Parse(cmd.ExecuteScalar().ToString());
 
+                                cmd = new SqlCommand("select  p.ProductName from CouponsSettingsTable ct inner join ProductsTable p on p.ProductID = ct.ProductID where ct.CouponID = '" + couponID + "' ", MainClass.con);
+                                object couponProduct = cmd.ExecuteScalar();
+
                                 if (float.Parse(lblGrandTotal.Text) > minimumbill)
                                 {
                                     foreach (DataGridViewRow item in DGVSaleCart.Rows)
                                     {
-                                        float actualtotal = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
-                                        actualtotal = 0;
-
-                                        item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
-
-                                        if (language.ToString() == "English")
+                                        if (couponProduct.ToString() == item.Cells["ProductGV"].Value.ToString())
                                         {
-                                            item.Cells["RemarksGV"].Value = "Coupon Applied";
-                                            btnApply.Text = "APPLIED";
+                                            float actualtotal = float.Parse(item.Cells["TotalOfProductGV"].Value.ToString());
+                                            actualtotal = 0;
+
+                                            item.Cells["TotalOfProductGV"].Value = actualtotal.ToString();
+
+                                            if (language.ToString() == "English")
+                                            {
+                                                item.Cells["RemarksGV"].Value = "Coupon Applied";
+                                                btnApply.Text = "APPLIED";
+                                            }
+                                            else
+                                            {
+                                                item.Cells["RemarksGV"].Value = "已申請優惠券";
+                                                btnApply.Text = "應用";
+                                            }
+                                            cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
+                                            cmd.ExecuteNonQuery();
+                                            btnApply.Enabled = false;
+                                            button2.Enabled = false;
                                         }
-                                        else
-                                        {
-                                            item.Cells["RemarksGV"].Value = "已申請優惠券";
-                                            btnApply.Text = "應用";
-                                        }
-                                        cmd = new SqlCommand("update CouponsTable set CouponsGenerated  = CouponsGenerated - 1 where CouponID  = '" + couponID + "'  ", MainClass.con);
-                                        cmd.ExecuteNonQuery();
-                                        btnApply.Enabled = false;
-                                        button2.Enabled = false;
                                     }
                                 }
                                 else
@@ -2321,6 +2326,7 @@ namespace BibiShop
                 MainClass.con.Close();
                 MessageBox.Show(ex.Message);
             }
+            MainClass.con.Close();
             FindGrossTotal();
 
 
@@ -2475,10 +2481,12 @@ namespace BibiShop
                         {
                             if (language.ToString() == "English")
                             {
+                                MainClass.con.Close();
                                 MessageBox.Show("Products in the cart not available for the discount");
                             }
                             else
                             {
+                                MainClass.con.Close();
                                 MessageBox.Show("購物車中的產品無法享受折扣");
 
                             }

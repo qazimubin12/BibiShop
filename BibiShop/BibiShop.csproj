@@ -281,70 +281,25 @@
     <EmbeddedResource Include="BibiHomeScreen.resx">
       <DependentUpon>BibiHomeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BibiHomeScreen.zh-TW.resx">
-      <DependentUpon>BibiHomeScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BibiPOS.resx">
-      <DependentUpon>BibiPOS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BibiPOS.zh-TW.resx">
       <DependentUpon>BibiPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Brands.resx">
       <DependentUpon>Brands.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Brands.zh-TW.resx">
-      <DependentUpon>Brands.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Categories.zh-TW.resx">
-      <DependentUpon>Categories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Colors.zh-TW.resx">
-      <DependentUpon>Colors.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CouponPrinting.resx">
-      <DependentUpon>CouponPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CouponPrinting.zh-TW.resx">
       <DependentUpon>CouponPrinting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Coupons.resx">
       <DependentUpon>Coupons.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Coupons.zh-TW.resx">
-      <DependentUpon>Coupons.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CouponsSettings.resx">
       <DependentUpon>CouponsSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CouponsSettings.zh-TW.resx">
-      <DependentUpon>CouponsSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CouponsTypes.zh-TW.resx">
-      <DependentUpon>CouponsTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.zh-TW.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DiscountOffers.zh-TW.resx">
-      <DependentUpon>DiscountOffers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expenses.zh-TW.resx">
-      <DependentUpon>Expenses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inventory.zh-TW.resx">
-      <DependentUpon>Inventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ledgers.zh-TW.resx">
-      <DependentUpon>Ledgers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginScreen.zh-TW.resx">
-      <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PackagedDiscount.resx">
       <DependentUpon>PackagedDiscount.cs</DependentUpon>
@@ -367,28 +322,16 @@
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PackagedDiscount.zh-TW.resx">
-      <DependentUpon>PackagedDiscount.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PackagedDiscountItems.resx">
       <DependentUpon>PackagedDiscountItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PackagedDiscountItems.zh-TW.resx">
-      <DependentUpon>PackagedDiscountItems.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Persons.resx">
-      <DependentUpon>Persons.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persons.zh-TW.resx">
       <DependentUpon>Persons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS.resx">
       <DependentUpon>POS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
-      <DependentUpon>Products.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Products.zh-TW.resx">
       <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -404,37 +347,19 @@
     <EmbeddedResource Include="PurchaseInvoice.resx">
       <DependentUpon>PurchaseInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PurchaseInvoice.zh-TW.resx">
-      <DependentUpon>PurchaseInvoice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PurchaseReceiptForm.resx">
-      <DependentUpon>PurchaseReceiptForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PurchaseReceiptForm.zh-TW.resx">
       <DependentUpon>PurchaseReceiptForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuantityForm.resx">
       <DependentUpon>QuantityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuantityForm.zh-TW.resx">
-      <DependentUpon>QuantityForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RecentSales.resx">
-      <DependentUpon>RecentSales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecentSales.zh-TW.resx">
       <DependentUpon>RecentSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports.zh-TW.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SaleReceiptForm.resx">
-      <DependentUpon>SaleReceiptForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SaleReceiptForm.zh-TW.resx">
       <DependentUpon>SaleReceiptForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchProducts.resx">
@@ -449,20 +374,8 @@
     <EmbeddedResource Include="CouponsTypes.resx">
       <DependentUpon>CouponsTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings.zh-TW.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sizes.zh-TW.resx">
-      <DependentUpon>Sizes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Trasnfer.resx">
       <DependentUpon>Trasnfer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Trasnfer.zh-TW.resx">
-      <DependentUpon>Trasnfer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Units.zh-TW.resx">
-      <DependentUpon>Units.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouses.resx">
       <DependentUpon>Warehouses.cs</DependentUpon>
@@ -472,9 +385,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Units.resx">
       <DependentUpon>Units.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Warehouses.zh-TW.resx">
-      <DependentUpon>Warehouses.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

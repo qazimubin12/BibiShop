@@ -17,7 +17,8 @@ namespace BibiShop
         int purchasedate = 0;
         public Reports()
         {
-InitializeComponent(); MainClass.ChangeLanguage();
+            InitializeComponent();
+            MainClass.ChangeLanguage();
         }
 
         private void btnPurchaseReports_Click(object sender, EventArgs e)
@@ -399,6 +400,15 @@ InitializeComponent(); MainClass.ChangeLanguage();
             {
                 DGVPurchases.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(92, 137, 253);
                 DGVPurchases.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
+            }
+        }
+
+        private void DGVSales_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                DGVSales.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(92, 137, 253);
+                DGVSales.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
             }
         }
     }
